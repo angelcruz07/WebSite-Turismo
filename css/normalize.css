@@ -9,7 +9,6 @@ html {
   -webkit-text-size-adjust: 100%; 
   font-size: 62.5%;
   font-display: swap;
-  overflow: hidden;/* 2 */
 }
 /* Sections */
 
@@ -22,7 +21,6 @@ html {
     box-sizing: border-box;
     text-decoration: none;
      outline: none;
-    scroll-behavior: smooth;
  }
 body {
   background-color: #1F242D;

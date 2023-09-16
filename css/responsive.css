@@ -3,13 +3,26 @@
     html{ 
         font-size: 55%;
     }
+    .lodging-box{ 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lodging-box-left{
+        flex-direction: column;
+        padding: var(--standard-padding);
+        justify-content: center;
+        align-items: center;
+    }
+    .description h3{
+        text-align: center;
+    }
  }
  @media (max-width: 991px){
     .header { 
         padding: 2rem 3%; 
     }
  }
-
  @media (max-width: 768px){
     .header { 
         text-align: start;
@@ -40,5 +53,8 @@
 @media (max-width: 450px){
     html { 
         font-size:50%;
+    }
+    .lodging-image img { 
+        width: 250px;
     }
 }
