@@ -1,8 +1,6 @@
--- Active: 1690594507692@@127.0.0.1@3306@users
 <?php 
     require "database.php";
-
-// Variable para declarar errores en el llenado
+// Variable para declarar errores en el llenado del formulario
     $error = null;
 
     if ( $_SERVER['REQUEST_METHOD'] == "POST") { 
@@ -39,61 +37,53 @@
     }
   }
 ?>
-
 <!-- <form method="POST" action="resgister.php">
     <label for="name">Nombre de usuario</label><br>
     <input type="text" name="username" placeholder="Ingresa un nombre de usuario"><br>
-
     <label for="email">Ingresa un correo</label><br>
     <input type="email" name='email' placeholder="Ingresa tu correo"><br>
     <label for="password">Ingresa una contraseña</label><br>
-
     <input type="password" name="password" placeholder="Ingresa contraseña"><br>
-
     <input type="submit" value="Enviar">
-
 </form> -->
-
-      <div class="card">
-        <div class="card-header">Registro</div>
-        <div class="card-body">
-          <?php if ($error): ?>
-            <p class="text-danger">
-              <?= $error ?>
-            </p>
-          <?php endif ?>
-          <form method="POST" action="register.php">
-            <div class="">
-              <label for="name" class="">Name</label>
-
-              <div class="col-md-6">
-                <input id="name" type="text" class="" name="name" autocomplete="name" autofocus>
-              </div>
+<?php require "./partials/header.php"?>
+<section class="form-register">
+<div class="container-register">
+    <h2 class="card-title">Registro</h2>
+    <div class="container-form">
+        <?php if ($error): ?>
+        <p class="text-error">
+            <?= $error ?>
+        </p>
+        <?php endif ?>
+        <form method="POST" action="register.php">
+            <div class="card-option">
+                <label for="name" class="labels">Nombre:</label>
+                <div class="container-input">
+                    <input id="name" type="text" class="input" name="name" autocomplete="name" autofocus>
+                </div>
             </div>
-
-            <div class="">
-              <label for="email" class="">Email</label>
-
-              <div class="col-md-6">
-                <input id="email" type="email" class="" name="email" autocomplete="email" autofocus>
-              </div>
+            <div class="card-option">
+                <label for="email" class="labels">Email:</label>
+                <div class="container-input">
+                    <input id="email" type="email" class="input" name="email" autocomplete="email" autofocus>
+                </div>
             </div>
+            <div class="card-option">
+                <label for="password" class="labels">Contraseña:</label>
 
-            <div class="">
-              <label for="password" class="">Password</label>
-
-              <div class="">
-                <input id="password" type="password" class="form-control" name="password" autocomplete="password" autofocus>
-              </div>
+                <div class="container-input">
+                    <input id="password" type="password" class="input" name="password" autocomplete="password"autofocus>
+                </div>
             </div>
-
-            <div class="">
-              <div class="">
-                <button type="submit" class="">Enviar</button>
-              </div>
+            <div class="card-option">
+                <div class="submit-form">
+                    <button type="submit" class="btn">Enviar</button>
+                </div>
             </div>
-          </form>
-        </div>
-      </div>
+        </form>
+</div>
+</div>
+</section>
 
-
+<?php require "./partials/footer.php"?>

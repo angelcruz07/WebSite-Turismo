@@ -16,13 +16,14 @@
     --subtitles-size: 3rem;
     --font-size: 2rem; 
     --standard-padding:2rem 9%;
-}
-h2{ 
+  }
+  h2{ 
     color: var(--color-titles);
     font-size: var(--subtitles-size);
     text-align: center;
     margin-bottom: 2rem;
-}
+  }
+
 /* Header */
 .header { 
     position: fixed; 
@@ -35,7 +36,7 @@ h2{
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    z-index: 999;
+    z-index: 10;
 }
 .logo img {
     width: 120px;
@@ -57,5 +58,6 @@ h2{
     font-size: 3.6rem;
     color: var(--color-text);
     display: none;
+    cursor: pointer;
 }
 
