@@ -2,44 +2,52 @@
 #lodging {
     background: var(--background-secundary);
 }
-.lodging{ 
-    margin-top: 12rem;
+
+.lodging {
     padding: var(--standard-padding);
 }
-.container-lodging{ 
+
+.container-lodging {
     background: var(--background-color);
     padding: var(--standard-padding);
     border-radius: 2rem;
 }
-.lodging-box{ 
+
+.lodging-box {
     display: flex;
     margin-bottom: 1rem;
     padding: var(--standard-padding);
 }
+
 .lodging-box-left {
     display: flex;
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
     padding: var(--standard-padding);
 }
-.lodging-image{ 
+
+.lodging-image {
     position: relative;
     overflow: hidden;
     margin: 1em;
     overflow: hidden;
 }
-.lodging-image img { 
+
+.lodging-image img {
     width: 350px;
     height: auto;
 }
+
 .description {
     padding: 2rem;
     flex: 1;
 }
-.description h3{
+
+.description h3 {
     font-size: var(--font-size);
-    margin:0 0 10px 0;
-    color:var(--color-titles);
+    margin: 0 0 10px 0;
+    color: var(--color-titles);
 }
+
 .description p {
     margin: 0;
     font-size: var(--font-size);
@@ -48,13 +56,15 @@
 .lodging-image:hover .overlay {
     top: 0%;
     right: 0%;
-  }
-  
-  .overlay, .overlay-left p {
+}
+
+.overlay,
+.overlay-left p {
     text-align: center;
     line-height: 40px;
-  }
-  .overlay  {
+}
+
+.overlay {
     width: 100%;
     height: 400px;
     background: rgba(0, 0, 0, 0.3);
@@ -62,8 +72,9 @@
     right: 100%;
     top: 100%;
     transition: 1s;
-  }
-  .overlay-left{
+}
+
+.overlay-left {
     width: 100%;
     height: 400px;
     background: rgba(0, 0, 0, 0.3);
@@ -71,8 +82,9 @@
     left: 100%;
     top: 100%;
     transition: 1s;
-  }
-  .lodging-image:hover .overlay-left {
+}
+
+.lodging-image:hover .overlay-left {
     top: 0%;
     left: 0%;
-  }
+}

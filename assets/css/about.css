@@ -1,0 +1,59 @@
+/* Styles of the section about and home  */
+
+#about {
+    margin-top: 12rem;
+    padding: var(--standard-padding);
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Section home */
+#home {
+    background-color: var(--background-color);
+    margin-top: 12rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Containers of the section */
+.box-about {
+    display: flex;
+    margin-bottom: 1rem;
+}
+/*Style of home  */
+.about-box-left {
+    display: flex;
+    padding: var(--standard-padding);
+    align-items: center;
+}
+
+.information {
+    padding: 2rem;
+    flex: 1;
+    margin: 1rem;
+}
+
+.information h3 {
+    font-size: var(--font-size);
+    margin: 0 0 10px 0;
+    color: var(--color-titles);
+}
+
+.information p {
+    margin: 0;
+    font-size: var(--font-size);
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+    overflow: hidden;
+}
+
+.image img {
+    width: 350px;
+    height: auto;
+}

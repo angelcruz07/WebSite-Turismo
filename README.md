@@ -1,3 +1,4 @@
+
 # WebSite-Turismo Conociendo las riquezas de sultepec
 
 Desarrollo de sitio web para promover el turismo en el municipio de Sultepec
@@ -39,7 +40,14 @@ por lo que tendras que seguir las siguientes instrucciones .
 
 2-Uso de un servidor local puede ser (XAMP,MAMP); 
 Debido a que se trabaja de manera local si eres nuevo en el proyecto y debes hacer uso de la base de datos deberas crearla por ti mismo en tu maquina local.
-(Despues agrego como la pueden crear XD)
+Facilitando el trabajo se ha creado una carpeta con la denominacion sql
+Dentro de ella se encuentra un archivo donde podras ejecutar los comandos para crear la base de datos
+para hacerlo aun mas facil 
+descarga la extension de VScode llamada
+Mysql
+ID de la extension
+cweijan.vscode-mysql-client2
+Esta te permitira adminitrar las bases de datos de manera grafica ademas de automatizar los proceso de creacion como se muestra en el archivo setup.sql
 
 
 Forma de Trabajo: Frontend

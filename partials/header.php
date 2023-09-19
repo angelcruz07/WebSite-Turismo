@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/normalize.css" type="text/css">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/index.css">
+    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/about.css">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/lodging.css">
+    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/events.css">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/register.css">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/footer.css">
     <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/responsive.css">
