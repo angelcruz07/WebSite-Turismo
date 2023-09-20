@@ -52,16 +52,22 @@
     .box-about{ 
         flex-direction: column;
 }
-    }
     .about-box-left{ 
-        flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    width: 100%;
+    }
+    .gallery img {
+        width: 100%;
+    }
 }
-
 @media (max-width: 450px){
     html { 
         font-size:50%;
     }
     .lodging-image img { 
         width: 250px;
+    }
+    .container-events{
+        flex-direction: column;
     }
 }

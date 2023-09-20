@@ -1,48 +1,35 @@
 /* Estilo para el contenedor principal */
-.container {
+.container-events {
     width: 100%;
+    padding: var(--standard-padding);
+    display: flex;
+    justify-content: space-between;
 }
 /* Estilo para cada elemento (imagen + información) */
-.item {
-    width: 25%; /* Cada elemento ocupa un tercio del ancho del contenedor */
-    float: left; /* Alinea los elementos en línea horizontal */
-    box-sizing: border-box;
-    margin: 0;
+.card-event{
     padding: 0 10px; /* Agrega espacio entre elementos */
-    margin-left:90px;
+    margin-bottom: 2rem;
 }
 /* Estilo para las imágenes */
-.item img {
+.card-event img {
     max-width: 100%; /* Ajusta el tamaño de la imagen al ancho del contenedor */
     height: auto; /* Mantiene la proporción de aspecto de la imagen */
     display: block; /* Evita espacios vacíos debajo de las imágenes */
+    border-radius: 5% 5% 0 0
 }
 /* Estilo para la información */
-.info {
-    padding: 10px;
-    border: 1px solid var(--background-secundary);
+.description-event {
+    padding: var(--standard-padding);
     text-align: center;
-    border-radius: 15px;
+    border-radius:0 0 2rem 2rem;
     background-color: var(--background-secundary);
-font-family: var(--font-family);
+    font-family: var(--font-family);
 }
-.info h2{
+.description-event h3{
+    font-size: var(--font-size);
+    margin: 0 0 10px 0;
     color: var(--color-titles);
-font-size: var(--subtitles-size);
 }
-.info p{
+.description-event{
 color:var(--color-text);
-}
-/* ESTILOS PARA EL BOTON  VER MAS*/
-.button{
-border-radius: 70px;
-background-color: var(--color-titles);
-font-family: var(--font-family);
-width: 150px;
-height: 60px;
-display: flex;
-justify-content: center;
-line-height: 60px;
-margin-top: 40%;
-margin-left: 45%;
 }
