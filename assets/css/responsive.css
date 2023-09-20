@@ -49,7 +49,14 @@
         font-size:2rem; 
         margin:3rem 0;
     }
+    .box-about{ 
+        flex-direction: column;
 }
+    }
+    .about-box-left{ 
+        flex-direction: column-reverse;
+}
+
 @media (max-width: 450px){
     html { 
         font-size:50%;

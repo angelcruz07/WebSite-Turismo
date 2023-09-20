@@ -57,3 +57,11 @@
     width: 350px;
     height: auto;
 }
+@media (max-width: 768px){
+    .box-about{ 
+        flex-direction: column;
+    }
+    .about-box-left{ 
+        flex-direction: column-reverse;
+}
+}

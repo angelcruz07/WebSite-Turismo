@@ -10,6 +10,7 @@
 </footer>
 <!-- Scripts JS -->
 <script src="http://localhost/WebSite-Turismo/assets/js/index.js"></script>
+<script src="http://localhost/WebSite-Turismo/assets/js/lightbox.js"></script>
 </body>
 </body>
 

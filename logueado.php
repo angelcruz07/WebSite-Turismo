@@ -4,12 +4,13 @@ require "database.php";
 
 session_start();
 
-if (!isset($_SESSION["user"])) {
+if (!isset($_SESSION["rol"])) {
   header("Location: login.php");
-  return;
+}else{ 
+  if($_SESSION['rol'] != 0){ 
+    header('location: login.php');
+  }
 }
-
-$contacts = $conn->query("SELECT * FROM users WHERE id = {$_SESSION['user']['id']}");
 
 ?>
 <h1>Usuario Logueado</h1>
