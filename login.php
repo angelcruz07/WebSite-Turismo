@@ -1,65 +1,63 @@
-<?php 
-    require "database.php";
+<?php
+  require "database.php";
+  session_start();
 
-    session_start();
-
-    if(isset($_GET['cerrar_sesion'])){ 
-        session_unset(); 
-        session_destroy();
+  $error = null;
+  if (isset($_SESSION["rol"])) {
+    // Si ya hay una sesión (el usuario está logueado),
+    // redirige a una página que corresponda al rol del usuario
+    switch ($_SESSION["rol"]) {
+      case 1:
+        header("Location: admin.php");
+        exit();
+      case 2:
+        header("Location: home.php");
+        exit();
+      default:
+        // Manejar otros roles si es necesario
     }
+  }
 
-    if(isset($_SESSION['rol'])){ 
 
-        switch($_SESSION['rol']){ 
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["email"]) || empty($_POST["password"])) {
+      $error = "Please fill all the fileds.";
+    } else if (!str_contains($_POST["email"], "@")) {
+      $error = "Email format is incorrect.";
+    } else {
+      $database = new Database();  // Crear una instancia de la clase Database
+      $conn = $database->connect();  // Obtener la conexión  
+      $statement = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+      $statement->bindParam(":email", $_POST["email"]);
+      $statement->execute();
+
+      if ($statement->rowCount() == 0) {
+        $error = "Email incorrecto.";
+      } else {
+        $query = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if (password_verify($_POST["password"], $query["password"])) {
+          $error = "Password incorrecta.";
+        } else {
+
+          $rol = $query['rol_id'];
+          $_SESSION['rol'] = $rol;
+
+          switch($_SESSION['rol']){ 
             case 1:
                 header('location: admin.php');
             break;
             // Reder
             case 2:
-            header('location: logueado.php');
+            header('location: home.php');
             break;
             default:
+          }
         }
+      }
     }
-
-    if(isset($_POST['username']) && isset($_POST['password'])){ 
-        $username =  $_POST['username'];
-        $password = $_POST['password'];
-
-        $db = new Database();
-        $query = $db->connect()->prepare('SELECT * FROM  users WHERE username = :username AND password = :password');
-        $query->execute(['username' => $username, 'password' => $password]);
-
-        $row = $query->fetch(PDO::FETCH_NUM);
-        if($row == true){ 
-            //validar el rolx
-            $rol = $row[4];
-            $_SESSION['rol'] = $rol;
-            switch($_SESSION['rol']){ 
-                case 1:
-                    header('location: admin.php');
-                break;
-                // Reder
-                case 2:
-                header('location: logueado.php');
-                break;
-                default:
-            }
-
-
-        }else { 
-            // No hixo mach con algun rol
-            echo "El usuario o contraseña son incorectos";
-        }
-
-}
-
-
-
-     
+  }
 ?>
-
-
 
 <?php 
 //  require "./partials/header.php"
@@ -67,9 +65,14 @@
 
 
 <form action="#" method="POST">
+<?php if ($error): ?>
+            <p class="text-danger">
+              <?= $error ?>
+            </p>
+ <?php endif ?>
 
-<label for="username">Nombre de usuario</label>
-<input type="text" name="username">
+<label for="email">Nombre de usuario</label>
+<input type="email" name="email">
 <label for="password">Contraseña</label>
 <input type="password"  name="password">
 

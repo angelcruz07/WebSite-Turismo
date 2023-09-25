@@ -1,10 +1,18 @@
-
 # WebSite-Turismo Conociendo las riquezas de sultepec
 
-Desarrollo de sitio web para promover el turismo en el municipio de Sultepec
-En este repositorio se llevara a cabo el proyecto propuesto por el plantel sultepec al Ayundtamiento del municipio en donde 
-como finalidad se tiene promover el turismo dentro del mismo a traves de un sitio web el cual represente 
-los sitios mas relevantes y atractivos para visitar.
+## Indice
+
+- ['Descripcion'](#Descripcion)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Desarrolladores](#Desarrolladores\)
+- [Créditos](#créditos)
+
+## Descripcion
+
+Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, proyecto propuesto por el CECYTEM_SULTEPC al H. Ayuntamiento del municipio del sultpec, en donde 
+como finalidad se tiene promover el turismo dentro del municipio a traves de un sitio web el cual represente 
+los lugares mas relevantes y atractivos para visitar asi como informacion de interes para cualquier persona.
 
 ¿Quienes colaboran? 
 Lizandro Antonio Santos - Estudiante de programacion 
@@ -16,7 +24,7 @@ Descripcion del desarrollo del sitio web.
 El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar. 
 Primer fase: Creacion del diseño inicial
 Apartir del diseño que se encuentra en la carpeta assets llamado mockup, se debera crear el diseño principal haciendo uso de html css js , si haci lo requiere. 
-
+![Texto alternativo](./assets/img/iglesia%20sult.jpg)
 Segunda fase: Automatizacion del contenido.
 Se considero crear una web con contenido dinamico, ¿pero a que nos referimos con esto?
 Bien pues una vez establecido el diseño inicial se buscara que la creacion de contenido sea actualizada mendiante una cuenta de administrador,
@@ -107,3 +115,11 @@ Recuerda que las pruebas en dispositivos móviles son esenciales para asegurarte
 
 Cualquier duda en whatsapp.
 
+
+## Desarolladores
+| Nombre                             | Rol en Proyecto         | 
+|------------------------------------|-------------------------|
+| Lizandro Antonio Santos            | Programador Backend     |
+| Yuliana Lizeth Betancourt Medina   | Programador, diseñador  | 
+| Tony Villagran Arellano            | Programador, diseñador  | 
+| Angel Alejandro Cruz Sanchez       | Programador FullStack   | 

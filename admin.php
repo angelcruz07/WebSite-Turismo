@@ -1,7 +1,6 @@
 <?php
 
 require "database.php";
-
 session_start();
 
 if (!isset($_SESSION["rol"])) {
@@ -14,3 +13,4 @@ if (!isset($_SESSION["rol"])) {
 
 ?>
 <h1>admin</h1>
+<a class="nav-link" href="logout.php">Logout</a>
