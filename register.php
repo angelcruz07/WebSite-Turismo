@@ -23,9 +23,6 @@
           ->execute([
             ":username" => $_POST["username"],
             ":email" => $_POST["email"],
-            //Si lo mando directo si jala
-            // ":password" => $_POST["password"],
-            // Haciendo esto ya no funciona
             ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
           ]);
 
@@ -44,9 +41,10 @@
 ?>
 
 <?php require "./partials/header.php"?>
+
 <section class="form-register">
 <div class="container-register">
-    <h2 class="card-title">Registro</h2>
+    <h2 class="card-title">Crear cuenta</h2>
     <div class="container-form">
         <?php if ($error): ?>
         <p class="text-error">
@@ -75,7 +73,7 @@
             </div>
             <div class="card-option">
                 <div class="submit-form">
-                    <button type="submit" class="btn">Enviar</button>
+                    <button type="submit" class="btn">Registrarme</button>
                 </div>
             </div>
         </form>

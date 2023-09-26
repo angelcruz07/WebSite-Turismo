@@ -9,6 +9,6 @@
         <a href="http://localhost/WebSite-Turismo/index.php#attractive">Atractivos</a>
         <a href="http://localhost/WebSite-Turismo/index.php#lodging">Hospedaje</a>
         <a href="http://localhost/WebSite-Turismo/index.php#events">Eventos</a>
-        <a href="http://localhost/WebSite-Turismo/register.php"><i class="fa-solid fa-user"></i>Login</a>
+        <a href="http://localhost/WebSite-Turismo/login.php">Iniciar sesion</a>
     </nav>
 </header>

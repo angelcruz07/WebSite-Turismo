@@ -11,7 +11,7 @@ CREATE TABLE roles (
 
 CREATE TABLE users (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50), 
+    username VARCHAR(50), 
     email VARCHAR(30),
     password VARCHAR(10),
     rol_id INT(2),
@@ -19,15 +19,14 @@ CREATE TABLE users (
 );
 
 --Insertar los roles existentes en la tabla
-INSERT INTO roles (id, rol) VALUES  (1 , 'admin');
-INSERT INTO roles (id, rol) VALUES  (2 , 'colaborador');
+INSERT INTO roles (id, rol) VALUES  
+(1 , 'admin'),
+(2 , 'colaborador');
 
--- Comando para insertar usuarios de prueba en la tabla users
-INSERT INTO users (name, email, password, rol_id)
-VALUES ('admin', 'admin@gmail.com', 'admin', 1);
+-- Comando para insertar usuarios de prueba en la tabla users.
 
-INSERT INTO users (name, email, password, rol_id)
-VALUES ('colaborador', 'admin@gmail.com', 'cola', 0);
-INSERT INTO users (name, email, password, rol_id)
-VALUES ('test', 'test@gmail.com', 'test', 0);
+-- La contraseña para admin es admin y para user es user.
+INSERT INTO users (username, email, password, rol_id) VALUES 
+('admin', 'admin@gmail.com', '$2y$10$zgk', 1),
+('user', 'user@gmail.com', '$2y$10$Lk2', 2);
 
