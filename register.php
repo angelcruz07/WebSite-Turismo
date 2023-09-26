@@ -73,7 +73,7 @@
             </div>
             <div class="card-option">
                 <div class="submit-form">
-                    <button type="submit" class="btn">Registrarme</button>
+                    <button type="submit" class="btn">Registrate</button>
                 </div>
             </div>
         </form>

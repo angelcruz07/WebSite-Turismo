@@ -37,7 +37,7 @@
         $query = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!password_verify($_POST["password"], $query["password"])) {
-          $error = "Password incorrecta.";
+            $error = "Password incorrecta.";
         } else {
 
           $rol = $query['rol_id'];
@@ -60,26 +60,45 @@
 ?>
 
 <?php 
-//  require "./partials/header.php"
+ require "./partials/header.php"
  ?>
 
 
-<form action="#" method="POST">
-<?php if ($error): ?>
-            <p class="text-danger">
-              <?= $error ?>
-            </p>
- <?php endif ?>
+<?php require "./partials/header.php"?>
 
-<label for="email">Nombre de usuario</label>
-<input type="email" name="email">
-<label for="password">Contraseña</label>
-<input type="password"  name="password">
+<section class="form-register">
+<div class="container-register">
+    <h2 class="card-title">Iniciar sesion</h2>
+    <div class="container-form">
+        <?php if ($error): ?>
+        <p class="text-error">
+            <?= $error ?>
+        </p>
+        <?php endif ?>
+        <form method="POST" action="#">
+            <div class="card-option">
+                <label for="email" class="labels">Email:</label>
+                <div class="container-input">
+                    <input id="email" type="email" class="input" name="email" autocomplete="email" autofocus>
+                </div>
+            </div>
+            <div class="card-option">
+                <label for="password" class="labels">Contraseña:</label>
+                <div class="container-input">
+                    <input id="password" type="password" class="input" name="password" autocomplete="password"autofocus>
+                </div>
+            </div>
+            <div class="card-option">
+                <div class="submit-form">
+                    <button type="submit" class="btn">Iniciar sesion</button>
+                </div>
+            </div>
+            <div class="register">
+              <p>Aún no tienes cuenta? <a href="register.php" class="redirect-register">Registrarme</a></p>
+            </div>
+        </form>
+      </div>
+    </div>
+</section>
 
-<input type="submit" value="Iniciar Sesion">
-
-</form>
-
-<?php  
-// require "./partials/footer.php"
-?>
+<?php require "./partials/footer.php"?>

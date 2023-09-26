@@ -4,11 +4,13 @@
     padding: var(--standard-padding);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 /* Estilo para cada elemento (imagen + información) */
 .card-event{
     padding: 0 10px; /* Agrega espacio entre elementos */
     margin-bottom: 2rem;
+    max-width: 350px;
 }
 /* Estilo para las imágenes */
 .card-event img {

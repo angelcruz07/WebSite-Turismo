@@ -61,3 +61,12 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+/* Form of login */
+.register{
+    text-align: center;
+    padding: var(--standard-padding);
+    font-size: 1.5rem
+}
+.redirect-register{ 
+    color: var( --color-titles);
+}

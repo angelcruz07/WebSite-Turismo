@@ -9,7 +9,11 @@
     </div>
 </footer>
 <!-- Scripts JS -->
+<!-- scroll -->
+<script  src="https://unpkg.com/scrollreveal" defer></script>  
+
 <script src="http://localhost/WebSite-Turismo/assets/js/index.js"></script>
+
 <script src="http://localhost/WebSite-Turismo/assets/js/lightbox.js"></script>
 </body>
 </body>

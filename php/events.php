@@ -25,6 +25,30 @@
                 <p>Descripción corta.</p>
             </div>
         </div>
+        <div class="card-event">
+            <img src="./assets/img/iglesia sult.jpg" alt="Imagen 3">
+            <div class="description-event">
+                <!-- Información para la tercera imagen -->
+                <h3>Nombre evento</h3>
+                <p>Descripción corta.</p>
+            </div>
+        </div>
+        <div class="card-event">
+            <img src="./assets/img/iglesia sult.jpg" alt="Imagen 3">
+            <div class="description-event">
+                <!-- Información para la tercera imagen -->
+                <h3>Nombre evento</h3>
+                <p>Descripción corta.</p>
+            </div>
+        </div>
+        <div class="card-event">
+            <img src="./assets/img/iglesia sult.jpg" alt="Imagen 3">
+            <div class="description-event">
+                <!-- Información para la tercera imagen -->
+                <h3>Nombre evento</h3>
+                <p>Descripción corta.</p>
+            </div>
+        </div>
     </div>
 
 </section>
