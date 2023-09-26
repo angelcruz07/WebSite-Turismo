@@ -37,7 +37,7 @@
           session_start();
           $_SESSION["username"] = $user;
 
-          header("Location: logueado.php");
+          header("Location: login.php");
       }
     }
   }

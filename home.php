@@ -14,3 +14,4 @@ if (!isset($_SESSION["rol"])) {
 
 ?>
 <h1>Usuario Logueado</h1>
+<a class="nav-link" href="logout.php">Logout</a>
