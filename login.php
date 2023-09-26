@@ -36,7 +36,7 @@
       } else {
         $query = $statement->fetch(PDO::FETCH_ASSOC);
 
-        if (password_verify($_POST["password"], $query["password"])) {
+        if (!password_verify($_POST["password"], $query["password"])) {
           $error = "Password incorrecta.";
         } else {
 

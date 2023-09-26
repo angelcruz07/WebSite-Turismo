@@ -6,7 +6,6 @@
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Desarrolladores](#Desarrolladores)
-- [Créditos](#créditos)
 
 ## Descripcion
 
@@ -17,20 +16,20 @@ los lugares mas relevantes y atractivos para visitar asi como informacion de int
 ## Marco_de_trabajo
 El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar. 
 
-*[X] Creacion del diseño inicial
-*[X] Creacion del primero codigo HTML CSS JS
-*[X] Base de datos para usuario registrados
-*[X] Sistema de Roles
-*[ ] Automatizacion del contenido mediante PHP  
-*[ ] Panel de administrador 
-*[ ] Funciones para usuario registrado
-*[ ] Informacion relevante
-*[ ] Optimizacion de imagenes
-*[ ] Revision y optimizacion del codigo
-*[ ] Pruebas de funcionalidad
-*[ ] SEO
-*[ ] Despliegue del sitio
-*[ ] Presentacion del proyecto
+* [X] Creacion del diseño inicial
+* [X] Creacion del primero codigo HTML CSS JS
+* [X] Base de datos para usuario registrados
+* [X] Sistema de Roles
+* [ ] Automatizacion del contenido mediante PHP  
+* [ ] Panel de administrador 
+* [ ] Funciones para usuario registrado
+* [ ] Informacion relevante
+* [ ] Optimizacion de imagenes
+* [ ] Revision y optimizacion del codigo
+* [ ] Pruebas de funcionalidad
+* [ ] SEO
+* [ ] Despliegue del sitio
+* [ ] Presentacion del proyecto
 
 ## Instalacion
 
@@ -41,21 +40,37 @@ El diseño previamente establecido del sitio web cuenta con una serie de funcion
 
 
 ## Crear base de datos 
+
+Coneccion a la base de datos en MYSQL
+
+Una vez instalada la extencion deberas crear la coneccion a la base de datos de la siguiente manera
+
+
+![Coneccion a la base de datos](./assets/img/connection.png)
+
+
 Deberas entrar a la carpeta llamada sql donde encontraras un archivo llamado setup.sql
 en el se encuentran las sentencias para crear la base de datos por lo que deberas tener la extencion instalada
 
 ![Imagen de instruccion](./assets/img/setup%20sql.png)
+
+
 Como puedes observar la extesion cuenta con una funcionalidad de ejecutar sentecias sql directamente
 una vez que lo hayas echo con todos las sentencias sql y tendras las base de datos ya instalada he iniciada por lo que 
 podras hacer uso de las funciones que requieren base de datos.
 
 ## Estandares
-1. Paleta de Colores:\
-Color de Fondo: #1F242D
-Color de fondo Secundario:#B6DB7B
-Color complementario: #1AB823
-Color de titulos: #1AB823
-Color de texto: #F9F4F5
+1. Paleta de Colores:
+
+* Color de Fondo: #1F242D
+
+* Color de fondo Secundario:#B6DB7B
+
+* Color complementario: #1AB823
+
+* Color de titulos: #1AB823
+
+* Color de texto: #F9F4F5
 
 ## Tipografía:
 Fuente principal: Poppins
