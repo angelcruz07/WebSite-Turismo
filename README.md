@@ -16,6 +16,25 @@ los lugares mas relevantes y atractivos para visitar asi como informacion de int
 ## Marco_de_trabajo
 El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar. 
 
+En este proyecto se hace uso de PHP por lo que usamos las caracteristicas del mismo
+aislando nuestro codigo y organizandolo en carpetas con nombres referenciales a su propocito en ellas encontras 
+la mayoria del codigo desarrollado para el funcionamiento del sitio web 
+
+Destacando el uso de los archivos esenciales y requeridos para inicar el proyecto en tu maquina local
+
+dentro de la carpeta assets se encontrara otra llamada css
+en donde existe un archivo con el nombre superglobals.css
+en el se encuentran nuestras variables globales de los estilos del sitio para modificar o hacer uso de este 
+archivo tendras que hacer referencia al mismo. 
+
+# Dudas en diseño? 
+
+Si tienes duda de como realizar un diseño en especifico se ha creado una carpeta con el nombre desing
+en donde se han incluido todas las imagenes de diseño que podrian ser de utilizadad al momento de desarollar en el 
+proyecto.
+
+
+
 * [X] Creacion del diseño inicial
 * [X] Creacion del primero codigo HTML CSS JS
 * [X] Base de datos para usuario registrados

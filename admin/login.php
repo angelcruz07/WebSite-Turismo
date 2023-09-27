@@ -1,5 +1,5 @@
 <?php
-  require "database.php";
+  require "./config/database.php";
   session_start();
 
   $error = null;
