@@ -1,29 +1,3 @@
-/* Important source */
-@font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/poppins-regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-/* Declaring global variables */
-:root{
-    --background-color:#1F242D;
-    --background-secundary:#323946;
-    --color-titles:#1ab823;
-    --color-text:#F9F4F5;
-    --font-family:'Poppins', sans-serif;
-    --title-size: 4.6rem;
-    --subtitles-size: 3rem;
-    --font-size: 2rem; 
-    --standard-padding:2rem 9%;
-  }
-  h2{ 
-    color: var(--color-titles);
-    font-size: var(--subtitles-size);
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
 /* Header */
 .header { 
     position: fixed; 
