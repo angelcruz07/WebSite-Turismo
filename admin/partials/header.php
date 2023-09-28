@@ -13,7 +13,8 @@
   <title>Administrador</title>
   
 </head>
-<body>
+<body id="body">
+
 
 
 

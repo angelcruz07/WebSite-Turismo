@@ -19,6 +19,4 @@
 
 <script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
 </body>
-</body>
-
 </html>

@@ -27,7 +27,7 @@ CREATE TABLE events (
      image LONGBLOB,
      title VARCHAR(25),
      description VARCHAR(250)
-)
+);
 
 --Insert  fields into the roles table.
 INSERT INTO roles (id, rol) VALUES  
