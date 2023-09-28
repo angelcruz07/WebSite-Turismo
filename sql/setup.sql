@@ -1,4 +1,4 @@
--- Active: 1695754074530@@127.0.0.1@3306@tourism
+-- Active: 1695851616372@@127.0.0.1@3306
 
 -- Run SQL commands in order
 
