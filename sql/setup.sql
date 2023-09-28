@@ -1,4 +1,4 @@
--- Active: 1695754074530@@127.0.0.1@3306@tourism
+-- Active: 1695851160752@@127.0.0.1@3306@users
 
 -- Run SQL commands in order
 
@@ -27,7 +27,7 @@ CREATE TABLE events (
      image LONGBLOB,
      title VARCHAR(25),
      description VARCHAR(250)
-)
+);
 
 --Insert  fields into the roles table.
 INSERT INTO roles (id, rol) VALUES  
