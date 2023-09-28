@@ -1,3 +1,6 @@
+<?php 
+ $url = "http://".$_SERVER['HTTP_HOST']."/WebSite-Turismo"; 
+ ?>
 </main>
 <!-- footer desing -->
 <footer class="footer">
@@ -12,9 +15,9 @@
 <!-- scroll -->
 <script  src="https://unpkg.com/scrollreveal" defer></script>  
 
-<script src="http://localhost/WebSite-Turismo/assets/js/index.js"></script>
+<script src="<?php echo $url; ?>/assets/js/index.js"></script>
 
-<script src="http://localhost/WebSite-Turismo/assets/js/lightbox.js"></script>
+<script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
 </body>
 </body>
 

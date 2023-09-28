@@ -1,3 +1,9 @@
+<?php
+
+$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,17 +11,18 @@
     <!-- Agrega aqui los archivos css o de otro tipo que requieras llamar -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/superglobals.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/index.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/about.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/attractive.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/lodging.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/events.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/register.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/footer.css">
-    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/responsive.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/index.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/about.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/register.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/responsive.css" type="text/css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous" defer></script>
+
     <title>Visita Sultepec</title>
 </head>
 
