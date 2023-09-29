@@ -1,17 +1,19 @@
 /* Important source */
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/poppins-regular.woff2') format('woff2');
+    font-family: 'Gotham';
+    src: url('../fonts/Montserrat-Light.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 /* Declaring global variables */
 :root{
-    --background-color:#1F242D;
-    --background-secundary:#323946;
-    --color-titles:#1ab823;
-    --color-text:#F9F4F5;
-    --font-family:'Poppins', sans-serif;
+    --background-color:#eeeeee;
+    --background-secundary:#e7e8eb;
+    --title-navbar:#fff;
+    --background-navbar:#1b1c1c;
+    --color-titles:#3bad4c;
+    --color-text:#030303;
+    --font-family:'Gotham', sans-serif;
     --title-size: 4.6rem;
     --subtitles-size: 3rem;
     --font-size: 2rem; 

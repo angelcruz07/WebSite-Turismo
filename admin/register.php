@@ -1,5 +1,5 @@
 <?php 
-    require "database.php";
+    require "./config/database.php";
 // Variable para declarar errores en el llenado del formulario
     $error = null;
 

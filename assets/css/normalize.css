@@ -24,7 +24,7 @@ html {
      outline: none;
  }
 body {
-  background-color: #1F242D;
+  background-color:#eeeeee;
   color:var(--color-text);
   font-family:var(--font-family);
 }

@@ -6,7 +6,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 
 <header class="header" id="header">
     <a href="index.php" class="logo">
-        <img src="./assets/img/logo sultepec.webp" alt="Logo municipal" title="H. Ayuntamiento de sultepec">
+        <img src="<?php echo $url ?>/assets/img/LOGO AYUNTAMIENTO.png " alt="Logo municipal" title="H. Ayuntamiento de sultepec">
     </a>
     <i class="fa-solid fa-bars" id="menu-icon"></i>
     

@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     padding: var(--standard-padding);
-    background-color: var(--background-color);
+    background-color: var(--background-navbar);
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -13,7 +13,7 @@
     z-index: 10;
 }
 .logo img {
-    width: 120px;
+    width: 200px;
 }
 .header .sticky { 
     border-bottom:.1rem solid rgba(0, 0 ,0 .2 );
@@ -21,7 +21,7 @@
 /* Navbar menu */
 .navbar a { 
     font-size: var(--font-size);
-    color: var(--color-text);
+    color: var(--title-navbar);
     margin-left: 4rem; 
 }
 .navbar a:hover, 

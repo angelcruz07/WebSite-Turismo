@@ -5,10 +5,11 @@
     align-items: center;
     flex-wrap: wrap;
     padding: var(--standard-padding);
-    background: var(--background-secundary);
+    background: var(--background-navbar);
 }
 .footer-text p { 
     font-size: var(--font-size);
+    color: var(--title-navbar);
 }
 .footer-iconTop { 
     display: inline-block;
