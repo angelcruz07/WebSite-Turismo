@@ -10,6 +10,14 @@
 .footer-text p { 
     font-size: var(--font-size);
     color: var(--title-navbar);
+    padding: 1rem;
+}
+.logo-footer img{
+    width: 100px;
+}
+.footer-icon{ 
+    color: var(--title-navbar);
+    font-size:3rem;
 }
 .footer-iconTop { 
     display: inline-block;

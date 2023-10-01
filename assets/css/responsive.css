@@ -3,6 +3,9 @@
     html{ 
         font-size: 55%;
     }
+    .container_sugetions{
+        justify-content: space-around;
+    }
     .lodging-box{ 
         flex-direction: column;
         justify-content: center;
@@ -36,7 +39,7 @@
         left:0;
         width:100%;
         padding: 1rem 3%;
-        background: var(--background-color);
+        background: var(--background-navbar);
         border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow:0 .5rem 1rem rgba(0,0,0,.2);
         display: none;
@@ -70,4 +73,5 @@
     .container-events{
         flex-direction: column;
     }
+    
 }

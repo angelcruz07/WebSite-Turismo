@@ -1,16 +1,12 @@
 <?php
-// Barra de navegacion
+// Navbar
 require "partials/header.php";
-
+// Slider index
+require "./php/slider.php";
+//About
 require "./php/about.php";
-
-require "./php/home.php";
-// Chamba de lizandro en este archivo
-require "./php/attractive.php";
-
-require "./php/lodging.php";
-
-require "./php/events.php";
-
-require "./partials/footer.php"
+//Suggestions
+require "./php/suggestions.php";
+//footer
+require "./partials/footer.php";
 ?>

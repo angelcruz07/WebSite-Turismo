@@ -13,8 +13,10 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/index.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/slider.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/about.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/suggestions.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">

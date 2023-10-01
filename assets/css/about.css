@@ -1,9 +1,7 @@
 /* Styles of the section about and home  */
-
 #about {
-    margin-top: 25rem;
+    margin-top: 2rem;
     padding: var(--standard-padding);
-    background: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +10,6 @@
 #home {
     background-color: var(--background-color);
     margin-top: 12rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +49,15 @@
     overflow: hidden;
     margin: 1em;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .image img {
     width: 350px;
-    height: auto;
+    height: 350px;
 }
+
 @media (max-width: 768px){
     .box-about{ 
         flex-direction: column;
