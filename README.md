@@ -17,7 +17,7 @@ los lugares mas relevantes y atractivos para visitar asi como informacion de int
 El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar. 
 
 En este proyecto se hace uso de PHP por lo que usamos las caracteristicas del mismo
-aislando nuestro codigo y organizandolo en carpetas con nombres referenciales a su propocito en ellas encontras 
+aislando nuestro codigo y organizandolo en carpetas con nombres referenciales a su proposito en ellas encontras 
 la mayoria del codigo desarrollado para el funcionamiento del sitio web 
 
 Destacando el uso de los archivos esenciales y requeridos para inicar el proyecto en tu maquina local

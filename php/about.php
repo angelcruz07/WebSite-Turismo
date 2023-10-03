@@ -8,9 +8,11 @@
         </p>
       </div>
       <div class="image">
-        <img src="http://localhost/WebSite-Turismo/assets/img/minero sultepec.jpg" alt="Descripción de la imagen">
+      <div class="slider-screen"> 
+        <img src="http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg" alt="" name="Image">
+      </div>
       </div>
     </div>
   </div>
-
+ <script src="https://localhost/WebSite-Turismo/assets/js/aboutSlider.js"></script>
 </section>
