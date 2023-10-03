@@ -1,0 +1,7 @@
+#home {
+    background-color: var(--background-color);
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

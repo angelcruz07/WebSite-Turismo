@@ -13,10 +13,10 @@
     <div class="footer-text">
         <p>Redes sociales</p>
         
-        <a href="https://www.facebook.com/Ayuntamientosultepec2022/"><i class="fa-brands fa-facebook footer-icon"></i></a>
+        <a href="https://www.facebook.com/Ayuntamientosultepec2022/"><img class="icon-footer-facebook"src="<?php echo $url?>/assets/icons/facebook.svg" alt="Flecha que regresa al index"></a>
     </div>
     <div class="footer-iconTop">
-        <a href="#silder_main" title="redireccion al inicio"><i class="fa-solid fa-arrow-up-long" style="color: #ffffff;"></i></a>
+        <a href="#silder_main" title="redireccion al inicio"><img class="icon-footer-svg"src="<?php echo $url?>/assets/icons/arrow-up-solid.svg" alt="Flecha que regresa al index"></a>
     </div>
 </footer>
 <!-- Scripts JS -->

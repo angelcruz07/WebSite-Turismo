@@ -1,6 +1,8 @@
 <?php
-// Navbar
+//header
 require "partials/header.php";
+// Navbar
+require "./partials/navbar.php";
 // Slider index
 require "./php/slider.php";
 //About

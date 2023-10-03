@@ -1,4 +1,4 @@
-<section id="silder_main">
+<section id="silder_main" class="scroll-top">
 
 <div class="container_slider">
   <div class="slider_screen">

@@ -23,12 +23,8 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/register.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/responsive.css" type="text/css">
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous" defer></script>
-
+    <!-- <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous" defer></script> -->
     <title>Visita Sultepec</title>
 </head>
 
 <body>
-    <!-- Barra de navegacion traida con php -->
-    <?php require "./partials/navbar.php" ?>
-    <main>

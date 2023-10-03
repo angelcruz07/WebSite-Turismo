@@ -5,7 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: var(--standard-padding);
-    background: var(--background-navbar);
+    background: var(--background-footer);
 }
 .footer-text p { 
     font-size: var(--font-size);
@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     padding:.8rem;
-    background-color: var(--color-titles);
+    background-color: var(--color-secundary);
     border-radius: .8rem ;
     cursor: pointer;
 }
@@ -33,5 +33,11 @@
 }
  .footer-iconTop a i { 
     font-size:  2.4rem; 
-    color: var(--background-secundary);
+    color:rgb(19, 142, 70)
+ }
+ .icon-footer-svg{
+    width: 1rem;
+ }
+ .icon-footer-facebook{ 
+    width: 3rem;
  }

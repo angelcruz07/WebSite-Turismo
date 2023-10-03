@@ -1,10 +1,20 @@
+#events { 
+    margin-top:15rem;
+}
+
+#events h1 { 
+    color:var(--color-titles);
+    font-size: 3rem;
+    font-family:var(--font-primary);
+    text-align: center;
+}
 /* Estilo para el contenedor principal */
 .container-events {
     width: 100%;
     padding: var(--standard-padding);
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: center;
 }
 /* Estilo para cada elemento (imagen + información) */
 .card-event{

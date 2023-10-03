@@ -1,23 +1,26 @@
 /* Important source */
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Light.ttf') format('woff2');
+    src: url('../fonts/Montserrat.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
   font-family: 'Ghotman';
-  src: url('../fonts/Gotham\ Black\ Regular.ttf');
-  
+  src: url('../fonts/Gotham\ Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 /* Declaring global variables */
 :root{
     --background-color:#F7F7F7;
+    --color-secundary:#138e46;
     --background-secundary:#e7e8eb;
     --title-navbar:#fff;
-    --background-navbar:#1b1c1c;
-    --color-titles:#3bad4c;
-    --color-text:#030303;
+    --background-navbar:#ffffff;
+    --background-footer:#1b1c1c;
+    --color-titles:#00172bff;
+    --color-text:#00172bff;
     --color-text-secundary:#fff;
     --font-family:'Montserrat', sans-serif;
     --font-primary:'Gotham', sans-serif;
@@ -29,7 +32,7 @@
   h2{ 
     color: var(--color-titles);
     font-size: var(--subtitles-size);
+    padding: var(--standard-padding);
     text-align: center;
-    margin-bottom: 2rem;
     font-family: var(--font-primary);
   }
