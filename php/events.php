@@ -57,7 +57,7 @@ $url = "http://" .$_SERVER['HTTP_HOST'] ."WebSite-Turismo";
         </div>
     </div>
 </section>
-<section id="events-2">
+<section id="religious-events">
 
 <h2>Fiestas religiosas</h2>
 

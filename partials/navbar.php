@@ -14,17 +14,16 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
             <ul>
                 <li class="margin-left"><a href="<?php echo $url; ?>" id="selected"></a></li>
                 <li class="margin-left"><a href="<?php echo $url; ?>/php/events.php">Eventos</a>
-                    <!-- Sub menu 1-->
                     <ul>
-                        <li><a href="#">Programacion</a></li>
-                        <li><a href="#">Animacion Digital</a></li>
+                        <li><a href="<?php echo $url; ?>/php/events.php/#events">Eventos sociales</a></li>
+                        <li><a href="<?php echo $url; ?>/php/events.php/#religious-events">Eventos patronales</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a class="no__hover" href="">Nuestro Encanto</a>
                     <ul>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Ubicacion</a></li>
-                        <li><a href="#">Servicios escolares</a></li>
+                        <li><a href="#">Lugares</a></li>
+                        <li><a href="#">Gastronomía</a></li>
+                        <li><a href="#">Cultura</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a href="#">Blog</a></li>

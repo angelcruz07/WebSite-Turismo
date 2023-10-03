@@ -18,7 +18,6 @@
     }
   }
 
-
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"]) || empty($_POST["password"])) {
       $error = "Please fill all the fileds.";
@@ -39,7 +38,6 @@
         if (!password_verify($_POST["password"], $query["password"])) {
             $error = "Password incorrecta.";
         } else {
-
           $rol = $query['rol_id'];
           $_SESSION['rol'] = $rol;
 
@@ -60,11 +58,12 @@
 ?>
 
 <?php 
- require "./partials/header.php"
- ?>
 
+require "./partials/header.php";
 
-<?php require "./partials/header.php"?>
+// require "../partials/navbar.php";
+
+?>
 
 <section class="form-register">
 <div class="container-register">

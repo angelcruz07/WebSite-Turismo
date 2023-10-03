@@ -19,7 +19,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
       <div class="text_sugetion">
         <a href="#" class="hover-text">Leer más</a>
       </div>
-      <h2>Gastronomia</h2>
+      <h2>Gastronomía</h2>
     </div>
     <div class="card_suggetion">
       <img src="<?php echo $url ?>minero sultepec.jpg" alt="Que visitar en sultepec">
