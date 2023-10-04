@@ -1,10 +1,11 @@
 <?php
 $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
+$redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 ?>
 
 <section id="suggestions">
 
-  <h2>¿Que deseas conocer?</h2>
+  <h2 class="title-suggetions">¿Que deseas conocer?</h2>
 
   <div class="container_sugetions">
     <div class="card_suggetion">
@@ -17,7 +18,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
     <div class="card_suggetion">
       <img src="<?php echo $url ?>galletas.jpeg" alt="Gastronomia sultepequence">
       <div class="text_sugetion">
-        <a href="#" class="hover-text">Leer más</a>
+        <a href="<?php echo $redirection?>/php/gatronomy.php" class="hover-text">Leer más</a>
       </div>
       <h2>Gastronomía</h2>
     </div>
