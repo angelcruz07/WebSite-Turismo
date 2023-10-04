@@ -23,7 +23,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
                     <ul>
                         <li><a href="#">Lugares</a></li>
                         <li><a href="<?php echo $url; ?>/php/gastronomy.php">Gastronomía</a></li>
-                        <li><a href="#">Cultura</a></li>
+                        <li><a href="#">Hospedaje</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a href="#">Blog</a></li>

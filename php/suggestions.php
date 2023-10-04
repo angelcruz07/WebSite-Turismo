@@ -18,7 +18,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     <div class="card_suggetion">
       <img src="<?php echo $url ?>galletas.jpeg" alt="Gastronomia sultepequence">
       <div class="text_sugetion">
-        <a href="<?php echo $redirection?>/php/gatronomy.php" class="hover-text">Leer más</a>
+        <a href="<?php echo $redirection?>/php/gastronomy.php" class="hover-text">Leer más</a>
       </div>
       <h2>Gastronomía</h2>
     </div>
