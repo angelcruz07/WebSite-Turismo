@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
           sliderImage.src = imagePaths[currentIndex];
           sliderImage.style.opacity = 1;
-      }, 1000); // Cambio de imagen después de 1 segundo (ajusta según tus necesidades)
+      }, 1500); // Cambio de imagen después de 1 segundo (ajusta según tus necesidades)
   }
 
   // Intervalo para cambiar automáticamente de imagen cada 3 segundos
-  setInterval(nextSlide, 1000);
+  setInterval(nextSlide, 1500);
 });
 
