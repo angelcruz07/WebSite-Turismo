@@ -1,31 +1,27 @@
-var images = [  
-  "http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg", 
-  "http://localhost/WebSite-Turismo/php/aboutSlider/img_2.jpg",
-  "http://localhost/WebSite-Turismo/php/aboutSlider/img_3.jpg",
-  "http://localhost/WebSite-Turismo/php/aboutSlider/img_4.jpg",
-]; 
-document.Image.src = images[0]; 
- 
-var counter = 0; 
- 
-function MoveRight() 
-{ 
-  counter++; 
-  if(counter > images.length - 1) 
-  { 
-    counter = 0;
-  } 
-  document.Image.src = images[counter];
-}  
-setInterval(MoveRight, 2000);
- 
-function MoveLeft() 
-{ 
-  counter--;  
-  if(counter < 0) 
-  { 
-    counter = images.length -1;
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderImage = document.getElementById("sliderImage");
+  const imagePaths = [ 
+    "http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg",  
+    "http://localhost/WebSite-Turismo/php/aboutSlider/img_2.jpg",  
+    "http://localhost/WebSite-Turismo/php/aboutSlider/img_3.jpg", 
+    "http://localhost/WebSite-Turismo/php/aboutSlider/img_4.jpg" 
+  ]; // Lista de rutas de imágenes
+  let currentIndex = 0;
+
+  function nextSlide() {
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      updateSlider();
   }
-  document.Image.src = images[counter];
-}
+
+  function updateSlider() {
+      sliderImage.style.opacity = 0;
+      setTimeout(() => {
+          sliderImage.src = imagePaths[currentIndex];
+          sliderImage.style.opacity = 1;
+      }, 1000); // Cambio de imagen después de 1 segundo (ajusta según tus necesidades)
+  }
+
+  // Intervalo para cambiar automáticamente de imagen cada 3 segundos
+  setInterval(nextSlide, 1000);
+});
 

@@ -7,10 +7,10 @@
         <p>El municipio de Sultepec, cuenta con la denominación de "Pueblo con Encanto", principalmente por sus bellezas naturales y por su conservación de su estructura, casas de adobe pintadas de color blanco con techos de teja.
         </p>
       </div>
-      <div class="image">
-      <div class="slider-screen"> 
-        <img src="http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg" alt="" name="Image">
-      </div>
+      <div class="image">  
+      <div class="slider-container">
+        <img id="sliderImage" src="http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg" alt="Imagen 1">
+    </div>
       </div>
     </div>
   </div>

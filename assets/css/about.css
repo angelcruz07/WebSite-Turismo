@@ -58,6 +58,12 @@
     height: 350px;
     transition: transform 0.3s ease;
     border-radius: 5%;
+} 
+ 
+#sliderImage {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 1s ease; /* Animación de cambio de imagen */
 }
 
 @media (max-width: 768px) {
