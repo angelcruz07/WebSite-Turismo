@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.slider_screen {
+.slider {
   position: relative;
   height: 85vh;
 }
@@ -39,7 +39,7 @@
   font-size:3rem;
 }
 @media (max-width: 768px){
-  .slider_screen{
+  .slider{
     height: 35vh;
   }
   .slider_text h1{

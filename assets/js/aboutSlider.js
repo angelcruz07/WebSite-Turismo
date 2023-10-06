@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
       sliderImage.style.opacity = 0;
       setTimeout(() => {
           sliderImage.src = imagePaths[currentIndex];
-
           sliderImage.style.transition = "opacity 0.8s ease-in-out";
           sliderImage.style.opacity = 1;
       }, 1500); // Cambio de imagen después de 1 segundo (ajusta según tus necesidades)
