@@ -48,7 +48,7 @@ nav>ul>li>a {
   display: flex;
   align-items: center;
   padding: 14px;
-  color: #7a7a7aff;
+  color: #fff;
   text-transform: uppercase;
   font-family: var(--font-primary);
   font-size: 14px;
@@ -170,7 +170,7 @@ nav ul li ul li a:hover {
 @media screen and (max-width: 768px) {
   nav>ul {
       flex-direction: column;
-      background-color: #fff;
+      background-color:#1b1c1c;
       position: absolute;
       left: 0;
       top: 98px;

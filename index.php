@@ -5,10 +5,10 @@ require "partials/header.php";
 require "./partials/navbar.php";
 // Slider index
 require "./php/slider.php";
-//About
-require "./php/about.php";
 //Suggestions
 require "./php/suggestions.php";
+//About
+require "./php/about.php";
 //footer
 require "./partials/footer.php";
 ?>

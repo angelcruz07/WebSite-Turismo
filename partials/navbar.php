@@ -13,7 +13,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         <nav>
             <ul>
                 <li class="margin-left"><a href="<?php echo $url; ?>" id="selected"></a></li>
-                <li class="margin-left"><a href="<?php echo $url; ?>/php/events.php">Eventos</a>
+                <li class="margin-left"><a href="<?php echo $url; ?>/php/events.php" class="no__hover">Eventos</a>
                     <ul>
                         <li><a href="<?php echo $url; ?>/php/events.php/#events">Eventos sociales</a></li>
                         <li><a href="<?php echo $url; ?>/php/events.php/#religious-events">Eventos patronales</a></li>
@@ -22,8 +22,8 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
                 <li class="margin-left"><a class="no__hover" href="">Nuestro Encanto</a>
                     <ul>
                         <li><a href="#">Lugares</a></li>
-                        <li><a href="#">Gastronomía</a></li>
-                        <li><a href="#">Cultura</a></li>
+                        <li><a href="<?php echo $url; ?>/php/gastronomy.php">Gastronomía</a></li>
+                        <li><a href="#">Hospedaje</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a href="#">Blog</a></li>
