@@ -1,34 +1,79 @@
 <?php  $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";?>
 
 <section class="attractive" id="attractive">
-<h2>Visita Sultepec</h2> 
-   
-   <div class="container"> 
-     <div class="gallery"> 
-        
-     <a href="<?php  echo $url;?>/assets/img/img2.jpg" data-lightbox="models" data-title="IMAGEN 1"> 
-       <img src="<?php  echo $url;?>/assets/img/img2.jpg" alt="">
-     </a> 
-      
-     <a href="<?php  echo $url;?>/assets/img/img3.jpg" data-lightbox="models" data-title="IMAGEN 2"> 
-       <img src="<?php  echo $url;?>/assets/img/img3.jpg" alt="">
-     </a> 
-      
-     <a href="<?php  echo $url;?>/assets/img/img2.jpg" data-lightbox="models" data-title="IMAGEN 3"> 
-       <img src="<?php  echo $url;?>/assets/img/img2.jpg" alt="">
-     </a> 
-      
-     <a href="<?php  echo $url;?>/assets/img/img3.jpg" data-lightbox="models" data-title="IMAGEN 4"> 
-       <img src="<?php  echo $url;?>/assets/img/img3.jpg" alt="">
-     </a> 
-      
-     <a href="<?php  echo $url;?>/assets/img/img2.jpg" data-lightbox="models" data-title="IMAGEN 5"> 
-       <img src="<?php  echo $url;?>/assets/img/img2.jpg" alt="">
-     </a> 
-      
-     <a href="<?php  echo $url;?>/assets/img/img3.jpg" data-lightbox="models" data-title="IMAGEN 6"> 
-       <img src="<?php  echo $url;?>/assets/img/img3.jpg" alt="">
-     </a>  
-     </div>
-   </div>
+<h2>Visita Sultepec</h2>    
+<div class="card-section">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 1" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 1</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div>  
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div> 
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div> 
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div> 
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div> 
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="http://localhost/WebSite-Turismo/assets/img/sultepec2.jpg" alt="Imagen 2" class="card-image">
+                </div>
+                <div class="card-back">
+                    <p>Título de la tarjeta 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="http://localhost/WebSite-Turismo/assets/css/attractive.css"> 
+    
 </section>

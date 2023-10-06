@@ -14,5 +14,5 @@
       </div>
     </div>
   </div>
- <script src="https://localhost/WebSite-Turismo/assets/js/aboutSlider.js"></script>
+ <script src="http://localhost/WebSite-Turismo/assets/js/aboutSlider.js"></script>
 </section>
