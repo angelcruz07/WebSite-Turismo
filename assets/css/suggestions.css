@@ -8,22 +8,20 @@
 }
 .container_sugetions { 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 2rem;
     align-items: center;
     justify-content: space-between;
     position: relative;
- 
-
 } 
-.card {
+.card-suggetion{
     position: relative;
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     margin: 20px;
   }
   
-  .card .face {
+  .card-suggetion .face {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -33,19 +31,19 @@
     transition: .5s;
   }
   
-  .card .front {
+  .card-suggetion .front {
     transform: perspective(600px) rotateY(0deg);
     box-shadow: 0 5px 10px #000;
   }
   
-  .card .front img {
+  .card-suggetion .front img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   
-  .card .front h3 {
+  .card-suggetion .front h3 {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -56,7 +54,7 @@
     text-align: center;
   }
   
-  .card .back {
+  .card-suggetion .back {
     transform: perspective(600px) rotateY(180deg);
     background: rgb(3, 35, 54);
     padding: 15px;
@@ -68,31 +66,31 @@
     box-shadow: 0 5px 10px #000;
   } 
    
-  .card .back .link {
+  .card-suggetion .back .link {
     border-top: solid 1px #f3f3f3;
     height: 50px;
     line-height: 50px;
   } 
    
-   .card .back .link a {
+   .card-suggetion .back .link a {
     color: #f3f3f3;
 }
    
-  .card .back h3 {
+  .card-suggetion .back h3 {
     font-size: 30px;
     margin-top: 20px;
     letter-spacing: 2px;
   }
   
-  .card .back p {
+  .card-suggetion .back p {
     letter-spacing: 1px;
   } 
   
-  .card:hover .front {
+  .card-suggetion:hover .front {
     transform: perspective(600px) rotateY(180deg);
   }
   
-  .card:hover .back {
+  .card-suggetion:hover .back {
     transform: perspective(600px) rotateY(360deg);
   }
 

@@ -4,6 +4,7 @@
         font-size: 55%;
     }
     .container_sugetions{
+        flex-wrap: wrap;
         justify-content: space-around;
     }
     .lodging-box{ 

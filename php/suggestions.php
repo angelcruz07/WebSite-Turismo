@@ -9,7 +9,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 
   <div class="container_sugetions">  
 
-  <div class="card">
+  <div class="card-suggetion">
         <div class="face front">
                 <img src="<?php echo $url ?>antiguo sultepec.jpg" alt="Cultura sultepequense">
                 <h3>Historia</h3>
@@ -23,7 +23,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card-suggetion">
         <div class="face front">
                 <img src="<?php echo $url ?>galletas.jpeg" alt="Gastronomia sultepequence">
                 <h3>Gastronomia</h3>
@@ -37,7 +37,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card-suggetion">
         <div class="face front">
                 <img src="<?php echo $url ?>minero sultepec.jpg" alt="Que visitar en sultepec">
                 <h3>Lugares</h3>
@@ -51,7 +51,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card-suggetion">
         <div class="face front">
                 <img src="<?php echo $url ?>hospedaje.jpeg" alt="Donde hospedarte en sultepec">
                 <h3>Hospedaje</h3>
