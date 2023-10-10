@@ -1,21 +1,12 @@
 #attractive { 
     padding: var(--standard-padding);
 }   
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .attractive {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
-
-
 .card {
   position: relative;
   width: 300px;
