@@ -19,8 +19,5 @@
         <a href="#silder_main" title="redireccion al inicio"><img class="icon-footer-svg"src="<?php echo $url?>/assets/icons/arrow-up-solid.svg" alt="Flecha que regresa al index"></a>
     </div>
 </footer>
-<!-- Scripts JS -->
-<script src="<?php echo $url; ?>/assets/js/index.js"></script>
-<script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
 </body>
 </html>

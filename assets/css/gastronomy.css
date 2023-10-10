@@ -48,7 +48,6 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: var(--standard-padding);
 }
 
 .card {

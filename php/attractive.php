@@ -3,7 +3,8 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
 ?>
 <?php
-require "../partials/header2.php"
+require "../partials/header2.php";
+require "../partials/navbar.php";
 ?>
 <section class="attractive" id="attractive">
     <div class="card">

@@ -19,3 +19,4 @@
     <img class="icon-footer-svg" src="<?php echo $url ?>/assets/icons/arrow-up-solid.svg" alt="Icono de Scroll al inicio"></a>
   </a>
 </div>
+<script src="<?php echo $url; ?>/assets/js/index.js"></script>

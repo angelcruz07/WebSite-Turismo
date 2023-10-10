@@ -46,7 +46,7 @@ $redirection = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
             <h3>Lugares</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, magnam consequuntur veritatis voluptas doloremque nemo perspiciatis.</p>
             <div class="link">
-            <a href="#" class="hover-text">Leer más</a>
+            <a href="<?php echo $redirection ?>/php/attractive.php" class="hover-text">Leer más</a>
             </div>
         </div>
     </div> 

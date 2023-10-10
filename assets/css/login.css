@@ -1,9 +1,9 @@
 .form-register {
     padding: var(--standard-padding);
-    height: 100vh;
 }
 .container-register { 
     margin-top:16rem;
+    margin-bottom: 16rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +37,10 @@
 .labels{ 
     font-size: var(--font-size);
     text-align: center;
+    color: #fff;
+}
+.parraf{ 
+    color: #fff;
 }
 .submit-form{
     display: flex;

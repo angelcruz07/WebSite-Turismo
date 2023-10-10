@@ -20,9 +20,9 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"]) || empty($_POST["password"])) {
-      $error = "Please fill all the fileds.";
+      $error = "Rellene con los datos correctos";
     } else if (!str_contains($_POST["email"], "@")) {
-      $error = "Email format is incorrect.";
+      $error = "Formato de email incorrecto";
     } else {
       $database = new Database();  // Crear una instancia de la clase Database
       $conn = $database->connect();  // Obtener la conexión  
@@ -36,7 +36,7 @@
         $query = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!password_verify($_POST["password"], $query["password"])) {
-            $error = "Password incorrecta.";
+            $error = "Contraseña incorrecta.";
         } else {
           $rol = $query['rol_id'];
           $_SESSION['rol'] = $rol;
@@ -57,8 +57,8 @@
 ?>
 
 <?php 
-require "./partials/header.php";
-// require "../partials/navbar.php";
+require "../partials/header2.php";
+require "../partials/navbar.php";
 ?>
 
 <section class="form-register">
@@ -89,10 +89,10 @@ require "./partials/header.php";
                 </div>
             </div>
             <div class="register">
-              <p>Aún no tienes cuenta? <a href="register.php" class="redirect-register">Registrarme</a></p>
+              <p class="parraf">Aún no tienes cuenta? <a href="register.php" class="redirect-register">Registrarme</a></p>
             </div>
         </form>
       </div>
     </div>
 </section>
-<?php require "./partials/footer.php"?>
+<?php require "../partials/footer.php"?>
