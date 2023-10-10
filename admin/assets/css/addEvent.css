@@ -1,0 +1,101 @@
+#add-event { 
+    padding: var(--standard-padding);
+}
+
+/* Contenedor del crud de eventos */
+
+.container-event-crud{ 
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+/* Contenedores */
+.container-form-event{ 
+    padding:var(--standard-padding);
+    background:var( --background-secundary);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #000;
+    max-width: 50%;
+    flex: 1
+}
+.contaier-events-add{ 
+    padding:var(--standard-padding);
+    background:var( --background-secundary);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #000;
+    max-width: 50%;
+    flex: 1
+
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+
+/* Estetica */
+.title-event{ 
+    font-size:3rem;
+}
+.container-form-event label ,input { 
+    color:#000000;
+    font-weight: 700;
+}
+.container-form-event label{
+    font-size: 2rem;
+}
+.container-form-event input { 
+    background-color:var();
+    border: none;
+}
+.form-btn{ 
+    padding: var(--standard-padding);
+    max-width: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius:10px;
+    background-color: var( --color-secundary);
+    color:#fff;
+    cursor: pointer;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+}
+/* Contenedores del formulario */
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:2rem; 
+}
+.form-group label {
+    width: 40%; 
+}
+.form-group input {
+    width: 55%;
+
+}
+/* Estilos de eventos agregados */
+.info-crud { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.event-add{ 
+    display: flex;
+    flex-direction: space-between;
+}
+.date-event-colum{ 
+    flex: 1; /* Todas las columnas tienen el mismo ancho */
+    padding: 10px;
+    border: 1px solid #ccc;
+
+}
+.date-event{ 
+  flex: 1; /* Todas las columnas tienen el mismo ancho */
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+

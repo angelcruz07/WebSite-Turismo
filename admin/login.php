@@ -45,7 +45,6 @@
             case 1:
                 header('location: admin.php');
             break;
-            // Reder
             case 2:
             header('location: home.php');
             break;
@@ -58,11 +57,8 @@
 ?>
 
 <?php 
-
 require "./partials/header.php";
-
 // require "../partials/navbar.php";
-
 ?>
 
 <section class="form-register">
@@ -99,5 +95,4 @@ require "./partials/header.php";
       </div>
     </div>
 </section>
-
 <?php require "./partials/footer.php"?>
