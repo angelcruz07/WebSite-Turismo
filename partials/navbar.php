@@ -33,8 +33,3 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     </div>
 </header>
 <main>
-    <div id="scroll-to-top" class="hidden">
-        <a href="#silder_main">
-            <img class="icon-footer-svg" src="<?php echo $url ?>/assets/icons/arrow-up-solid.svg" alt="Icono de Scroll al inicio"></a>
-        </a>
-    </div>

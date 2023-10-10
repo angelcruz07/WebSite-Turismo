@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="image">  
-      <div class="slider-container">
+      <div class="slider-container-about">
         <img id="sliderImage" src="http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg" alt="Imagen 1">
     </div>
       </div>
