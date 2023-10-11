@@ -1,4 +1,4 @@
--- Active: 1695851616372@@127.0.0.1@3306
+-- Active: 1696989656192@@127.0.0.1@3306@tourism
 
 -- Run SQL commands in order
 
@@ -24,9 +24,9 @@ CREATE TABLE users (
 
 CREATE TABLE events (
      id_event INT(11) AUTO_INCREMENT PRIMARY KEY,
-     image LONGBLOB,
      title VARCHAR(25),
-     description VARCHAR(250)
+     description VARCHAR(250),
+     image VARCHAR(3000)
 );
 
 --Insert  fields into the roles table.
@@ -41,3 +41,7 @@ INSERT INTO roles (id, rol) VALUES
 INSERT INTO users (username, email, password, rol_id) VALUES 
     ('admin', 'admin@gmail.com', '$2y$10$WsSVuxqz4eEWces6JDOAx.2nRnbNx3R40NK4nAMnZ17TFgT8m0yVq', 1),
     ('user', 'user@gmail.com', '$2y$10$bFR1XATfuO.duGieAkmtxOBRANJb/y3FEXnUhXA9cZLoVhy8RQHEO', 2);
+
+
+INSERT INTO events (id_event, title, description, image) VALUES 
+    ('1','Mi primer evento','Probando sistema de html dinamico','Imagen.jpg')

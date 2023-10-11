@@ -74,7 +74,13 @@
 }
 .form-group input {
     width: 55%;
-
+}
+.group-buttons{ 
+    display: flex;
+}
+.group-buttons button{ 
+   display: flex;
+   justify-content: space-between;
 }
 /* Estilos de eventos agregados */
 .info-crud { 
