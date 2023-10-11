@@ -37,9 +37,9 @@ switch ($action){
 $query = $conn->prepare("SELECT * FROM events");
 $query -> execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
+
+
 <section id="add-event" class="add-event">
 
   <h1 class="title-event"> Agregar un nuevo evento</h1>
@@ -54,7 +54,6 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           <label for="title"> Agrega un título:</label>
           <input type="text" name="title" id="title" required="">
         </div>
-
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
           <input type="text" name="description" id="description" required="">
@@ -63,8 +62,6 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           <label for="image">Agrega una imagen:</label>
           <input type="file" name="image" id="image" required="">
         </div>
-
-
         <div class="group-buttons">
           <button type="submit" value="Agregar" name="accion" class="form-btn">Agregar</button>
           <button type="submit" value="Modificar" name="accion" class="form-btn">Modificar</button>
@@ -98,6 +95,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 <?php require "./partials/footer.php" ?>

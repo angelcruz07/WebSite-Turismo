@@ -10,7 +10,6 @@
     gap: 2rem;
 }
 
-
 /* Contenedores */
 .container-form-event{ 
     padding:var(--standard-padding);
@@ -27,7 +26,6 @@
     box-shadow: 0 5px 10px #000;
     max-width: 50%;
     flex: 1
-
 }
 .form-container {
     display: flex;
@@ -35,10 +33,10 @@
     margin: auto;
 }
 
-
-/* Estetica */
+/* Estetica titulos */
 .title-event{ 
     font-size:3rem;
+    margin-bottom: 3rem;
 }
 .container-form-event label ,input { 
     color:#000000;
@@ -46,10 +44,6 @@
 }
 .container-form-event label{
     font-size: 2rem;
-}
-.container-form-event input { 
-    background-color:var();
-    border: none;
 }
 .form-btn{ 
     padding: var(--standard-padding);
@@ -65,15 +59,25 @@
 /* Contenedores del formulario */
 .form-group {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom:2rem; 
 }
 .form-group label {
-    width: 40%; 
+    width: 100%; 
 }
 .form-group input {
-    width: 55%;
+    background: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    outline: none;
 }
 /* Estilos de menu */
 .group-buttons{ 
@@ -115,4 +119,10 @@
 .date-event{
     font-weight:700;
     color:#000
+}
+/* Responsive */
+@media  screen and (max-width: 1100px) {
+    .container-event-crud{ 
+        flex-direction: column;
+    }
 }
