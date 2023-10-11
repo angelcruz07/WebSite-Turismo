@@ -75,7 +75,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="contaier-events-add">
-      <h2>Modificar publicaciones</h2>
+      <h2>Publicadas</h2>
       <table class="info-crud">
         <thead>
           <tr class="event-add">
@@ -86,13 +86,12 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           </tr>
         </thead>
         <tbody>
-
           <?php foreach($events as $event) {?>
           <tr class="event-add">
             <td class="date-event"><?php echo $event ['title']?></td>
             <td class="date-event"><?php echo $event ['description']?></td>
             <td class="date-event"><?php echo $event ['image']?></td>
-            <td class="date-event"> seleccionar | borrar</td>
+            <td class="date-event"> Seleccionar | borrar</td>
           </tr>
           <?php }?>
 

@@ -75,12 +75,14 @@
 .form-group input {
     width: 55%;
 }
+/* Estilos de menu */
 .group-buttons{ 
     display: flex;
 }
 .group-buttons button{ 
    display: flex;
    justify-content: space-between;
+   border: none;
 }
 /* Estilos de eventos agregados */
 .info-crud { 
@@ -88,7 +90,6 @@
     flex-direction: column;
     width: 100%;
 }
-
 .event-add{ 
     display: flex;
     flex-direction: space-between;
@@ -105,3 +106,13 @@
   border: 1px solid #ccc;
 }
 
+/* Estilos de la tabla */
+.date-event-colum{
+    text-transform: uppercase;
+    font-weight:800;
+    color: #000;
+}
+.date-event{
+    font-weight:700;
+    color:#000
+}
