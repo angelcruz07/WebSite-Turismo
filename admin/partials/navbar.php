@@ -3,14 +3,18 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 ?>
 <header>
   <div class="icon_menu">
-    <i class="fa-solid fa-bars bx bx-menu" id="btn_open"></i>
+  <img  src="<?php echo $url ?>/assets/icons/bars-solid-black.svg" alt="Icono menu" id="btn_open" title="icon-menu">
   </div>
   <h1>Administrador</h1>
 </header>
 
 <div class="menu_side" id="menu_side">
   <div class="name_page">
-    <i class="fa-solid fa-folder-open"></i>
+    <!-- Copiar este div -->
+      <div class="icon_menu">
+         <img  src="<?php echo $url ?>/assets/icons/folder.svg" alt="Icono folder" title="icon-folder">
+      </div>
+      <!-- -------------------------------- -->
     <h4>Panel de administracion</h4>
   </div>
   <div class="options_menu">

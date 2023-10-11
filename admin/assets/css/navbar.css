@@ -45,8 +45,8 @@ header {
 
 }
 
-.icon_menu i {
-    font-size: 20px;
+.icon_menu img {
+    width: 25px;
     cursor: pointer;
     position: absolute;
 }
