@@ -2,10 +2,6 @@
     padding: var(--standard-padding);
     margin-bottom: 3rem;
 }
-.title-suggetions h2 { 
-    margin-bottom: 3rem;
-    font-size: 1rem;
-}
 .container_sugetions { 
     display: flex;
     flex-wrap: nowrap;
@@ -76,6 +72,8 @@
    
    .card-suggetion .back .link a {
     color: #f3f3f3;
+    font-size: 2rem;
+    font-weight: 700;
 }
    
   .card-suggetion .back h3 {

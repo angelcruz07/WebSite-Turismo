@@ -3,7 +3,7 @@
   <div class="container_slider">
     <div class="slider_screen">
       <div class="slider-container">
-        <img id="slider" src="http://localhost/WebSite-Turismo/php/imgSlider/Postal.jpg" alt="Imagen 1" class="img_slider">
+        <img id="slider" src="http://localhost/WebSite-Turismo/php/imgSlider/Postal.jpg" alt="Slider de bienvenida"  title="Bienvenidos a sultepec" class="img_slider">
       </div>
       <div class="slider_text">
         <h1>!Bienvenidos¡</h1>
@@ -16,7 +16,7 @@
 </section>
 <div id="scroll-to-top" class="hidden">
   <a href="#silder_main">
-    <img class="icon-footer-svg" src="<?php echo $url ?>/assets/icons/arrow-up-solid.svg" alt="Icono de Scroll al inicio"></a>
+    <img class="icon-footer-svg" src="<?php echo $url ?>/assets/icons/arrow-up-solid.svg" alt="Icono de Scroll al inicio" title="Up"></a>
   </a>
 </div>
 <script src="<?php echo $url; ?>/assets/js/index.js"></script>

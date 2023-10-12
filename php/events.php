@@ -1,6 +1,6 @@
 <?php 
 $url = "http://" .$_SERVER['HTTP_HOST'] ."WebSite-Turismo";
- require "../partials/header.php";
+ require "../partials/header2.php";
  require "../partials/navbar.php";
  ?>
 
@@ -10,56 +10,34 @@ $url = "http://" .$_SERVER['HTTP_HOST'] ."WebSite-Turismo";
         <div class="card-event">
             <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 1">
             <div class="description-event">
-                <!-- Información para la primera imagen -->
                 <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ipsam provident ut natus iste tenetur id molestiae error repudiandae qui atque corporis harum. Ut cum, aliquam alias fuga ipsum sed!</p>
             </div>
         </div>
         <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 2">
+            <img src="<?php echo $url?>/assets/img/antiguo sultepec.jpg" alt="Imagen 2">
             <div class="description-event">
-                <!-- Información para la segunda imagen -->
                 <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, modi magni 
+                    vero unde voluptate laborum incidunt laboriosam nostrum Lorem ipsum dolor 
+                    sit, amet consectetur adipisicing elit. Mollitia fuga suscipit repellendus.
+                    Alias veritatis iusto veniam dolorum ex rem id aliquid. Ducimus, veritatis quis
+                    Minus consequuntur dolor tempore exercitationem sapiente officiis tenetur.</p>
             </div>
         </div>
         <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 3">
+            <img src="<?php echo $url?>/assets/img/hospedaje.jpeg" alt="Imagen 3">
             <div class="description-event">
-                <!-- Información para la tercera imagen -->
-                <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
-            </div>
-        </div>
-        <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 3">
-            <div class="description-event">
-                <!-- Información para la tercera imagen -->
-                <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
-            </div>
-        </div>
-        <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 3">
-            <div class="description-event">
-                <!-- Información para la tercera imagen -->
-                <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
-            </div>
-        </div>
-        <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 3">
-            <div class="description-event">
-                <!-- Información para la tercera imagen -->
                 <h3>Nombre evento</h3>
                 <p>Descripción corta.</p>
             </div>
         </div>
     </div>
 </section>
+
 <section id="religious-events">
 
-<h2>Fiestas religiosas</h2>
+<h2 class="title-index">Fiestas religiosas</h2>
 
 </section>
 

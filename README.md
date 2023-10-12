@@ -28,12 +28,12 @@ en el se encuentran nuestras variables globales de los estilos del sitio para mo
 archivo tendras que hacer referencia al mismo. 
 
 # Dudas en diseño? 
-
 Si tienes duda de como realizar un diseño en especifico se ha creado una carpeta con el nombre desing
 en donde se han incluido todas las imagenes de diseño que podrian ser de utilizadad al momento de desarollar en el 
 proyecto.
 
 
+## Tareas pendientes
 
 * [X] Creacion del diseño inicial
 * [X] Creacion del primero codigo HTML CSS JS
@@ -50,29 +50,22 @@ proyecto.
 * [ ] Despliegue del sitio
 * [ ] Presentacion del proyecto
 
-## Instalacion
-
 ## Inicialización
 * Clonar el repositorio de git en tu maquina local.
 * XAMP o algun servidor local 
 * Extension Mysql ID: cweijan.vscode-mysql-client2
 
-
 ## Crear base de datos 
 
 Coneccion a la base de datos en MYSQL
-
 Una vez instalada la extencion deberas crear la coneccion a la base de datos de la siguiente manera
 
-
 ![Coneccion a la base de datos](./assets/img/connection.png)
-
 
 Deberas entrar a la carpeta llamada sql donde encontraras un archivo llamado setup.sql
 en el se encuentran las sentencias para crear la base de datos por lo que deberas tener la extencion instalada
 
 ![Imagen de instruccion](./assets/img/setup%20sql.png)
-
 
 Como puedes observar la extesion cuenta con una funcionalidad de ejecutar sentecias sql directamente
 una vez que lo hayas echo con todos las sentencias sql y tendras las base de datos ya instalada he iniciada por lo que 
@@ -80,41 +73,34 @@ podras hacer uso de las funciones que requieren base de datos.
 
 ## Estandares
 1. Paleta de Colores:
-
 * Color de Fondo: #1F242D
-
 * Color de fondo Secundario:#B6DB7B
-
 * Color complementario: #1AB823
-
 * Color de titulos: #1AB823
-
 * Color de texto: #F9F4F5
 
 ## Tipografía:
-Fuente principal: Poppins
-Link: https://fonts.google.com/specimen/Poppins?query=poppins
-
-Títulos Principales (H1): Fuente:Poppins, Tamaño: 4,6rem, Peso: Negrita
-Subtítulos (h2, a ): Fuente: Fuente:Poppins, Tamaño: 2.5rem, Peso: Seminegrita
-Texto del Cuerpo (p): Fuente: Fuente:Poppins Tamaño: 1.6rem, Peso: Regular
-Texto Destacado: Fuente:Poppins, Tamaño: 1.6rem.
+Fuente principal:Ghotman , Montserrat.
+Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso: Negrita
+Subtítulos (h2, a ): Fuente: Fuente: Tamaño: 2.5rem, Peso: Seminegrita
+Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
+Texto Destacado: Fuente: Tamaño: 1.6rem.
 
 ## Clases y Nomenclatura
 Utiliza nombres en el idioma ingles claros y descriptivos para las clases en el código CSS.
 Utiliza la metodologia BEM
 Prefijo de Clases: .Nombre descriptivo-(uso de dos guiones medios)segunda palabra descriptiva
-
 Ejemplos: 
 .menu-container 
 .menu-icon
 .menu-text
-
 ## Imagenes
 Utiliza imágenes de alta calidad y optimizadas para la web (Formato: .webp).
 Prefijo de Nombres de Archivos: Crear Carpeta con el nombre assets e incluir las imagenes con el siguiente formato (Descripicion corta de la imagen/lugar en la web) 
 Ejemplo: 
 parroquia sultepec/portada.webp
+
+##Documentacion
 
 ## Desarolladores
 | Nombre                             | Rol en Proyecto         | 

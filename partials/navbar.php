@@ -15,11 +15,11 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
                 <li class="margin-left"><a href="<?php echo $url; ?>" id="selected"></a></li>
                 <li class="margin-left"><a href="<?php echo $url; ?>/php/events.php" class="no__hover">Eventos</a>
                     <ul>
-                        <li><a href="<?php echo $url; ?>/php/events.php/#events">Eventos sociales</a></li>
+                        <li><a href="<?php echo $url; ?>/php/events.php/#events" title="Eventos sociales">Eventos sociales</a></li>
                         <li><a href="<?php echo $url; ?>/php/events.php/#religious-events">Eventos patronales</a></li>
                     </ul>
                 </li>
-                <li class="margin-left"><a class="no__hover" href="">Nuestro Encanto</a>
+                <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Nuestro Encanto</a>
                     <ul>
                         <li><a href="<?php echo $url; ?>/php/attractive.php">Lugares</a></li>
                         <li><a href="<?php echo $url; ?>/php/gastronomy.php">Gastronomía</a></li>

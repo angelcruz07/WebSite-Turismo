@@ -30,13 +30,15 @@
     --font-size: 2rem; 
     --standard-padding:2rem 9%;
   }
-  h2{ 
+  .title-index{
     color: var(--color-titles);
     font-size: var(--subtitles-size);
     padding: var(--standard-padding);
     text-align: center;
     font-family: var(--font-primary);
+    margin-bottom: 2rem;
   }
+
   @media (max-width: 450px){
     html { 
         font-size:50%;

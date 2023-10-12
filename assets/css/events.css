@@ -1,14 +1,12 @@
 #events { 
     margin-top:5rem;
 }
-
 #events h1 { 
     color:var(--color-titles);
     font-size: 3rem;
     font-family:var(--font-primary);
     text-align: center;
 }
-/* Estilo para el contenedor principal */
 .container-events {
     width: 100%;
     padding: var(--standard-padding);
@@ -16,32 +14,32 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-/* Estilo para cada elemento (imagen + información) */
 .card-event{
-    padding: 0 10px; /* Agrega espacio entre elementos */
+    padding: 0 10px;
     margin-bottom: 2rem;
     max-width: 350px;
 }
-/* Estilo para las imágenes */
 .card-event img {
-    max-width: 100%; /* Ajusta el tamaño de la imagen al ancho del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
-    display: block; /* Evita espacios vacíos debajo de las imágenes */
-    border-radius: 5% 5% 0 0
+    width: 330px;
+    height: 250px;
+    display: block;
+    border-radius: 5% 5% 0 0;
+    box-shadow: 0 5px 10px #000;
 }
-/* Estilo para la información */
 .description-event {
+    color:var(--color-text);
     padding: var(--standard-padding);
-    text-align: center;
     border-radius:0 0 2rem 2rem;
-    background-color: var(--background-secundary);
+    background-color:#fff;
     font-family: var(--font-family);
+    box-shadow: 0 5px 10px #000;
+    text-align: justify;
+    font-weight: 700;
+    height: 150px;
 }
 .description-event h3{
     font-size: var(--font-size);
     margin: 0 0 10px 0;
     color: var(--color-titles);
-}
-.description-event{
-color:var(--color-text);
+    text-align: center;
 }
