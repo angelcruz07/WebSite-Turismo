@@ -37,9 +37,9 @@ switch ($action){
 $query = $conn->prepare("SELECT * FROM events");
 $query -> execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
+
+
 <section id="add-event" class="add-event">
 
   <h1 class="title-event"> Agregar un nuevo evento</h1>
@@ -54,7 +54,6 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           <label for="title"> Agrega un título:</label>
           <input type="text" name="title" id="title" required="">
         </div>
-
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
           <input type="text" name="description" id="description" required="">
@@ -63,8 +62,6 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           <label for="image">Agrega una imagen:</label>
           <input type="file" name="image" id="image" required="">
         </div>
-
-
         <div class="group-buttons">
           <button type="submit" value="Agregar" name="accion" class="form-btn">Agregar</button>
           <button type="submit" value="Modificar" name="accion" class="form-btn">Modificar</button>
@@ -75,7 +72,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="contaier-events-add">
-      <h2>Modificar publicaciones</h2>
+      <h2>Publicadas</h2>
       <table class="info-crud">
         <thead>
           <tr class="event-add">
@@ -86,19 +83,19 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           </tr>
         </thead>
         <tbody>
-
           <?php foreach($events as $event) {?>
           <tr class="event-add">
             <td class="date-event"><?php echo $event ['title']?></td>
             <td class="date-event"><?php echo $event ['description']?></td>
             <td class="date-event"><?php echo $event ['image']?></td>
-            <td class="date-event"> seleccionar | borrar</td>
+            <td class="date-event"> Seleccionar | borrar</td>
           </tr>
           <?php }?>
 
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 <?php require "./partials/footer.php" ?>

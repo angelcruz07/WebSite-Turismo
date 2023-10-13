@@ -7,6 +7,9 @@ require "../partials/header2.php";
 require "../partials/navbar.php";
 ?>
 <section class="attractive" id="attractive">
+    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
+<div class="container-gallery">
+
     <div class="card">
         <div class="face front">
             <a href="<?php echo $images?>/minero_sultepec.jpg">
@@ -94,6 +97,7 @@ require "../partials/navbar.php";
             </div>
         </div>
     </div>
+</div>
 </section>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>

@@ -1,12 +1,29 @@
-#attractive { 
-    padding: var(--standard-padding);
-}   
+#attractive {
+  padding: var(--standard-padding);
+}
+
 .attractive {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
+.container-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-attractive {
+  text-align: center;
+  color: var(--color-titles);
+  font-size: var(--subtitles-size);
+  padding: var(--standard-padding);
+  text-align: center;
+  font-family: var(--font-primary);
+}
+
 .card {
   position: relative;
   width: 300px;
@@ -43,7 +60,7 @@
   height: 45px;
   line-height: 45px;
   color: #fff;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, .4);
   text-align: center;
 }
 
@@ -57,14 +74,14 @@
   justify-content: space-between;
   text-align: center;
   box-shadow: 0 5px 10px #000;
-} 
- 
+}
+
 .card .back .link {
   border-top: solid 1px #f3f3f3;
   height: 50px;
   line-height: 50px;
 }
- 
+
 .card .back h3 {
   font-size: 30px;
   margin-top: 20px;
@@ -73,7 +90,7 @@
 
 .card .back p {
   letter-spacing: 1px;
-} 
+}
 
 .card:hover .front {
   transform: perspective(600px) rotateY(180deg);
@@ -82,4 +99,3 @@
 .card:hover .back {
   transform: perspective(600px) rotateY(360deg);
 }
-
