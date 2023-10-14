@@ -4,34 +4,33 @@ $url = "http://" .$_SERVER['HTTP_HOST'] ."WebSite-Turismo";
  require "../partials/navbar.php";
  ?>
 
+ <?php 
+ require "../admin/config/database.php";
+
+ //Recuperar conexion de database
+$database = new Database();  
+$conn = $database->connect();
+ // Haciendo la consulta a los registros 
+$query = $conn->prepare("SELECT * FROM events");
+$query -> execute();
+$events = $query->fetchAll(PDO::FETCH_ASSOC);
+
+ ?>
+
 <section class="events scroll-top" id="events">
 <h1>Eventos proximos</h1>
     <div class="container-events">
+
+    <?php foreach($events as $event){ ?>
         <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/parroquia de sultepec.jpg" alt="Imagen 1">
+        <img src="../../admin/assets/imgEvent/<?php echo $event['image']?>" alt="Portada representativa al evento">
             <div class="description-event">
-                <h3>Nombre evento</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ipsam provident ut natus iste tenetur id molestiae error repudiandae qui atque corporis harum. Ut cum, aliquam alias fuga ipsum sed!</p>
+                <h3><?php echo $event['title']?></h3>
+               <p><?php echo $event ['description']?></p>
             </div>
         </div>
-        <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/antiguo sultepec.jpg" alt="Imagen 2">
-            <div class="description-event">
-                <h3>Nombre evento</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, modi magni 
-                    vero unde voluptate laborum incidunt laboriosam nostrum Lorem ipsum dolor 
-                    sit, amet consectetur adipisicing elit. Mollitia fuga suscipit repellendus.
-                    Alias veritatis iusto veniam dolorum ex rem id aliquid. Ducimus, veritatis quis
-                    Minus consequuntur dolor tempore exercitationem sapiente officiis tenetur.</p>
-            </div>
-        </div>
-        <div class="card-event">
-            <img src="<?php echo $url?>/assets/img/hospedaje.jpeg" alt="Imagen 3">
-            <div class="description-event">
-                <h3>Nombre evento</h3>
-                <p>Descripción corta.</p>
-            </div>
-        </div>
+   <?php } ?>
+
     </div>
 </section>
 
