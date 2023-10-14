@@ -23,7 +23,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
     <div class="card_info">
       <div class="head">
-        <p class="title">Tacos</p>
+        <p class="title">Mole</p>
         <div class="description">
         </div>
       </div>
@@ -43,7 +43,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
     <div class="card_info">
       <div class="head">
-        <p class="title">Tacos</p>
+        <p class="title">Tacos-Dorados</p>
         <div class="description">
         </div>
       </div>
@@ -90,7 +90,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
     <div class="card_info">
       <div class="head">
-        <p class="title">Tacos</p>
+        <p class="title">Tamales</p>
         <div class="description">
         </div>
       </div>
@@ -113,7 +113,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
     <div class="card_info">
       <div class="head">
-        <p class="title">Tacos</p>
+        <p class="title">Guacamole</p>
         <div class="description">
         </div>
       </div>
@@ -136,7 +136,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
     <div class="card_info">
       <div class="head">
-        <p class="title">Tacos</p>
+        <p class="title">Caldo</p>
         <div class="description">
         </div>
       </div>
