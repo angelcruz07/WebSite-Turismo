@@ -84,22 +84,18 @@ header {
 }
 
 .name_page {
-    padding: 20px 30px;
     display: flex;
     align-items: center;
-    margin-top: 10px;
-
 }
 
-.name_page i {
+.name_page img {
     width: 20px;
-    margin-right: 20px;
+    margin-right:3rem;
 }
 
 .options_menu {
     padding: 20px 30px;
     position: absolute;
-    top: 80px;
 }
 
 .options_menu a {
@@ -135,8 +131,7 @@ header {
 }
 
 a.selected {
-    color: var();
-
+    color: var(--color-secundary);
 }
 
 .selected:before {
