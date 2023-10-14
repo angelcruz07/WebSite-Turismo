@@ -1,4 +1,4 @@
--- Active: 1697037100017@@127.0.0.1@3306
+-- Active: 1696989656192@@127.0.0.1@3306@tourism
 
 -- Run SQL commands in order
 
@@ -23,7 +23,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE events (
-     id_event INT(11) AUTO_INCREMENT PRIMARY KEY,
+     id INT(11) AUTO_INCREMENT PRIMARY KEY,
      title VARCHAR(25),
      description VARCHAR(250),
      image VARCHAR(3000)
