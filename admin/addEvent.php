@@ -7,6 +7,8 @@ require "config/database.php";
 $database = new Database();  
 $conn = $database->connect();
 
+
+// Validar los campos
 //Recibir los datos del formulario
 $id = (isset($_POST['id']))?$_POST['id']:""; 
 $title = (isset($_POST['title']))?$_POST['title']:"";  
@@ -32,6 +34,7 @@ switch ($action){
 
       $sql->bindParam(':image',$nameFile);
       $sql->execute();
+      header("Location:AddEvent.php");
       break;
 
     case "Modificar";
@@ -42,15 +45,35 @@ switch ($action){
       $sql -> execute();
 
       if($image != ""){
+
+        $date = new DateTime();
+        $nameFile=($image != "")?$date->getTimestamp()."_".$_FILES["image"]["name"]:"imagen.jpg";
+        $tmpImage = $_FILES["image"]["tmp_name"]; 
+
+        move_uploaded_file($tmpImage,"../admin/assets/imgEvent/". $nameFile);
+
+        $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
+        $sql->bindParam(':id',$id);
+        $sql -> execute();
+        $event = $sql->fetch(PDO::FETCH_LAZY);
+  
+        if(isset($event["image"]) && ($event['image'] !="imagen.jpg")){ 
+          if(file_exists("../admin/assets/imgEvent/".$event["image"])){ 
+  
+            unlink("../admin/assets/imgEvent/".$event["image"]);
+          }
+        }
+
         $sql = $conn->prepare("UPDATE events SET image=:image WHERE id=:id");
-        $sql->bindParam(':image',$image);
+        $sql->bindParam(':image',$nameFile);
         $sql->bindParam(':id',$id);
         $sql -> execute();
       }
-        
+      header("Location:AddEvent.php");
        break;
     case "Cancelar";
-      echo "Presionado boton de cancelar";
+      header("Location:AddEvent.php");
+
       break;
       case "Seleccionar";
       $sql = $conn->prepare("SELECT * FROM events WHERE id=:id");
@@ -63,9 +86,24 @@ switch ($action){
 
       break;
       case "Borrar";
+      // Verificar si la imagen existe y eliminarla de la carpeta imgEvent
+      $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
+      $sql->bindParam(':id',$id);
+      $sql -> execute();
+      $event = $sql->fetch(PDO::FETCH_LAZY);
+
+      if(isset($event["image"]) && ($event['image'] !="imagen.jpg")){ 
+        if(file_exists("../admin/assets/imgEvent/".$event["image"])){ 
+
+          unlink("../admin/assets/imgEvent/".$event["image"]);
+        }
+      }
+
+
       $sql = $conn->prepare("DELETE FROM events WHERE id=:id");
       $sql->bindParam(':id',$id);
       $sql -> execute();
+      header("Location:AddEvent.php");
       break;
 }
 // Haciendo la consulta a los registros 
@@ -84,8 +122,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
       <form  method="POST" enctype="multipart/form-data" class="form-container">
       <div class="form-group">
-          <label for="title"> ID:</label>
-          <input type="text" value="<?php echo $id?>" name="id" id="id">
+          <input type="hidden" value="<?php echo $id?>" name="id" id="id">
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
@@ -96,15 +133,19 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
           <input type="text"  value="<?php echo $description;?>" name="description" id="description" required="">
         </div>
         <div class="form-group">
-          <label for="image">Agrega una imagen:</label>
+          <label for="image">Agrega una imagen:</label><br>
 
-        <?php echo $image;?>
-          <input type="file" name="image" id="image" >
+          <?php  if($image != "") {?>
+            <img src="../admin/assets/imgEvent/<?php echo $image ?>"  title="Imagen seleccionada"width="50px">
+          <?php } ?>
+
+          <input type="file" name="image" id="image">
+
         </div>
         <div class="group-buttons">
-          <button type="submit" value="Agregar" name="accion" class="form-btn">Agregar</button>
-          <button type="submit" value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn">Cancelar</button>
+          <button type="submit"   <?php echo ($action == "Seleccionar")?"disabled":""?> value="Agregar" name="accion" class="form-btn">Agregar</button>
+          <button type="submit"   <?php echo ($action != "Seleccionar")?"disabled":""?> value="Modificar" name="accion" class="form-btn">Modificar</button>
+          <button type="submit"   <?php echo ($action != "Seleccionar")?"disabled":""?>value="Cancelar" name="accion" class="form-btn">Cancelar</button>
         </div>
 
       </form>
@@ -128,7 +169,10 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
             <td class="date-event"><?php echo $event ['id']?></td>
             <td class="date-event"><?php echo $event ['title']?></td>
             <td class="date-event"><?php echo $event ['description']?></td>
-            <td class="date-event"><?php echo $event ['image']?></td>
+            <td class="date-event">
+              <img src="../admin/assets/imgEvent/<?php echo $event ['image']?>"  width="50px">
+          
+          </td>
             <td class="date-event"> 
 
             <form method="POST">
