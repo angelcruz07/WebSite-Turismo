@@ -47,7 +47,7 @@ require "./partials/navbar.php"
         <div class="image-container">
           <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
         </div>
-        <a href="#" class="link-desktop">Ver sitio</a>
+        <a href="<?php echo $url; ?>" class="link-desktop">Ver sitio</a>
       </div>
     </div>
   </div>

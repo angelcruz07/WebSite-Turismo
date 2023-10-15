@@ -63,7 +63,7 @@ require "../partials/navbar.php";
 
 <section class="form-register">
 <div class="container-register">
-    <h2 class="card-title">Iniciar sesion</h2>
+    <h2 class="title-index">Iniciar sesion</h2>
     <div class="container-form">
         <?php if ($error): ?>
         <p class="text-error">
