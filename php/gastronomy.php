@@ -13,7 +13,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
 
 
 <section id="gastronomy">
-  <h2>Grastronomía</h2>
+  <h2 class="title-index">Grastronomía</h2>
 
 <div class="container-card-gastronomy">
 

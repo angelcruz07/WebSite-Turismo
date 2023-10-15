@@ -18,10 +18,6 @@ main {
 
 }
 
-h1 {
-    color: var(--color-titles);
-    text-align: center;
-}
 
 header {
     width: 100%;
@@ -33,6 +29,10 @@ header {
     top: 0;
     z-index: 200;
 
+}
+ h1 {
+    color: var(--color-titles);
+    text-align: center;
 }
 
 .icon_menu {
