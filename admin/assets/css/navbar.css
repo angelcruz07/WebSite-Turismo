@@ -12,17 +12,6 @@ body {
     margin-top: 80px;
     background: var(--background-color);
 }
-
-main {
-    padding: 20px;
-
-}
-
-h1 {
-    color: var(--color-titles);
-    text-align: center;
-}
-
 header {
     width: 100%;
     height: 80px;
@@ -33,6 +22,10 @@ header {
     top: 0;
     z-index: 200;
 
+}
+ h1 {
+    color: var(--color-titles);
+    text-align: center;
 }
 
 .icon_menu {
@@ -84,22 +77,18 @@ header {
 }
 
 .name_page {
-    padding: 20px 30px;
     display: flex;
     align-items: center;
-    margin-top: 10px;
-
 }
 
-.name_page i {
+.name_page img {
     width: 20px;
-    margin-right: 20px;
+    margin-right:3rem;
 }
 
 .options_menu {
     padding: 20px 30px;
     position: absolute;
-    top: 80px;
 }
 
 .options_menu a {
@@ -135,8 +124,7 @@ header {
 }
 
 a.selected {
-    color: var();
-
+    color: var(--color-secundary);
 }
 
 .selected:before {
