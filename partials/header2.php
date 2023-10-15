@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">  
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css"> 
+
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
   <title>Visita sultepec</title>
