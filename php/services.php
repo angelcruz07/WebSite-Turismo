@@ -1,64 +1,95 @@
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php";
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgServices";
+$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 ?>
+
+
 <div class="container-front-page">
-  <div class="degraded"></div>
-  <div class="title-front-page">
-    <h1>Servicios</h1>
-  </div>
-  <img src="<?php echo $url ?>/fondo-services.webp" alt="Portada de Servicios" title="Servicios" class="image-front-page">
+    <div class="degraded"></div>
+     <div class="title-front-page">
+       <h1>Servicios</h1>
+     </div>
+  <img src="<?php echo $url ?>/assets/imgServices/fondo-services.webp" alt="Portada de Servicios" title="Servicios" class="image-front-page">
 </div>
-<div class="title">
-  <h1>TRANSPORTE</h1>  </div>
+
+
+<section class="services" id="services">
+  <h1 class="title-index">Transporte</h1>
+
   <div class="container-services">
+
+  <div class="service-box">
+  <div class="services-rigth">
   <div class="icons">
-         <img  src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono taxi" title="icon-taxi">
+      <img  src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono taxi" title="icon-taxi">
   </div>
-    <div class="services">
-    <h2 class="subtitle">TAXI</h2>
-    <table class="table-services">
-  
-  <tr>
-    <th>DESTINO</th>
-    <th>HORARIO</th>
-  </tr>
-  <tr>
-    <td>LUGAR</td>
-    <td>00:00    </td>
-  </tr>
-  <tr>
-    <td>LUGAR</td>
-    <td>00:00</td>
-  </tr>
-    </table> </div>
-    <img src="<?php echo $url ?>/bus.webp" alt="" class="img-services">
-</div>
-<!-- seccion 2 -->
-<div class="container-services-2">
-  <img src="<?php echo $url ?>/bus.webp" alt="" class="img-services-dos">
-  <div class="icons-2">
-    <!-- ICONOOO -->
-  </div>
-  <div class="services-2">
-    <h2 class="colectivo-2"> COLECTIVO</h2>
-    <table class="table-services-2">
+ 
+    <h2 class="subtitle">Taxi</h2>
+
+  <table class="table-services">
+    <thead>
       <tr>
         <th>DESTINO</th>
         <th>HORARIO</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
         <td>LUGAR</td>
-        <td>00:00</td>
+        <td>00:00    </td>
+     </tr>
+     <tr>
+        <td>LUGAR</td>
+        <td>00:00    </td>
+     </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+
+<div class="service-image-right"> 
+  <img src="<?php echo $url ?>/assets/imgServices/bus.webp" alt="" class="img-services">
+</div>
+
+<!-- seccion 2 -->
+
+<div class="services-left">
+    <div class="service-image-left">
+      <img src="<?php echo $url ?>/assets/imgServices/" alt="" class="img-services-lefth">
+    </div>
+    <div class="icons">
+      <img  src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono taxi" title="icon-taxi">
+    </div>
+    
+<div class="service-left">
+<table class="table-services">
+    <thead>
+      <tr>
+        <th>DESTINO</th>
+        <th>HORARIO</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
         <td>LUGAR</td>
-        <td>00:00</td>
-      </tr></table>
+        <td>00:00    </td>
+     </tr>
+     <tr>
+        <td>LUGAR</td>
+        <td>00:00    </td>
+     </tr>
+    </tbody>
+  </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+</section>
+
 
 <?php
 require "../partials/footer.php"

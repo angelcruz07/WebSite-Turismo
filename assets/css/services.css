@@ -2,6 +2,23 @@
     padding: var(--standard-padding);
 }
 
+.services-box{
+  display:flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container-front-page {
     position: relative;
     width: 100%;
@@ -79,6 +96,13 @@ width: 48%;
   border-radius:35px;
   position: relative;
   left:70%;
+}
+.img-services-lefth{
+  width:300px;
+  height:200px;
+  border-radius:35px;
+  position: relative;
+  left:20%;
 }
 .table-services{
   position:absolute; 
