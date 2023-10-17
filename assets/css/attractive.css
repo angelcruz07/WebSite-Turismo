@@ -65,7 +65,7 @@
 
 .card .back {
   transform: perspective(600px) rotateY(180deg);
-  background: rgb(3, 35, 54);
+  background: var(--color-secundary);
   padding: 15px;
   color: #f3f3f3;
   display: flex;

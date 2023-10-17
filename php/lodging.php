@@ -7,13 +7,13 @@ require "../partials/scroll-top.php";
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
-    <h1>Hospedajes </h1>
+    <h1>Hospedajes</h1>
   </div>
   <img src="<?php echo $url ?>/assets/imgLodging/portada.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 
 <section class="lodging" id="lodging">
-    <h1 class="title-index">¿Donde descansar?</h1>
+    <h1 class="title-index">¿No sabes en donde descansar?</h1>
     <div class="container-lodging">
 <!--  copear formato lodging box -->
         <div class="lodging-box">
