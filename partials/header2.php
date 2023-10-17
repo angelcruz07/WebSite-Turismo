@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/front-page.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css"> 
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/services.css" type="text/css">
