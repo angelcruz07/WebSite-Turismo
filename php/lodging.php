@@ -1,12 +1,18 @@
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php";
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 ?>
 
+<div class="container-front-page">
+  <div class="degraded"></div>
+  <div class="title-front-page">
+    <h1>Hospedajes </h1>
+  </div>
+  <img src="<?php echo $url ?>/assets/imgLodging/portada.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+</div>
 
 <section class="lodging" id="lodging">
-    <h2>¿Donde descansar?</h2>
+    <h1 class="title-index">¿Donde descansar?</h1>
     <div class="container-lodging">
 <!--  copear formato lodging box -->
         <div class="lodging-box">
