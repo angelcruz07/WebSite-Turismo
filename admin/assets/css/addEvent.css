@@ -3,13 +3,11 @@
 }
 
 /* Contenedor del crud de eventos */
-
 .container-event-crud{ 
     display: flex;
     justify-content: space-between;
     gap: 2rem;
 }
-
 /* Contenedores */
 .container-form-event{ 
     padding:var(--standard-padding);
@@ -35,17 +33,17 @@
 
 /* Estetica titulos */
 .title-event{ 
-    font-size:3rem;
+    font-size:2rem;
     margin-bottom: 3rem;
+    text-align: center;
+    color: var(--color-secundary);
 }
 .container-form-event label ,input { 
     color:#000000;
-}
-.container-form-event label{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .form-btn{ 
-    padding: var(--standard-padding);
+    padding:10px 10px;
     max-width: 50%;
     margin: auto;
     margin-top: 1rem;
@@ -53,7 +51,6 @@
     background-color: var( --color-secundary);
     color:#fff;
     cursor: pointer;
-    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
 }
 /* Contenedores del formulario */
 .form-group {
@@ -66,17 +63,10 @@
 }
 .form-group input {
     background: none;
-    color: #000000;
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
     width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
-    resize: none;
     margin-top: 20px;
-    margin-bottom: 10px;
-    outline: none;
 }
 /* Estilos de menu */
 .group-buttons{ 
@@ -96,27 +86,44 @@
 }
 .event-add{ 
     display: flex;
-    flex-direction: space-between;
+}
+.date-event-colum.id, .date-event.id{
+   max-width: 2.2rem;
+}
+.title{ 
+    max-width: 8rem;
+}
+.description{ 
+    max-width: 25rem;
+}
+.image{ 
+    max-width: 7.5rem;
+}
+.option{ 
+    max-width: 11rem;
+}
+.btn-flex{ 
+    display: flex;
+    justify-content: center;
 }
 .date-event-colum{ 
     flex: 1; /* Todas las columnas tienen el mismo ancho */
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
 
 }
 .date-event{ 
   flex: 1; /* Todas las columnas tienen el mismo ancho */
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #ccc;
 }
 /* Botones */
-
 .btn{ 
     color: #fff;
     padding: 5px;
     border-radius:5px;
     border:none;
-
+    margin-bottom: 1rem;
 }
 .danger{ 
     background-color: #ff0000;
@@ -128,6 +135,7 @@
 .date-event-colum{
     text-transform: uppercase;
     color: #000;
+    text-align: start;
 }
 .date-event{
     font-weight:700;
@@ -137,5 +145,11 @@
 @media  screen and (max-width: 1100px) {
     .container-event-crud{ 
         flex-direction: column;
+    }
+    .container-form-event{
+        max-width: 100%;
+    }
+    .contaier-events-add{
+        max-width: 100%;
     }
 }
