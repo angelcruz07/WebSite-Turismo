@@ -1,48 +1,35 @@
-let atras = document.getElementById('atras');
-let adelante = document.getElementById('adelante');
-let imagen = document.getElementById('img');
-let puntos = document.getElementById('puntos');
-let texto = document.getElementById('texto')
-let actual = 0
-posicionCarrusel()
+function App() {}
 
-atras.addEventListener('click', function(){
-  actual -=1
+window.onload = function (event) {
+    var app = new App();
+    window.app = app;
+};
 
-  if (actual == -1){
-      actual = imagenes.length - 1
-  }
+App.prototype.processingButton = function(event) {
+    const btn = event.currentTarget;
+    const slickList = event.currentTarget.parentNode;
+    const track = event.currentTarget.parentNode.querySelector('#track');
+    const slick = track.querySelectorAll('.slick');
 
-  imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
-  texto.innerHTML = `
-  <h3>${imagenes[actual].nombre}</h3>
-  <p>${imagenes[actual].descripcion}</p>
-  `
-  posicionCarrusel()
-})  
-adelante.addEventListener('click', function(){
-  actual +=1
+    const slickWidth = slick[0].offsetWidth;
+    
+    const trackWidth = track.offsetWidth;
+    const listWidth = slickList.offsetWidth;
 
-  if (actual == imagenes.length){
-      actual = 0
-  }
+    track.style.left == ""  ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0, -2) * -1);
 
-  imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
-  texto.innerHTML = `
-  <h3>${imagenes[actual].nombre}</h3>
-  <p>${imagenes[actual].descripcion}</p>
-  `
-  posicionCarrusel()
-})  
+    btn.dataset.button == "button-prev" ? prevAction(leftPosition,slickWidth,track) : nextAction(leftPosition,trackWidth,listWidth,slickWidth,track)
+}
 
-function posicionCarrusel() {
-  puntos.innerHTML = ""
-  for (var i = 0; i <imagenes.length; i++){
-      if(i == actual){
-          puntos.innerHTML += '<p class="bold">.<p>'
-      }
-      else{
-          puntos.innerHTML += '<p>.<p>'
-      }
-  } 
+let prevAction = (leftPosition,slickWidth,track) => {
+    if(leftPosition > 0) {
+        console.log("entro 2")
+        track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
+    }
+}
+
+let nextAction = (leftPosition,trackWidth,listWidth,slickWidth,track) => {
+    if(leftPosition < (trackWidth - listWidth)) {
+        track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
+    }
 }

@@ -1,8 +1,8 @@
 /* Desing of seccion lodging */
 #lodging {
+    padding:var(--standard-padding);
     background: var(--background-secundary);
 }
-
 .lodging {
     padding: var(--standard-padding);
 }
