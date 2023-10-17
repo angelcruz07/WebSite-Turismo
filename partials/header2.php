@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/front-page.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">  
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
@@ -19,9 +20,9 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/services.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css">  
+  <script defer src="<?php echo $url; ?>/assets/js/blog.js"></script>
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
-  <script defer src="<?php echo $url; ?>/assets/js/blog.js"></script>
   <title>Visita sultepec</title>
 </head>
 <body>

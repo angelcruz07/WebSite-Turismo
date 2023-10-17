@@ -23,10 +23,10 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
                     <ul>
                         <li><a href="<?php echo $url; ?>/php/attractive.php">Lugares</a></li>
                         <li><a href="<?php echo $url; ?>/php/gastronomy.php">Gastronomía</a></li>
-                        <li><a href="<?php echo $url; ?>/php/lodging.php"">Hospedaje</a></li>
+                        <li><a href="<?php echo $url; ?>/php/lodging.php">Hospedaje</a></li>
                     </ul>
                 </li>
-                <li class="margin-left"><a href="#">Blog</a></li>
+                <li class="margin-left"><a href="<?php echo $url; ?>/php/blog.php">Blog</a></li>
                 <li class="margin-left"> <a href="<?php echo $url; ?>/admin/login.php"><img src="<?php echo $url ?>/assets/icons/user-solid.svg" alt="icon-user" title="Iniciar sesion" class="fa-user"></img></a></li>
             </ul>
         </nav>
