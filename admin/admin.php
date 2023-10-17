@@ -24,39 +24,39 @@ require "./partials/navbar.php"
 
     <div class="container-card-menu">
 
-
+    <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
       <div class="card-menu">
-        <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
+       
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/plus.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
           </div>
           Agregar Evento
-        </a>
       </div>
+      </a>
+      <a href="#" class="link-desktop">
       <div class="card-menu">
-        <a href="#" class="link-desktop">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
           </div>
           Agregar al blog
-        </a>
       </div>
+      </a>
+      <a href="#" class="link-desktop">
       <div class="card-menu">
-        <a href="#" class="link-desktop">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
           </div>
           Agregar Hospedaje
-        </a>
       </div>
+      </a>
+      <a href="<?php echo $url; ?>" class="link-desktop">
       <div class="card-menu">
-        <a href="<?php echo $url; ?>" class="link-desktop">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
           </div>
           Ver sitio
-        </a>
       </div>
+      </a>
     </div>
   </div>
 </section>
