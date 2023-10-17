@@ -1,10 +1,8 @@
 document.addEventListener('scroll', () => {
   const scrollButton = document.getElementById('scroll-to-top');
+  const triggerScroll = 200;  
 
-  const sections = document.querySelectorAll('.scroll-top');
-  const lastSection = sections[sections.length - 1];
-
-  if (window.scrollY > lastSection.offsetTop + lastSection.offsetHeight) {
+  if (window.scrollY > triggerScroll) {
     scrollButton.classList.remove('hidden');
   } else {
     scrollButton.classList.add('hidden');

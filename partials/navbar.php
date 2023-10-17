@@ -1,7 +1,7 @@
 <?php
 $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 ?>
-<header class="header">
+<header class="header" id="scroll-top">
     <div class="logo">
         <img src="<?php echo $url ?>/assets/img/LOGO AYUNTAMIENTO.webp" alt="Logo municipal de sultepec" title="H. Ayuntamiento de sultepec">
     </div>
@@ -28,7 +28,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Servicios</a>
                     <ul>
-                        <li><a href="<?php echo $url; ?>/php/attractive.php">Transporte</a></li>
+                        <li><a href="<?php echo $url; ?>/php/services.php">Transporte</a></li>
                         <li><a href="<?php echo $url; ?>/php/gastronomy.php">Comida</a></li>
                         <li><a href="<?php echo $url; ?>/php/lodging.php">Hospedajes</a></li>
                     </ul>

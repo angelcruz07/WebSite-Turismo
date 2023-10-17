@@ -1,6 +1,7 @@
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php";
+require "../partials/scroll-top.php";
 ?>
 
 <div class="container-front-page">
@@ -23,7 +24,7 @@ require "../partials/navbar.php";
                 </div>
             </div>
             <!-- descripcion equivale a tabla  -->
-            <div class="description">
+            <div class="description-lodging">
                 <h3>Nombre del hospedaje</h3>
                 <p>Descripcion del hospedaje</p>
             </div>
@@ -37,7 +38,7 @@ require "../partials/navbar.php";
                     <p> Calificacion</p>
                 </div>
             </div>
-            <div class="description left">
+            <div class="description-lodging left">
                 <h3>Nombre del hospedaje</h3>
                 <p>Descripcion del hospedaje</p>
             </div>

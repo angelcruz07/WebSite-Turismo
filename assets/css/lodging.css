@@ -37,18 +37,18 @@
     height: auto;
 }
 
-.description {
+.description-lodging {
     padding: 2rem;
     flex: 1;
 }
 
-.description h3 {
+.description-lodging h3 {
     font-size: var(--font-size);
     margin: 0 0 10px 0;
     color: var(--color-titles);
 }
 
-.description p {
+.description-lodging p {
     margin: 0;
     font-size: var(--font-size);
 }

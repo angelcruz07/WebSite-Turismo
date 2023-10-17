@@ -1,9 +1,8 @@
-<?php 
-$url = "http://" .$_SERVER['HTTP_HOST'] ."WebSite-Turismo";
-
+<?php
+ require "../admin/config/database.php";
  require "../partials/header2.php";
  require "../partials/navbar.php";
- require "../admin/config/database.php";
+ require "../partials/scroll-top.php";
 
  //Recuperar conexion de database
 $database = new Database();  
