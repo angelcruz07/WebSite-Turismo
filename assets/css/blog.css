@@ -1,5 +1,6 @@
 #blog{ 
-  padding: var(--standard-padding);
+  padding: var(--standard-padding); 
+  background: var(--background-secundary);
  }
  :root{ 
   /*Variables Landscape */ 
