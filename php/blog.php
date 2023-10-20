@@ -1,7 +1,7 @@
 <?php 
   require "../partials/header2.php"; 
   require "../partials/navbar.php";  
-  require "../partials/scroll-top.php";
+  require "../partials/scroll-top.php";  
   $urlImage = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgBlog";
   ?>
 
@@ -132,7 +132,149 @@
             </article>
          </div>
       </div> 
-</article>
+</article> 
+ 
+<!--Desarrolladores-Colaboraciones --> 
+<section class="colaborations">
+    
+    <div class="swiper mySwiper container-colaborations">
+      <div class="swiper-wrapper content-colaborations"> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="<?php echo $urlImage ?>/landscape-1.png" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina --> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina --> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="<?php echo $urlImage ?>/landscape-3.png" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina --> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="<?php echo $urlImage ?>/landscape-1.png" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina --> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina --> 
+        <!--Empieza -->
+        <div class="swiper-slide card-colaborations">
+          <div class="card-content-colaborations">
+            <div class="image-colaborations">
+              <img src="images/1.jpg" alt="">
+            </div>
+
+            <div class="media-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="name-profession">
+              <span class="name">NOMBRE</span>
+              <span class="profession">PROFESION/PUESTO</span>
+            </div>
+
+          </div>
+        </div> 
+        <!--Termina -->
+
+        
+
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
        
 </section> 
 
