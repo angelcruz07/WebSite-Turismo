@@ -50,76 +50,6 @@
 </div>
 </article>
 
-
-<!--Carrusel --> 
-<article class="carousel">
-<div class="Carousel">
-        
-            <div class="slick-track" id="track"> 
-              <!-- Empieza_1-->
-                <div class="slick">
-                    <div>
-                    <a href="/">
-                            <h4 class="title-carousel"><small class="small">Share Your Message</small>Watch</h4>
-                            <picture>
-                                <img src="<?php echo $urlImage ?>/gallery.jpg" alt="Image">
-                            </picture>
-                        </a>
-                    </div>
-                </div> 
-                <!--Termina --> 
-              <!-- Empieza_2-->
-                <div class="slick">
-                    <div>
-                    <a href="/">
-                            <h4 class="title-carousel"><small class="small">Share Your Message</small>Watch</h4>
-                            <picture>
-                                <img src="<?php echo $urlImage ?>/hospedaje.jpeg" alt="Image">
-                            </picture>
-                        </a>
-                    </div>
-                </div> 
-                <!--Termina -->  
-              <!-- Empieza_3-->
-                <div class="slick">
-                    <div>
-                    <a href="/">
-                            <h4 class="title-carousel"><small class="small">Share Your Message</small>Watch</h4>
-                            <picture>
-                                <img src="<?php echo $urlImage ?>/gallery.jpg" alt="Image">
-                            </picture>
-                        </a>
-                    </div>
-                </div> 
-                <!--Termina -->   
-              <!-- Empieza_4-->
-                <div class="slick">
-                    <div>
-                    <a href="/">
-                            <h4 class="title-carousel"><small class="small">Share Your Message</small>Watch</h4>
-                            <picture>
-                                <img src="<?php echo $urlImage ?>/hospedaje.jpeg" alt="Image">
-                            </picture>
-                        </a>
-                    </div>
-                </div>  
-                <!--Termina -->   
-              <!-- Empieza_5-->
-                <div class="slick">
-                    <div>
-                    <a href="/">
-                            <h4 class="title-carousel"><small class="small">Share Your Message</small>Watch</h4>
-                            <picture>
-                                <img src="<?php echo $urlImage ?>/gallery.jpg" alt="Image">
-                            </picture>
-                        </a>
-                    </div>
-                </div>  
-                <!--Termina -->     
-        </div> 
-</article> 
-               
-
 <!--Tarjetas con efecto landscape -->
 <article>
 <div class="landscape-container">
@@ -130,7 +60,7 @@
                <div class="card__data">
                   <span class="card__description">Vancouver Mountains, Canada</span>
                   <h2 class="card__title">The Great Path</h2>
-                  <a href="#" class="card__button">Read More</a>
+                  
                </div>
             </article>
 
@@ -140,7 +70,7 @@
                <div class="card__data">
                   <span class="card__description">Poon Hill, Nepal</span>
                   <h2 class="card__title">Starry Night</h2>
-                  <a href="#" class="card__button">Read More</a>
+                  
                </div>
             </article>
 
@@ -150,7 +80,7 @@
                <div class="card__data">
                   <span class="card__description">Bojcin Forest, Serbia</span>
                   <h2 class="card__title">Path Of Peace</h2>
-                  <a href="#" class="card__button">Read More</a>
+                 
                </div>
             </article>
          </div>
