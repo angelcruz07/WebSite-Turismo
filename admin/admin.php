@@ -33,7 +33,7 @@ require "./partials/navbar.php"
           Agregar Evento
       </div>
       </a>
-      <a href="#" class="link-desktop">
+      <a href="<?php echo $url ?>/admin/addBlog.php" class="link-desktop">
       <div class="card-menu">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
