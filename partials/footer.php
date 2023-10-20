@@ -20,7 +20,9 @@
     </div>
 </footer>
 <script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script> 
-<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
+<script src="<?php echo $url; ?>/assets/js/blog.js"></script>  
+
+
 
 </body>
 </html>
