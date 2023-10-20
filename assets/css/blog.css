@@ -232,13 +232,12 @@
 .colaborations{
   position: relative;  
   height: 450px;
-  width: 1075px;
   display: flex;
-  align-items: center;
+  align-items: center;  
 }
 
 .swiper{
-  width: 950px;
+  width: 950px; 
 }
 
 .card-colaborations{
@@ -247,7 +246,7 @@
   border-radius: 20px;
   height: 400px;
   margin: 20px 0;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .card-colaborations::before{
@@ -255,7 +254,7 @@
   position: absolute;
   height: 40%;
   width: 100%;
-  background: white;
+  background: #fff;
   border-radius: 20px 20px 0 0;
 }
 
@@ -273,7 +272,7 @@
   width: 140px;
   border-radius: 20%;
   padding: 3px;
-  background: #7d2ae8;
+  background: var(--color-secundary);
   margin-top: 30px;
 }
 
@@ -286,21 +285,19 @@
 }
 
 .card-colaborations .media-icons{
-  position: absolute;
-  top: 12px;
-  right: 95px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .card-colaborations .media-icons i{
-  color: #7d2ae8;
+  color: var(--color-secundary);
   opacity: 0.6;
   margin-top: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
-  margin: 10px;
+  margin: 10px; 
+  font-size: 18px;
 }
 
 .card-colaborations .media-icons i:hover{
@@ -312,7 +309,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  color: black;
+  color: #000000;
 } 
 
 .name-profession .name{

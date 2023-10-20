@@ -1,4 +1,4 @@
--- Active: 1697553788481@@127.0.0.1@3306@tourism
+-- Active: 1697036357493@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
