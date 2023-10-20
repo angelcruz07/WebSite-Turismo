@@ -23,6 +23,7 @@
     width: 330px;
     height: 250px;
     display: block;
+    object-fit: cover;
     border-radius: 5% 5% 0 0;
     box-shadow: 0 5px 10px #000;
 }

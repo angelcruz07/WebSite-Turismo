@@ -9,8 +9,6 @@ $database = new Database();
 $conn = $database->connect();
 
 
-
-
 ?>
 <section id="add-event" class="add-event">
 

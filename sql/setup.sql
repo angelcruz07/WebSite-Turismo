@@ -1,6 +1,4 @@
--- Active: 1696989656192@@127.0.0.1@3306@tourism
-
--- Run SQL commands in order
+-- Active: 1697553788481@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -27,6 +25,13 @@ CREATE TABLE events (
      title VARCHAR(25),
      description VARCHAR(250),
      image VARCHAR(3000)
+);
+
+CREATE TABLE blog (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    title  VARCHAR(25),
+    description VARCHAR(250), 
+    image VARCHAR(3000)
 );
 
 --Insert  fields into the roles table.
