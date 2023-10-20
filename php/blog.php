@@ -1,8 +1,16 @@
 <?php 
+  require "../admin/config/database.php";
   require "../partials/header2.php"; 
   require "../partials/navbar.php";  
   require "../partials/scroll-top.php";  
   $urlImage = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgBlog";
+
+$database = new Database();  
+$conn = $database->connect();
+ // Haciendo la consulta a los registros 
+$query = $conn->prepare("SELECT * FROM blog");
+$query -> execute();
+$blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
 <div class="container-front-page">
@@ -12,41 +20,24 @@
   </div>
   <img src="<?php echo $urlImage ?>/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>  
- 
+<section id="blog">  
 
-<section id="blog">   
+  <h2 class="title-index">Publicaciones</h2> 
+
 <!--Cards dinamicas -->   
-
 <article class="contend-info">
 <div class="container-cards-dynamic">
+<?php foreach ($blogs as $blog ){ ?>
     <div class="card-dynamic"> 
-    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
+    <img src="../../admin/assets/imgBlog/<?php echo $blog['image']?>" alt="Imagen del blog "> 
     <div> 
-        <h2 class="text-dynamic">Texto</h2> 
-        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
+        <h2 class="text-dynamic"><?php echo $blog['title']?></h2> 
+        <p class="paragraph-dynamic"><?php echo $blog ['description']?></p> 
     </div>
     </div> 
-    <div class="card-dynamic"> 
-    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
-    <div> 
-        <h2 class="text-dynamic">Texto</h2> 
-        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
-    </div>
-    </div> 
-    <div class="card-dynamic"> 
-    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
-    <div> 
-        <h2 class="text-dynamic">Texto</h2> 
-        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
-    </div>
-    </div> 
-    <div class="card-dynamic"> 
-    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
-    <div> 
-        <h2 class="text-dynamic">Texto</h2> 
-        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
-    </div>
-    </div> 
+<?php } ?>
+
+
 </div>
 </article>
 
