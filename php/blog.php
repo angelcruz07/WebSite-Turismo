@@ -29,7 +29,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 <div class="container-cards-dynamic">
 <?php foreach ($blogs as $blog ){ ?>
     <div class="card-dynamic"> 
-    <img src="../../admin/assets/imgBlog/<?php echo $blog['image']?>" alt="Imagen del blog "> 
+    <img src="../admin/assets/imgBlog/<?php echo $blog['image']?>" alt="Imagen del blog"> 
     <div> 
         <h2 class="text-dynamic"><?php echo $blog['title']?></h2> 
         <p class="paragraph-dynamic"><?php echo $blog ['description']?></p> 
