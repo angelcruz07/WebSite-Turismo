@@ -39,6 +39,23 @@
     margin-bottom: 2rem;
   }
 
+  /* Scrool top */
+  #scroll-to-top a {
+    padding: 10px;
+    background-color: #0000009b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 1rem;
+  }
+  #scroll-to-top a:hover {
+    background-color: #0000009b;
+  }
+  .hidden {
+    display: none;
+  }
+
   @media (max-width: 450px){
     html { 
         font-size:50%;

@@ -27,7 +27,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         <h4>Agregar evento</h4>
       </div>
     </a>
-    <a href="#">
+    <a href="<?php echo $url; ?>/admin/addBlog.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono gear" title="Agregar al blog">
         <h4>Agregar al blog</h4>

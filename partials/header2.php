@@ -10,15 +10,25 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">  
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/front-page.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css"> 
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css">   
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css">   
-  <script defer src="<?php echo $url; ?>/assets/js/blog.js"></script>
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css"> 
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/services.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css">  
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> 
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/> 
+  <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+<!--js --> 
+<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
+
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
   <title>Visita sultepec</title>
 </head>
-<body>
+<body class="scroll-top">
   

@@ -1,16 +1,16 @@
 /* Desing of seccion lodging */
 #lodging {
-    background: var(--background-secundary);
+    padding:var(--standard-padding);
 }
-
 .lodging {
     padding: var(--standard-padding);
 }
 
 .container-lodging {
-    background: var(--background-color);
+    background-color: #fff;
     padding: var(--standard-padding);
     border-radius: 2rem;
+    box-shadow: 0 5px 10px #000;
 }
 
 .lodging-box {
@@ -37,18 +37,18 @@
     height: auto;
 }
 
-.description {
+.description-lodging {
     padding: 2rem;
     flex: 1;
 }
 
-.description h3 {
+.description-lodging h3 {
     font-size: var(--font-size);
     margin: 0 0 10px 0;
     color: var(--color-titles);
 }
 
-.description p {
+.description-lodging p {
     margin: 0;
     font-size: var(--font-size);
 }
@@ -87,4 +87,54 @@
 .lodging-image:hover .overlay-left {
     top: 0%;
     left: 0%;
+}
+
+@media (max-width: 1200px){
+    html{ 
+        font-size: 55%;
+    }
+    .container_sugetions{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .lodging-box{ 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lodging-box-left{
+        flex-direction: column;
+        padding: var(--standard-padding);
+        justify-content: center;
+        align-items: center;
+    }
+    .description h3{
+        text-align: center;
+    }
+ }
+ @media (max-width: 768px){
+    .header { 
+        text-align: start;
+    }
+    .box-about{ 
+        flex-direction: column;
+}
+    .about-box-left{ 
+    flex-direction: column-reverse;
+    width: 100%;
+    }
+    .gallery img {
+        width: 100%;
+    }
+}
+@media (max-width: 450px){
+    html { 
+        font-size:50%;
+    }
+    .lodging-image img { 
+        width: 250px;
+    }
+    .container-events{
+        flex-direction: column;
+    }
 }

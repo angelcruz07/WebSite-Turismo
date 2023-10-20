@@ -1,10 +1,9 @@
 <?php
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
-?>
-<?php
+
 require "../partials/header2.php";
 require "../partials/navbar.php";
+require "../partials/scroll-top.php";
 ?>
 <section class="attractive" id="attractive">
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>

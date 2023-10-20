@@ -151,22 +151,6 @@ nav ul li ul li a:hover {
   right: 1rem;
   z-index: 10;
 }
-
-#scroll-to-top a {
-  padding: 10px;
-  background-color: #0000009b;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  border-radius: 1rem;
-}
-#scroll-to-top a:hover {
-  background-color: #0000009b;
-}
-.hidden {
-  display: none;
-}
 @media screen and (max-width: 768px) {
   nav>ul {
       flex-direction: column;

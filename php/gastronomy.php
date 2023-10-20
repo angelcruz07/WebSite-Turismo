@@ -1,6 +1,7 @@
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php"; 
+require "../partials/scroll-top.php";
 $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
 ?>
 <div class="container-front-page">

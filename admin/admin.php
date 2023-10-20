@@ -24,31 +24,39 @@ require "./partials/navbar.php"
 
     <div class="container-card-menu">
 
-
+    <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
       <div class="card-menu">
-        <div class="image-container">
-          <img src="<?php echo $url ?>/assets/icons/plus.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
-        </div>
-        <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">Agregar Evento</a>
+       
+          <div class="image-container">
+            <img src="<?php echo $url ?>/assets/icons/plus.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+          </div>
+          Agregar Evento
       </div>
+      </a>
+      <a href="<?php echo $url ?>/admin/addBlog.php" class="link-desktop">
       <div class="card-menu">
-        <div class="image-container">
-          <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
-        </div>
-        <a href="#" class="link-desktop">Agregar al blog</a>
+          <div class="image-container">
+            <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+          </div>
+          Agregar al blog
       </div>
+      </a>
+      <a href="#" class="link-desktop">
       <div class="card-menu">
-        <div class="image-container">
-          <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
-        </div>
-        <a href="#" class="link-desktop">Agregar Hospedaje</a>
+          <div class="image-container">
+            <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+          </div>
+          Agregar Hospedaje
       </div>
+      </a>
+      <a href="<?php echo $url; ?>" class="link-desktop">
       <div class="card-menu">
-        <div class="image-container">
-          <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
-        </div>
-        <a href="<?php echo $url; ?>" class="link-desktop">Ver sitio</a>
+          <div class="image-container">
+            <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+          </div>
+          Ver sitio
       </div>
+      </a>
     </div>
   </div>
 </section>
