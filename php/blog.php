@@ -22,19 +22,29 @@
     <div class="card-dynamic"> 
     <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
     <div> 
-        <h1 class="text-dynamic">Texto</h1> 
-        <h2 class="text-dynamic-2">Lorem ipsum, dolor sit</h2>
+        <h2 class="text-dynamic">Texto</h2> 
         <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
-        <button class="btn-dynamic">Clic aqui</button>
     </div>
-    </div>
+    </div> 
     <div class="card-dynamic"> 
     <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
     <div> 
-        <h1 class="text-dynamic">Texto</h1> 
-        <h2 class="text-dynamic-2">Lorem ipsum, dolor sit</h2>
+        <h2 class="text-dynamic">Texto</h2> 
         <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
-        <button class="btn-dynamic">Clic aqui</button>
+    </div>
+    </div> 
+    <div class="card-dynamic"> 
+    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
+    <div> 
+        <h2 class="text-dynamic">Texto</h2> 
+        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
+    </div>
+    </div> 
+    <div class="card-dynamic"> 
+    <img src="<?php echo $urlImage ?>/gallery.jpg" alt=""> 
+    <div> 
+        <h2 class="text-dynamic">Texto</h2> 
+        <p class="paragraph-dynamic">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, cum illum? Et tempora perferendis corporis.</p> 
     </div>
     </div> 
 </div>
