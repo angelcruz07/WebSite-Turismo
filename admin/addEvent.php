@@ -101,7 +101,7 @@ switch ($action) {
     $sql = $conn->prepare("DELETE FROM events WHERE id=:id");
     $sql->bindParam(':id', $id);
     $sql->execute();
-    header("Location:AddEvent.php");
+    header("Location:addEvent.php");
     break;
 }
 // Haciendo la consulta a los registros 
