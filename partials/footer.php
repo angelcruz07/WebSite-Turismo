@@ -19,6 +19,8 @@
         <a href="#scroll-top" title="redireccion al inicio"><img class="icon-footer-svg"src="<?php echo $url?>/assets/icons/arrow-up-solid.svg" alt="Flecha que regresa al index" title="Line"></a>
     </div>
 </footer>
-<script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script>
+<script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script> 
+<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
+
 </body>
 </html>
