@@ -115,7 +115,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   <div class="container-event-crud">
 
     <div class="container-form-event">
-      <h2 class="title-blog">Nueva publicacion</h2>
+      <h2 class="title-event">Nueva publicacion</h2>
 
       <form method="POST" enctype="multipart/form-data" class="form-container">
         
@@ -167,12 +167,12 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
-            <tr class="blog-add">
+            <tr class="event-add">
               <td class="date-event id"><?php echo $blog['id'] ?></td>
               <td class="date-event title"><?php echo $blog['title'] ?></td>
               <td class="date-event descrption"><?php echo $blog['description'] ?></td>
               <td class="date-event image">
-                <img src="../admin/assets/imgblog/<?php echo $blog['image'] ?>" width="50px">
+                <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" width="50px">
               </td>
 
               <td class="date-event btn-flex option">
@@ -189,6 +189,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 <?php require "./partials/footer.php" ?>
