@@ -33,4 +33,8 @@ function connect(){
 }
 
 }
+
+$database = new Database();
+$conn = $database->connect();
+
 ?>

@@ -55,7 +55,7 @@ switch ($action) {
       $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
       $sql->bindParam(':id', $id);
       $sql->execute();
-      $event = $sql->fetch(PDO::FETCH_LAZY);
+      $form = $sql->fetch(PDO::FETCH_LAZY);
 
       if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
         if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
@@ -112,14 +112,14 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<section id="add-event" class="add-event">
+<section id="add-form" class="add-form">
 
   <h1 class="title-index"> Agregar un nuevo evento</h1>
-  <!-- <p>Llena el formulario para agregar un nuevo evento a la pagina</p> -->
-  <div class="container-event-crud">
+  <!-- <p>Llena el formulario para agregar un nuevo formo a la pagina</p> -->
+  <div class="container-form-crud">
 
-    <div class="container-form-event">
-      <h2 class="title-event">Nueva publicacion</h2>
+    <div class="container-form-form">
+      <h2 class="title-form">Nueva publicacion</h2>
 
       <form method="POST" enctype="multipart/form-data" class="form-container">
         
@@ -155,31 +155,31 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
       </form>
     </div>
 
-    <div class="contaier-events-add">
-      <h2 class="title-event">Publicadas</h2>
+    <div class="contaier-forms-add">
+      <h2 class="title-form">Publicadas</h2>
 
       <table class="info-crud">
         <thead>
-          <tr class="event-add">
-            <th class="date-event-colum id">ID</th>
-            <th class="date-event-colum title">Titulo</th>
-            <th class="date-event-colum description ">Descripcion</th>
-            <th class="date-event-colum image">Imagen</th>
-            <th class="date-event-colum option">Opciones</th>
+          <tr class="form-add">
+            <th class="date-form-colum id">ID</th>
+            <th class="date-form-colum title">Titulo</th>
+            <th class="date-form-colum description ">Descripcion</th>
+            <th class="date-form-colum image">Imagen</th>
+            <th class="date-form-colum option">Opciones</th>
           </tr>
         </thead>
 
         <tbody>
           <?php foreach ($events as $event) { ?>
-            <tr class="event-add">
-              <td class="date-event id"><?php echo $event['id'] ?></td>
-              <td class="date-event title"><?php echo $event['title'] ?></td>
-              <td class="date-event descrption"><?php echo $event['description'] ?></td>
-              <td class="date-event image">
+            <tr class="form-add">
+              <td class="date-form id"><?php echo $event['id'] ?></td>
+              <td class="date-form title"><?php echo $event['title'] ?></td>
+              <td class="date-form descrption"><?php echo $event['description'] ?></td>
+              <td class="date-form image">
                 <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" width="50px">
               </td>
 
-              <td class="date-event btn-flex option">
+              <td class="date-form btn-flex option">
 
                 <form method="POST">
                   <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />

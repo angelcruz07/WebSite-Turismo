@@ -41,7 +41,7 @@ require "./partials/navbar.php"
           Agregar al blog
       </div>
       </a>
-      <a href="#" class="link-desktop">
+      <a href="<?php echo $url; ?>/admin/addLodging.php" class="link-desktop">
       <div class="card-menu">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">

@@ -1,12 +1,7 @@
 <?php  
 require "partials/header.php";
 require "partials/navbar.php";
-
-//Archivo de conecion a la base de datos
 require "config/database.php";
-//Recuperar conexion de database
-$database = new Database();
-$conn = $database->connect();
 
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
 $title = (isset($_POST['title'])) ? $_POST['title'] : "";
@@ -35,7 +30,7 @@ switch ($action) {
     break;
 
   case "Modificar";
-    $sql = $conn->prepare("UPDATE blogs SET title=:title, description=:description WHERE id=:id");
+    $sql = $conn->prepare("UPDATE blog SET title=:title, description=:description WHERE id=:id");
     $sql->bindParam(':title', $title);
     $sql->bindParam(':description', $description);
     $sql->bindParam(':id', $id);
@@ -108,13 +103,13 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<section id="add-event" class="add-event">
+<section id="add-form" class="add-form">
 
   <h1 class="title-index"> Agregar dato al blog</h1>
   <!-- <p>Llena el formulario para agregar un nuevo blogo a la pagina</p> -->
-  <div class="container-event-crud">
+  <div class="container-form-crud">
 
-    <div class="container-form-event">
+    <div class="container-form-form">
       <h2 class="title-blog">Nueva publicacion</h2>
 
       <form method="POST" enctype="multipart/form-data" class="form-container">
@@ -151,31 +146,30 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
       </form>
     </div>
 
-    <div class="contaier-events-add">
-      <h2 class="title-event">Publicadas</h2>
-
+    <div class="contaier-forms-add">
+      <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
         <thead>
-          <tr class="event-add">
-            <th class="date-event-colum id">ID</th>
-            <th class="date-event-colum title">Titulo</th>
-            <th class="date-event-colum description ">Descripcion</th>
-            <th class="date-event-colum image">Imagen</th>
-            <th class="date-event-colum option">Opciones</th>
+          <tr class="form-add">
+            <th class="date-form-colum id">ID</th>
+            <th class="date-form-colum title">Titulo</th>
+            <th class="date-form-colum description ">Descripcion</th>
+            <th class="date-form-colum image">Imagen</th>
+            <th class="date-form-colum option">Opciones</th>
           </tr>
         </thead>
 
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
-            <tr class="blog-add">
-              <td class="date-event id"><?php echo $blog['id'] ?></td>
-              <td class="date-event title"><?php echo $blog['title'] ?></td>
-              <td class="date-event descrption"><?php echo $blog['description'] ?></td>
-              <td class="date-event image">
-                <img src="../admin/assets/imgblog/<?php echo $blog['image'] ?>" width="50px">
+            <tr class="form-add">
+              <td class="date-form id"><?php echo $blog['id'] ?></td>
+              <td class="date-form title"><?php echo $blog['title'] ?></td>
+              <td class="date-form descrption"><?php echo $blog['description'] ?></td>
+              <td class="date-form image">
+                <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" width="50px">
               </td>
 
-              <td class="date-event btn-flex option">
+              <td class="date-form btn-flex option">
 
                 <form method="POST">
                   <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
@@ -192,4 +186,3 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </section>
 <?php require "./partials/footer.php" ?>
- 

@@ -33,7 +33,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
         <h4>Agregar al blog</h4>
       </div>
     </a>
-    <a href="#">
+    <a href="<?php echo $url; ?>/admin/addLodging.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
         <h4>Agregar hospedaje</h4>
