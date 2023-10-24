@@ -2,16 +2,8 @@
 require "../partials/header2.php";
 require "../partials/navbar.php"; 
 require "../partials/scroll-top.php";
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
 ?>
-<div class="container-front-page">
-  <div class="degraded"></div>
-  <div class="title-front-page">
-    <h1>Gastronomía</h1>
-  </div>
-  <img src="<?php echo $url ?>/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
-</div>
-
 
 <section id="gastronomy">
   <h2 class="title-index">Grastronomía</h2>
@@ -19,7 +11,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
 <div class="container-card-gastronomy">
 
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/mole.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/mole.jpg)">
       <h6>Mole</h6>
     </div>
     <div class="card_info">
@@ -39,7 +31,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
   </div>
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/Tacos-Dorados.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/Tacos-Dorados.jpg)">
       <h6>Tacos-Dorados</h6>
     </div>
     <div class="card_info">
@@ -59,7 +51,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
     </div>
   </div>
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/tacos.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tacos.jpg)">
       <h6>Tacos</h6>
     </div>
     <div class="card_info">
@@ -80,13 +72,11 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
   </div>
   </div>
 </section>
-<!--CAMBIOS-->
-
 <section id="gastronomy">
 <div class="container-card-gastronomy">
 
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/tamales.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tamales.jpg)">
       <h6>Tamales</h6>
     </div>
     <div class="card_info">
@@ -105,11 +95,8 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
       </div>
     </div>
   </div>
-
-
-
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/guacamole.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/guacamole.jpg)">
       <h6>Guacamole</h6>
     </div>
     <div class="card_info">
@@ -128,11 +115,8 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
       </div>
     </div>
   </div>
-
-
-
   <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url ?>/caldo.jpg)">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
       <h6>Caldo</h6>
     </div>
     <div class="card_info">
@@ -153,7 +137,4 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronom
   </div>
   </div>
 </section> 
-
-<?php
-require "../partials/footer.php"
-?>
+<?php require "../partials/footer.php"?>

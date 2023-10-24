@@ -2,16 +2,6 @@
   padding: var(--standard-padding); 
   background: var(--background-secundary);
  }
- :root{ 
-  /*Variables Landscape */ 
-  --first-color: hsl(82, 60%, 28%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%); 
-  --container-color: hsl(0, 0%, 100%); 
-  --h2-font-size: 1.25rem;
-  --small-font-size: .813rem;
-}  
-
 /*Tarjetas dinamicas*/
 .contend-info{ 
   margin-bottom: 4rem;

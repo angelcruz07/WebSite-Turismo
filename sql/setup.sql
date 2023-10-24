@@ -1,4 +1,4 @@
--- Active: 1697036357493@@127.0.0.1@3306@tourism
+-- Active: 1697942534488@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -33,6 +33,15 @@ CREATE TABLE blog (
     description VARCHAR(250), 
     image VARCHAR(3000)
 );
+
+CREATE TABLE lodging (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(250),
+    social_networks VARCHAR(250),
+    images VARCHAR(3000)
+)
+
 
 --Insert  fields into the roles table.
 INSERT INTO roles (id, rol) VALUES  

@@ -1,14 +1,12 @@
 <?php
-$images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
-
 require "../partials/header2.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
+$images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
 ?>
 <section class="attractive" id="attractive">
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
 <div class="container-gallery">
-
     <div class="card">
         <div class="face front">
             <a href="<?php echo $images?>/minero_sultepec.jpg">
@@ -23,7 +21,6 @@ require "../partials/scroll-top.php";
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="face front">
             <a href="<?php echo $images?>/img2.jpg">
@@ -52,7 +49,6 @@ require "../partials/scroll-top.php";
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="face front">
             <a href="http://localhost/WebSite-Turismo/assets/imgGallery/minero_sultepec.jpg">
@@ -63,11 +59,9 @@ require "../partials/scroll-top.php";
             <h3>Minero Sultepec</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
             <div class="link">
-
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="face front">
             <a href="http://localhost/WebSite-Turismo/assets/imgGallery/minero_sultepec.jpg">
@@ -78,11 +72,9 @@ require "../partials/scroll-top.php";
             <h3>Minero Sultepec</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
             <div class="link">
-
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="face front">
             <a href="http://localhost/WebSite-Turismo/assets/imgGallery/minero_sultepec.jpg">
@@ -101,6 +93,4 @@ require "../partials/scroll-top.php";
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="http://localhost/WebSite-Turismo/assets/js/lightbox.js"></script>
-<?php
-require "../partials/footer.php"
-?>
+<?php require "../partials/footer.php" ?>

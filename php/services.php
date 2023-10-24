@@ -2,16 +2,13 @@
 require "../partials/header2.php";
 require "../partials/navbar.php";
 ?>
-<div class="container-services">
+<div class="container-front-page">
   <div class="degraded"></div>
-  <div class="title">
-    <h1>Servicios</h1>
+  <div class="title-front-page">
+    <h1>Gastronomía</h1>
   </div>
-  <img src="<?php echo $url ?>/assets/imgServices/fondo-services.webp" alt="Portada de Servicios" title="Servicios"
-    class="image-front-page">
+  <img src="<?php echo $url ?>/assets/imgServices/front-page.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
-
-
 <section class="services" id="services">
   <h1 class="title-index">Transporte</h1>
   <div class="container-service">
@@ -23,13 +20,15 @@ require "../partials/navbar.php";
         </div>
       </div>
       <div class="description-service left">
-      <h2 class="subtitle"><b>Colectivo</b></h2>
-      <div class="horarios-services">
-       <table>  
-        <tr>
+        <h2 class="subtitle"><b>Colectivo</b></h2>
+        <div class="horarios-services">
+          <table>
+            <tr>
               <th>Horario inicio=00:00</th>
               <th>Horario salida=00:00</th>
-            </tr></table> </div>
+            </tr>
+          </table>
+        </div>
         <table class="table-services-1">
           <thead>
             <tr>
@@ -66,11 +65,13 @@ require "../partials/navbar.php";
       <div class="description-service">
         <h2 class="subtitle"><b>Combi</b></h2>
         <div class="horarios-services">
-       <table>  
-        <tr>
+          <table>
+            <tr>
               <th>Horario inicio=00:00</th>
               <th>Horario salida=00:00</th>
-            </tr></table> </div>
+            </tr>
+          </table>
+        </div>
         <table class="table-services">
           <thead>
             <tr>
@@ -103,13 +104,15 @@ require "../partials/navbar.php";
         </div>
       </div>
       <div class="description-service left">
-      <h2 class="subtitle"><b>Autobus</b></h2>
-      <div class="horarios-services">
-       <table>  
-        <tr>
+        <h2 class="subtitle"><b>Autobus</b></h2>
+        <div class="horarios-services">
+          <table>
+            <tr>
               <th>Horario inicio=00:00</th>
               <th>Horario salida=00:00</th>
-            </tr></table> </div>
+            </tr>
+          </table>
+        </div>
         <table class="table-services-1">
           <thead>
             <tr>
@@ -146,11 +149,13 @@ require "../partials/navbar.php";
       <div class="description-service">
         <h2 class="subtitle"><b>Taxi</b></h2>
         <div class="horarios-services">
-       <table>  
-        <tr>
+          <table>
+            <tr>
               <th>Horario inicio=00:00</th>
               <th>Horario salida=00:00</th>
-            </tr></table> </div>
+            </tr>
+          </table>
+        </div>
         <table class="table-services">
           <thead>
             <tr>
@@ -178,7 +183,4 @@ require "../partials/navbar.php";
   </div>
 </section>
 
-<?php
-require "../partials/footer.php"
-  ?>
-
+<?php require "../partials/footer.php" ?>

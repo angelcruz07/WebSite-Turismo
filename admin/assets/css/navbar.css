@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: var(--font-family);
-}
-
 body {
     margin-left: 80px;
     transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
     margin-top: 80px;
     background: var(--background-color);
+    font-family: var(--font-family);
 }
 header {
     width: 100%;
@@ -21,7 +14,6 @@ header {
     position: fixed;
     top: 0;
     z-index: 200;
-
 }
  h1 {
     color: var(--color-titles);
@@ -136,11 +128,8 @@ a.selected {
     top: 10%;
     left: -30px;
 }
-
-/* calses para usar en java script */
 .body_move {
     margin-left: 250px;
-
 }
 
 .menu_side_move {

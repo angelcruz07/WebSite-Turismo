@@ -40,7 +40,7 @@ proyecto.
 * [X] Base de datos para usuario registrados
 * [X] Sistema de Roles
 * [ ] Automatizacion del contenido mediante PHP  
-* [ ] Panel de administrador 
+* [x] Panel de administrador 
 * [ ] Funciones para usuario registrado
 * [ ] Informacion relevante
 * [ ] Optimizacion de imagenes
@@ -59,14 +59,6 @@ proyecto.
 
 Coneccion a la base de datos en MYSQL
 Una vez instalada la extencion deberas crear la coneccion a la base de datos de la siguiente manera
-
-![Coneccion a la base de datos](./assets/img/connection.png)
-
-Deberas entrar a la carpeta llamada sql donde encontraras un archivo llamado setup.sql
-en el se encuentran las sentencias para crear la base de datos por lo que deberas tener la extencion instalada
-
-![Imagen de instruccion](./assets/img/setup%20sql.png)
-
 Como puedes observar la extesion cuenta con una funcionalidad de ejecutar sentecias sql directamente
 una vez que lo hayas echo con todos las sentencias sql y tendras las base de datos ya instalada he iniciada por lo que 
 podras hacer uso de las funciones que requieren base de datos.
@@ -99,8 +91,6 @@ Utiliza imágenes de alta calidad y optimizadas para la web (Formato: .webp).
 Prefijo de Nombres de Archivos: Crear Carpeta con el nombre assets e incluir las imagenes con el siguiente formato (Descripicion corta de la imagen/lugar en la web) 
 Ejemplo: 
 parroquia sultepec/portada.webp
-
-##Documentacion
 
 ## Desarolladores
 | Nombre                             | Rol en Proyecto         | 

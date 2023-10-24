@@ -1,13 +1,7 @@
 <?php
 require "partials/header.php";
 require "partials/navbar.php";
-
-//Archivo de conecion a la base de datos
 require "config/database.php";
-//Recuperar conexion de database
-$database = new Database();
-$conn = $database->connect();
-
 
 // Validar los campos (Falta)
 //Recibir los datos del formulario
