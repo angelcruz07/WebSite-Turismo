@@ -74,4 +74,4 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
 
 </section>
 
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

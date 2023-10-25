@@ -219,4 +219,4 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
 </section>
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

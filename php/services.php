@@ -183,4 +183,4 @@ require "../partials/navbar.php";
   </div>
 </section>
 
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

@@ -143,4 +143,4 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
   </div>
   </div>
 </section> 
-<?php require "../partials/footer.php"?>
+<?php require "../partials/footer2.php"?>

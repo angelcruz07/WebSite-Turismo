@@ -66,31 +66,24 @@
    .slider_text p{
    font-size: 3rem;
  }
- .slider-container{
+ .slider-container,.overlay-slider {
   height: 50vh;
+}
+.slider_text{ 
+  top:35%;
 }
 }
 @media (max-width: 450px){
+  .slider_text{ 
+    top:25%;
+  }
   .slider_text h1{
    font-size: 3rem;
   }
   .slider_text p{
   font-size: 2rem;
 }
-.slider-container{
+.slider-container,.overlay-slider{
   height: 35vh;
 }
-}
-
-
-.slider_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 0.5s ease;
 }

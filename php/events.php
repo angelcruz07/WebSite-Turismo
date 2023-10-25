@@ -32,7 +32,7 @@ if ($stmt->rowCount() == 0) {
 ?>
         <?php foreach ($events as $event) { ?>
             <div class="card-event">
-                <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="Portada representativa al evento">
+                <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image']?>" alt="Portada representativa al evento">
                 <div class="description-event">
                     <h3><?php echo $event['title'] ?></h3>
                     <p><?php echo $event['description'] ?></p>
