@@ -1,7 +1,9 @@
 #suggestions{
     padding: var(--standard-padding);
     margin-bottom: 3rem;
-}
+} 
+ 
+
 .container_sugetions { 
     display: flex;
     flex-wrap: nowrap;
@@ -92,5 +94,8 @@
   
   .card-suggetion:hover .back {
     transform: perspective(600px) rotateY(360deg);
-  }
+  } 
+  
+  
+
 
