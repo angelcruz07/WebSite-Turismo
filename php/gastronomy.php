@@ -12,7 +12,7 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
   <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section id="gastronomy">
-  <h2 class="title-index">Grastronomía</h2>
+  <h2 class="title-index">"Sabores Sultepequenses Delicias que Enamoran tu Paladar"</h2>
 
 <div class="container-card-gastronomy">
 
