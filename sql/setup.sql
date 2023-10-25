@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
--- Active: 1695851160752@@127.0.0.1@3306@tourism
-=======
 -- Active: 1696112272292@@127.0.0.1@3306@tourism
->>>>>>> 4890c9b0fb3157b420cd18116a6ce786c6740e2b
-=======
--- Active: 1697942534488@@127.0.0.1@3306@tourism
->>>>>>> parent of 4890c9b (Modificacion slider: Nombre de los lugares)
 
 DROP DATABASE IF EXISTS tourism;
 
