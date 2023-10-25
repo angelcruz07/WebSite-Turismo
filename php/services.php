@@ -5,9 +5,9 @@ require "../partials/navbar.php";
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
-    <h1>Gastronomía</h1>
+    <h1>Servicios</h1>
   </div>
-  <img src="<?php echo $url ?>/assets/imgServices/front-page.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+  <img src="<?php echo $url ?>/assets/imgServices/servicios.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section class="services" id="services">
   <h1 class="title-index">Transporte</h1>
