@@ -5,7 +5,7 @@ require "../partials/navbar.php";
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
-    <h1>Servicios</h1>
+    <h1>Transporte</h1>
   </div>
   <img src="<?php echo $url ?>/assets/imgServices/servicios.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>

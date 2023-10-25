@@ -4,6 +4,13 @@ require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
 ?>
+<div class="container-front-page">
+  <div class="degraded"></div>
+  <div class="title-front-page">
+    <h1>Atractivos</h1>
+  </div>
+  <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+</div>
 <section class="attractive" id="attractive">
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2> 
     <div class="gallery">
