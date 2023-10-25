@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 -- Active: 1695851160752@@127.0.0.1@3306@tourism
+=======
+-- Active: 1696112272292@@127.0.0.1@3306@tourism
+>>>>>>> 4890c9b0fb3157b420cd18116a6ce786c6740e2b
 
 DROP DATABASE IF EXISTS tourism;
 
