@@ -4,7 +4,13 @@ require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
 ?>
-
+<div class="container-front-page">
+  <div class="degraded"></div>
+  <div class="title-front-page">
+    <h1>Gastronomía</h1>
+  </div>
+  <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+</div>
 <section id="gastronomy">
   <h2 class="title-index">Grastronomía</h2>
 

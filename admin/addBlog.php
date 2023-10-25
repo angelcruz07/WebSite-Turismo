@@ -109,8 +109,13 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   <!-- <p>Llena el formulario para agregar un nuevo blogo a la pagina</p> -->
   <div class="container-form-crud">
 
+<<<<<<< HEAD
+    <div class="container-form-event">
+      <h2 class="title-event">Nueva publicacion</h2>
+=======
     <div class="container-form-form">
       <h2 class="title-blog">Nueva publicacion</h2>
+>>>>>>> cb57c7670c624f2c01e5af55160c4eaf5c5ed138
 
       <form method="POST" enctype="multipart/form-data" class="form-container">
         
@@ -161,11 +166,19 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
+<<<<<<< HEAD
+            <tr class="event-add">
+              <td class="date-event id"><?php echo $blog['id'] ?></td>
+              <td class="date-event title"><?php echo $blog['title'] ?></td>
+              <td class="date-event descrption"><?php echo $blog['description'] ?></td>
+              <td class="date-event image">
+=======
             <tr class="form-add">
               <td class="date-form id"><?php echo $blog['id'] ?></td>
               <td class="date-form title"><?php echo $blog['title'] ?></td>
               <td class="date-form descrption"><?php echo $blog['description'] ?></td>
               <td class="date-form image">
+>>>>>>> cb57c7670c624f2c01e5af55160c4eaf5c5ed138
                 <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" width="50px">
               </td>
 
@@ -183,6 +196,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 <?php require "./partials/footer.php" ?>
