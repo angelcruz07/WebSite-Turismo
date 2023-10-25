@@ -29,6 +29,12 @@
     --subtitles-size:3rem;
     --font-size: 2rem; 
     --standard-padding:2rem 9%;
+    --first-color: hsl(82, 60%, 28%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%); 
+    --container-color: hsl(0, 0%, 100%); 
+    --h2-font-size: 1.25rem;
+    --small-font-size: .813rem;
   }
   .title-index{
     color: var(--color-titles);
@@ -38,7 +44,6 @@
     font-family: var(--font-primary);
     margin-bottom: 2rem;
   }
-
   /* Scrool top */
   #scroll-to-top a {
     padding: 10px;
@@ -55,7 +60,16 @@
   .hidden {
     display: none;
   }
-
+/* Alert not event */
+.alert-not-event{ 
+  background: var(--color-secundary);
+  width: 100%;
+  padding: var(--standard-padding);
+  color:#fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+}
   @media (max-width: 450px){
     html { 
         font-size:50%;

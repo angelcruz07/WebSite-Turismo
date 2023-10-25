@@ -10,7 +10,6 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     <meta name="robots" content="index, follow"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="http://localhost/WebSite-Turismo/">
-    
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">

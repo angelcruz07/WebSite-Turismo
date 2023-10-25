@@ -1,6 +1,5 @@
 <?php 
     require "./config/database.php";
-// Variable para declarar errores en el llenado del formulario
     $error = null;
 
     if ( $_SERVER['REQUEST_METHOD'] == "POST") { 
@@ -25,7 +24,6 @@
             ":email" => $_POST["email"],
             ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT),
           ]);
-
           $statement = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
           $statement->bindParam(":email", $_POST["email"]);
           $statement->execute();
@@ -33,7 +31,6 @@
 
           session_start();
           $_SESSION["username"] = $user;
-
           header("Location: login.php");
       }
     }
@@ -80,5 +77,4 @@
       </div>
     </div>
 </section>
-
 <?php require "./partials/footer.php"?>

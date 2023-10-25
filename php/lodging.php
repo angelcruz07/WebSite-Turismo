@@ -3,7 +3,6 @@ require "../partials/header2.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 ?>
-
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
@@ -11,11 +10,9 @@ require "../partials/scroll-top.php";
   </div>
   <img src="<?php echo $url ?>/assets/imgLodging/portada.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
-
 <section class="lodging" id="lodging">
     <h1 class="title-index">¿No sabes en donde descansar?</h1>
     <div class="container-lodging">
-<!--  copear formato lodging box -->
         <div class="lodging-box">
             <div class="lodging-image">
                 <img src="<?php  echo $url?>/assets/img/hotel.jpg" alt="Imagen del hotel">
@@ -23,14 +20,12 @@ require "../partials/scroll-top.php";
                     <p> Calificacion</p>
                 </div>
             </div>
-            <!-- descripcion equivale a tabla  -->
             <div class="description-lodging">
                 <h3>Nombre del hospedaje</h3>
                 <p>Descripcion del hospedaje</p>
+                <a href="#"><img src="<?php echo $url ?>/assets/icons/contact.svg" alt=""></a>
             </div>
         </div>
-
-
         <div class="lodging-box-left">
             <div class="lodging-image">
             <img src="<?php  echo $url?>/assets/img/hotel.jpg" alt="Imagen del hotel">
@@ -41,11 +36,9 @@ require "../partials/scroll-top.php";
             <div class="description-lodging left">
                 <h3>Nombre del hospedaje</h3>
                 <p>Descripcion del hospedaje</p>
+                <a href="#"><img src="<?php echo $url ?>/assets/icons/contact.svg" alt=""></a>
             </div>
         </div>
     </div>
 </section>
-
-<?php
-require "../partials/footer.php"
-?>
+<?php require "../partials/footer.php" ?>
