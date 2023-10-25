@@ -1,6 +1,8 @@
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php";
+require "../partials/scroll-top.php";
+
 ?>
 <div class="container-front-page">
   <div class="degraded"></div>
