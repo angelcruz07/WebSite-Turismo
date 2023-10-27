@@ -6,7 +6,7 @@
   font-size: 2rem;
   text-align: center;
   position: relative;
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
 }
 .description-service h3 {
   position: relative;
@@ -25,22 +25,23 @@
   justify-content: center;
 }
 .horarios-services th {
-  font-size: 20px;
-  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-family: var(--font-family);
   position: relative;
   border-radius: 20px;
+  justify-content: center;
 }
 .table-services th {
   background-color: var(--color-titles);
   border-radius: 7px;
   font-size: 2rem;
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   color: var(--color-text-secundary);
 }
 
 .table-services td {
   font-size: 15px;
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   text-align: center;
   border: 1px solid transparent;
   border-image: linear-gradient(
@@ -62,13 +63,13 @@
   background-color: var(--color-titles);
   border-radius: 7px;
   font-size: 2rem;
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   color: var(--color-text-secundary);
 }
 
 .table-services-1 td {
   font-size: 15px;
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   text-align: center;
   border: 1px solid transparent;
   border-image: linear-gradient(
@@ -142,27 +143,35 @@
   top: 0%;
   left: 0%;
 }
-
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
   }
-  .container_sugetions {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .service-box {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+
+  .service-box,
   .service-box-left {
     flex-direction: column;
-    padding: var(--standard-padding);
     justify-content: center;
     align-items: center;
   }
+
+  .table-services,
+  .table-services-1 {
+    width: 100%;
+    position: static;
+  }
+
+  .table-services th,
+  .table-services-1 th {
+    font-size: 1.5rem; 
+  }
+
+  .table-services td,
+  .table-services-1 td {
+    font-size: 1rem; 
+  }
 }
+
 @media (max-width: 768px) {
   .header {
     text-align: start;
@@ -178,6 +187,7 @@
     width: 100%;
   }
 }
+
 @media (max-width: 450px) {
   html {
     font-size: 50%;

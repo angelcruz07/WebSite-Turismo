@@ -16,7 +16,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   <img src="<?php echo $urlImage ?>/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section id="blog">
-  <h2 class="title-index">Publicaciones</h2>
+  <h2 class="title-index">"Aventúrate en Sultepec"</h2>
   <!--Cards dinamicas -->
   <article class="contend-info">
     <?php
@@ -44,42 +44,43 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   </article>
   <!--Tarjetas con efecto landscape -->
   <article>
+    <h2 class="title-index">"Paisajes Inolvidables de Sultepec"</h2>
     <div class="landscape-container">
       <div class="card__container">
         <article class="card__article">
-          <img src="<?php echo $urlImage ?>/landscape-1.png" alt="image" class="card__img">
+          <img src="<?php echo $urlImage ?>/puesta-de-sol.jpg" alt="image" class="card__img">
 
           <div class="card__data">
-            <span class="card__description">Vancouver Mountains, Canada</span>
-            <h2 class="card__title">The Great Path</h2>
+            <span class="card__description">Puesta de Sol en Sultepec</span>
+            <h2 class="card__title">Municipio Encantador</h2>
 
           </div>
         </article>
-
         <article class="card__article">
-          <img src="<?php echo $urlImage ?>/landscape-2.png" alt="image" class="card__img">
+          <img src="<?php echo $urlImage ?>/noche.jpg" alt="image" class="card__img">
 
           <div class="card__data">
-            <span class="card__description">Poon Hill, Nepal</span>
-            <h2 class="card__title">Starry Night</h2>
+            <span class="card__description">Sultepec de Noche</span>
+            <h2 class="card__title">La Luna Solitaria Ilumina el Misterio</h2>
 
           </div>
         </article>
-
         <article class="card__article">
-          <img src="<?php echo $urlImage ?>/landscape-3.png" alt="image" class="card__img">
+          <img src="<?php echo $urlImage ?>/puesta-de-sol-2.jpg" alt="image" class="card__img">
 
           <div class="card__data">
-            <span class="card__description">Bojcin Forest, Serbia</span>
-            <h2 class="card__title">Path Of Peace</h2>
+            <span class="card__description">Atardecer en Sultepec</span>
+            <h2 class="card__title"> Un Rincón de Paz</h2>
 
           </div>
         </article>
+    
       </div>
     </div>
   </article>
 
   <!--Desarrolladores-Colaboraciones -->
+  <h2 class="title-index">Nuestro Equipo y Colaboradores</h2>
   <section class="colaborations">
 
     <div class="swiper mySwiper container-colaborations">
@@ -88,7 +89,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="swiper-slide card-colaborations">
           <div class="card-content-colaborations">
             <div class="image-colaborations">
-              <img src="<?php echo $urlImage ?>/landscape-1.png" alt="">
+              <img src="<?php echo $urlImage ?>/Angel-colab.webp" alt="">
             </div>
 
             <div class="media-icons">
@@ -98,8 +99,8 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <div class="name-profession">
-              <span class="name">NOMBRE</span>
-              <span class="profession">PROFESION/PUESTO</span>
+              <span class="name">Angel Alejandro</span>
+              <span class="profession">Programador Web</span>
             </div>
 
           </div>
@@ -192,7 +193,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="swiper-slide card-colaborations">
           <div class="card-content-colaborations">
             <div class="image-colaborations">
-              <img src="images/1.jpg" alt="">
+              <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
             </div>
 
             <div class="media-icons">
@@ -218,4 +219,4 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
 </section>
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

@@ -41,4 +41,4 @@ require "../partials/scroll-top.php";
         </div>
     </div>
 </section>
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

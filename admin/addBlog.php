@@ -44,7 +44,7 @@ switch ($action) {
 
       move_uploaded_file($tmpImage, "../admin/assets/imgBlog/" . $nameFile);
 
-      $sql = $conn->prepare("SELECT image FROM blogs WHERE id=:id");
+      $sql = $conn->prepare("SELECT image FROM blog WHERE id=:id");
       $sql->bindParam(':id', $id);
       $sql->execute();
       $blog = $sql->fetch(PDO::FETCH_LAZY);
@@ -183,6 +183,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
       </table>
     </div>
+
   </div>
 </section>
 <?php require "./partials/footer.php" ?>

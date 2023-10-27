@@ -10,7 +10,7 @@
       </div>
       <div class="image">
         <div class="slider-container-about">
-          <img id="sliderImage" src="http://localhost/WebSite-Turismo/php/aboutSlider/img_1.jpg" alt="Slider de imagenes" title="slider">
+          <img id="sliderImage" src="http://localhost/WebSite-Turismo/php/aboutSlider/iglesia2.jpg" alt="Slider de imagenes" title="slider">
         </div>
       </div>
     </div>
