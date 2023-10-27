@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/front-page.css" type="text/css">
-  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css"> 
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">   
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css"> 

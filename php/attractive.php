@@ -12,64 +12,91 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
   <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section class="attractive" id="attractive">
-    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2> 
-    <div class="gallery">
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
+    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>     
+    <div class="container-gallery">
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
+    </div>
+    <!-- Repite esta estructura para las demás imágenes --> 
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
     </div> 
      
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
     </div> 
      
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
     </div> 
      
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
     </div> 
      
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
-    </div> 
-     
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
-    </div>  
-     
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
-    </div>  
-     
-    <div class="gallery-item">
-        <a class="lightbox-trigger" href="<?php echo $images?>/minero_sultepec.jpg">
-            <img class="thumbnail" src="<?php echo $images?>/minero_sultepec.jpg" alt="Descripción de la imagen">
-            <span class="overlay-text">Texto al pasar el mouse</span>
-        </a>
-    </div> 
-
+    <div class="card">
+        <div class="face front">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+                <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
+                <h3>Minero Sultepec</h3>
+            </a>
+        </div>
+        <div class="face back">
+            <h3>Minero Sultepec</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
+            <div class="link"></div>
+        </div>
+    </div>
 </div>
 
 </section>
