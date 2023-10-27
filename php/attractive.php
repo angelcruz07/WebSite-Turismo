@@ -14,9 +14,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
 <section class="attractive" id="attractive">
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>     
     <div class="container-gallery">
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg">
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
@@ -28,9 +28,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
     </div>
     <!-- Repite esta estructura para las demás imágenes --> 
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" >
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
@@ -42,9 +42,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" >
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
@@ -56,9 +56,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" >
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
@@ -70,9 +70,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" >
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
@@ -84,9 +84,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
     </div> 
      
-    <div class="card">
+    <div class="card my-card">
         <div class="face front">
-            <a href="<?php echo $images?>/minero_sultepec.jpg" data-fancybox="mi-galeria">
+            <a href="<?php echo $images?>/minero_sultepec.jpg" >
                 <img src="<?php echo $images?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
             </a>
