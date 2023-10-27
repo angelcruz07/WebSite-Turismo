@@ -15,7 +15,11 @@
     </div>
 </footer>
 <script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script>  
+<script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script>     
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="<?php echo $url; ?>/assets/js/lightbox.js"></script> 
 
-
-</body>
+<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
+</body> 
 </html>
