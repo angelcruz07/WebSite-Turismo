@@ -16,6 +16,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/slider.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/about.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/suggestions.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/location.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/responsive.css" type="text/css">
     <title>Visita Sultepec</title>

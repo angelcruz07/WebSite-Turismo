@@ -11,6 +11,7 @@ require "./partials/scroll-top.php";
 require "./php/suggestions.php";
 //About
 require "./php/about.php";
+require "./php/location.php";
 //footer
 require "./partials/footer.php";
 ?>
