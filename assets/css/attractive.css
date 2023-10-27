@@ -92,11 +92,15 @@
 .card .back h3 {
   font-size: 30px;
   margin-top: 20px;
+  margin-bottom: 2rem;
   letter-spacing: 2px;
 }
 
 .card .back p {
   letter-spacing: 1px;
+}
+.link{ 
+  margin-top: 1rem;
 }
 
 .card:hover .front {
