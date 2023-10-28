@@ -227,8 +227,6 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
   </section>
-
 </section>
-
 <script src="<?php echo $url; ?>/assets/js/blog.js"></script>
 <?php require "../partials/footer2.php" ?>

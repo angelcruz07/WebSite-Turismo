@@ -1,12 +1,11 @@
+
 <?php
 require "../partials/header2.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGallery";
 ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css" type="text/css"> 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">  
 </head>
 <body class="scroll-top">
 
@@ -105,7 +104,5 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </a>
         </div> 
 </section>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
+
 <?php require "../partials/footer2.php" ?>
