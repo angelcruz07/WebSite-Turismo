@@ -44,11 +44,11 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             <div class="face front">
 
                 <img src="<?php echo $images ?>/puesta-de-sol-2.jpg" alt="Imagen minero">
-                <h3>Minero Sultepec</h3>
+                <h3>Atardecer en Sultepec</h3>
 
             </div>
             <div class="face back">
-                    <h3>Minero Sultepec</h3>
+                    <h3>Atardecer en Sultepec</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
                     <div class="link">
                     </div>
@@ -61,11 +61,11 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             <div class="face front">
 
                 <img src="<?php echo $images ?>/puesta-de-sol.jpg" alt="Imagen minero">
-                <h3>Minero Sultepec</h3>
+                <h3>Un buen atardecer</h3>
 
             </div>
             <div class="face back">
-                    <h3>Minero Sultepec</h3>
+                    <h3>Un buen atardecer</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
                     <div class="link">
                     </div>
@@ -77,11 +77,11 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             <div class="face front">
 
                 <img src="<?php echo $images ?>/noche.jpg" alt="Imagen minero">
-                <h3>Minero Sultepec</h3>
+                <h3>Noche Sultepec</h3>
 
             </div>
             <div class="face back">
-                    <h3>Minero Sultepec</h3>
+                    <h3>Noche Sultepec</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
                     <div class="link">
                     </div>
@@ -93,11 +93,11 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             <div class="face front">
 
                 <img src="<?php echo $images ?>/minas.jpg" alt="Imagen minero">
-                <h3>Minero Sultepec</h3>
+                <h3>Mañana Sultepec</h3>
 
             </div>
             <div class="face back">
-                    <h3>Minero Sultepec</h3>
+                    <h3>Mañana Sultepec</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
                     <div class="link">
                     </div>

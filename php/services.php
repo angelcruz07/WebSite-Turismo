@@ -94,7 +94,7 @@ require "../partials/scroll-top.php";
             <tr>
               <td>LUGAR</td>
               <td>00:00 </td>
-            </tr>
+            </tr> 
             <tr>
               <td>LUGAR</td>
               <td>00:00 </td>
