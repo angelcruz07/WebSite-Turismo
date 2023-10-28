@@ -60,12 +60,13 @@
 .form-group label {
     width: 100%; 
 }
-.form-group input {
+.form-group input,textarea {
     background: none;
     width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
     margin-top: 20px;
+    resize: none;
 }
 /* Estilos de menu */
 .group-buttons{ 
@@ -75,6 +76,8 @@
    display: flex;
    justify-content: space-between;
    border: none;
+   text-transform: uppercase;
+font-weight: 700;
 }
 /* Estilos de formos agregados */
 .info-crud { 

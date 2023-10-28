@@ -1,6 +1,3 @@
-<?php
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
-?>
 <header class="header" id="scroll-top">
     <div class="logo">
         <img src="<?php echo $url ?>/assets/img/LOGO AYUNTAMIENTO.webp" alt="Logo municipal de sultepec" title="H. Ayuntamiento de sultepec">

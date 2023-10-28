@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     // Inicializa Magnific Popup en las tarjetas con la clase "my-card"
     $('.my-card').magnificPopup({

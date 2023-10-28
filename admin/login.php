@@ -55,12 +55,14 @@
     }
   }
 ?>
-
 <?php 
 require "../partials/header2.php";
 require "../partials/navbar.php";
+require "../partials/scroll-top.php";
 ?>
-
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
+</head>
+<body class="scroll-top">
 <section class="form-register">
 <div class="container-register">
     <h2 class="title-index">Iniciar sesion</h2>
@@ -95,4 +97,4 @@ require "../partials/navbar.php";
       </div>
     </div>
 </section>
-<?php require "../partials/footer.php"?>
+<?php require "../partials/footer2.php"?>

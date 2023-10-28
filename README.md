@@ -9,19 +9,15 @@
 
 ## Descripcion
 
-Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, proyecto propuesto por el CECYTEM_SULTEPC al H. Ayuntamiento del municipio del sultpec, en donde 
-como finalidad se tiene promover el turismo dentro del municipio a traves de un sitio web el cual represente 
+Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, proyecto propuesto por el CECYTEM_SULTEPC al H. Ayuntamiento del municipio del sultpec, en donde como finalidad se tiene promover el turismo dentro del municipio a traves de un sitio web el cual represente 
 los lugares mas relevantes y atractivos para visitar asi como informacion de interes para cualquier persona.
 
 ## Marco_de_trabajo
 El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar. 
-
 En este proyecto se hace uso de PHP por lo que usamos las caracteristicas del mismo
 aislando nuestro codigo y organizandolo en carpetas con nombres referenciales a su proposito en ellas encontras 
 la mayoria del codigo desarrollado para el funcionamiento del sitio web 
-
 Destacando el uso de los archivos esenciales y requeridos para inicar el proyecto en tu maquina local
-
 dentro de la carpeta assets se encontrara otra llamada css
 en donde existe un archivo con el nombre superglobals.css
 en el se encuentran nuestras variables globales de los estilos del sitio para modificar o hacer uso de este 
@@ -39,7 +35,7 @@ proyecto.
 * [X] Creacion del primero codigo HTML CSS JS
 * [X] Base de datos para usuario registrados
 * [X] Sistema de Roles
-* [ ] Automatizacion del contenido mediante PHP  
+* [50%] Automatizacion del contenido mediante PHP  
 * [x] Panel de administrador 
 * [ ] Funciones para usuario registrado
 * [ ] Informacion relevante

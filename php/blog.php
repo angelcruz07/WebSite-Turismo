@@ -8,6 +8,16 @@ $query = $conn->prepare("SELECT * FROM blog");
 $query->execute();
 $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css"> 
+  <!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> 
+  <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+
+</head>
+<body class="scroll-top">
+
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
@@ -219,4 +229,6 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
   </section>
 
 </section>
+
+<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
 <?php require "../partials/footer2.php" ?>

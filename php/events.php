@@ -8,6 +8,10 @@ $query = $conn->prepare("SELECT * FROM events");
 $query->execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css"> 
+</head>
+<body class="scroll-top">
+
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">
@@ -44,4 +48,4 @@ if ($stmt->rowCount() == 0) {
 <section id="religious-events">
     <h2 class="title-index">Fiestas religiosas</h2>
 </section>
-<?php require "../partials/footer.php" ?>
+<?php require "../partials/footer2.php" ?>

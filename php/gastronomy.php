@@ -4,6 +4,10 @@ require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
 ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
+</head>
+<body class="scroll-top">
+
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">

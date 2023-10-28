@@ -3,6 +3,10 @@ require "../partials/header2.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css"> 
+</head>
+<body class="scroll-top">
+
 <div class="container-front-page">
   <div class="degraded"></div>
   <div class="title-front-page">

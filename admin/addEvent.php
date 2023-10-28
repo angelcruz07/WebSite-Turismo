@@ -123,14 +123,13 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" required maxlength="22">
+          <input type="text" value="<?php echo $title ?>" name="title" id="title"  maxlength="22">
         </div>
 
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <input type="text" value="<?php echo $description; ?>" name="description" id="description" required maxlength="220">
+          <textarea  type="text" value="<?php echo $description; ?>" name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"></textarea>
         </div>
-
 
         <div class="form-group">
           <label for="image">Agrega una imagen:</label><br>
@@ -143,7 +142,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?>value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
 
       </form>

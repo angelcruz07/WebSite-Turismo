@@ -1,8 +1,4 @@
-<<<<<<< HEAD
--- Active: 1695851160752@@127.0.0.1@3306@tourism
-=======
--- Active: 1696112272292@@127.0.0.1@3306@tourism
->>>>>>> 4890c9b0fb3157b420cd18116a6ce786c6740e2b
+-- Active: 1697942534488@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -27,7 +23,7 @@ CREATE TABLE users (
 CREATE TABLE events (
      id INT(11) AUTO_INCREMENT PRIMARY KEY,
      title VARCHAR(25),
-     description VARCHAR(250),
+     description VARCHAR(300),
      image VARCHAR(3000)
 );
 
