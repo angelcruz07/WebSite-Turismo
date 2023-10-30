@@ -1,4 +1,4 @@
--- Active: 1697942534488@@127.0.0.1@3306@tourism
+-- Active: 1698628320755@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -12,10 +12,10 @@ CREATE TABLE roles (
 );
 
 CREATE TABLE users (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50), 
     email VARCHAR(30),
-    password VARCHAR(250),
+    password VARCHAR(255),
     rol_id INT(2),
     CONSTRAINT rol_id FOREIGN KEY (rol_id) REFERENCES roles(id)
 );
@@ -24,23 +24,82 @@ CREATE TABLE events (
      id INT(11) AUTO_INCREMENT PRIMARY KEY,
      title VARCHAR(25),
      description VARCHAR(300),
+     date TIMESTAMP,
      image VARCHAR(3000)
 );
+
+
+CREATE TABLE request(
+    id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone_number INT(20) NOT NULL,
+    description VARCHAR(255) NOT NULL, 
+    type VARCHAR(25), 
+    date TIMESTAMP,
+    message VARCHAR(255), 
+    status VARCHAR(25)
+); 
+
 
 CREATE TABLE blog (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     title  VARCHAR(25),
     description VARCHAR(250), 
+    date TIMESTAMP,
     image VARCHAR(3000)
 );
 
 CREATE TABLE lodging (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     description VARCHAR(250),
-    social_networks VARCHAR(250),
-    images VARCHAR(3000)
+    phone_number INT(20) NULL,
+    social_networks VARCHAR(250) NULL,
+    image VARCHAR(3000)
 )
+
+
+CREATE TABLE restaurants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(25) NOT NULL, 
+    name VARCHAR(50) NOT NULL, 
+    description VARCHAR(255),
+    location VARCHAR(255),
+    phone_number INT(20),
+    data TIMESTAMP, 
+    image VARCHAR(3000)
+);
+
+CREATE TABLE gastronomy(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(25) NOT NULL, 
+    name VARCHAR(50) NOT NULL, 
+    description VARCHAR(255),
+    data TIMESTAMP, 
+    image VARCHAR(3000)
+);
+
+
+CREATE TABLE services(
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    type VARCHAR(25), 
+    name VARCHAR(50), 
+    description VARCHAR(250), 
+    image VARCHAR(3000), 
+    location VARCHAR(255),
+    route VARCHAR(255), 
+    scheduls VARCHAR(255)
+)
+
+CREATE TABLE gallery (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    type VARCHAR(25),
+    name VARCHAR(50), 
+    description VARCHAR(255),
+    location VARCHAR(255), 
+    data TIMESTAMP
+);
 
 
 --Insert  fields into the roles table.

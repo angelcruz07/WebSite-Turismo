@@ -123,18 +123,20 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title"  maxlength="22">
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" required  maxlength="22">
         </div>
 
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea  type="text" value="<?php echo $description; ?>" name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"></textarea>
+          <!-- <input type="text" value="<?php echo $description; ?>" name="description" id="description" required maxlength="220"> -->
+          <textarea name="description" required id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
+
         </div>
 
         <div class="form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-            <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="../admin/assets/imgEvent/<?php echo $image ?>"  title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
@@ -142,7 +144,7 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button  type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
 
       </form>
@@ -174,12 +176,11 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
               <td class="date-form btn-flex option">
 
-                <form method="POST">
+                <form method="POST"id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" name="accion" value="Borrar" class="btn danger" onclick=return confirmDeletion()>Borrar</button>
                 </form>
-
               </td>
             </tr>
           <?php } ?>
@@ -188,4 +189,5 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </div>
 </section>
+<script src='<?php echo $url; ?>/admin/assets/js/alerts.js'></script>
 <?php require "./partials/footer.php" ?>

@@ -1,0 +1,10 @@
+Se requiere el diseño de una base de datos para una pagina web  con orientacion al turismo
+esta web consta de un administador y de usuarios que se pueden registrar, ademas de esto el administrador tiene la capacidad 
+de administrar el contenido de la web, como lo son eventos que se estan borrando y actualizando de manera constante , ademas 
+de eventos que por lo regular son fijos sin embargo se necesita almacenarlos en la base de datos este tipo de eventos
+cuenta con un formato  repetitivo el cual se basa en un titulo una descripccion y una imagen relacionada, asu vez tambien tiene la posibilidad 
+de hacer publicaciones en el blog de la web donde se necesita guardar un titulo, descripcion y una imagen relacionada al blog, 
+tambien contamos con un apartado de gastronomia el cual cuenta de igual manera con el nombre de la comida ademas 
+de una imagen y descripccion sin embargo debemos guardar el tipo de comida separarlo en comida tradicional, estranjera, local, o de bares
+para seccionarlo en la pagina web, ademas de esto se necesita almacenar los ditintos datos de los tranportes del municipio como, lo son hora de llegada , salida, ubicacion y horarios, 
+ademas de esto se tiene un apartado de hospedajes en donde deseamos guardar una imagen del hotel o descripccion, ubicacion redes sociales o datos de contacto.
