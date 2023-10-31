@@ -17,13 +17,22 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
     <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section class="attractive" id="attractive">
-    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
-    <div class="container-gallery">
-        <!-- Repite esta estructura para las demás imágenes -->
-        
+    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2> 
+     
+    <!--Lista de lugares o opciones --> 
+    <ul class="options"> 
+            <li class="active links" data-nombre="all">Todos</li>
+            <li class="links" data-nombre="lookout">Mirador</li>
+            <li class="links" data-nombre="churches">Parroquias</li>
+            <li class="links" data-nombre="places">Lugares</li>
+        </ul> 
+         
+        <!--Contenedor de la galeria -->
+    <div class="container-gallery"> 
+
         <div class="card my-card">
         <a href="<?php echo $images ?>/minero_sultepec.jpg">
-            <div class="face front">
+            <div class="face front box filter lookout">
 
                 <img src="<?php echo $images ?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
@@ -40,7 +49,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         
         <div class="card my-card">
         <a href="<?php echo $images ?>/puesta-de-sol-2.jpg">
-            <div class="face front">
+            <div class="face front box filter churches">
 
                 <img src="<?php echo $images ?>/puesta-de-sol-2.jpg" alt="Imagen minero">
                 <h3>Atardecer en Sultepec</h3>
@@ -57,7 +66,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         
         <div class="card my-card">
         <a href="<?php echo $images ?>/puesta-de-sol.jpg">
-            <div class="face front">
+            <div class="face front box filter places">
 
                 <img src="<?php echo $images ?>/puesta-de-sol.jpg" alt="Imagen minero">
                 <h3>Un buen atardecer</h3>
@@ -73,7 +82,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
         <div class="card my-card">
         <a href="<?php echo $images ?>/noche.jpg">
-            <div class="face front">
+            <div class="face front box filter lookout">
 
                 <img src="<?php echo $images ?>/noche.jpg" alt="Imagen minero">
                 <h3>Noche Sultepec</h3>
@@ -89,7 +98,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         </div>
         <div class="card my-card">
         <a href="<?php echo $images ?>/minas.jpg">
-            <div class="face front">
+            <div class="face front box filter churches">
 
                 <img src="<?php echo $images ?>/minas.jpg" alt="Imagen minero">
                 <h3>Mañana Sultepec</h3>
