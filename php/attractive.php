@@ -12,6 +12,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
 <div class="container-front-page">
     <div class="degraded"></div>
     <div class="title-front-page">
+        <h1>Rama de galeria</h1>
         <h1>Atractivos</h1>
     </div>
     <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
