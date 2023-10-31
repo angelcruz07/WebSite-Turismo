@@ -1,5 +1,5 @@
 #add-form { 
-    padding: var(--standard-padding);
+    padding: 5rem;
 }
 /* Contenedor del crud de formos */
 .container-form-crud{ 
@@ -41,7 +41,7 @@
     text-align: center;
     color: var(--color-secundary);
 }
-.container-form-form label ,input { 
+.container-form-form label ,input , select{ 
     color:#000000;
     font-size: 1.5rem;
 }
@@ -64,7 +64,7 @@
 .form-group label {
     width: 100%; 
 }
-.form-group input,textarea {
+.form-group input,textarea,select {
     background: none;
     width: 100%;
     border: none;
@@ -97,31 +97,28 @@ font-weight: 700;
    max-width: 2.2rem;
 }
 .title{ 
-    max-width: 8rem;
-}
-.description{ 
-    max-width: 25rem;
+    max-width: 6rem;
 }
 .image{ 
-    max-width: 7.5rem;
+    max-width: 6rem;
 }
 .option{ 
     max-width: 11rem;
+}
+.type{ 
+    max-width: 6rem;
 }
 .btn-flex{ 
     display: flex;
     justify-content: center;
 }
-.date-form-colum{ 
-    flex: 1; /* Todas las columnas tienen el mismo ancho */
-    padding: 5px;
-    border: 1px solid #ccc;
 
-}
 .date-form{ 
   flex: 1; /* Todas las columnas tienen el mismo ancho */
   padding: 5px;
   border: 1px solid #ccc;
+  font-weight:700;
+    color:#000
 }
 /* Botones */
 .btn{ 
@@ -143,13 +140,11 @@ font-weight: 700;
 }
 /* Estilos de la tabla */
 .date-form-colum{
+    flex: 1; /* Todas las columnas tienen el mismo ancho */
+    border: 1px solid #ccc;
     text-transform: uppercase;
     color: #000;
-    text-align: start;
-}
-.date-form{
-    font-weight:700;
-    color:#000
+    text-align:center;
 }
 .text-error{
     color: #ff0000;

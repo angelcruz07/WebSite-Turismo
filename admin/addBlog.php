@@ -134,7 +134,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <input type="text" value="<?php echo $description; ?>" name="description" id="description" required maxlength="220">
+          <textarea name="description" required id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
         </div>
 
 

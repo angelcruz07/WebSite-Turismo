@@ -22,6 +22,7 @@ CREATE TABLE users (
 
 CREATE TABLE events (
      id INT(11) AUTO_INCREMENT PRIMARY KEY,
+     type VARCHAR(25) NOT NULL,
      title VARCHAR(25),
      description VARCHAR(300),
      date TIMESTAMP,

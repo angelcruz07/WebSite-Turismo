@@ -23,9 +23,7 @@
       $error = "Rellene con los datos correctos";
     } else if (!str_contains($_POST["email"], "@")) {
       $error = "Formato de email incorrecto";
-    } else {
-      $database = new Database();  // Crear una instancia de la clase Database
-      $conn = $database->connect();  // Obtener la conexión  
+    } else { 
       $statement = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
       $statement->bindParam(":email", $_POST["email"]);
       $statement->execute();

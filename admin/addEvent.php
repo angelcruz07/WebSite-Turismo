@@ -12,22 +12,29 @@ if (!isset($_SESSION["rol"])) {
   }
 }
 
-// Validar los campos (Falta)
 //Recibir los datos del formulario
+$type = (isset($_POST['type'])) ? $_POST['type'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
 $title = (isset($_POST['title'])) ? $_POST['title'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 
+// MEJORAR EL ENVIO DE LA FECHA A LA BASE DE DATOS
+$dataSend = date('Y-m-d H:i:s');
+
 switch ($action) {
   case "Agregar";
-    $sql = $conn->prepare("INSERT INTO events (title, description, image) VALUES (:title, :description, :image);");
-    // Insertando los datos con la variables
+    $sql = $conn->prepare("INSERT INTO events (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
+    // Insertar los datos con la variable
+    $sql->bindParam(':type', $type);
     $sql->bindParam(':title', $title);
     $sql->bindParam(':description', $description);
+    $sql->bindParam(':date' , $dataSend);
+    
     //Guardando la iamgen con la fecha en que se agrego
     $date = new DateTime();
+    
     $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
     $tmpImage = $_FILES["image"]["tmp_name"];
 
@@ -36,12 +43,14 @@ switch ($action) {
     }
 
     $sql->bindParam(':image', $nameFile);
+    $date->getTimestamp();
     $sql->execute();
     header("Location:AddEvent.php");
     break;
 
   case "Modificar";
-    $sql = $conn->prepare("UPDATE events SET title=:title, description=:description WHERE id=:id");
+    $sql = $conn->prepare("UPDATE events SET  type=:type ,title=:title, description=:description WHERE id=:id");
+    $sql->bindParam(':type', $type);
     $sql->bindParam(':title', $title);
     $sql->bindParam(':description', $description);
     $sql->bindParam(':id', $id);
@@ -114,11 +123,10 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-
 <section id="add-form" class="add-form">
 
   <h1 class="title-index"> Agregar un nuevo evento</h1>
-  <!-- <p>Llena el formulario para agregar un nuevo formo a la pagina</p> -->
+
   <div class="container-form-crud">
 
     <div class="container-form-form">
@@ -128,6 +136,13 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
         
         <div class="form-group">
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
+        </div>
+        <div class="form-group">
+          <label for="Type">Selecciona el tipo de evento</label>
+          <select name="type" id="type">
+            <option value="Social"> Social</option>
+            <option value="Religioso">Religioso</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -159,7 +174,6 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="contaier-forms-add">
       <h2 class="title-form">Publicadas</h2>
-
       <table class="info-crud">
         <thead>
           <tr class="form-add">
@@ -167,10 +181,10 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
             <th class="date-form-colum title">Titulo</th>
             <th class="date-form-colum description ">Descripcion</th>
             <th class="date-form-colum image">Imagen</th>
+            <th class="date-form-colum type">Tipo</th>
             <th class="date-form-colum option">Opciones</th>
           </tr>
         </thead>
-
         <tbody>
           <?php foreach ($events as $event) { ?>
             <tr class="form-add">
@@ -178,11 +192,10 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
               <td class="date-form title"><?php echo $event['title'] ?></td>
               <td class="date-form descrption"><?php echo $event['description'] ?></td>
               <td class="date-form image">
-                <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" width="50px">
+                <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" width="40px">
               </td>
-
+              <td class="date-form type"><?php echo $event['type'] ?></td>   
               <td class="date-form btn-flex option">
-
                 <form method="POST"id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
