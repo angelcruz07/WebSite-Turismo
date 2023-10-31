@@ -1,6 +1,6 @@
 <?php
 require_once "./config/database.php";
-require_once "./config/rolValidate.php";
+require_once "./config/utilities.php";
 validateRol();
 require_once "partials/header.php";
 require_once "./partials/navbar.php";
@@ -10,9 +10,9 @@ require_once "./partials/navbar.php";
   <div class="container-desktop">
     <img src="../assets/img/LOGO AYUNTAMIENTO.webp" class="logo" alt="Logo del Ayuntamiento" title="H. Ayuntamiento de sultepec">       
     <!-- PENDIENTE BIENVENIDA AL USUARIO -->
-    <?php if (isset($_SESSION["user"])): ?>
+   <?php if (isset($_SESSION["user"])): ?>
     <h2 class="title-index">Bienvenido <?= $_SESSION["user"]["email"] ?> </h2>
-    <?php endif ?>
+<?php endif ?>
     <p class="parraf-description">Comencemos administrar el sitio</p>
     <div class="container-card-menu">
     <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
