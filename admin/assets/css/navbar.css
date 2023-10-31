@@ -97,7 +97,7 @@ header {
 }
 
 .options_menu .option {
-    padding: 20px 0px;
+    padding: 1rem 0px;
     display: flex;
     align-items: center;
     position: relative;

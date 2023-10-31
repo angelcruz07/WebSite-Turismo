@@ -77,6 +77,14 @@ if (!isset($_SESSION["rol"])) {
           Ver sitio
       </div>
       </a>
+      <a href="<?php echo $url; ?>/admin/logout.php" class="link-desktop">
+      <div class="card-menu">
+          <div class="image-container">
+            <img src="<?php echo $url ?>/assets/icons/bracket.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+          </div>
+          Cerrar Sesion
+      </div>
+      </a>
     </div>
   </div>
 </section>
