@@ -2,6 +2,15 @@
 require "partials/header.php";
 require "partials/navbar.php";
 require "config/database.php";
+// Validacion de rol
+session_start();
+if (!isset($_SESSION["rol"])) {
+  header("Location: login.php");
+} else {
+  if ($_SESSION['rol'] != 1) {
+    header('location: login.php');
+  }
+}
 
 // Validar los campos (Falta)
 //Recibir los datos del formulario
@@ -128,11 +137,9 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <!-- <input type="text" value="<?php echo $description; ?>" name="description" id="description" required maxlength="220"> -->
           <textarea name="description" required id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
 
         </div>
-
         <div class="form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>

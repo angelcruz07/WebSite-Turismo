@@ -2,6 +2,16 @@
 require "partials/header.php";
 require "partials/navbar.php";
 require "config/database.php";
+// Validacion de rol 
+session_start();
+if (!isset($_SESSION["rol"])) {
+  header("Location: login.php");
+} else {
+  if ($_SESSION['rol'] != 1) {
+    header('location: login.php');
+  }
+}
+
 
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
