@@ -41,20 +41,20 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     </a>
     <a href="<?php echo $url; ?>/admin/addGallery.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
+        <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono gear" title="Agregar hospedaje">
         <h4>Agregar Galeria</h4>
       </div>
     </a>
     <a href="<?php echo $url; ?>/admin/addGallery.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
-        <h4>Agregar Galeria</h4>
+        <img src="<?php echo $url ?>/assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar hospedaje">
+        <h4>Agregar Gastronomia</h4>
       </div>
     </a>
     <a href="<?php echo $url; ?>/admin/addGallery.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
-        <h4>Agregar Galeria</h4>
+        <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar hospedaje">
+        <h4>Agregar Servicio</h4>
       </div>
     </a>
     <a href="<?php echo $url; ?>">

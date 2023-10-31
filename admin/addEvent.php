@@ -1,17 +1,8 @@
 <?php
-require "partials/header.php";
-require "partials/navbar.php";
 require "config/database.php";
+require "config/rolValidate.php";
 
-// Validacion de rol
-session_start();
-if (!isset($_SESSION["rol"])) {
-  header("Location: login.php");
-} else {
-  if ($_SESSION['rol'] != 1) {
-    header('location: login.php');
-  }
-}
+
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //   if (empty($_POST["type"]) || empty($_POST["title"])) {
@@ -127,6 +118,11 @@ $query = $conn->prepare("SELECT * FROM events");
 $query->execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
+?>
+
+<?php 
+require "partials/header.php";
+require "partials/navbar.php";
 ?>
 
 <section id="add-form" class="add-form">
