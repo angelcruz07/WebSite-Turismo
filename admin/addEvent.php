@@ -2,6 +2,7 @@
 require "partials/header.php";
 require "partials/navbar.php";
 require "config/database.php";
+
 // Validacion de rol
 session_start();
 if (!isset($_SESSION["rol"])) {
@@ -11,6 +12,11 @@ if (!isset($_SESSION["rol"])) {
     header('location: login.php');
   }
 }
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//   if (empty($_POST["type"]) || empty($_POST["title"])) {
+//     $error = "Rellene con los datos correctos";
+//   }}
 
 //Recibir los datos del formulario
 $type = (isset($_POST['type'])) ? $_POST['type'] : "";
@@ -147,12 +153,15 @@ $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" required  maxlength="22">
+          <input type="text" value="<?php echo $title ?>" name="title" id="title"  maxlength="22">
+          <?php if (!empty($titleError)) {
+        echo "<div class='error-message'>$titleError</div>";
+    } ?>
         </div>
 
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" required id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
+          <textarea name="description"id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
 
         </div>
         <div class="form-group">
