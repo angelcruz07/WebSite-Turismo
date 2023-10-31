@@ -30,9 +30,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
         <!--Contenedor de la galeria -->
     <div class="container-gallery"> 
 
-        <div class="card my-card">
+        <div class="card my-card box filter lookout">
         <a href="<?php echo $images ?>/minero_sultepec.jpg">
-            <div class="face front box filter lookout">
+            <div class="face front">
 
                 <img src="<?php echo $images ?>/minero_sultepec.jpg" alt="Imagen minero">
                 <h3>Minero Sultepec</h3>
@@ -47,9 +47,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </a>
         </div>
         
-        <div class="card my-card">
+        <div class="card my-card box filter churches">
         <a href="<?php echo $images ?>/puesta-de-sol-2.jpg">
-            <div class="face front box filter churches">
+            <div class="face front">
 
                 <img src="<?php echo $images ?>/puesta-de-sol-2.jpg" alt="Imagen minero">
                 <h3>Atardecer en Sultepec</h3>
@@ -64,9 +64,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </a>
         </div>
         
-        <div class="card my-card">
+        <div class="card my-card box filter places">
         <a href="<?php echo $images ?>/puesta-de-sol.jpg">
-            <div class="face front box filter places">
+            <div class="face front">
 
                 <img src="<?php echo $images ?>/puesta-de-sol.jpg" alt="Imagen minero">
                 <h3>Un buen atardecer</h3>
@@ -80,9 +80,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </div>
             </a>
         </div>
-        <div class="card my-card">
+        <div class="card my-card box filter lookout">
         <a href="<?php echo $images ?>/noche.jpg">
-            <div class="face front box filter lookout">
+            <div class="face front">
 
                 <img src="<?php echo $images ?>/noche.jpg" alt="Imagen minero">
                 <h3>Noche Sultepec</h3>
@@ -96,9 +96,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </div>
             </a>
         </div>
-        <div class="card my-card">
+        <div class="card my-card box filter churches">
         <a href="<?php echo $images ?>/minas.jpg">
-            <div class="face front box filter churches">
+            <div class="face front">
 
                 <img src="<?php echo $images ?>/minas.jpg" alt="Imagen minero">
                 <h3>Mañana Sultepec</h3>
