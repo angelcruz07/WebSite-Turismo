@@ -14,18 +14,23 @@ $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 date_default_timezone_set('America/Mexico_City');
 $dataSend = date('Y-m-d H:i:s'); // Obtendrás la fecha y hora en la Ciudad de México
 
+//Parametros para las funciones
+$table = "events";
+$location = "addEvent.php";
+
+
 switch ($action) {
   case "Agregar";
     addEvent($conn, $type, $title, $description, $image, $dataSend);
   break;
   case "Modificar";
-  editEvent($conn, $type, $title, $description, $id, $image);
+  editEvent($conn, $type, $title, $description, $id, $image, $table);
     break;
   case "Cancelar";
     header("Location:AddEvent.php");
     break;
   case "Seleccionar":
-    $selectedEvent = selectEvent($conn, $id);
+    $selectedEvent = selectEvent($conn, $id, $table);
     if ($selectedEvent) {
         $title = $selectedEvent['title'];
         $description = $selectedEvent['description'];
@@ -33,14 +38,11 @@ switch ($action) {
     }
     break;
   case "Borrar";
-  $table = "events";
-  $location = "addEvent.php";
   deleteEvent($conn, $id, $location,$table);
   break;
 }
 
 // Consulta de los datos
-$table = "events";
 $events = getEvents($conn, $table);
 
 ?>

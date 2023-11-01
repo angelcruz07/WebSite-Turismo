@@ -3,11 +3,16 @@ require_once "config/database.php";
 require_once "./config/utilities.php";
 validateRol();
 
+//Recuperar los datos del formulario
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
 $title = (isset($_POST['title'])) ? $_POST['title'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
+
+// Parametros de la funcion 
+$table = "blog";
+$location = "addBlog.php";
 
 switch ($action) {
   case "Agregar";
@@ -64,41 +69,21 @@ switch ($action) {
     header("Location:addBlog.php");
     break;
   case "Cancelar";
-    header("Location:addBlog.php");
+    header("Location: $location");
     break;
   case "Seleccionar";
-    $sql = $conn->prepare("SELECT * FROM blog WHERE id=:id");
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-    $blog = $sql->fetch(PDO::FETCH_LAZY);
-    $title = $blog['title'];
-    $description = $blog['description'];
-    $image = $blog['image'];
+  $selectedBlog = selectEvent($conn, $id, $table);
+    if ($selectedBlog) {
+        $title = $selectedBlog['title'];
+        $description = $selectedBlog['description'];
+        $image = $selectedBlog['image'];
+    }
     break;
   case "Borrar";
-  $location = "addBlog.php";
-  deleteEvent($conn, $id, $location, $table);
-    // Verificar si la imagen existe y eliminarla de la carpeta imgblog
-    // $sql = $conn->prepare("SELECT image FROM blog WHERE id=:id");
-    // $sql->bindParam(':id', $id);
-    // $sql->execute();
-    // $blog = $sql->fetch(PDO::FETCH_LAZY);
-
-    // if (isset($blog["image"]) && ($blog['image'] != "imagen.jpg")) {
-    //   if (file_exists("../admin/assets/imgblog/" . $blog["image"])) {
-
-    //     unlink("../admin/assets/imgBlog/" . $blog["image"]);
-    //   }
-    // }
-
-    // $sql = $conn->prepare("DELETE FROM blog WHERE id=:id");
-    // $sql->bindParam(':id', $id);
-    // $sql->execute();
-    // header("Location:addBlog.php");
-    // break;
+    deleteEvent($conn, $id, $location, $table);
+    break;
 }
-
-$table = "blog";
+// Consulta a la publicaciones
 $blogs = getEvents($conn, $table);
 ?>
 
