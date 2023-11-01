@@ -9,11 +9,7 @@ require_once "./partials/navbar.php";
 <section class="desktop" id="desktop">
   <div class="container-desktop">
     <img src="../assets/img/LOGO AYUNTAMIENTO.webp" class="logo" alt="Logo del Ayuntamiento" title="H. Ayuntamiento de sultepec">       
-    <!-- PENDIENTE BIENVENIDA AL USUARIO -->
-   <?php if (isset($_SESSION["user"])): ?>
-    <h2 class="title-index">Bienvenido <?= $_SESSION["user"]["email"] ?> </h2>
-<?php endif ?>
-    <p class="parraf-description">Comencemos administrar el sitio</p>
+    <h2 class="title-index">Bienvenido comencemos administrar el sitio</h2>
     <div class="container-card-menu">
     <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
       <div class="card-menu">

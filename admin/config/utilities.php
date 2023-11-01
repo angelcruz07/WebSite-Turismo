@@ -86,16 +86,15 @@ function editEvent($conn, $type, $title, $description, $id, $image) {
   header("Location:AddEvent.php");
 }
 
-// Función para seleccionar un evento
-function selecEvent($conn, $id ,$title, $description, $image) {
+function selectEvent($conn, $id) {
   $sql = $conn->prepare("SELECT * FROM events WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
-  $event = $sql->fetch(PDO::FETCH_LAZY);
-  $title = $event['title'];
-  $description = $event['description'];
-  $image = $event['image'];
+  $event = $sql->fetch(PDO::FETCH_ASSOC); // Usamos FETCH_ASSOC para obtener un array asociativo
+
+  return $event; // Devolvemos el evento seleccionado
 }
+
 
 function deleteEvent($conn, $id) {
   $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
