@@ -20,15 +20,17 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2> 
      
     <!--Lista de lugares o opciones --> 
-    <ul class="options"> 
+   <div class="options"> 
+   <ul> 
             <li class="active links" data-nombre="all">Todos</li>
             <li class="links" data-nombre="lookout">Mirador</li>
             <li class="links" data-nombre="churches">Parroquias</li>
             <li class="links" data-nombre="places">Lugares</li>
         </ul> 
+   </div>
          
         <!--Contenedor de la galeria -->
-    <div class="container-gallery"> 
+    <div class="container-gallery">  
 
         <div class="card my-card box filter lookout">
         <a href="<?php echo $images ?>/minero_sultepec.jpg">
@@ -112,8 +114,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGaller
             </div>
             </a>
         </div> 
-</section>
-
-<?php require "../partials/footer.php" ?> 
+</section> 
+<script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>  
+<script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>  
+<?php require "../partials/footer2.php" ?> 
 
 
