@@ -1,14 +1,6 @@
 <?php
 require "config/database.php";
-require "config/rolValidate.php";
-
-
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//   if (empty($_POST["type"]) || empty($_POST["title"])) {
-//     $error = "Rellene con los datos correctos";
-//   }}
-
+require "config/utilities.php";
 //Recibir los datos del formulario
 $type = (isset($_POST['type'])) ? $_POST['type'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
@@ -22,96 +14,20 @@ $dataSend = date('Y-m-d H:i:s');
 
 switch ($action) {
   case "Agregar";
-    $sql = $conn->prepare("INSERT INTO events (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
-    // Insertar los datos con la variable
-    $sql->bindParam(':type', $type);
-    $sql->bindParam(':title', $title);
-    $sql->bindParam(':description', $description);
-    $sql->bindParam(':date' , $dataSend);
-    
-    //Guardando la iamgen con la fecha en que se agrego
-    $date = new DateTime();
-    
-    $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
-    $tmpImage = $_FILES["image"]["tmp_name"];
-
-    if ($tmpImage != "") {
-      move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
-    }
-
-    $sql->bindParam(':image', $nameFile);
-    $date->getTimestamp();
-    $sql->execute();
-    header("Location:AddEvent.php");
-    break;
-
+  addEvent($conn, $type, $title, $description, $date, $image,$dataSend);
+  break;
   case "Modificar";
-    $sql = $conn->prepare("UPDATE events SET  type=:type ,title=:title, description=:description WHERE id=:id");
-    $sql->bindParam(':type', $type);
-    $sql->bindParam(':title', $title);
-    $sql->bindParam(':description', $description);
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-
-    if ($image != "") {
-
-      $date = new DateTime();
-      $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
-      $tmpImage = $_FILES["image"]["tmp_name"];
-
-      move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
-
-      $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
-      $sql->bindParam(':id', $id);
-      $sql->execute();
-      $form = $sql->fetch(PDO::FETCH_LAZY);
-
-      if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
-        if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
-
-          unlink("../admin/assets/imgEvent/" . $event["image"]);
-        }
-      }
-
-      $sql = $conn->prepare("UPDATE events SET image=:image WHERE id=:id");
-      $sql->bindParam(':image', $nameFile);
-      $sql->bindParam(':id', $id);
-      $sql->execute();
-    }
-    header("Location:AddEvent.php");
+  editEvent($conn, $type, $title, $description, $id, $image);
     break;
   case "Cancelar";
     header("Location:AddEvent.php");
-
     break;
   case "Seleccionar";
-    $sql = $conn->prepare("SELECT * FROM events WHERE id=:id");
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-    $event = $sql->fetch(PDO::FETCH_LAZY);
-    $title = $event['title'];
-    $description = $event['description'];
-    $image = $event['image'];
+   selecEvent($conn, $id ,$title, $description, $image);
     break;
   case "Borrar";
-    // Verificar si la imagen existe y eliminarla de la carpeta imgEvent
-    $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-    $event = $sql->fetch(PDO::FETCH_LAZY);
-
-    if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
-      if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
-
-        unlink("../admin/assets/imgEvent/" . $event["image"]);
-      }
-    }
-
-    $sql = $conn->prepare("DELETE FROM events WHERE id=:id");
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-    header("Location:addEvent.php");
-    break;
+  deleteEvent($conn, $id);
+  break;
 }
 // Haciendo la consulta a los registros 
 $query = $conn->prepare("SELECT * FROM events");
