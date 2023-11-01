@@ -14,15 +14,6 @@
         <a href="#scroll-top" title="redireccion al inicio"><img class="icon-footer-svg" src="<?php echo $url ?>/assets/icons/arrow-up-solid.svg" alt="Flecha que regresa al index" title="Line"></a>
     </div>
 </footer> 
-
 <script src="<?php echo $url; ?>/assets/js/scroll-top.js"></script>    
-<!--Script de la galeria -->   
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>  
-<script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
-<!--<script src="<?php //echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>  
-<script src="<?php //echo $url; ?>/assets/js/bottons-links.js"></script>  -->
-<!--Script de blog -->
-<script src="<?php echo $url; ?>/assets/js/blog.js"></script>
 </body>
 </html>
