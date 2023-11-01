@@ -1,6 +1,7 @@
 <?php
 require "config/database.php";
 require "config/utilities.php";
+// Validacion del rol de admin
 validateRol();
 
 //Recibir los datos del formulario
@@ -15,7 +16,7 @@ $dataSend = date('Y-m-d H:i:s'); // Obtendrás la fecha y hora en la Ciudad de M
 
 switch ($action) {
   case "Agregar";
-  addEvent($conn, $type, $title, $description, $date, $image,$dataSend);
+    addEvent($conn, $type, $title, $description, $image, $dataSend);
   break;
   case "Modificar";
   editEvent($conn, $type, $title, $description, $id, $image);
@@ -35,10 +36,20 @@ switch ($action) {
   deleteEvent($conn, $id);
   break;
 }
+
+function getEvents($conn) {
+  $query = $conn->prepare("SELECT * FROM events");
+  $query->execute();
+  return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Para usar la función, pasas la conexión como argumento:
+$events = getEvents($conn);
+
 // Haciendo la consulta a los registros 
-$query = $conn->prepare("SELECT * FROM events");
-$query->execute();
-$events = $query->fetchAll(PDO::FETCH_ASSOC);
+// $query = $conn->prepare("SELECT * FROM events");
+// $query->execute();
+// $events = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php require "partials/header.php"; require "partials/navbar.php";?>

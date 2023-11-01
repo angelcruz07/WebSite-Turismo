@@ -29,7 +29,7 @@ if (!isset($_SESSION["rol"])) {
 }
 }
 
-function addEvent($conn, $type, $title, $description, $date, $image,$dataSend) {
+function addEvent($conn, $type, $title, $description, $image,$dataSend) {
   $sql = $conn->prepare("INSERT INTO events (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
   // Insertar los datos con la variable
   $sql->bindParam(':type', $type);

@@ -38,7 +38,7 @@ require_once "./partials/navbar.php";
       <a href="<?php echo $url; ?>/admin/addGallery.php" class="link-desktop">
       <div class="card-menu">
           <div class="image-container">
-            <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono plus" class="icon-desktop" title="Agregar evento">
+            <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono plus" class="icon-desktop" title="Agregar Galeria">
           </div>
           Agregar a galeria
       </div>

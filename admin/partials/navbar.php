@@ -1,6 +1,3 @@
-<?php
-$url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
-?>
 <header>
   <div class="icon_menu">
     <img src="<?php echo $url ?>/assets/icons/bars-solid-black.svg" alt="Icono menu" id="btn_open" title="icon-menu">
@@ -41,19 +38,19 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
     </a>
     <a href="<?php echo $url; ?>/admin/addGallery.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono gear" title="Agregar hospedaje">
+        <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono gear" title="Agregar galeria">
         <h4>Agregar Galeria</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addGallery.php">
+    <a href="<?php echo $url; ?>/admin/addGastronomy.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar hospedaje">
+        <img src="<?php echo $url ?>/assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar Gastronomia">
         <h4>Agregar Gastronomia</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addGallery.php">
+    <a href="<?php echo $url; ?>/admin/addService.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar hospedaje">
+        <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar Servicio">
         <h4>Agregar Servicio</h4>
       </div>
     </a>
