@@ -1,6 +1,8 @@
 <?php
 require "config/database.php";
 require "config/utilities.php";
+validateRol();
+
 //Recibir los datos del formulario
 $type = (isset($_POST['type'])) ? $_POST['type'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";

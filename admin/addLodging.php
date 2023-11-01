@@ -1,17 +1,7 @@
 <?php
-require "partials/header.php";
-require "partials/navbar.php";
-require "config/database.php";
-// Validacion de rol 
-session_start();
-if (!isset($_SESSION["rol"])) {
-  header("Location: login.php");
-} else {
-  if ($_SESSION['rol'] != 1) {
-    header('location: login.php');
-  }
-}
-
+require_once "config/database.php";
+require_once "./config/utilities.php";
+validateRol();
 
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
@@ -116,7 +106,10 @@ $query->execute();
 $events = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
+<?php
+require "partials/header.php";
+require "partials/navbar.php";
+?>
 <section id="add-form" class="add-form">
 
   <h1 class="name-index"> Agregar un hospoedaje</h1>
