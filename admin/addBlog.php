@@ -33,40 +33,8 @@ switch ($action) {
     $sql->execute();
     header("Location:Addblog.php");
     break;
-
   case "Modificar";
-    $sql = $conn->prepare("UPDATE blog SET title=:title, description=:description WHERE id=:id");
-    $sql->bindParam(':title', $title);
-    $sql->bindParam(':description', $description);
-    $sql->bindParam(':id', $id);
-    $sql->execute();
-
-    if ($image != "") {
-
-      $date = new DateTime();
-      $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
-      $tmpImage = $_FILES["image"]["tmp_name"];
-
-      move_uploaded_file($tmpImage, "../admin/assets/imgBlog/" . $nameFile);
-
-      $sql = $conn->prepare("SELECT image FROM blog WHERE id=:id");
-      $sql->bindParam(':id', $id);
-      $sql->execute();
-      $blog = $sql->fetch(PDO::FETCH_LAZY);
-
-      if (isset($blog["image"]) && ($blog['image'] != "imagen.jpg")) {
-        if (file_exists("../admin/assets/imgBlog/" . $blog["image"])) {
-
-          unlink("../admin/assets/imgBlog/" . $blog["image"]);
-        }
-      }
-
-      $sql = $conn->prepare("UPDATE blog SET image=:image WHERE id=:id");
-      $sql->bindParam(':image', $nameFile);
-      $sql->bindParam(':id', $id);
-      $sql->execute();
-    }
-    header("Location:addBlog.php");
+  editEvent($conn, $type, $title, $description, $id, $image, $table);
     break;
   case "Cancelar";
     header("Location: $location");

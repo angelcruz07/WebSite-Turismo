@@ -21,7 +21,7 @@ $location = "addEvent.php";
 
 switch ($action) {
   case "Agregar";
-    addEvent($conn, $type, $title, $description, $image, $dataSend);
+  addEvent($conn, $type, $title, $description, $image, $dataSend, $table);
   break;
   case "Modificar";
   editEvent($conn, $type, $title, $description, $id, $image, $table);

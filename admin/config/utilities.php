@@ -1,5 +1,10 @@
 <?php
-// Funciones del panel de administrador
+/**
+ * Redirrecion dependiendo el rol del usuario
+ *
+ * @param [int] $rol valor de int en la base de datos
+ * @return void
+ */
 function redirectToRolePage($rol) {
   switch ($rol) {
       case 1:
@@ -9,20 +14,23 @@ function redirectToRolePage($rol) {
           header('Location: home.php');
           exit();
       default:
-          // Manejar otros roles si es necesario
   }
 }
 
 
-function roles() {
-  if (isset($_SESSION["rol"])) {
-      // Si ya hay una sesión (el usuario está logueado),
-      // redirige a una página que corresponda al rol del usuario
-      redirectToRolePage($_SESSION["rol"]);
-  }
-}
+// function roles() {
+//   if (isset($_SESSION["rol"])) {
+//       // Si ya hay una sesión (el usuario está logueado),
+//       // redirige a una página que corresponda al rol del usuario
+//       redirectToRolePage($_SESSION["rol"]);
+//   }
+// }
 
-// Validar el rol de administrador
+/**
+ * Validar el rol de administrador
+ *
+ * @return void
+ */
 function validateRol(){
   session_start();
 if (!isset($_SESSION["rol"])) {
@@ -35,35 +43,63 @@ if (!isset($_SESSION["rol"])) {
 }
 
 // Funcion para agregar una publicacion
-function addEvent($conn, $type, $title, $description, $image,$dataSend) {
-  $sql = $conn->prepare("INSERT INTO events (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
-  // Insertar los datos con la variable
+function addEvent($conn, $type, $title, $description, $image, $dataSend, $table) {
+  insertEvent($conn, $type, $title, $description, $image, $dataSend, $table);
+}
+
+function insertEvent($conn, $type, $title, $description, $image, $dataSend, $table) {
+  $sql = $conn->prepare("INSERT INTO $table (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
   $sql->bindParam(':type', $type);
   $sql->bindParam(':title', $title);
   $sql->bindParam(':description', $description);
-  $sql->bindParam(':date' , $dataSend);
-  
-  //Guardando la iamgen con la fecha en que se agrego
+  $sql->bindParam(':date', $dataSend);
+  $nameFile = uploadImage($image);
+  $sql->bindParam(':image', $nameFile);
+  $sql->execute();
+}
+
+// Conflico en el nombre de la funcion corregir
+function uploadImage($image) {
   $date = new DateTime();
-  
   $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
   $tmpImage = $_FILES["image"]["tmp_name"];
 
   if ($tmpImage != "") {
-    move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
+      move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
   }
 
-  $sql->bindParam(':image', $nameFile);
-  $date->getTimestamp();
-  $sql->execute();
-  header("Location:AddEvent.php");
+  return $nameFile;
 }
 
+// function addEvent($conn, $type, $title, $description, $image,$dataSend, $table) {
+//   $sql = $conn->prepare("INSERT INTO $table (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
+//   // Insertar los datos con la variable
+//   $sql->bindParam(':type', $type);
+//   $sql->bindParam(':title', $title);
+//   $sql->bindParam(':description', $description);
+//   $sql->bindParam(':date' , $dataSend);
+  
+//   //Guardando la imagen con la fecha en que se agrego
+//   $date = new DateTime();
+//   $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
+//   $tmpImage = $_FILES["image"]["tmp_name"];
+
+//   if ($tmpImage != "") {
+//     move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
+//   }
+
+//   $sql->bindParam(':image', $nameFile);
+//   $date->getTimestamp();
+//   $sql->execute();
+//   header("Location:AddEvent.php");
+// }
+
+
+// Actualizar el registro o editar 
 function editEvent($conn, $type, $title, $description, $id, $image, $table) {
   updateEventData($conn, $type, $title, $description, $id, $table);
   handleImage($conn, $id, $image, $table);
 }
-
 
 function updateEventData($conn, $type, $title, $description, $id, $table) {
   $sql = $conn->prepare("UPDATE $table SET type=:type, title=:title, description=:description WHERE id=:id");
@@ -81,14 +117,13 @@ function handleImage($conn, $id, $image, $table) {
   }
 }
 
-
-function uploadImage($image) {
-  $date = new DateTime();
-  $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
-  $tmpImage = $_FILES["image"]["tmp_name"];
-  move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
-  return $nameFile;
-}
+// function uploadImage($image) {
+//   $date = new DateTime();
+//   $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
+//   $tmpImage = $_FILES["image"]["tmp_name"];
+//   move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
+//   return $nameFile;
+// }
 
 function deleteOldImage($conn, $id, $table) {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
@@ -110,41 +145,6 @@ function updateImage($conn, $id, $nameFile, $table) {
   $sql->bindParam(':id', $id);
   $sql->execute();
 }
-
-
-// function editEvent($conn, $type, $title, $description, $id, $image) {
-//   $sql = $conn->prepare("UPDATE events SET type=:type, title=:title, description=:description WHERE id=:id");
-//   $sql->bindParam(':type', $type);
-//   $sql->bindParam(':title', $title);
-//   $sql->bindParam(':description', $description);
-//   $sql->bindParam(':id', $id);
-//   $sql->execute();
-
-//   if ($image != "") {
-//       $date = new DateTime();
-//       $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
-//       $tmpImage = $_FILES["image"]["tmp_name"];
-//       move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
-
-//       $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
-//       $sql->bindParam(':id', $id);
-//       $sql->execute();
-//       $event = $sql->fetch(PDO::FETCH_LAZY);
-
-//       if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
-//           if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
-//               unlink("../admin/assets/imgEvent/" . $event["image"]);
-//           }
-//       }
-
-//       $sql = $conn->prepare("UPDATE events SET image=:image WHERE id=:id");
-//       $sql->bindParam(':image', $nameFile);
-//       $sql->bindParam(':id', $id);
-//       $sql->execute();
-//   }
-//   header("Location:AddEvent.php");
-// }
-
 
 /**
  * Seleccionar consultas agregadas y mostrarlas en el formulario
