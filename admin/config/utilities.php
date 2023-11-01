@@ -96,21 +96,36 @@ function selectEvent($conn, $id) {
 }
 
 
-function deleteEvent($conn, $id) {
-  $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
-  $sql->bindParam(':id', $id);
-  $sql->execute();
-  $event = $sql->fetch(PDO::FETCH_LAZY);
+function verifyImage($imagePath){
 
-  if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
-    if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
-      unlink("../admin/assets/imgEvent/" . $event["image"]);
+  if (isset($imagePath["image"]) && ($imagePath['image'] != "imagen.jpg")) {
+    if (file_exists("../admin/assets/imgEvent/" . $imagePath["image"])) {
+      unlink("../admin/assets/imgEvent/" . $imagePath["image"]);
     }
   }
+}
+
+function deleteEvent($conn, $id, $location, $table ) {
+  $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
+  $sql->bindParam(':id', $id);
+  $sql->execute();
+  
+  $image = $sql->fetch(PDO::FETCH_ASSOC);
+
+  if ($image) {
+    verifyImage("../admin/assets/imgEvent/" . $image["image"]);
+  }
+
   $sql = $conn->prepare("DELETE FROM events WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
-  header("Location:addEvent.php");
+  header("Location:$location");
 }
 
+// Consulta de los datos
+function getEvents($conn,$table) {
+  $query = $conn->prepare("SELECT * FROM $table");
+  $query->execute();
+  return $query->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>

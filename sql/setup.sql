@@ -30,6 +30,14 @@ CREATE TABLE events (
 );
 
 
+CREATE TABLE blog (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    title  VARCHAR(25),
+    description VARCHAR(250), 
+    date TIMESTAMP,
+    image VARCHAR(3000)
+);
+
 CREATE TABLE request(
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     username VARCHAR(255) NOT NULL,
@@ -41,15 +49,6 @@ CREATE TABLE request(
     message VARCHAR(255), 
     status VARCHAR(25)
 ); 
-
-
-CREATE TABLE blog (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    title  VARCHAR(25),
-    description VARCHAR(250), 
-    date TIMESTAMP,
-    image VARCHAR(3000)
-);
 
 CREATE TABLE lodging (
     id INT AUTO_INCREMENT PRIMARY KEY,

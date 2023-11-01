@@ -33,23 +33,16 @@ switch ($action) {
     }
     break;
   case "Borrar";
-  deleteEvent($conn, $id);
+  $table = "events";
+  $location = "addEvent.php";
+  deleteEvent($conn, $id, $location,$table);
   break;
 }
 
-function getEvents($conn) {
-  $query = $conn->prepare("SELECT * FROM events");
-  $query->execute();
-  return $query->fetchAll(PDO::FETCH_ASSOC);
-}
+// Consulta de los datos
+$table = "events";
+$events = getEvents($conn, $table);
 
-// Para usar la función, pasas la conexión como argumento:
-$events = getEvents($conn);
-
-// Haciendo la consulta a los registros 
-// $query = $conn->prepare("SELECT * FROM events");
-// $query->execute();
-// $events = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php require "partials/header.php"; require "partials/navbar.php";?>
