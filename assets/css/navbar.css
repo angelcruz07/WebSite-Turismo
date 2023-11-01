@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 9%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
 .logo img {
   width:100px

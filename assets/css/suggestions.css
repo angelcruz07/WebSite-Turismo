@@ -1,9 +1,10 @@
 #suggestions{
-    padding: var(--standard-padding);
-    margin-bottom: 3rem;
+    padding: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    top: 10rem;
 } 
  
-
 .container_sugetions { 
     display: flex;
     flex-wrap: nowrap;

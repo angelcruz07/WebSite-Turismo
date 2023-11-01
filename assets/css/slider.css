@@ -2,7 +2,9 @@
   position: relative;
   width: 100%; /* Cambia el ancho al 100% para ocupar todo el espacio disponible */
   height: 90vh;
-  overflow: hidden; /* Oculta el contenido que desborda */
+  overflow: hidden;
+  position: relative;
+  top: 72px; /* Oculta el contenido que desborda */
 }
 
 .slider-container img {

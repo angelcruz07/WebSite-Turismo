@@ -42,7 +42,7 @@
     padding: var(--standard-padding);
     text-align: center;
     font-family: var(--font-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   /* Scrool top */
   #scroll-to-top a {
