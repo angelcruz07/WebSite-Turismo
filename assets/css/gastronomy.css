@@ -108,15 +108,9 @@
     margin-top: 10px;
 }
 @media screen and (max-width: 768px) {
-    .title-front-page{ 
-        font-size: 2rem;
-        margin-left:8rem;
-    }
     .container-card-gastronomy{ 
         padding: var(--standard-padding);
     }
-    
-
 }
 @media (max-width: 450px){
     html { 

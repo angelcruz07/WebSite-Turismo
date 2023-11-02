@@ -3,6 +3,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    top: 73px;
+    margin-bottom: 8rem;
 }
 
 .title-front-page{ 
@@ -35,4 +37,15 @@
     object-fit: cover;
     display: block;
     z-index: 2;
+}
+@media screen and (max-width: 768px) {
+    .title-front-page{ 
+        font-size: 2rem;
+        margin-left:8rem;
+    }
+}
+@media (max-width: 450px){
+    .title-front-page{ 
+        margin-left:4rem;
+    }
 }
