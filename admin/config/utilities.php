@@ -19,15 +19,6 @@ function redirectToRolePage($rol)
   }
 }
 
-// Creo que esta funcion no me sirve
-// function roles() {
-//   if (isset($_SESSION["rol"])) {
-//       // Si ya hay una sesión (el usuario está logueado),
-//       // redirige a una página que corresponda al rol del usuario
-//       redirectToRolePage($_SESSION["rol"]);
-//   }
-// }
-
 /**
  * Validar el rol de administrador
  *
@@ -44,35 +35,36 @@ function validateRol()
     }
   }
 }
+
 /**
- * Agregar un registro a la base de datos llamando a otra funcion
+ * Insertar un nuevo registro 
  *
- * @param [type] $conn
- * @param [type] $type
- * @param [string] $title titulo de la publicacion
- * @param [string] $description descripcion de la publicacion
- * @param [string] $image descripcion de la publicacion
- * @param [datatime] $dataSend hora en que se agrego la publicacion
- * @param [string] $table nombre de la tabla de la base de datos
+ * @param  $conn
+ * @param array $data array con los datos a ingresar 
+ * @param array $validFields array con los campos de la base de datos 
  * @return void
  */
-function addEvent($conn, $type, $title, $description, $image, $dataSend, $table, $carpet)
+function insertRegister($conn, $data = [], $validFields = [])
 {
-  insertEvent($conn, $type, $title, $description, $image, $dataSend, $table, $carpet);
-}
+  $table = isset($data['table']) ? $data['table'] : 'default_table';
 
-function insertEvent($conn, $type, $title, $description, $image, $dataSend, $table, $carpet)
-{
-  $sql = $conn->prepare("INSERT INTO $table (type, title, description, date, image) VALUES (:type, :title, :description, :date, :image);");
-  $sql->bindParam(':type', $type);
-  $sql->bindParam(':title', $title);
-  $sql->bindParam(':description', $description);
-  $sql->bindParam(':date', $dataSend);
-  $nameFile = loadImage($image, $carpet);
-  $sql->bindParam(':image', $nameFile);
-  $sql->execute();
-}
+  $insertData = array();
+  foreach ($validFields as $field) {
+    if (isset($data[$field])) {
+      $insertData[$field] = $data[$field];
+    }
+  }
 
+  // Llamar a loadImage para obtener el nombre del archivo
+  $nameFile = loadImage($_FILES["image"], $data['carpet']);
+
+  // Agregar el nombre del archivo al array de datos
+  $insertData['image'] = $nameFile;
+
+  // Construir la consulta SQL con los campos válidos
+  $sql = $conn->prepare("INSERT INTO $table (" . implode(', ', array_keys($insertData)) . ") VALUES (" . implode(', ', array_fill(0, count($insertData), '?')) . ");");
+  $sql->execute(array_values($insertData));
+}
 
 /**
  * Cargar imagen a la base de datos
@@ -102,6 +94,7 @@ function editRegister($conn, $type, $title, $description, $id, $image, $table)
   handleImage($conn, $id, $image, $table);
 }
 
+
 function updateRegisterData($conn, $type, $title, $description, $id, $table)
 {
   $sql = $conn->prepare("UPDATE $table SET type=:type, title=:title, description=:description WHERE id=:id");
@@ -123,7 +116,7 @@ function handleImage($conn, $id, $image, $table)
 /**
  * Actualizar la imagen de la consulta
  *
- * @param [string] $image ruta de la imagen en memoria
+ * @param string $image ruta de la imagen en memoria
  * @return void
  */
 function uploadImage($image)
@@ -135,7 +128,14 @@ function uploadImage($image)
   return $nameFile;
 }
 
-
+/**
+ * Eliminar la imagen de la carpeta
+ *
+ * @param PDO $conn
+ * @param int $id
+ * @param string $table
+ * @return void
+ */
 function deleteOldImage($conn, $id, $table)
 {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
@@ -151,7 +151,15 @@ function deleteOldImage($conn, $id, $table)
   }
 }
 
-
+/**
+ * Actualizar imagen de la base de datos
+ *
+ * @param PDO $conn
+ * @param int $id
+ * @param string $nameFile
+ * @param string $table
+ * @return void
+ */
 function updateImage($conn, $id, $nameFile, $table)
 {
   $sql = $conn->prepare("UPDATE $table SET image=:image WHERE id=:id");
@@ -163,8 +171,8 @@ function updateImage($conn, $id, $nameFile, $table)
 /**
  * Seleccionar consultas agregadas y mostrarlas en el formulario
  *
- * @param [conection] $conn recuperar la conexion a la base de datos 
- * @param [int] $id  identificador de la consulta
+ * @param PDO $conn recuperar la conexion a la base de datos 
+ * @param int $id  identificador de la consulta
  * 
  *  @return array|null Devuelve el registro como un arreglo asociativo o NULL si no se encontró ninguna coincidencia.s
  */
@@ -181,15 +189,14 @@ function selectRegister($conn, $id, $table)
 /**
  * Verificar si existe una imagen
  *
- * @param [string] $imagePath ruta de la imagen
+ * @param string $imagePath ruta de la imagen
  * @return void
  */
-function verifyImage($imagePath)
+function verifyImage($imagePath, $carpet)
 {
-
   if (isset($imagePath["image"]) && ($imagePath['image'] != "imagen.jpg")) {
-    if (file_exists("../admin/assets/imgEvent/" . $imagePath["image"])) {
-      unlink("../admin/assets/imgEvent/" . $imagePath["image"]);
+    if (file_exists("../admin/assets/$carpet/" . $imagePath["image"])) {
+      unlink("../admin/assets/$carpet/" . $imagePath["image"]);
     }
   }
 }
@@ -197,27 +204,23 @@ function verifyImage($imagePath)
 /**
  * Eliminar los registros de la base de datos
  *
- * @param [PDO] $conn Recuperar la conexion a Mysql
+ * @param PDO $conn Recuperar la conexion a Mysql
  * @param [int] $id enviar el identificador del registro
  * @param [string] $location nombre del archivo al que se actualizara la cabecera
  * @param [string] $table nombre de la tabla a la que se esta consultando
  * @return void
  */
-function deleteRegister($conn, $id, $location, $table)
+function deleteRegister($conn, $id, $table, $carpet)
 {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
   $image = $sql->fetch(PDO::FETCH_ASSOC);
 
-  if ($image) {
-    verifyImage("../admin/assets/imgEvent/" . $image["image"]);
-  }
-
+  deleteOldImage($conn, $id, $table);
   $sql = $conn->prepare("DELETE FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
-  header("Location:$location");
 }
 
 
