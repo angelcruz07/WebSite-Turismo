@@ -121,7 +121,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="swiper-slide card-colaborations">
       <div class="card-content-colaborations">
         <div class="image-colaborations">
-          <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
+          <img src="<?php echo $urlImage ?>/Lizandro-colab.png" alt="">
         </div>
         <div class="media-icons">
           <i class="fab fa-facebook"></i>
@@ -130,8 +130,8 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="name-profession">
-          <span class="name">NOMBRE</span>
-          <span class="profession">PROFESION/PUESTO</span>
+          <span class="name">Lizandro Antonio Santos</span>
+          <span class="profession">Programador Web</span>
         </div>
 
       </div>

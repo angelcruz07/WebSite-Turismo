@@ -47,7 +47,7 @@
   font-size: 14px; 
   margin-bottom: 24px;
 }  
-/* Responsive*/ 
+/* Responsive card-dynamic*/ 
 @media (width <= 880px){ 
   .card-dynamic{ 
     margin: 0 40px; 
@@ -194,6 +194,10 @@
   .card__data {
     width: 250px;
     padding: 1rem;
+  } 
+  .card__img{ 
+    width: 250px; 
+    border-radius: 1.5rem;
   }
 }
 
@@ -201,7 +205,12 @@
 @media screen and (min-width: 768px) {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
+    column-gap: 1.5rem; 
+    
+  } 
+  .card__img{ 
+    width: 250px; 
+    border-radius: 1.5rem;
   }
 }
 
@@ -230,7 +239,6 @@
 .swiper{
   width: 950px; 
 }
-
 .card-colaborations{
   position: relative;
   background: #fff;
@@ -331,21 +339,19 @@
   opacity: 1;
   color: white;
 } 
- 
+ /*Responsive carrusel */
 @media screen and (min-width: 768px) {
   .swiper-container {
-    width: 100%; /* Ajusta el ancho del contenedor según tus necesidades */ 
+    width: 100%;  
     justify-content: center; 
     align-items: center;
   }
   .mySwiper {
     width: 100%;
   }
-  
-  /* Cambia el número de tarjetas visibles a 3 en pantallas grandes */
   .swiper-slide {
     width: auto;
-    margin-right: 20px; /* Espacio entre tarjetas */
+    margin-right: 20px; 
   }
 } 
 @media screen and (max-width: 849px) {
@@ -354,8 +360,6 @@
     margin-right: 0;
   }
 }
-
-/* Estilos para el carrousel en pantallas medianas y grandes (850px o más) */
 @media screen and (min-width: 850px) {
   .swiper-slide {
     width: calc((100% - 40px) / 3);
