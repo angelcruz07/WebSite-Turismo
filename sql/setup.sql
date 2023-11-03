@@ -57,8 +57,8 @@ CREATE TABLE
 CREATE TABLE
     lodging (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(50) NOT NULL,
-        description VARCHAR(250),
+        name VARCHAR(255) NOT NULL,
+        description VARCHAR(255),
         phone_number VARCHAR(255) NULL,
         social_networks VARCHAR(250) NULL,
         image VARCHAR(3000)
