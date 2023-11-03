@@ -330,4 +330,35 @@
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
   color: white;
+} 
+ 
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 100%; /* Ajusta el ancho del contenedor según tus necesidades */ 
+    justify-content: center; 
+    align-items: center;
+  }
+  .mySwiper {
+    width: 100%;
+  }
+  
+  /* Cambia el número de tarjetas visibles a 3 en pantallas grandes */
+  .swiper-slide {
+    width: auto;
+    margin-right: 20px; /* Espacio entre tarjetas */
+  }
+} 
+@media screen and (max-width: 849px) {
+  .swiper-slide {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Estilos para el carrousel en pantallas medianas y grandes (850px o más) */
+@media screen and (min-width: 850px) {
+  .swiper-slide {
+    width: calc((100% - 40px) / 3);
+    margin-right: 20px;
+  }
 }
