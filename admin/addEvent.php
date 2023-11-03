@@ -11,43 +11,44 @@ $title = (isset($_POST['title'])) ? $_POST['title'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
+// Obtener la fecha y hora en la Ciudad de México
 date_default_timezone_set('America/Mexico_City');
-$dataSend = date('Y-m-d H:i:s'); // Obtendrás la fecha y hora en la Ciudad de México
+$dataSend = date('Y-m-d H:i:s');
 
 //Parametros para las funciones
 $table = "events";
 $location = "addEvent.php";
-
+$carpet = "imgEvent";
 
 switch ($action) {
   case "Agregar";
-  addEvent($conn, $type, $title, $description, $image, $dataSend, $table);
-  break;
+    addEvent($conn, $type, $title, $description, $image, $dataSend, $table, $carpet);
+    break;
   case "Modificar";
-  editEvent($conn, $type, $title, $description, $id, $image, $table);
+    editRegister($conn, $type, $title, $description, $id, $image, $table);
     break;
   case "Cancelar";
-    header("Location:AddEvent.php");
+    header("Location:$location");
     break;
   case "Seleccionar":
-    $selectedEvent = selectEvent($conn, $id, $table);
+    $selectedEvent = selectRegister($conn, $id, $table);
     if ($selectedEvent) {
-        $title = $selectedEvent['title'];
-        $description = $selectedEvent['description'];
-        $image = $selectedEvent['image'];
+      $title = $selectedEvent['title'];
+      $description = $selectedEvent['description'];
+      $image = $selectedEvent['image'];
     }
     break;
   case "Borrar";
-  deleteEvent($conn, $id, $location,$table);
-  break;
+    deleteRegister($conn, $id, $location, $table);
+    break;
 }
 
 // Consulta de los datos
-$events = getEvents($conn, $table);
-
+$events = getQuery($conn, $table);
 ?>
 
-<?php require "partials/header.php"; require "partials/navbar.php";?>
+<?php require "partials/header.php";
+require "partials/navbar.php"; ?>
 
 <section id="add-form" class="add-form">
   <h1 class="title-index"> Agregar un nuevo evento</h1>
@@ -68,24 +69,26 @@ $events = getEvents($conn, $table);
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title"  maxlength="22">
-          <?php if (!empty($titleError)) { echo "<div class='error-message'>$titleError</div>"; }?>
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22">
+          <?php if (!empty($titleError)) {
+            echo "<div class='error-message'>$titleError</div>";
+          } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description"id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-            <img src="../admin/assets/imgEvent/<?php echo $image ?>"  title="Imagen seleccionada" width="50px">
+            <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button  type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
@@ -112,9 +115,9 @@ $events = getEvents($conn, $table);
               <td class="date-form image">
                 <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" width="40px">
               </td>
-              <td class="date-form type"><?php echo $event['type'] ?></td>   
+              <td class="date-form type"><?php echo $event['type'] ?></td>
               <td class="date-form btn-flex option">
-                <form method="POST"id="custom-register">
+                <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
                   <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
