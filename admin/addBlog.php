@@ -30,7 +30,7 @@ switch ($action) {
     insertRegister($conn, $data, $validFields);
     break;
   case "Modificar";
-    editRegister($conn, $type, $title, $description, $id, $image, $table);
+    editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet);
     break;
   case "Cancelar";
     header("Location:$location");
@@ -44,7 +44,7 @@ switch ($action) {
     }
     break;
   case "Borrar";
-    deleteRegister($conn, $id, $carpet, $table);
+    deleteRegister($conn, $id, $table, $carpet);
     header("Location:$location");
     break;
 }
@@ -63,25 +63,25 @@ require_once "partials/navbar.php"; ?>
 
       <form method="POST" enctype="multipart/form-data" class="form-container">
         <div class="form-group">
-          <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
+          <input type="hidden" value="<?php echo $id ?>" name="id" id="id" required>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22">
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22" required>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
-        <div class="form-group">
+        <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-            <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="../admin/assets/imgBlog/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image">
+          <input type="file" name="image" id="image" required>
         </div>
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>

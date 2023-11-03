@@ -1,25 +1,6 @@
 <?php
 
 /**
- * Redirecion dependiendo el rol del usuario
- *
- * @param [int] $rol valor de int en la base de datos
- * @return void
- */
-function redirectToRolePage($rol)
-{
-  switch ($rol) {
-    case 1:
-      header('Location: admin.php');
-      exit();
-    case 2:
-      header('Location: home.php');
-      exit();
-    default:
-  }
-}
-
-/**
  * Validar el rol de administrador
  *
  * @return void
@@ -39,7 +20,7 @@ function validateRol()
 /**
  * Insertar un nuevo registro 
  *
- * @param  $conn
+ * @param object $conn conexion a la base de datos
  * @param array $data array con los datos a ingresar 
  * @param array $validFields array con los campos de la base de datos 
  * @return void
@@ -54,13 +35,10 @@ function insertRegister($conn, $data = [], $validFields = [])
       $insertData[$field] = $data[$field];
     }
   }
-
   // Llamar a loadImage para obtener el nombre del archivo
   $nameFile = loadImage($_FILES["image"], $data['carpet']);
-
   // Agregar el nombre del archivo al array de datos
   $insertData['image'] = $nameFile;
-
   // Construir la consulta SQL con los campos válidos
   $sql = $conn->prepare("INSERT INTO $table (" . implode(', ', array_keys($insertData)) . ") VALUES (" . implode(', ', array_fill(0, count($insertData), '?')) . ");");
   $sql->execute(array_values($insertData));
@@ -69,8 +47,8 @@ function insertRegister($conn, $data = [], $validFields = [])
 /**
  * Cargar imagen a la base de datos
  *
- * @param [string] $image ruta de nuesta imagen en la base de datos
- * @param [string] $carpet nombre de la carpeta donde se almacena la imagen 
+ * @param string $image ruta de nuesta imagen en la base de datos
+ * @param string $carpet nombre de la carpeta donde se almacena la imagen 
  * @return void
  */
 function loadImage($image, $carpet)
@@ -88,10 +66,10 @@ function loadImage($image, $carpet)
 
 
 // Actualizar el registro o editar 
-function editRegister($conn, $type, $title, $description, $id, $image, $table)
+function editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet)
 {
   updateRegisterData($conn, $type, $title, $description, $id, $table);
-  handleImage($conn, $id, $image, $table);
+  handleImage($conn, $id, $image, $table, $carpet);
 }
 
 
@@ -104,11 +82,11 @@ function updateRegisterData($conn, $type, $title, $description, $id, $table)
   $sql->bindParam(':id', $id);
   $sql->execute();
 }
-function handleImage($conn, $id, $image, $table)
+function handleImage($conn, $id, $image, $table, $carpet)
 {
   if (!empty($image)) {
     $nameFile = uploadImage($image);
-    deleteOldImage($conn, $id, $table);
+    deleteOldImage($conn, $id, $table, $carpet);
     updateImage($conn, $id, $nameFile, $table);
   }
 }
@@ -136,7 +114,7 @@ function uploadImage($image)
  * @param string $table
  * @return void
  */
-function deleteOldImage($conn, $id, $table)
+function deleteOldImage($conn, $id, $table, $carpet)
 {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
@@ -144,7 +122,7 @@ function deleteOldImage($conn, $id, $table)
   $deleteImage = $sql->fetch(PDO::FETCH_LAZY);
 
   if (isset($deleteImage["image"]) && $deleteImage['image'] != "imagen.jpg") {
-    $imagePath = "../admin/assets/imgEvent/" . $deleteImage["image"];
+    $imagePath = "../admin/assets/$carpet/" . $deleteImage["image"];
     if (file_exists($imagePath)) {
       unlink($imagePath);
     }
@@ -171,12 +149,12 @@ function updateImage($conn, $id, $nameFile, $table)
 /**
  * Seleccionar consultas agregadas y mostrarlas en el formulario
  *
- * @param PDO $conn recuperar la conexion a la base de datos 
+ * @param object $conn recuperar la conexion a la base de datos 
  * @param int $id  identificador de la consulta
  * 
  *  @return array|null Devuelve el registro como un arreglo asociativo o NULL si no se encontró ninguna coincidencia.s
  */
-function selectRegister($conn, $id, $table)
+function selectRegister(object $conn, int $id, string $table)
 {
   $sql = $conn->prepare("SELECT * FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
@@ -187,51 +165,33 @@ function selectRegister($conn, $id, $table)
 }
 
 /**
- * Verificar si existe una imagen
+ * Eliminar registro 
  *
- * @param string $imagePath ruta de la imagen
+ * @param object $conn
+ * @param integer $id
+ * @param string $table
+ * @param string $carpet
  * @return void
  */
-function verifyImage($imagePath, $carpet)
-{
-  if (isset($imagePath["image"]) && ($imagePath['image'] != "imagen.jpg")) {
-    if (file_exists("../admin/assets/$carpet/" . $imagePath["image"])) {
-      unlink("../admin/assets/$carpet/" . $imagePath["image"]);
-    }
-  }
-}
-
-/**
- * Eliminar los registros de la base de datos
- *
- * @param PDO $conn Recuperar la conexion a Mysql
- * @param [int] $id enviar el identificador del registro
- * @param [string] $location nombre del archivo al que se actualizara la cabecera
- * @param [string] $table nombre de la tabla a la que se esta consultando
- * @return void
- */
-function deleteRegister($conn, $id, $table, $carpet)
+function deleteRegister(object $conn, int $id, string $table, string $carpet)
 {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
-  $image = $sql->fetch(PDO::FETCH_ASSOC);
-
-  deleteOldImage($conn, $id, $table);
+  deleteOldImage($conn, $id, $table, $carpet);
   $sql = $conn->prepare("DELETE FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
 }
 
-
 /**
  * Consulta del registro para mostrarlo en una tabla
  *
- * @param [PDO] $conn Recuperar la conexion a Mysql
- * @param [String] $table Nombre de la tabla a la que se desar consultar
- * @return $query devolvemos un array asosiativo  con los datos de las tabla
+ * @param object $conn Recuperar la conexion a Mysql
+ * @param string $table Nombre de la tabla a la que se desar consultar
+ * @return array $query devolvemos un array asosiativo  con los datos de las tabla
  */
-function  getQuery($conn, $table)
+function  getQuery(object $conn, string $table)
 {
   $query = $conn->prepare("SELECT * FROM $table");
   $query->execute();
