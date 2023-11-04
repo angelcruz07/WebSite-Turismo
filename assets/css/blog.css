@@ -47,7 +47,7 @@
   font-size: 14px; 
   margin-bottom: 24px;
 }  
-/* Responsive*/ 
+/* Responsive card-dynamic*/ 
 @media (width <= 880px){ 
   .card-dynamic{ 
     margin: 0 40px; 
@@ -194,6 +194,10 @@
   .card__data {
     width: 250px;
     padding: 1rem;
+  } 
+  .card__img{ 
+    width: 250px; 
+    border-radius: 1.5rem;
   }
 }
 
@@ -201,7 +205,12 @@
 @media screen and (min-width: 768px) {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
+    column-gap: 1.5rem; 
+    
+  } 
+  .card__img{ 
+    width: 250px; 
+    border-radius: 1.5rem;
   }
 }
 
@@ -230,7 +239,6 @@
 .swiper{
   width: 950px; 
 }
-
 .card-colaborations{
   position: relative;
   background: #fff;
@@ -330,4 +338,31 @@
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
   color: white;
+} 
+ /*Responsive carrusel */
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 100%;  
+    justify-content: center; 
+    align-items: center;
+  }
+  .mySwiper {
+    width: 100%;
+  }
+  .swiper-slide {
+    width: auto;
+    margin-right: 20px; 
+  }
+} 
+@media screen and (max-width: 849px) {
+  .swiper-slide {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 850px) {
+  .swiper-slide {
+    width: calc((100% - 40px) / 3);
+    margin-right: 20px;
+  }
 }
