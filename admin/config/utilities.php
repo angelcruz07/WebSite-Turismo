@@ -45,29 +45,35 @@ function insertRegister($conn, $data = [], $validFields = [])
 }
 
 
-//Sirve
 /**
  * Cargar imagen a la base de datos
  *
  * @param string $image ruta de nuesta imagen en la base de datos
- * @param string $carpet nombre de la carpeta donde se almacena la imagen 
+ * @param string $file nombre de la carpeta donde se almacena la imagen 
  * @return void
  */
-function loadImage($image, $carpet)
+function loadImage($image, $file)
 {
   $date = new DateTime();
   $nameFile = ($image != "") ? $date->getTimestamp() . "_" . $_FILES["image"]["name"] : "imagen.jpg";
   $tmpImage = $_FILES["image"]["tmp_name"];
 
   if ($tmpImage != "") {
-    move_uploaded_file($tmpImage, "../admin/assets/$carpet/" . $nameFile);
+    move_uploaded_file($tmpImage, "../admin/assets/$file/" . $nameFile);
   }
 
   return $nameFile;
 }
 
 
-//ACTUZALIZAR REGISTRO 
+/**
+ * Modificar el registro de datos
+ *
+ * @param object $conn
+ * @param array $data
+ * @param array $validFields
+ * @return void
+ */
 function editRegister($conn, $data = [], $validFields = [])
 {
   $table = ($data['table']);
@@ -93,103 +99,38 @@ function editRegister($conn, $data = [], $validFields = [])
   $sql->execute();
 }
 
-function editImage($conn, $id, $image)
+/**
+ * Modificar nuestra imagen si se requiere
+ *
+ * @param  object $conn
+ * @param  interger $id
+ * @param  string $image
+ * @return void
+ */
+function editImage($conn, $id, $image, $file, $table)
 {
   if ($image != "") {
     $date = new DateTime();
     $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
     $tmpImage = $_FILES["image"]["tmp_name"];
 
-    move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
+    move_uploaded_file($tmpImage, "../admin/assets/$file/" . $nameFile);
 
-    $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
+    $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
     $sql->bindParam(':id', $id);
     $sql->execute();
-    $event = $sql->fetch(PDO::FETCH_ASSOC);
+    $image = $sql->fetch(PDO::FETCH_ASSOC);
 
-    if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
-      if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
-        unlink("../admin/assets/imgEvent/" . $event["image"]);
-      }
+    if (file_exists("../admin/assets/$file/" . $image["image"])) {
+      unlink("../admin/assets/$file/" . $image["image"]);
     }
 
-    $sql = $conn->prepare("UPDATE events SET image=:image WHERE id=:id");
+    $sql = $conn->prepare("UPDATE $table SET image=:image WHERE id=:id");
     $sql->bindParam(':image', $nameFile);
     $sql->bindParam(':id', $id);
     $sql->execute();
   }
 }
-
-// Actualizar el registro o editar 
-// function editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet)
-// {
-//   updateRegisterData($conn, $type, $title, $description, $id, $table);
-//   handleImage($conn, $id, $image, $table, $carpet);
-// }
-
-
-// function updateRegisterData($conn, $type, $title, $description, $id, $table)
-// {
-//   $sql = $conn->prepare("UPDATE $table SET type=:type, title=:title, description=:description WHERE id=:id");
-//   $sql->bindParam(':type', $type);
-//   $sql->bindParam(':title', $title);
-//   $sql->bindParam(':description', $description);
-//   $sql->bindParam(':id', $id);
-//   $sql->execute();
-// }
-// function handleImage($conn, $id, $image, $table, $carpet)
-// {
-//   if (!empty($image)) {
-//     $nameFile = uploadImage($image);
-//     deleteOldImage($conn, $id, $table, $carpet);
-//     updateImage($conn, $id, $nameFile, $table);
-//   }
-// }
-
-
-
-
-/**
- * Actualizar la imagen de la consulta
- *
- * @param string $image ruta de la imagen en memoria
- * @return void
- */
-function uploadImage($nameFile)
-{
-  $date = new DateTime();
-  $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
-  $tmpImage = $_FILES["image"]["tmp_name"];
-  move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
-  return $nameFile;
-}
-
-
-
-
-// Funciona
-/**
- * Actualizar imagen de la base de datos
- *
- * @param PDO $conn
- * @param int $id
- * @param string $nameFile
- * @param string $table
- * @return void
- */
-function updateImage($conn, $id, $nameFile, $table)
-{
-  $sql = $conn->prepare("UPDATE $table SET image=:image WHERE id=:id");
-  $sql->bindParam(':image', $nameFile);
-  $sql->bindParam(':id', $id);
-  $sql->execute();
-}
-
-
-
-
-
-
 
 /**
  * Seleccionar consultas agregadas y mostrarlas en el formulario
@@ -209,30 +150,24 @@ function selectRegister(object $conn, int $id, string $table)
   return $event;
 }
 
-
-
-
-
-
-// Funcion arreglada necesito hacer lo mismo con la funcion de eliminar 
 /**
  * Eliminar registro 
  *
  * @param object $conn
  * @param integer $id
  * @param string $table
- * @param string $carpet
+ * @param string $file
  * @return void
  */
-function deleteRegister(object $conn, int $id, string $table, string $carpet)
+function deleteRegister(object $conn, int $id, string $table, string $file)
 {
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
 
   $deleteImage = $sql->fetch(PDO::FETCH_LAZY);
-  if (file_exists("../admin/assets/$carpet/" . $deleteImage["image"])) {
-    unlink("../admin/assets/$carpet/" . $deleteImage["image"]);
+  if (file_exists("../admin/assets/$file/" . $deleteImage["image"])) {
+    unlink("../admin/assets/$file/" . $deleteImage["image"]);
   }
 
   $sql = $conn->prepare("DELETE FROM $table WHERE id=:id");

@@ -14,25 +14,26 @@ $dataSend = date('Y-m-d H:i:s');
 // Parametros de la funcion 
 $table = "blog";
 $location = "addBlog.php";
-$carpet = "imgBlog";
+$file = "imgBlog";
 $validFields = ['title', 'description', 'date', 'image'];
 $data = array(
   'id' => $id,
   'title' => $title,
   'description' => $description,
   'dataSend' => $dataSend,
-  'image' => $image,
   'table' => $table,
-  'carpet' => $carpet,
+  'carpet' => $file,
 );
 switch ($action) {
   case "Agregar";
     insertRegister($conn, $data, $validFields);
+    header("Location:$location");
     break;
   case "Modificar";
     editRegister($conn, $data, $validFields);
-    // handleImage($conn, $id, $image, $table, $carpet);
-    // editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet);
+    editImage($conn, $id, $image, $file, $table);
+    header("Location:$location");
+    break;
     break;
   case "Cancelar";
     header("Location:$location");
@@ -46,7 +47,7 @@ switch ($action) {
     }
     break;
   case "Borrar";
-    deleteRegister($conn, $id, $table, $carpet);
+    deleteRegister($conn, $id, $table, $file);
     header("Location:$location");
     break;
 }
@@ -54,7 +55,6 @@ switch ($action) {
 // Consulta de los datos
 $blogs = getQuery($conn, $table);
 ?>
-
 <?php require_once "partials/header.php";
 require_once "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -84,7 +84,7 @@ require_once "partials/navbar.php"; ?>
           <?php if ($image != "") { ?>
           <img src="../admin/assets/imgBlog/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image" required>
+          <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
