@@ -70,7 +70,7 @@ function loadImage($image, $carpet)
 //ACTUZALIZAR REGISTRO 
 function editRegister($conn, $data = [], $validFields = [])
 {
-  $table = isset($data['table']) ? $data['table'] : 'default_table';
+  $table = ($data['table']);
 
   $insertData = array();
   $columnFragments = array();
@@ -93,6 +93,32 @@ function editRegister($conn, $data = [], $validFields = [])
   $sql->execute();
 }
 
+function editImage($conn, $id, $image)
+{
+  if ($image != "") {
+    $date = new DateTime();
+    $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
+    $tmpImage = $_FILES["image"]["tmp_name"];
+
+    move_uploaded_file($tmpImage, "../admin/assets/imgEvent/" . $nameFile);
+
+    $sql = $conn->prepare("SELECT image FROM events WHERE id=:id");
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+    $event = $sql->fetch(PDO::FETCH_ASSOC);
+
+    if (isset($event["image"]) && ($event['image'] != "imagen.jpg")) {
+      if (file_exists("../admin/assets/imgEvent/" . $event["image"])) {
+        unlink("../admin/assets/imgEvent/" . $event["image"]);
+      }
+    }
+
+    $sql = $conn->prepare("UPDATE events SET image=:image WHERE id=:id");
+    $sql->bindParam(':image', $nameFile);
+    $sql->bindParam(':id', $id);
+    $sql->execute();
+  }
+}
 
 // Actualizar el registro o editar 
 // function editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet)

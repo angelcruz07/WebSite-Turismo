@@ -18,19 +18,16 @@ $table = "events";
 $location = "addEvent.php";
 $carpet = "imgEvent";
 $validFields = ['type', 'title', 'description', 'date', 'image'];
-
 // Definir los parámetros a ingresar
 $data = array(
   'id' => $id, // Asegúrate de que $id esté definido antes de esta línea
   'type' => $type,
   'title' => $title,
   'description' => $description,
-  'image' => $image,
   'dataSend' => $dataSend,
   'table' => $table,
   'carpet' => $carpet,
 );
-
 switch ($action) {
   case "Agregar":
     insertRegister($conn, $data, $validFields);
@@ -38,10 +35,9 @@ switch ($action) {
     header("Location:$location");
     break;
   case "Modificar":
-    // No necesitas pasar un arreglo vacío como argumento, usa el arreglo $data existente
     editRegister($conn, $data, $validFields);
+    editImage($conn, $id, $image);
     header("Location:$location");
-    // editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet);
     break;
   case "Cancelar";
     header("Location:$location");
