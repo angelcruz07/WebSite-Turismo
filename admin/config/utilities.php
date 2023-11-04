@@ -44,6 +44,8 @@ function insertRegister($conn, $data = [], $validFields = [])
   $sql->execute(array_values($insertData));
 }
 
+
+//Sirve
 /**
  * Cargar imagen a la base de datos
  *
@@ -65,31 +67,61 @@ function loadImage($image, $carpet)
 }
 
 
-// Actualizar el registro o editar 
-function editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet)
+//ACTUZALIZAR REGISTRO 
+function editRegister($conn, $data = [], $validFields = [])
 {
-  updateRegisterData($conn, $type, $title, $description, $id, $table);
-  handleImage($conn, $id, $image, $table, $carpet);
-}
+  $table = isset($data['table']) ? $data['table'] : 'default_table';
 
+  $insertData = array();
+  $columnFragments = array();
 
-function updateRegisterData($conn, $type, $title, $description, $id, $table)
-{
-  $sql = $conn->prepare("UPDATE $table SET type=:type, title=:title, description=:description WHERE id=:id");
-  $sql->bindParam(':type', $type);
-  $sql->bindParam(':title', $title);
-  $sql->bindParam(':description', $description);
-  $sql->bindParam(':id', $id);
+  foreach ($validFields as $field) {
+    if (isset($data[$field])) {
+      $insertData[$field] = $data[$field];
+      $columnFragments[] = "$field = :$field"; // Cada columna debe tener un único marcador de posición
+    }
+  }
+  // Construir la consulta SQL con los campos válidos
+  $sql = $conn->prepare("UPDATE $table SET " . implode(', ', $columnFragments) . " WHERE id=:id");
+  $sql->bindValue(':id', $data['id']);
+
+  // Asociar los valores de marcadores de posición
+  foreach ($insertData as $field => $value) {
+    $sql->bindValue(":$field", $value);
+  }
+  // Ejecutar la consulta preparada
   $sql->execute();
 }
-function handleImage($conn, $id, $image, $table, $carpet)
-{
-  if (!empty($image)) {
-    $nameFile = uploadImage($image);
-    deleteOldImage($conn, $id, $table, $carpet);
-    updateImage($conn, $id, $nameFile, $table);
-  }
-}
+
+
+// Actualizar el registro o editar 
+// function editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet)
+// {
+//   updateRegisterData($conn, $type, $title, $description, $id, $table);
+//   handleImage($conn, $id, $image, $table, $carpet);
+// }
+
+
+// function updateRegisterData($conn, $type, $title, $description, $id, $table)
+// {
+//   $sql = $conn->prepare("UPDATE $table SET type=:type, title=:title, description=:description WHERE id=:id");
+//   $sql->bindParam(':type', $type);
+//   $sql->bindParam(':title', $title);
+//   $sql->bindParam(':description', $description);
+//   $sql->bindParam(':id', $id);
+//   $sql->execute();
+// }
+// function handleImage($conn, $id, $image, $table, $carpet)
+// {
+//   if (!empty($image)) {
+//     $nameFile = uploadImage($image);
+//     deleteOldImage($conn, $id, $table, $carpet);
+//     updateImage($conn, $id, $nameFile, $table);
+//   }
+// }
+
+
+
 
 /**
  * Actualizar la imagen de la consulta
@@ -97,7 +129,7 @@ function handleImage($conn, $id, $image, $table, $carpet)
  * @param string $image ruta de la imagen en memoria
  * @return void
  */
-function uploadImage($image)
+function uploadImage($nameFile)
 {
   $date = new DateTime();
   $nameFile = $date->getTimestamp() . "_" . $_FILES["image"]["name"];
@@ -106,29 +138,10 @@ function uploadImage($image)
   return $nameFile;
 }
 
-/**
- * Eliminar la imagen de la carpeta
- *
- * @param PDO $conn
- * @param int $id
- * @param string $table
- * @return void
- */
-function deleteOldImage($conn, $id, $table, $carpet)
-{
-  $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
-  $sql->bindParam(':id', $id);
-  $sql->execute();
-  $deleteImage = $sql->fetch(PDO::FETCH_LAZY);
 
-  if (isset($deleteImage["image"]) && $deleteImage['image'] != "imagen.jpg") {
-    $imagePath = "../admin/assets/$carpet/" . $deleteImage["image"];
-    if (file_exists($imagePath)) {
-      unlink($imagePath);
-    }
-  }
-}
 
+
+// Funciona
 /**
  * Actualizar imagen de la base de datos
  *
@@ -145,6 +158,12 @@ function updateImage($conn, $id, $nameFile, $table)
   $sql->bindParam(':id', $id);
   $sql->execute();
 }
+
+
+
+
+
+
 
 /**
  * Seleccionar consultas agregadas y mostrarlas en el formulario
@@ -164,6 +183,12 @@ function selectRegister(object $conn, int $id, string $table)
   return $event;
 }
 
+
+
+
+
+
+// Funcion arreglada necesito hacer lo mismo con la funcion de eliminar 
 /**
  * Eliminar registro 
  *
@@ -178,7 +203,12 @@ function deleteRegister(object $conn, int $id, string $table, string $carpet)
   $sql = $conn->prepare("SELECT image FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();
-  deleteOldImage($conn, $id, $table, $carpet);
+
+  $deleteImage = $sql->fetch(PDO::FETCH_LAZY);
+  if (file_exists("../admin/assets/$carpet/" . $deleteImage["image"])) {
+    unlink("../admin/assets/$carpet/" . $deleteImage["image"]);
+  }
+
   $sql = $conn->prepare("DELETE FROM $table WHERE id=:id");
   $sql->bindParam(':id', $id);
   $sql->execute();

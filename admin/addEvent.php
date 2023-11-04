@@ -18,9 +18,10 @@ $table = "events";
 $location = "addEvent.php";
 $carpet = "imgEvent";
 $validFields = ['type', 'title', 'description', 'date', 'image'];
-// Definir los parametros a ingresar
+
+// Definir los parámetros a ingresar
 $data = array(
-  'id' => $id,
+  'id' => $id, // Asegúrate de que $id esté definido antes de esta línea
   'type' => $type,
   'title' => $title,
   'description' => $description,
@@ -31,11 +32,16 @@ $data = array(
 );
 
 switch ($action) {
-  case "Agregar";
+  case "Agregar":
     insertRegister($conn, $data, $validFields);
+    // Actualizar la cabecera al enviar un nuestra accion
+    header("Location:$location");
     break;
-  case "Modificar";
-    editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet);
+  case "Modificar":
+    // No necesitas pasar un arreglo vacío como argumento, usa el arreglo $data existente
+    editRegister($conn, $data, $validFields);
+    header("Location:$location");
+    // editRegister($conn, $type, $title, $description, $id, $image, $table, $carpet);
     break;
   case "Cancelar";
     header("Location:$location");
@@ -92,7 +98,7 @@ require "partials/navbar.php"; ?>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-            <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
@@ -124,7 +130,7 @@ require "partials/navbar.php"; ?>
               <td class="date-form title"><?php echo $event['title'] ?></td>
               <td class="date-form descrption"><?php echo $event['description'] ?></td>
               <td class="date-form image">
-                <img src="../admin/assets/imgEvent/<?php echo $event['image'] ?>" width="40px">
+                <img src=../admin/assets/imgEvent/<?php echo $event['image'] ?> width="40px">
               </td>
               <td class="date-form type"><?php echo $event['type'] ?></td>
               <td class="date-form btn-flex option">
