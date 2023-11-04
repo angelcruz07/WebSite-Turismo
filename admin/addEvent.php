@@ -89,9 +89,12 @@ require "partials/navbar.php"; ?>
           <label for="description"> Agrega una Descripción:</label>
           <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
-        <div class="form-group">
+        <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
-          <?php if ($image != "") { ?> <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px" <?php } ?> <input type="file" name="image" id="image" required>
+          <?php if ($image != "") { ?>
+            <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+          <?php } ?>
+          <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
