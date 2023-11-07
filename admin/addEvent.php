@@ -93,7 +93,7 @@ require "partials/navbar.php"; ?>
             required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
-          <label for="image">Agrega una imagen:</label><br>
+          <label for="image">Imagen del hotel:</label><br>
           <?php if ($image != "") { ?>
           <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada"
             width="50px">
@@ -147,5 +147,4 @@ require "partials/navbar.php"; ?>
     </div>
   </div>
 </section>
-<script src='<?php echo $url; ?>/admin/assets/js/alerts.js'></script>
 <?php require "./partials/footer.php" ?>
