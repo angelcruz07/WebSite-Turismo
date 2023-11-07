@@ -96,7 +96,7 @@ require_once "partials/navbar.php"; ?>
       </form>
     </div>
 
-    <div class="contaier-forms-add">
+    <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
         <thead>

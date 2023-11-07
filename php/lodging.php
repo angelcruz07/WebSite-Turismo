@@ -1,9 +1,9 @@
 <?php
 require_once "../admin/config/database.php";
 require_once "../admin/config/utilities.php";
-require "../partials/header2.php";
-require "../partials/navbar.php";
-require "../partials/scroll-top.php";
+require_once "../partials/header2.php";
+require_once "../partials/navbar.php";
+require_once "../partials/scroll-top.php";
 $table = 'lodging';
 $lodgings = getQuery($conn, $table);
 ?>
@@ -21,7 +21,7 @@ $lodgings = getQuery($conn, $table);
       class="image-front-page">
   </div>
   <section class="lodging" id="lodging">
-    <h1 class="title-index">¿No sabes en donde descansar?</h1>
+    <h2 class="title-index">¿No sabes en donde descansar?</h2>
     <?php
     $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay hospedajes, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
     $sql = "SELECT 1 FROM $table LIMIT 1";

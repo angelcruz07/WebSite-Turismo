@@ -76,7 +76,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de evento</label>
           <select name="type" id="type">
-            <option value="Social"> Social</option>
+            <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
           </select>
         </div>
@@ -110,7 +110,7 @@ require "partials/navbar.php"; ?>
       </form>
     </div>
 
-    <div class="contaier-forms-add">
+    <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
         <thead>
