@@ -16,7 +16,14 @@ $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $table = "lodging";
 $file = "imgLodging";
 $location = "addLodging.php";
-$validFields = ['type', 'name', 'description', 'phone_number', 'location', 'image'];
+$validFields = [
+  'type', 
+  'name', 
+  'description',
+  'phone_number', 
+  'location', 
+  'image'];
+  
 // Definir los parámetros a ingresar
 $data = array(
   'id' => $id, // Asegúrate de que $id esté definido antes de esta línea

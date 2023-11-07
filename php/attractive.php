@@ -16,7 +16,9 @@
         </div>
         <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
     </div>
+
     <section class="attractive" id="attractive">
+
         <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
         <!--Lista de lugares o opciones -->
         <div class="options">
@@ -47,7 +49,7 @@
                     </div>
                 </a>
             </div>
-
+<!-- 
             <div class="card my-card box filter churches">
                 <a href="<?php echo $images ?>/puesta-de-sol-2.jpg">
                     <div class="face front">
@@ -112,7 +114,8 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
+            
     </section>
     <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
