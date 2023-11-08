@@ -1,13 +1,5 @@
-<?php
-require_once "../admin/config/database.php";
-require_once "../admin/config/utilities.php";
-require_once "../partials/header2.php";
-require "../partials/navbar.php";
-require "../partials/scroll-top.php";
-$images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGallery/";
-$table = 'gallery';
-$places = getQuery($conn, $table);
-?>
+<?php require_once "../partials/header2.php"; ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
@@ -38,26 +30,22 @@ $places = getQuery($conn, $table);
         <li class="links" data-nombre="Lugares">Lugares</li>
       </ul>
     </div>
-
-    <!--Contenedor de la galeria -->
-
     <div class="container-gallery">
       <?php
-            $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay lugares, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
-            $sql = "SELECT 1 FROM $table LIMIT 1";
-            $stmt = $conn->query($sql);
-            if ($stmt->rowCount() == 0) {
-                echo $alert;
-            }
-            ?>
+      $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay lugares, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
+      $sql = "SELECT 1 FROM $table LIMIT 1";
+      $stmt = $conn->query($sql);
+      if ($stmt->rowCount() == 0) {
+        echo $alert;
+      }
+      ?>
       <?php foreach ($places as $place) { ?>
       <div class="card my-card box filter <?php echo $place['type'] ?>">
         <a href="<?php echo $images;
-                                echo $place['image']; ?>">
+                    echo $place['image']; ?>">
           <div class="face front">
-
             <img src="<?php echo $images;
-                                        echo $place['image']; ?>" alt="Imagen minero">
+                        echo $place['image']; ?>" alt="Imagen minero">
             <h3><?php echo $place['name'] ?></h3>
 
           </div>
@@ -67,6 +55,9 @@ $places = getQuery($conn, $table);
             <div class="link"></div>
           </div>
         </a>
+        <div id="map" class="map hidden">
+          <a class="link" href="#">Ver en mapa</a>
+        </div>
       </div>
       <?php } ?>
   </section>
@@ -76,20 +67,3 @@ $places = getQuery($conn, $table);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
   <?php require "../partials/footer2.php" ?>
-  <!-- 
-            <div class="card my-card box filter churches">
-                <a href="<?php echo $images ?>/puesta-de-sol-2.jpg">
-                    <div class="face front">
-
-                        <img src="<?php echo $images ?>/puesta-de-sol-2.jpg" alt="Imagen minero">
-                        <h3>Atardecer en Sultepec</h3>
-
-                    </div>
-                    <div class="face back">
-                        <h3>Atardecer en Sultepec</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
-                        <div class="link">
-                        </div>
-                    </div>
-                </a>
-            </div> -->
