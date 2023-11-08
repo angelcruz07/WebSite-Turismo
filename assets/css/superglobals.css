@@ -38,7 +38,7 @@
   }
   .title-index{
     color: var(--color-titles);
-    font-size: var(--subtitles-size);
+    font-size: 3rem;
     padding: var(--standard-padding);
     text-align: center;
     font-family: var(--font-primary);

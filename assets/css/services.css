@@ -3,17 +3,19 @@
   padding: var(--standard-padding);
 }
 .subtitle {
-  font-size: 2rem;
-  text-align: center;
-  position: relative;
-  font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: 0 0 10px 0;
+    color: var(--color-titles);
+    text-align: center;
 }
 .description-service h3 {
   position: relative;
   text-align: center;
+  display: inline-block;
 }
 .container-service {
   background-color: #fff;
+  margin-bottom: 3rem;
   padding: var(--standard-padding);
   border-radius: 2rem;
   box-shadow: 0 5px 10px #000;
@@ -24,7 +26,7 @@
   position: absolute;
   justify-content: center;
 }
-.horarios-services th {
+.horarios-services{
   font-size: 2rem;
   font-family: var(--font-family);
   position: relative;
@@ -33,7 +35,6 @@
 }
 .table-services th {
   background-color: var(--color-titles);
-  border-radius: 7px;
   font-size: 2rem;
   font-family: var(--font-family);
   color: var(--color-text-secundary);
@@ -43,16 +44,8 @@
   font-size: 15px;
   font-family: var(--font-family);
   text-align: center;
-  border: 1px solid transparent;
-  border-image: linear-gradient(
-    to right,
-    rgb(255, 255, 255) 0%,
-    rgb(17, 255, 0) 20%,
-    #00ff44 50%,
-    rgb(81, 255, 0) 80%,
-    rgb(53, 220, 3) 100%
-  );
-  border-image-slice: 1;
+  border: 1px solid #000;
+ 
 }
 .table-services-1 {
   width: 30%;
@@ -61,7 +54,6 @@
 }
 .table-services-1 th {
   background-color: var(--color-titles);
-  border-radius: 7px;
   font-size: 2rem;
   font-family: var(--font-family);
   color: var(--color-text-secundary);
@@ -71,15 +63,7 @@
   font-size: 15px;
   font-family: var(--font-family);
   text-align: center;
-  border: 1px solid transparent;
-  border-image: linear-gradient(
-    to right,
-    rgb(255, 255, 255) 0%,
-    rgb(17, 255, 0) 20%,
-    #00ff44 50%,
-    rgb(81, 255, 0) 80%,
-    rgb(53, 220, 3) 100%
-  );
+  border: 1px solid #138e46;
   border-image-slice: 1;
 }
 
