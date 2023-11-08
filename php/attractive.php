@@ -64,7 +64,7 @@ $places = getQuery($conn, $table);
             <div class="link"></div>
           </div>
         </a>
-        <div id ="map" class="map">
+        <div id ="map" class="map hidden">
         <a class="link" href="#">Ver en mapa</a>
       </div>
       </div>

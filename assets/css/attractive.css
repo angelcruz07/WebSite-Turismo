@@ -152,8 +152,12 @@
   left: 40%;
   text-decoration: none;
   color: #fff;
+}
+
+.hidden{
   display: none;
 }
+
 .card .back p {
   letter-spacing: 1px;
 }
