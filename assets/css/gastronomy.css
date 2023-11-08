@@ -2,12 +2,63 @@
     padding: var(--standard-padding);
 }
 
+
+/*Botones de cambio de opciones-galeria*/
+.options{ 
+    position: relative; 
+    width: 100%; 
+    margin: 60px 0;  
+    text-align: center; 
+    padding-top: 40px;
+
+  } 
+  
+  .options li{ 
+    list-style: none; 
+    display: inline-block; 
+    padding: 15px 35px; 
+    color: var(--color-text);  
+    font-size: var(--font-size);
+    margin-right: 15px; 
+    text-transform: capitalize; 
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); 
+    margin-top: 15px;
+  }  
+  .options li:hover , .active{ 
+    background: var(--color-titles ); 
+    color: #fff; 
+    cursor: pointer;
+  }    
+  .options li.active {
+    background: var(--color-titles);
+    color: #fff; 
+  }
+   
+
+   
+  /* Responsive de los botton-links*/ 
+  @media (max-width: 768px) { 
+    .options {
+      margin: 30px 0; 
+    }
+    .options li {
+      margin-bottom: 10px;  
+      padding: 15px 30px; 
+      font-size: 10px; 
+      margin: 10px 0;
+    }
+    .options li:last-child {
+      margin-bottom: 20px; 
+    }
+  }  
+
 .container-card-gastronomy{ 
     display: flex;
     flex-wrap: wrap;
     gap:3rem;
-    align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     position: relative;
 }
 
@@ -107,6 +158,75 @@
     display: block;
     margin-top: 10px;
 }
+.lodging {
+    padding: var(--standard-padding);
+}
+
+.container-lodging {
+    background-color: #fff;
+    padding: var(--standard-padding);
+    border-radius: 2rem;
+    box-shadow: 0 5px 10px #000;
+    margin-bottom: 3rem;
+    margin-top: 25px;
+}
+.lodging-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.lodging-box-left {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: var(--standard-padding);
+}
+
+.lodging-image {
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+    overflow: hidden;
+}
+
+.lodging-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.description-lodging {
+    padding: 2rem;
+    flex: 1;
+}
+
+.description-lodging h3 {
+    font-size: var(--font-size);
+    margin: 0 0 10px 0;
+    color: var(--color-titles);
+    text-align: center;
+}
+
+.description-lodging p {
+    margin: 0;
+    font-size: var(--font-size);
+    text-align: justify;
+}
+
+.link-lodging{ 
+    text-align: end;
+    
+}
+.link-lodging a{ 
+    color: var(--color-titles); 
+    font-size: var(--font-size);
+}
+
+.calf-star{ 
+    text-align: start;
+}
+
+
 @media screen and (max-width: 768px) {
     .container-card-gastronomy{ 
         padding: var(--standard-padding);

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require_once "../admin/config/database.php";
 require_once "../admin/config/utilities.php";
@@ -8,6 +9,10 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/img
 $table = 'gallery';
 $places = getQuery($conn, $table);
 ?>
+=======
+<?php require_once "../partials/header2.php"; ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">  
+>>>>>>> 244ace885392e899c37e8f39a0309db24a54f178
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
@@ -24,6 +29,7 @@ $places = getQuery($conn, $table);
 
   <section class="attractive" id="attractive">
 
+<<<<<<< HEAD
     <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
     <!--Lista de lugares o opciones -->
     <div class="options">
@@ -38,6 +44,12 @@ $places = getQuery($conn, $table);
         <li class="links" data-nombre="Lugares">Lugares</li>
       </ul>
     </div>
+=======
+
+            <div class="card my-card box filter lookout">
+                <a href="<?php echo $images ?>/minero_sultepec.jpg">
+                    <div class="face front">
+>>>>>>> 244ace885392e899c37e8f39a0309db24a54f178
 
     <!--Contenedor de la galeria -->
 
