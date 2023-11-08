@@ -121,7 +121,7 @@ require_once "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                <button type="submit" name="accion" value="Borrar" class="btn danger" id="btn_delete">Borrar</button>
               </form>
             </td>
           </tr>
@@ -130,5 +130,7 @@ require_once "partials/navbar.php"; ?>
       </table>
     </div>
   </div>
-</section>
+</section> 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php require "./partials/footer.php" ?>
