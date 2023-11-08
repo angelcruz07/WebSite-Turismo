@@ -110,7 +110,7 @@ require_once "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
-          <tr class="form-add">
+          <tr class="form-add"> 
             <td class="date-form id"><?php echo $blog['id'] ?></td>
             <td class="date-form title"><?php echo $blog['title'] ?></td>
             <td class="date-form descrption"><?php echo $blog['description'] ?></td>
