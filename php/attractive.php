@@ -52,12 +52,9 @@ $places = getQuery($conn, $table);
             ?>
       <?php foreach ($places as $place) { ?>
       <div class="card my-card box filter <?php echo $place['type'] ?>">
-        <a href="<?php echo $images;
-                                echo $place['image']; ?>">
+        <a href="<?php echo $images; echo $place['image']; ?>">
           <div class="face front">
-
-            <img src="<?php echo $images;
-                                        echo $place['image']; ?>" alt="Imagen minero">
+            <img src="<?php echo $images; echo $place['image']; ?>" alt="Imagen minero">
             <h3><?php echo $place['name'] ?></h3>
 
           </div>
@@ -71,6 +68,9 @@ $places = getQuery($conn, $table);
             </div>
           </div>
         </a>
+        <div id ="map" class="map">
+        <a class="link" href="#">Ver en mapa</a>
+      </div>
       </div>
       <?php } ?>
   </section>
@@ -80,20 +80,3 @@ $places = getQuery($conn, $table);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
   <?php require "../partials/footer2.php" ?>
-  <!-- 
-            <div class="card my-card box filter churches">
-                <a href="<?php echo $images ?>/puesta-de-sol-2.jpg">
-                    <div class="face front">
-
-                        <img src="<?php echo $images ?>/puesta-de-sol-2.jpg" alt="Imagen minero">
-                        <h3>Atardecer en Sultepec</h3>
-
-                    </div>
-                    <div class="face back">
-                        <h3>Atardecer en Sultepec</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis debitis in perferendis!</p>
-                        <div class="link">
-                        </div>
-                    </div>
-                </a>
-            </div> -->
