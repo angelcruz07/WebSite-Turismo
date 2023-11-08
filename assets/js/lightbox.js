@@ -9,3 +9,17 @@ $(document).ready(function() {
     });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtén una colección de elementos con la clase "back"
+    let mapButtons = document.getElementsByClassName("back");
+    let link = document.getElementsByClassName("link")
+  
+    // Itera a través de la colección y agrega el evento "mouseenter" a cada elemento
+    for (let i = 0; i < mapButtons.length; i++) {
+      mapButtons[i].addEventListener("mouseenter", function() {
+        console.log("Mouse encima")
+        link[i].classList.remove("hidden")
+      });
+    }
+  });

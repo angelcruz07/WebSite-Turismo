@@ -87,7 +87,7 @@ require "partials/navbar.php";
         </div>
         <div class="form-group">
           <label for="name">Nombre del lugar</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="30">
+          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="55">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del lugar:</label>
