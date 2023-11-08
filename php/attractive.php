@@ -63,8 +63,12 @@ $places = getQuery($conn, $table);
           </div>
           <div class="face back">
             <h3><?php echo $place['name'] ?></h3>
-            <p><?php echo $place['description'] ?></p>
-            <div class="link"></div>
+            <p><?php echo $place['description']  ?>
+          </p> 
+
+            <div class="link"> 
+            <!-- <a href="#">Ver lugar</a> -->
+            </div>
           </div>
         </a>
       </div>
