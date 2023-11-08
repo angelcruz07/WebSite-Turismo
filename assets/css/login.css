@@ -41,6 +41,7 @@
 }
 .parraf{ 
     color: #fff;
+    margin-bottom: 1rem;
 }
 .submit-form{
     display: flex;
@@ -64,6 +65,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-top: 1rem;
 }
 /* Form of login */
 .register{
