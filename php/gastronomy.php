@@ -35,7 +35,6 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
 
   <section id="gastronomy">
   <div class="container-card-gastronomy">
-
       <div class="card filter foodFor">
         <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
           <h6>Caldo</h6>
@@ -57,11 +56,31 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
         </div>
       </div>
 
+     
 
-
-    </div>
+</div>
+<div class="container-lodging filter foodFor">
+      <div class="lodging-box-left">
+        <div class="lodging-image">
+          <img src="<?php echo $url ?>/assets/imgGastronomy/locales.jpeg" alt="Imagen del hotel">
+        </div>
+        <div class="description-lodging left">
+          <h3>Nombre de el lugar</h3>
+          <p>Descripcion del hospedaje Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet omnis vel deserunt
+            distinctio, beatae quod molestias aliquam modi natus voluptas, earum maxime saepe illum possimus esse veniam
+            dolore cum nisi!
+          </p><br>
+          <div class="calf-star">
+            <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
+          </div>
+          <div class="link-lodging">
+            <a href="#">Ver en el mapa</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
 
   <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
