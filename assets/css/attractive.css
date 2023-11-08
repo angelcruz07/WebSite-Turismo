@@ -139,7 +139,6 @@
   height: 50px;
   line-height: 50px;
 }
-
 .card .back h3 {
   font-size: 2;
   margin-top: 20px;
@@ -147,6 +146,14 @@
   letter-spacing: 2px;
 }
 
+.map{
+  position: absolute;
+  bottom: 19px;
+  left: 40%;
+  text-decoration: none;
+  color: #fff;
+  display: none;
+}
 .card .back p {
   letter-spacing: 1px;
 }
@@ -159,5 +166,6 @@
 }
 
 .card:hover .back {
+  display: block;
   transform: perspective(600px) rotateY(360deg);
 }

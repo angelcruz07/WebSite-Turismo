@@ -9,3 +9,15 @@ $(document).ready(function() {
     });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtén una colección de elementos con la clase "back"
+    let mapButtons = document.getElementsByClassName("back");
+  
+    // Itera a través de la colección y agrega el evento "mouseenter" a cada elemento
+    for (let i = 0; i < mapButtons.length; i++) {
+      mapButtons[i].addEventListener("mouseenter", function() {
+        let link = document.getElementsByClassName("link").style.display = "block";
+      });
+    }
+  });
