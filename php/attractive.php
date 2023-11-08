@@ -1,4 +1,5 @@
 <?php require_once "../partials/header2.php"; ?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
@@ -30,6 +31,7 @@
 
         <!--Contenedor de la galeria -->
         <div class="container-gallery">
+
 
             <div class="card my-card box filter lookout">
                 <a href="<?php echo $images ?>/minero_sultepec.jpg">

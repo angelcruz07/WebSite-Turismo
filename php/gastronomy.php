@@ -2,9 +2,9 @@
 require "../partials/header2.php";
 require "../partials/navbar.php"; 
 require "../partials/scroll-top.php";
-$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
-?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css" type="text/css"> 
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css">  
+
 </head>
 <body class="scroll-top">
 
@@ -16,11 +16,21 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
   <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
 </div>
 <section id="gastronomy">
-  <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
+     <!--Lista de lugares o opciones -->
+     <div class="options">
+            <ul>
+                <li class="active links" data-nombre="all">Todos</li>
+                <li class="links" data-nombre="foodOne">reegional</li>
+                <li class="links" data-nombre="foodTwo">Parroquias</li>
+                <li class="links" data-nombre="foodThree">Lugares</li>
+                <li class="links" data-nombre="foodFor">comida cuatro</li>
+            </ul>
+        </div>
 
-<div class="container-card-gastronomy">
 
-  <div class="card">
+
+         <div class="container-card-gastronomy">
+<div class="card  filter foodOne ">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/mole.jpg)">
       <h6>Mole</h6>
     </div>
@@ -40,7 +50,7 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card filter foodOne">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/Tacos-Dorados.jpg)">
       <h6>Tacos-Dorados</h6>
     </div>
@@ -60,7 +70,7 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card filter foodTwo">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tacos.jpg)">
       <h6>Tacos</h6>
     </div>
@@ -80,12 +90,12 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
       </div>
     </div>
   </div>
-  </div>
+         </div>
 </section>
 <section id="gastronomy">
 <div class="container-card-gastronomy">
 
-  <div class="card">
+  <div class="card filter foodTwo">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tamales.jpg)">
       <h6>Tamales</h6>
     </div>
@@ -105,7 +115,7 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card filter foodThree">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/guacamole.jpg)">
       <h6>Guacamole</h6>
     </div>
@@ -125,7 +135,7 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card filter foodFor">
     <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
       <h6>Caldo</h6>
     </div>
@@ -146,5 +156,12 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
     </div>
   </div>
   </div>
-</section> 
-<?php require "../partials/footer2.php"?>
+
+</div>
+</section>
+<script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
+
+
+<?php require "../partials/footer2.php" ?>
