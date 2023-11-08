@@ -141,9 +141,9 @@
 }
 
 .card .back h3 {
-  font-size: 30px;
+  font-size: 2;
   margin-top: 20px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   letter-spacing: 2px;
 }
 
@@ -161,5 +161,3 @@
 .card:hover .back {
   transform: perspective(600px) rotateY(360deg);
 }
-
-
