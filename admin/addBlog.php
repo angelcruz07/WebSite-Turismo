@@ -94,8 +94,9 @@ require_once "partials/navbar.php"; ?>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
-    </div>
-
+    </div> 
+     
+   
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
@@ -121,7 +122,7 @@ require_once "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger" id="btn_delete">Borrar</button>
+                <button type="submit" name="accion" value="Borrar" class="btn danger" data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
               </form>
             </td>
           </tr>
