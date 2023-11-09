@@ -2,8 +2,8 @@
 require_once "../admin/config/database.php";
 require_once "../admin/config/utilities.php";
 require_once "../partials/header2.php";
-require "../partials/navbar.php";
-require "../partials/scroll-top.php";
+require_once  "../partials/navbar.php";
+require_once  "../partials/scroll-top.php";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGallery/";
 $table = 'gallery';
 $places = getQuery($conn, $table);
@@ -12,7 +12,7 @@ $places = getQuery($conn, $table);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 </head>
 
-<body class="scroll-top">
+<body id="scroll-top">
 
   <div class="container-front-page">
     <div class="degraded"></div>

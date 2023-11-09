@@ -1,4 +1,4 @@
--- Active: 1697036357493@@127.0.0.1@3306@tourism
+-- Active: 1698628320755@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -78,12 +78,11 @@ CREATE TABLE
 
 CREATE TABLE
     gastronomy(
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255),
-        data TIMESTAMP,
-        image VARCHAR(3000)
+        description VARCHAR(255) NOT NULL,
+        image VARCHAR(3000) NOT NULL
     );
 
 CREATE TABLE
@@ -101,11 +100,11 @@ CREATE TABLE
 CREATE TABLE
     gallery (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255) NOT NULL ,
+        type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         description VARCHAR(255) NOT NULL,
-        location VARCHAR(255) NOT NULL ,
-        image VARCHAR(255)  NOT NULL
+        location VARCHAR(255) NOT NULL,
+        image VARCHAR(255) NOT NULL
     );
 
 --Insert  fields into the roles table.
