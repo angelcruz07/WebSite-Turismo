@@ -1,6 +1,8 @@
-$('#btn_delete').click(function(e) {
-  e.preventDefault(); // Previene la acción predeterminada del botón (envío del formulario)
-
+$('.btn.danger').click(function(e) {
+  e.preventDefault();
+  
+  const postId = $(this).data('post-id');
+  
   Swal.fire({
     title: "¿Estás seguro?",
     text: "No podrás revertir esto",
@@ -11,11 +13,18 @@ $('#btn_delete').click(function(e) {
     confirmButtonText: "Sí, borrar"
   }).then((result) => {
     if (result.isConfirmed) {
-      // Realiza la acción de eliminación aquí (puedes usar AJAX, por ejemplo)
-      Swal.fire({
-        title: "¡Eliminado!",
-        text: "Tu archivo ha sido eliminado.",
-        icon: "success"
+      // Utiliza postId en tu solicitud AJAX para eliminar la publicación
+      $.ajax({
+        url: 'http://localhost/WebSite-Turismo/admin/addBlog.php',
+        type: 'POST',
+        data: { id: postId },
+        success: function(response) {
+          Swal.fire({
+            title: "¡Eliminado!",
+            text: "Tu archivo ha sido eliminado.",
+            icon: "success"
+          });
+        }
       });
     }
   });
