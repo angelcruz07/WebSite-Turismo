@@ -15,4 +15,3 @@ require "./php/about.php";
 require "./php/location.php";
 //footer
 require "./partials/footer.php";
-?>
