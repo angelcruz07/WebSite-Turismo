@@ -1,8 +1,8 @@
 <?php
 require_once "config/database.php";
 require_once "config/utilities.php";
-// Validacion del rol de admin
-validateRol();
+$rol = 1;
+validateRol($rol);
 //Recibir los datos del formulario
 $type = (isset($_POST['type'])) ? $_POST['type'] : "";
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
