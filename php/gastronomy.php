@@ -4,7 +4,7 @@ require_once "../admin/config/utilities.php";
 require_once "../partials/header2.php";
 require_once "../partials/navbar.php";
 require_once "../partials/scroll-top.php";
-$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGastronomy/";
 $table = "gastronomy";
 $saucers = getQuery($conn, $table);
 
@@ -19,7 +19,8 @@ $saucers = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia"
+      class="image-front-page">
   </div>
   <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
@@ -47,24 +48,24 @@ $saucers = getQuery($conn, $table);
       ?>
 
       <?php foreach ($saucers as $saurcer) { ?>
-        <div class="card filter foodFor">
-          <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
-            <h6><?php echo $saurcer['name'] ?></h6>
+      <div class="card filter <?php echo $saurcer['type']?>">
+        <div class="card_landing" style="--i:url(<?php echo $url_images; echo $saurcer['image']; ?>">
+          <h6><?php echo $saurcer['name'] ?></h6>
+        </div>
+        <div class="card_info">
+          <div class="head">
+            <p class="title"><?php echo $saurcer['name'] ?></p>
+            <div class="description">
+            </div>
           </div>
-          <div class="card_info">
-            <div class="head">
-              <p class="title"><?php echo $saurcer['name'] ?></p>
-              <div class="description">
-              </div>
-            </div>
-            <div class="content">
-              <p class="title">Descripcion</p>
-              <ul class="list">
-                <p><?php echo $saurcer['description'] ?></p>
-              </ul>
-            </div>
+          <div class="content">
+            <p class="title">Descripcion</p>
+            <ul class="list">
+              <p><?php echo $saurcer['description'] ?></p>
+            </ul>
           </div>
         </div>
+      </div>
       <?php } ?>
 
     </div>
@@ -87,9 +88,9 @@ $saucers = getQuery($conn, $table);
           </div>
         </div>
       </div>
-    </div> 
-     
-    <div class="register-business">  
+    </div>
+
+    <div class="register-business">
       <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
     </div>
   </section>

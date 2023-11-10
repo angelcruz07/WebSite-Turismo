@@ -2,7 +2,6 @@
     padding: var(--standard-padding);
 }
 
-
 /*Botones de cambio de opciones-galeria*/
 .options{ 
     position: relative; 
@@ -35,8 +34,6 @@
     background: var(--color-titles);
     color: #fff; 
   }
-   
-
    
   /* Responsive de los botton-links*/ 
   @media (max-width: 768px) { 
@@ -75,7 +72,7 @@
     width: 100%;
     height: 100%;
     box-shadow: 0 5px 10px #000;
-    background: linear-gradient(transparent 80%, #000), var(--i);
+    background: linear-gradient(#0000006e 80%, #000), var(--i);
     background-position: center;
     background-size: cover;
     z-index: 3;
