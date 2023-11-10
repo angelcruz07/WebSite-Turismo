@@ -87,9 +87,7 @@ CREATE TABLE
 CREATE TABLE
     services(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255),
         name VARCHAR(255),
-        description VARCHAR(255),
         image VARCHAR(3000),
         location VARCHAR(255),
         route VARCHAR(255),
