@@ -3,6 +3,61 @@ require_once "config/database.php";
 require_once "./config/utilities.php";
 // Validacion de rol 
 validateRol();
+$id = (isset($_POST['id'])) ? $_POST['id'] : "";
+$type = (isset($_POST['type'])) ? $_POST['type'] : '';
+$route = (isset($_POST['route'])) ? $_POST['route'] : "";
+$scheduls = (isset($_POST['scheduls'])) ? $_POST['scheduls'] : "";
+$availability = (isset($_POST['availability'])) ? $_POST['availability'] : "";
+$image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
+$action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
+
+$table = "services";
+$file = "imgServices";
+$location = "addService.php";
+$validFields = [
+  "name",
+  "availability",
+  "scheduls",
+  "route",
+  "image"
+];
+$data = array(
+  "id" => $id,
+  "name" => $type,
+  "availability" => $availability,
+  "scheduls" => $scheduls,
+  "route" => $route,
+  "table" => $table,
+  "carpet" => $file
+);
+
+switch ($action) {
+  case "Agregar":
+    insertRegister($conn, $data, $validFields);
+    header("Loction:$location");
+    break;
+  case "Modificar":
+    editRegister($conn, $data, $validFields);
+    editImage($conn, $id, $image, $file, $table);
+    header("Location:$location");
+  case "Cancelar":
+    header("Location:$location");
+  case "Seleccionar":
+    $selectedEvent = selectRegister($conn, $id, $table);
+    if ($selectedEvent) {
+      $type = $selectedEvent['type'];
+      $name = $selectedEvent['name'];
+      $description = $selectedEvent['description'];
+      $url_place = $selectedEvent['location'];
+      $image = $selectedEvent['image'];
+    }
+    break;
+  case "Borrar";
+    deleteRegister($conn, $id, $table, $file);
+    header("Location:$location");
+    break;
+}
+$services = getQuery($conn, $table);
 ?>
 
 <?php require "partials/header.php";
@@ -19,62 +74,78 @@ require "partials/navbar.php"; ?>
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
         </div>
         <div class="form-group">
-          <label for="title">Nombre del hospedaje</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="30">
+          <label for="Type">Selecciona el tipo de transporte</label>
+          <select name="type" id="type">
+            <option value="Taxi">Taxis</option>
+            <option value="Autobus">Autobus</option>
+            <option value="Urban">Urban</option>
+            <option value="Ruletera">Ruletera</option>
+          </select>
         </div>
         <div class="form-group">
-          <label for="phone_number"> Agrega un numero de contacto:</label> <input type="text" value="<?php echo $phone_number; ?>" name="phone_number" id="phone_number" maxlength="22">
+          <label for="route">Ruta(Salida - Destino)</label>
+          <input type="route" value="<?php echo $route; ?>" name="route" id="route" maxlength="55">
         </div>
         <div class="form-group">
-          <label for="description">Ubicacion del hotel en google (URL)</label>
-          <textarea name="location" id="location" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $url_lodging; ?></textarea>
+          <label>Disponibilidad</label>
+          <select name="availability" id="availability">
+            <option value="Lunes a Viernes">Lunes a Viernes</option>
+            <option value="Lunes a Sabado">Lunes a Sabado</option>
+            <option value="Lunes a Domingo">Lunes a Domingo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Horarios:</label>
+          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" id="scheduls" maxlength="55">
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgLodging/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+          <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $image ?>" title="Imagen seleccionada"
+            width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
+            class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
+            name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
-
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
         <thead>
           <tr class="form-add">
             <th class="date-form-colum id">ID</th>
-            <th class="date-form-colum title">Nombre</th>
-            <th class="date-form-colum description ">Descripcion</th>
+            <th class="date-form-colum title">Tipo</th>
+            <th class="date-form-colum description">Ruta</th>
             <th class="date-form-colum image">Imagen</th>
-            <th class="date-form-colum type">Telefono</th>
+            <th class="date-form-colum type">Horarios</th>
             <th class="date-form-colum option">Opciones</th>
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($lodgings as $lodging) { ?>
-            <tr class="form-add">
-              <td class="date-form id"><?php echo $lodging['id'] ?></td>
-              <td class="date-form title"><?php echo $lodging['name'] ?></td>
-              <td class="date-form descrption"><?php echo $lodging['description'] ?></td>
-              <td class="date-form image">
-                <img src=../admin/assets/imgLodging/<?php echo $lodging['image'] ?> width="40px">
-              </td>
-              <td class="date-form type"><?php echo $lodging['phone_number'] ?></td>
-              <td class="date-form btn-flex option">
-                <form method="POST" id="custom-register">
-                  <input type="hidden" name="id" id="id" value="<?php echo $lodging['id'] ?>" />
-                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
-                </form>
-              </td>
-            </tr>
+          <?php foreach ($services as $service) { ?>
+          <tr class="form-add">
+            <td class="date-form id"><?php echo $service['id'] ?></td>
+            <td class="date-form title"><?php echo $service['name'] ?></td>
+            <td class="date-form descrption"><?php echo $service['route'] ?></td>
+            <td class="date-form image">
+              <img src=../admin/assets/imgServices/<?php echo $service['image'] ?> width="40px">
+            </td>
+            <td class="date-form type"><?php echo $service['scheduls'] ?></td>
+            <td class="date-form btn-flex option">
+              <form method="POST" id="custom-register">
+                <input type="hidden" name="id" id="id" value="<?php echo $service['id'] ?>" />
+                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+              </form>
+            </td>
+          </tr>
           <?php } ?>
         </tbody>
       </table>

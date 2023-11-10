@@ -88,11 +88,11 @@ CREATE TABLE
     services(
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255),
-        image VARCHAR(3000),
-        location VARCHAR(255),
+        availability VARCHAR(255),
+        scheduls VARCHAR(255),
         route VARCHAR(255),
-        scheduls VARCHAR(255)
-    )
+        image VARCHAR(3000)
+    );
 
 CREATE TABLE
     gallery (
