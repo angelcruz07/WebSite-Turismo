@@ -87,31 +87,25 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Descripción del hospedaje:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
-          <label for="phone_number"> Agrega un numero de contacto:</label> <input type="text"
-            value="<?php echo $phone_number; ?>" name="phone_number" id="phone_number" maxlength="22">
+          <label for="phone_number"> Agrega un numero de contacto:</label> <input type="text" value="<?php echo $phone_number; ?>" name="phone_number" id="phone_number" maxlength="22">
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del hotel en google (URL)</label>
-          <textarea name="location" id="location" maxlength="300" class="textarea" rows="4"
-            cols="30"><?php echo $url_lodging; ?></textarea>
+          <textarea name="location" id="location" maxlength="300" class="textarea" rows="4" cols="30"><?php echo $url_lodging; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-          <img src="<?php echo $url ?>/admin/assets/imgLodging/<?php echo $image ?>" title="Imagen seleccionada"
-            width="50px">
+            <img src="<?php echo $url ?>/admin/assets/imgLodging/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
-            class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
-            name="accion" class="form-btn">Modificar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
@@ -132,22 +126,22 @@ require "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($lodgings as $lodging) { ?>
-          <tr class="form-add">
-            <td class="date-form id"><?php echo $lodging['id'] ?></td>
-            <td class="date-form title"><?php echo $lodging['name'] ?></td>
-            <td class="date-form descrption"><?php echo $lodging['description'] ?></td>
-            <td class="date-form image">
-              <img src=../admin/assets/imgLodging/<?php echo $lodging['image'] ?> width="40px">
-            </td>
-            <td class="date-form type"><?php echo $lodging['phone_number'] ?></td>
-            <td class="date-form btn-flex option">
-              <form method="POST" id="custom-register">
-                <input type="hidden" name="id" id="id" value="<?php echo $lodging['id'] ?>" />
-                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
-              </form>
-            </td>
-          </tr>
+            <tr class="form-add">
+              <td class="date-form id"><?php echo $lodging['id'] ?></td>
+              <td class="date-form title"><?php echo $lodging['name'] ?></td>
+              <td class="date-form descrption"><?php echo $lodging['description'] ?></td>
+              <td class="date-form image">
+                <img src=../admin/assets/imgLodging/<?php echo $lodging['image'] ?> width="40px">
+              </td>
+              <td class="date-form type"><?php echo $lodging['phone_number'] ?></td>
+              <td class="date-form btn-flex option">
+                <form method="POST" id="custom-register">
+                  <input type="hidden" name="id" id="id" value="<?php echo $lodging['id'] ?>" />
+                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                </form>
+              </td>
+            </tr>
           <?php } ?>
         </tbody>
       </table>
@@ -155,48 +149,3 @@ require "partials/navbar.php"; ?>
   </div>
 </section>
 <?php require "./partials/footer.php" ?>
-
-<form method="POST" enctype="multipart/form-data" class="form-container">
-  <div class="form-group">
-    <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
-  </div>
-  <div class="form-group">
-    <label for="type">Selecciona el tipo de lugar</label>
-    <select name="type" id="type">
-      <option value="#"></option>
-      <option value="lookout">Mirador</option>
-      <option value="churches">Parroquia</option>
-      <option value="monuments">Monumento</option>
-      <option value="parks">Parque</option>
-      <option value="plazas">plaza</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre del lugar</label>
-    <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="30">
-  </div>
-  <div class="form-group">
-    <label for="description">Descripción breve del lugar:</label>
-    <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
-      required><?php echo $description; ?></textarea>
-  </div>
-  <div class="form-group">
-    <label for="location">Ubicacion del lugar en google (URL)</label>
-    <textarea name="location" id="location" maxlength="300" class="textarea" rows="4"
-      cols="30"><?php echo $url_place; ?></textarea>
-  </div>
-  <div class=" form-group">
-    <label for="image">Agrega la imagen correspondiente al lugar:</label><br>
-    <?php if ($image != "") { ?>
-    <img src="<?php echo $url ?>/admin/assets/imgLodging/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
-    <?php } ?>
-    <input type="file" name="image" id="image">
-  </div>
-  <div class="group-buttons">
-    <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
-      class="form-btn primary">Agregar</button>
-    <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion"
-      class="form-btn">Modificar</button>
-    <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
-  </div>
-</form>
