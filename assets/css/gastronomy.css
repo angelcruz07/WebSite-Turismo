@@ -224,8 +224,52 @@
 
 .calf-star{ 
     text-align: start;
-}
+} 
+ 
+/*Boton de registro*/ 
+.register-business{  
+    text-align: right;
+} 
 
+.btn2{ 
+    padding: 15px 100px;
+    margin:10px 4px;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display:inline-block; 
+    font-size: var(--font-size);
+} 
+ 
+.btn2::before{
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color-text);
+  -webkit-transform: scaleY(.3);
+  transform: scaleY(.3);
+  opacity: 0;
+  transition: all .3s
+  }
+  
+  .btn2:hover{
+    color: var(--color-text-secundary);  
+  }
+  .btn2:hover::before{
+    opacity: 1;
+    background-color: var(--color-titles);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
+    transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+  }
 
 @media screen and (max-width: 768px) {
     .container-card-gastronomy{ 
