@@ -18,6 +18,12 @@
         <h4>Inicio</h4>
       </div>
     </a>
+    <a href="<?php echo $url; ?>/admin/request.php">
+      <div class="option">
+        <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono gear" title="Agregar evento">
+        <h4>Ver solicitud</h4>
+      </div>
+    </a>
     <a href="<?php echo $url; ?>/admin/addEvent.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/plus.svg" alt="Icono gear" title="Agregar evento">
@@ -57,7 +63,7 @@
     <a href="<?php echo $url; ?>">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" title="Ver sitio">
-        <h4>Ver sitio web</h4>
+        <h4>Ver sitio</h4>
       </div>
     </a>
     <a href="<?php echo $url; ?>/admin/logout.php">
