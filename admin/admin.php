@@ -12,7 +12,7 @@ require_once "./partials/navbar.php";
     <img src="../assets/img/LOGO AYUNTAMIENTO.webp" class="logo" alt="Logo del Ayuntamiento" title="H. Ayuntamiento de sultepec">
     <h2 class="title-index">Bienvenido comencemos administrar el sitio</h2>
     <div class="container-card-menu">
-      <a href="<?php echo $url ?>/admin/addEvent.php" class="link-desktop">
+      <a href="<?php echo $url ?>/admin/request.php" class="link-desktop">
         <div class="card-menu">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono plus" class="icon-desktop" title="Ver solicitudes">

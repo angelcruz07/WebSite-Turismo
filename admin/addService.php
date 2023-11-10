@@ -8,7 +8,7 @@ $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $route = (isset($_POST['route'])) ? $_POST['route'] : "";
 $scheduls = (isset($_POST['scheduls'])) ? $_POST['scheduls'] : "";
 $availability = (isset($_POST['availability'])) ? $_POST['availability'] : "";
-$image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
+$image = (isset($_FILES['image']['image'])) ? $_FILES['image']['image'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 
 $table = "services";
@@ -34,7 +34,7 @@ $data = array(
 switch ($action) {
   case "Agregar":
     insertRegister($conn, $data, $validFields);
-    header("Loction:$location");
+    header("Location:$location");
     break;
   case "Modificar":
     editRegister($conn, $data, $validFields);
@@ -43,13 +43,13 @@ switch ($action) {
   case "Cancelar":
     header("Location:$location");
   case "Seleccionar":
-    $selectedEvent = selectRegister($conn, $id, $table);
-    if ($selectedEvent) {
-      $type = $selectedEvent['type'];
-      $name = $selectedEvent['name'];
-      $description = $selectedEvent['description'];
-      $url_place = $selectedEvent['location'];
-      $image = $selectedEvent['image'];
+    $seletedService = selectRegister($conn, $id, $table);
+    if ($seletedService) {
+      $type = $seletedService['name'];
+      $scheduls = $seletedService['scheduls'];
+      $availability = $seletedService["availability"];
+      $route = $seletedService['route'];
+      $image = $seletedService['image'];
     }
     break;
   case "Borrar";
@@ -76,6 +76,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de transporte</label>
           <select name="type" id="type">
+            <option value="<?php echo $type?>"><?php echo $type?></option>
             <option value="Taxi">Taxis</option>
             <option value="Autobus">Autobus</option>
             <option value="Urban">Urban</option>
@@ -89,6 +90,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label>Disponibilidad</label>
           <select name="availability" id="availability">
+            <option value="<?php echo $availability?>"><?php echo $availability?></option>
             <option value="Lunes a Viernes">Lunes a Viernes</option>
             <option value="Lunes a Sabado">Lunes a Sabado</option>
             <option value="Lunes a Domingo">Lunes a Domingo</option>
