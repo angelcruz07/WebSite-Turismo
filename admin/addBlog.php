@@ -1,7 +1,8 @@
 <?php
 require_once "config/database.php";
 require_once "./config/utilities.php";
-validateRol();
+$rol = 1;
+validateRol($rol);
 
 //Recuperar los datos del formulario
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
@@ -33,7 +34,6 @@ switch ($action) {
     editRegister($conn, $data, $validFields);
     editImage($conn, $id, $image, $file, $table);
     header("Location:$location");
-    break;
     break;
   case "Cancelar";
     header("Location:$location");
