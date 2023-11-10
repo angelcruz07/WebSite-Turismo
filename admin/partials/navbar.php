@@ -12,7 +12,7 @@
       </div>
       <h4>Administrar </h4>
     </div>
-    <a href="<?php echo $url; ?>/admin/admins/admin.php">
+    <a href="<?php echo $url; ?>/admin/admin.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/house-solid-black.svg" alt="Icono house" title="Inicio">
         <h4>Inicio</h4>
@@ -24,31 +24,31 @@
         <h4>Agregar evento</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/admins/addBlog.php">
+    <a href="<?php echo $url; ?>/admin/addBlog.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono gear" title="Agregar al blog">
         <h4>Agregar al blog</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/admins/addLodging.php">
+    <a href="<?php echo $url; ?>/admin/addLodging.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
         <h4>Agregar hospedaje</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/admins/addGallery.php">
+    <a href="<?php echo $url; ?>/admin/addGallery.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono gear" title="Agregar galeria">
         <h4>Agregar Galeria</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/admins/addGastronomy.php">
+    <a href="<?php echo $url; ?>/admin/addGastronomy.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar Gastronomia">
         <h4>Agregar Gastronomia</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/admins/addService.php">
+    <a href="<?php echo $url; ?>/admin/addService.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar Servicio">
         <h4>Agregar Servicio</h4>
