@@ -56,7 +56,47 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
         </div>
       </div>
 
-     
+      <div class="card">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/Tacos-Dorados.jpg)">
+      <h6>Tacos-Dorados</h6>
+    </div>
+    <div class="card_info">
+      <div class="head">
+        <p class="title">Tacos-Dorados</p>
+        <div class="description">
+        </div>
+      </div>
+      <div class="content">
+        <p class="title">Descripcion</p>
+        <ul class="list">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Assumenda voluptatibus excepturi, architecto harum dicta quia
+            dolorum unde eaque nostrum molestiae a quasi accusantium nesciunt </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tacos.jpg)">
+      <h6>Tacos</h6>
+    </div>
+    <div class="card_info">
+      <div class="head">
+        <p class="title">Tacos</p>
+        <div class="description">
+        </div>
+      </div>
+      <div class="content">
+        <p class="title">Descripcion</p>
+        <ul class="list">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Assumenda voluptatibus excepturi, architecto harum dicta quia
+            dolorum unde eaque nostrum molestiae a quasi accusantium nesciunt </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
 
 </div>
 <div class="container-lodging filter foodFor">
