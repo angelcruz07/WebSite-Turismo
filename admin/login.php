@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('location: admin.php');
             break;
           case 2:
-            header('location: home.php');
+            header('location: User/home.php');
             break;
           default:
         }
