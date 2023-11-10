@@ -87,6 +87,10 @@ $saucers = getQuery($conn, $table);
           </div>
         </div>
       </div>
+    </div> 
+     
+    <div class="register-business">  
+      <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
     </div>
   </section>
 
