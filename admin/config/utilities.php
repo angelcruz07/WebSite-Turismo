@@ -5,17 +5,19 @@
  *
  * @return void
  */
-function validateRol()
+function validateRol($rol)
 {
   session_start();
   if (!isset($_SESSION["rol"])) {
     header("Location: login.php");
   } else {
-    if ($_SESSION['rol'] != 1) {
+    if ($_SESSION['rol'] != $rol) {
       header('location: login.php');
     }
   }
 }
+
+
 
 /**
  * Insertar un nuevo registro 

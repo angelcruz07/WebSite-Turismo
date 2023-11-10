@@ -1,7 +1,8 @@
 <?php
 require_once "./config/database.php";
 require_once "./config/utilities.php";
-validateRol();
+$rol = 1;
+validateRol($rol);
 require_once "partials/header.php";
 require_once "./partials/navbar.php";
 ?>

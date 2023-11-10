@@ -1,8 +1,8 @@
 <?php
 require_once "config/database.php";
 require_once "./config/utilities.php";
-// Validacion de rol 
-validateRol();
+$rol = 1;
+validateRol($rol);
 ?>
 
 <?php require "partials/header.php";
