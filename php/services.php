@@ -16,11 +16,12 @@ $services = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Transporte</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte" class="image-front-page">
+    <img src="<?php echo $url ?>/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte"
+      class="image-front-page">
   </div>
   <h1 class="title-index">Movilidad</h1>
   <section class="services" id="services">
-  <?php
+    <?php
     $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay servicios, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
     $sql = "SELECT 1 FROM $table LIMIT 1";
     $stmt = $conn->query($sql);
@@ -28,13 +29,14 @@ $services = getQuery($conn, $table);
       echo $alert;
     }
     ?>
- <?php foreach ($services as $service) { ?>
+    <?php foreach ($services as $service) { ?>
     <div class="container-service">
       <div class="service-box">
         <div class="service-image">
-          <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $service['image'] ?>" alt="" class="img-services">
+          <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $service['image'] ?>" alt=""
+            class="img-services">
         </div>
-        <h2 class="subtitle"><?php echo $service['name'] ?></h2>
+        <h2 class="subtitle"><?php echo $service['type'] ?></h2>
         <!-- descripcion equivale a tabla  -->
         <div class="description-service">
           <h3>Ruta</h3>

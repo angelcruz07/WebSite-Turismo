@@ -8,22 +8,16 @@ $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $route = (isset($_POST['route'])) ? $_POST['route'] : "";
 $scheduls = (isset($_POST['scheduls'])) ? $_POST['scheduls'] : "";
 $availability = (isset($_POST['availability'])) ? $_POST['availability'] : "";
-$image = (isset($_FILES['image']['image'])) ? $_FILES['image']['image'] : "";
+$image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 
 $table = "services";
 $file = "imgServices";
 $location = "addService.php";
-$validFields = [
-  "name",
-  "availability",
-  "scheduls",
-  "route",
-  "image"
-];
+$validFields = ["type", "availability", "scheduls", "route", "image"];
 $data = array(
   "id" => $id,
-  "name" => $type,
+  "type" => $type,
   "availability" => $availability,
   "scheduls" => $scheduls,
   "route" => $route,
@@ -43,13 +37,13 @@ switch ($action) {
   case "Cancelar":
     header("Location:$location");
   case "Seleccionar":
-    $seletedService = selectRegister($conn, $id, $table);
-    if ($seletedService) {
-      $type = $seletedService['name'];
-      $scheduls = $seletedService['scheduls'];
-      $availability = $seletedService["availability"];
-      $route = $seletedService['route'];
-      $image = $seletedService['image'];
+    $selectedService = selectRegister($conn, $id, $table);
+    if ($selectedService) {
+      $type = $selectedService['type'];
+      $scheduls = $selectedService['scheduls'];
+      $availability = $selectedService["availability"];
+      $route = $selectedService['route'];
+      $image = $selectedService['image'];
     }
     break;
   case "Borrar";
@@ -76,7 +70,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de transporte</label>
           <select name="type" id="type">
-            <option value="<?php echo $type?>"><?php echo $type?></option>
+            <option value="<?php echo $type ?>"><?php echo $type ?></option>
             <option value="Taxi">Taxis</option>
             <option value="Autobus">Autobus</option>
             <option value="Urban">Urban</option>
@@ -90,7 +84,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label>Disponibilidad</label>
           <select name="availability" id="availability">
-            <option value="<?php echo $availability?>"><?php echo $availability?></option>
+            <option value="<?php echo $availability ?>"><?php echo $availability ?></option>
             <option value="Lunes a Viernes">Lunes a Viernes</option>
             <option value="Lunes a Sabado">Lunes a Sabado</option>
             <option value="Lunes a Domingo">Lunes a Domingo</option>
@@ -101,7 +95,7 @@ require "partials/navbar.php"; ?>
           <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" id="scheduls" maxlength="55">
         </div>
         <div class=" form-group">
-          <label for="image">Agrega una imagen:</label><br>
+          <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
           <?php if ($image != "") { ?>
             <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
@@ -131,10 +125,10 @@ require "partials/navbar.php"; ?>
           <?php foreach ($services as $service) { ?>
             <tr class="form-add">
               <td class="date-form id"><?php echo $service['id'] ?></td>
-              <td class="date-form title"><?php echo $service['name'] ?></td>
+              <td class="date-form title"><?php echo $service['type'] ?></td>
               <td class="date-form descrption"><?php echo $service['route'] ?></td>
               <td class="date-form image">
-                <img src=../admin/assets/imgServices/<?php echo $service['image'] ?> width="40px">
+                <img src="../admin/assets/imgServices/<?php echo $service['image'] ?>" width="40px">
               </td>
               <td class="date-form type"><?php echo $service['scheduls'] ?></td>
               <td class="date-form btn-flex option">
