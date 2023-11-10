@@ -1,13 +1,12 @@
 <?php
 require_once "config/database.php";
 require_once "./config/utilities.php";
-// Validacion de rol 
-validateRol();
 
 $id = (isset($_POST['id']) ? $_POST['id'] : "");
 $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
+$url_restaurant = (isset($_POST['location'])) ? $_POST['location'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 
@@ -42,12 +41,13 @@ switch ($action) {
   case "Cancelar":
     header("Location:$location");
   case "Seleccionar":
-    $selectedGastronomy = selectRegister($conn, $id, $table);
-    if ($selectedGastronomy) {
-      $type = $selectedGastronomy['type'];
-      $name = $selectedGastronomy['name'];
-      $description = $selectedGastronomy['description'];
-      $image = $selectedGastronomy['image'];
+    $selectedRestaurant = selectRegister($conn, $id, $table);
+    if ($selectedRestaurant) {
+      $type = $selectedRestaurant['type'];
+      $name = $selectedRestaurant['name'];
+      $description = $selectedRestaurant['description'];
+      $url_restaurant = $selectedRestaurant['location'];
+      $image = $selectedRestaurant['image'];
     }
     break;
   case "Borrar";
@@ -55,13 +55,13 @@ switch ($action) {
     header("Location:$location");
     break;
 }
-$gastronomys = getQuery($conn, $table);
+$restaurants = getQuery($conn, $table);
 
 ?>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
-  <h1 class="title-index"> Agregar una imagen a galeria</h1>
+  <h1 class="title-index"> Agregar un Restaurant(o negocio)</h1>
   <div class="container-form-crud">
     <div class="container-form-form">
       <h2 class="title-form">Nueva publicacion</h2>
@@ -70,7 +70,7 @@ require "partials/navbar.php"; ?>
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
         </div>
         <div class="form-group">
-          <label for="type">Selecciona tipo de comida</label>
+          <label for="type">Selecciona el tipo de restaurant</label>
           <select name="type" id="type" required><?php echo $type ?>
             <option value="#"></option>
             <option value="Mexicana"> Comida Mexicana</option>
@@ -82,23 +82,27 @@ require "partials/navbar.php"; ?>
           </select>
         </div>
         <div class="form-group">
-          <label for="name">Nombre del platillo</label>
+          <label for="name">Nombre del Restaurant</label>
           <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="55">
         </div>
         <div class="form-group">
-          <label for="description">Descripción breve de la comida:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
+          <label for="description">Descripción breve del restaurant:</label>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+            required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
-          <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
+          <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgGallery/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+          <img src="<?php echo $url ?>/admin/assets/imgGallery/<?php echo $image ?>" title="Imagen seleccionada"
+            width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
+            class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
+            name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
@@ -117,29 +121,26 @@ require "partials/navbar.php"; ?>
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($gastronomys as $gastronomy) { ?>
-            <tr class="form-add">
-              <td class="date-form id"><?php echo $gastronomy['id'] ?></td>
-              <td class="date-form title"><?php echo $gastronomy['name'] ?></td>
-              <td class="date-form descrption"><?php echo $gastronomy['description'] ?></td>
-              <td class="date-form image">
-                <img src=../admin/assets/imgGallery/<?php echo $gastronomy['image'] ?> width="40px">
-              </td>
-              <td class="date-form type"><?php echo $gastronomy['type'] ?></td>
-              <td class="date-form btn-flex option">
-                <form method="POST" id="custom-register">
-                  <input type="hidden" name="id" id="id" value="<?php echo $gastronomy['id'] ?>" />
-                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
-                </form>
-              </td>
-            </tr>
+          <?php foreach ($restaurants as $restaurant) { ?>
+          <tr class="form-add">
+            <td class="date-form id"><?php echo $restaurant['id'] ?></td>
+            <td class="date-form title"><?php echo $restaurant['name'] ?></td>
+            <td class="date-form descrption"><?php echo $restaurant['description'] ?></td>
+            <td class="date-form image">
+              <img src=../admin/assets/imgGallery/<?php echo $restaurant['image'] ?> width="40px">
+            </td>
+            <td class="date-form type"><?php echo $restaurant['type'] ?></td>
+            <td class="date-form btn-flex option">
+              <form method="POST" id="custom-register">
+                <input type="hidden" name="id" id="id" value="<?php echo $restaurant['id'] ?>" />
+                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+              </form>
+            </td>
+          </tr>
           <?php } ?>
         </tbody>
       </table>
     </div>
   </div>
 </section>
-<?php
-require_once "./addRestaurant.php";
-?>

@@ -72,7 +72,6 @@ CREATE TABLE
         description VARCHAR(255),
         phone_number VARCHAR(255),
         location VARCHAR(255),
-        data TIMESTAMP,
         image VARCHAR(3000)
     );
 
