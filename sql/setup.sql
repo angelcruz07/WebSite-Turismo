@@ -1,4 +1,4 @@
--- Active: 1698628320755@@127.0.0.1@3306@tourism
+-- Active: 1695851160752@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -44,15 +44,15 @@ CREATE TABLE
 CREATE TABLE
     request(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255)  
-        username VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        phone_number VARCHAR(255) NOT NULL,
+        business_type VARCHAR(255), 
+        business VARCHAR(255) NOT NULL,
+        business_image VARCHAR(3000),
         description VARCHAR(255) NOT NULL,
-        type VARCHAR(255),
-        date TIMESTAMP,
-        message VARCHAR(255),
-        status VARCHAR(255)
+        product_type VARCHAR(255),
+        product_image VARCHAR(255),
+        name VARCHAR(255) NOT NULL,
+        adress VARCHAR(255) NOT NULL,
+        phone_number VARCHAR(255) NOT NULL    
     );
 
 CREATE TABLE
