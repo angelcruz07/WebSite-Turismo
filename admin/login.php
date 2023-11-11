@@ -15,7 +15,7 @@ if (isset($_SESSION["rol"])) {
       header("Location: admin.php");
       exit();
     case 2:
-      header("Location: home.php");
+      header("Location: user/home.php");
       exit();
     default:
       // Manejar otros roles si es necesario
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('location: admin.php');
             break;
           case 2:
-            header('location: home.php');
+            header('location: User/home.php');
             break;
           default:
         }

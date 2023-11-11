@@ -1,6 +1,8 @@
 <?php
 require_once "config/database.php";
 require_once "./config/utilities.php";
+$rol = 1;
+validateRol($rol);
 
 $id = (isset($_POST['id']) ? $_POST['id'] : "");
 $type = (isset($_POST['type'])) ? $_POST['type'] : '';
@@ -87,22 +89,18 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del restaurant:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
           <?php if ($image != "") { ?>
-          <img src="<?php echo $url ?>/admin/assets/imgGallery/<?php echo $image ?>" title="Imagen seleccionada"
-            width="50px">
+            <img src="<?php echo $url ?>/admin/assets/imgGallery/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
-            class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
-            name="accion" class="form-btn">Modificar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
@@ -122,22 +120,22 @@ require "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($restaurants as $restaurant) { ?>
-          <tr class="form-add">
-            <td class="date-form id"><?php echo $restaurant['id'] ?></td>
-            <td class="date-form title"><?php echo $restaurant['name'] ?></td>
-            <td class="date-form descrption"><?php echo $restaurant['description'] ?></td>
-            <td class="date-form image">
-              <img src=../admin/assets/imgGallery/<?php echo $restaurant['image'] ?> width="40px">
-            </td>
-            <td class="date-form type"><?php echo $restaurant['type'] ?></td>
-            <td class="date-form btn-flex option">
-              <form method="POST" id="custom-register">
-                <input type="hidden" name="id" id="id" value="<?php echo $restaurant['id'] ?>" />
-                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
-              </form>
-            </td>
-          </tr>
+            <tr class="form-add">
+              <td class="date-form id"><?php echo $restaurant['id'] ?></td>
+              <td class="date-form title"><?php echo $restaurant['name'] ?></td>
+              <td class="date-form descrption"><?php echo $restaurant['description'] ?></td>
+              <td class="date-form image">
+                <img src=../admin/assets/imgGallery/<?php echo $restaurant['image'] ?> width="40px">
+              </td>
+              <td class="date-form type"><?php echo $restaurant['type'] ?></td>
+              <td class="date-form btn-flex option">
+                <form method="POST" id="custom-register">
+                  <input type="hidden" name="id" id="id" value="<?php echo $restaurant['id'] ?>" />
+                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                </form>
+              </td>
+            </tr>
           <?php } ?>
         </tbody>
       </table>

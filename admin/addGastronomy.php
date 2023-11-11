@@ -1,8 +1,8 @@
 <?php
-require_once "config/database.php";
+require_once "./config/database.php";
 require_once "./config/utilities.php";
-// Validacion de rol 
-validateRol();
+$rol = 1;
+validateRol($rol);
 
 $id = (isset($_POST['id']) ? $_POST['id'] : "");
 $type = (isset($_POST['type'])) ? $_POST['type'] : '';
@@ -12,14 +12,13 @@ $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 
 $table = "gastronomy";
-$file = "imgGallery";
-$location = "addGallery.php";
+$file = "imgGastronomy";
+$location = "addGastronomy.php";
 $validFields = [
   "type",
   "name",
   "description",
   "image",
-  "data"
 ];
 
 $data = array(
@@ -28,12 +27,12 @@ $data = array(
   "name" => $name,
   "description" => $description,
   "table" => $table,
-  "carpet" => $file
+  "carpet" => $file,
 );
 switch ($action) {
   case "Agregar":
     insertRegister($conn, $data, $validFields);
-    header("Loction:$location");
+    header("Location:$location");
     break;
   case "Modificar":
     editRegister($conn, $data, $validFields);
@@ -92,7 +91,7 @@ require "partials/navbar.php"; ?>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgGallery/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="<?php echo $url ?>/admin/assets/imgGastronomy/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
@@ -123,7 +122,7 @@ require "partials/navbar.php"; ?>
               <td class="date-form title"><?php echo $gastronomy['name'] ?></td>
               <td class="date-form descrption"><?php echo $gastronomy['description'] ?></td>
               <td class="date-form image">
-                <img src=../admin/assets/imgGallery/<?php echo $gastronomy['image'] ?> width="40px">
+                <img src=../admin/assets/imgGastronomy/<?php echo $gastronomy['image'] ?> width="40px">
               </td>
               <td class="date-form type"><?php echo $gastronomy['type'] ?></td>
               <td class="date-form btn-flex option">
@@ -140,6 +139,3 @@ require "partials/navbar.php"; ?>
     </div>
   </div>
 </section>
-<?php
-require_once "./addRestaurant.php";
-?>
