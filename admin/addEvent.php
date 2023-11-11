@@ -82,7 +82,8 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22" required>
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22" required><span
+            id="count"></span>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
