@@ -12,7 +12,6 @@ require "./php/suggestions.php";
 //About
 require "./php/about.php";
 //location
-require "./php/location.php";
+/* require "./php/location.php"; */
 //footer
 require "./partials/footer.php";
-?>

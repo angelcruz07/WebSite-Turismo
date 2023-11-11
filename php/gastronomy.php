@@ -1,105 +1,74 @@
 <?php
-require "../partials/header2.php";
-require "../partials/navbar.php";
-require "../partials/scroll-top.php";
-$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy"; ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css">
+require_once "../admin/config/database.php";
+require_once "../admin/config/utilities.php";
+require_once "../partials/header2.php";
+require_once "../partials/navbar.php";
+require_once "../partials/scroll-top.php";
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGastronomy";
+$table = "gastronomy";
+$saucers = getQuery($conn, $table);
 
+?>
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css">
 </head>
 
-<body class="scroll-top">
+<body id="scroll-top">
 
   <div class="container-front-page">
     <div class="degraded"></div>
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia"
-      class="image-front-page">
+    <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
-<h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
+  <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
   <div class="options">
     <ul>
       <li class="active links" data-nombre="all">Todos</li>
-      <li class="links" data-nombre="foodOne">Comida Mexicana</li>
-      <li class="links" data-nombre="foodTwo">Comida Rápida</li>
-      <li class="links" data-nombre="foodThree">Comida Oriental</li>
-      <li class="links" data-nombre="foodFor">Comida Tradicional</li>
-      <li class="links" data-nombre="foodfive">Bebidas</li>
-      <li class="links" data-nombre="foodsix">Reposteria</li>
-
-
+      <li class="links" data-nombre="Mexicana">Comida Mexicana</li>
+      <li class="links" data-nombre="Rapida">Comida Rápida</li>
+      <li class="links" data-nombre="Oriental">Comida Oriental</li>
+      <li class="links" data-nombre="Tradicional">Comida Tradicional</li>
+      <li class="links" data-nombre="Reposteria">Bebidas</li>
+      <li class="links" data-nombre="Bebidas">Reposteria</li>
     </ul>
   </div>
 
   <section id="gastronomy">
-  <div class="container-card-gastronomy">
-      <div class="card filter foodFor">
-        <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
-          <h6>Caldo</h6>
-        </div>
-        <div class="card_info">
-          <div class="head">
-            <p class="title">Caldo</p>
-            <div class="description">
+    <div class="container-card-gastronomy">
+      <?php
+      $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay lugares, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
+      $sql = "SELECT 1 FROM $table LIMIT 1";
+      $stmt = $conn->query($sql);
+      if ($stmt->rowCount() == 0) {
+        echo $alert;
+      }
+      ?>
+
+      <?php foreach ($saucers as $saurcer) { ?>
+        <div class="card filter foodFor">
+          <div class="card_landing" style="--i:url(<?php echo $url_images ?>/caldo.jpg)">
+            <h6><?php echo $saurcer['name'] ?></h6>
+          </div>
+          <div class="card_info">
+            <div class="head">
+              <p class="title"><?php echo $saurcer['name'] ?></p>
+              <div class="description">
+              </div>
+            </div>
+            <div class="content">
+              <p class="title">Descripcion</p>
+              <ul class="list">
+                <p><?php echo $saurcer['description'] ?></p>
+              </ul>
             </div>
           </div>
-          <div class="content">
-            <p class="title">Descripcion</p>
-            <ul class="list">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda voluptatibus excepturi, architecto harum dicta quia
-                dolorum unde eaque nostrum molestiae a quasi accusantium nesciunt </p>
-            </ul>
-          </div>
         </div>
-      </div>
+      <?php } ?>
 
-      <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/Tacos-Dorados.jpg)">
-      <h6>Tacos-Dorados</h6>
     </div>
-    <div class="card_info">
-      <div class="head">
-        <p class="title">Tacos-Dorados</p>
-        <div class="description">
-        </div>
-      </div>
-      <div class="content">
-        <p class="title">Descripcion</p>
-        <ul class="list">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Assumenda voluptatibus excepturi, architecto harum dicta quia
-            dolorum unde eaque nostrum molestiae a quasi accusantium nesciunt </p>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card_landing" style="--i:url(<?php echo $url_images ?>/tacos.jpg)">
-      <h6>Tacos</h6>
-    </div>
-    <div class="card_info">
-      <div class="head">
-        <p class="title">Tacos</p>
-        <div class="description">
-        </div>
-      </div>
-      <div class="content">
-        <p class="title">Descripcion</p>
-        <ul class="list">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Assumenda voluptatibus excepturi, architecto harum dicta quia
-            dolorum unde eaque nostrum molestiae a quasi accusantium nesciunt </p>
-        </ul>
-      </div>
-    </div>
-  </div>
-  </div>
-
-</div>
-<div class="container-lodging filter foodFor">
+    <div class="container-lodging filter foodFor">
       <div class="lodging-box-left">
         <div class="lodging-image">
           <img src="<?php echo $url ?>/assets/imgGastronomy/locales.jpeg" alt="Imagen del hotel">
@@ -122,9 +91,5 @@ $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgGa
   </section>
 
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
-
   <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
-
-
   <?php require "../partials/footer2.php" ?>
-

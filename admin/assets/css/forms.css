@@ -16,7 +16,7 @@
     max-width: 50%;
     flex: 1
 }
-.contaier-forms-add{ 
+.container-forms-add{ 
     padding:2rem;
     background-color: #fff;
     border-radius: 10px;
@@ -155,7 +155,7 @@ font-weight: 700;
     .container-form-form{
         max-width: 100%;
     }
-    .contaier-forms-add{
+    .container-forms-add{
         max-width: 100%;
     }
 }

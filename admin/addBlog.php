@@ -94,9 +94,10 @@ require_once "partials/navbar.php"; ?>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
-    </div>
-
-    <div class="contaier-forms-add">
+    </div> 
+     
+   
+    <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
         <thead>
@@ -110,7 +111,7 @@ require_once "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
-          <tr class="form-add">
+          <tr class="form-add"> 
             <td class="date-form id"><?php echo $blog['id'] ?></td>
             <td class="date-form title"><?php echo $blog['title'] ?></td>
             <td class="date-form descrption"><?php echo $blog['description'] ?></td>
@@ -121,7 +122,7 @@ require_once "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                <button type="submit" name="accion" value="Borrar" class="btn danger" data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
               </form>
             </td>
           </tr>
@@ -130,5 +131,7 @@ require_once "partials/navbar.php"; ?>
       </table>
     </div>
   </div>
-</section>
+</section> 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php require "./partials/footer.php" ?>

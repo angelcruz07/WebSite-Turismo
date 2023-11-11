@@ -11,7 +11,7 @@ $events = getQuery($conn, $table);
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
 </head>
 
-<body class="scroll-top">
+<body id="scroll-top">
     <div class="container-front-page">
         <div class="degraded"></div>
         <div class="title-front-page">

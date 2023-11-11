@@ -1,4 +1,4 @@
--- Active: 1697553788481@@127.0.0.1@3306@tourism
+-- Active: 1698378113160@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -58,11 +58,11 @@ CREATE TABLE
     lodging (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255),
-        phone_number VARCHAR(255) NULL,
-        social_networks VARCHAR(250) NULL,
+        description VARCHAR(255) NOT NULL,
+        phone_number VARCHAR(255) NOT NULL,
+        location VARCHAR(255) NOT NULL,
         image VARCHAR(3000)
-    )
+    );
 
 CREATE TABLE
     restaurants (
@@ -70,28 +70,24 @@ CREATE TABLE
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
         description VARCHAR(255),
-        location VARCHAR(255),
         phone_number VARCHAR(255),
-        data TIMESTAMP,
+        location VARCHAR(255),
         image VARCHAR(3000)
     );
 
 CREATE TABLE
     gastronomy(
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255),
-        data TIMESTAMP,
-        image VARCHAR(3000)
+        description VARCHAR(255) NOT NULL,
+        image VARCHAR(3000) NOT NULL
     );
 
 CREATE TABLE
     services(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255),
         name VARCHAR(255),
-        description VARCHAR(255),
         image VARCHAR(3000),
         location VARCHAR(255),
         route VARCHAR(255),
@@ -101,11 +97,11 @@ CREATE TABLE
 CREATE TABLE
     gallery (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255),
-        name VARCHAR(255),
-        description VARCHAR(255),
-        location VARCHAR(255),
-        data TIMESTAMP
+        type VARCHAR(255) NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        description VARCHAR(255) NOT NULL,
+        location VARCHAR(255) NOT NULL,
+        image VARCHAR(255) NOT NULL
     );
 
 --Insert  fields into the roles table.
