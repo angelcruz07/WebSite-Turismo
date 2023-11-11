@@ -1,0 +1,112 @@
+
+/* Desing of seccion lodging */
+#lodging {
+    padding:var(--standard-padding);
+}
+.lodging {
+    padding: var(--standard-padding);
+}
+
+.container-lodging {
+    background-color: #fff;
+    padding: var(--standard-padding);
+    border-radius: 2rem;
+    box-shadow: 0 5px 10px #000;
+    margin-bottom: 3rem;
+}
+
+.lodging-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.lodging-box-left {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: var(--standard-padding);
+}
+
+.lodging-image {
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+    overflow: hidden;
+}
+
+.lodging-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.description-lodging {
+    padding: 2rem;
+    flex: 1;
+}
+
+.description-lodging h3 {
+    font-size: var(--font-size);
+    margin: 0 0 10px 0;
+    color: var(--color-titles);
+    text-align: center;
+}
+
+.description-lodging p {
+    margin: 0;
+    font-size: var(--font-size);
+    text-align: justify;
+}
+
+.link-lodging{ 
+    text-align: end;
+    
+}
+.link-lodging a{ 
+    color: var(--color-titles); 
+    font-size: var(--font-size);
+}
+
+.calf-star{ 
+    text-align: start;
+}
+
+
+@media (max-width: 1200px){
+    html{ 
+        font-size: 55%;
+    }
+    .lodging-box{ 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lodging-box-left{
+        flex-direction: column;
+        padding: var(--standard-padding);
+        justify-content: center;
+        align-items: center;
+    }
+    .description h3{
+        text-align: center;
+    }
+ }
+ @media (max-width: 768px){
+    .header { 
+        text-align: start;
+    }
+    .box-about{ 
+        flex-direction: column;
+}
+    .about-box-left{ 
+    flex-direction: column-reverse;
+    width: 100%;
+    }
+}
+@media (max-width: 450px){
+    html { 
+        font-size:50%;
+    }
+    .lodging-image img { 
+        width: 250px;
+    }
+}
