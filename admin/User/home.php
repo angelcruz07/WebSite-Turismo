@@ -5,58 +5,52 @@ $rol = 2;
 validateRol($rol);
 require_once "../partials/headerUser.php";
 require_once "../partials/navbarUser.php";
-$conn;
+$conn; 
 
-//VARIABLES 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  // DATOS FORMULARIO
-  $business_type = isset($_POST['business_type']) ? $_POST['business_type'] : "";
-  $name_business = isset($_POST['name_business']) ? $_POST['name_business'] : "";
-  $business_image = isset($_FILES['business_image']) ? $_FILES['business_image']['name'] : "";
-  $description = isset($_POST['description']) ? $_POST['description'] : "";
-  $product_type = isset($_POST['product_type']) ? $_POST['product_type'] : "";
-  $product_image = isset($_FILES['product_image']) ? $_FILES['product_image']['name'] : "";
-  $name = isset($_POST['name']) ? $_POST['name'] : "";
-  $adress = isset($_POST['adress']) ? $_POST['adress'] : "";
-  $phone = isset($_POST['phone']) ? $_POST['phone'] : "";
+function clean($data) {
+  return htmlspecialchars(stripslashes(trim($data)));
 }
 
-// VALIDACION 
-// if (
-//   !empty($business_type) &&
-//   !empty($name_business) &&
-//   !empty($business_image) &&
-//   !empty($description) &&
-//   !empty($product_type) &&
-//   !empty($product_image) &&
-//   !empty($name) &&
-//   !empty($adress) &&
-//   !empty($phone)
-// ) {
-// INSERTAR A LA BASE DE DATOS 
-$sql = $conn->prepare("INSERT INTO request (`business_type`, `business`, `business_image`, `description`, `product_type`, `product_image`, `name`, `adress`, `phone_number`) 
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $business_type = $name_business = $business_image = $description = $product_type = $product_image = $name = $adress = $phone = "";
 
-$sql->bindValue(1, $business_type);
-$sql->bindValue(2, $name_business);
-$sql->bindValue(3, $business_image);
-$sql->bindValue(4, $description);
-$sql->bindValue(5, $product_type);
-$sql->bindValue(6, $product_image);
-$sql->bindValue(7, $name);
-$sql->bindValue(8, $adress);
-$sql->bindValue(9, $phone);
+  foreach ($_POST as $key => $value) {
+      $$key = clean($value);
+  }
 
-$sql->execute();
-//   if ($conn->query($sql) === TRUE) {
-//     echo "El registro de tu negocio ha sido exitoso, el administrador pronto verá tus datos...";
-//   } else {
-//     echo "Error al enviar tus datos: " . $conn->error;
-//   }
-// } else {
-//   echo "Por favor, llena todos los campos del formulario";
-// }
+  $uploadDirectory = __DIR__ . "/User/imageUser/";
 
+  function processImage($imageField) {
+      global $uploadDirectory;
+
+      if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
+          $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
+
+          if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
+              return basename($_FILES[$imageField]['name']);
+          } else {
+              echo "Error al subir la imagen de $imageField.";
+          }
+      } else {
+          echo "Error al cargar la imagen de $imageField.";
+      }
+
+      return false;
+  }
+
+  $businessImage = processImage('business_image');
+  $productImage = processImage('product_image');
+
+  if ($businessImage !== false && $productImage !== false) {
+      $sql = "INSERT INTO request (business_type, business, description, product_type, name, adress, phone, business_image, product_image) VALUES ('$business_type', '$name_business', '$description', '$product_type', '$name', '$adress', '$phone', '$businessImage', '$productImage')";
+
+      if ($conn->query($sql) === TRUE) {
+          echo "Datos insertados correctamente";
+      } else {
+          echo "Error al insertar datos: " . $conn->error;
+      }
+  }
+}
 ?>
 
 
@@ -88,7 +82,6 @@ $sql->execute();
         </div>
         <div class=" form-group">
           <label for="image">Imagen del negocio:</label><br>
-          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <input type="file" name="business_image" id="business_image">
         </div>
         <div class="form-group">
@@ -109,7 +102,6 @@ $sql->execute();
         </div>
         <div class=" form-group">
           <label for="product_image">Imagen del producto:</label><br>
-          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <input type="file" name="product_image" id="product_image">
         </div>
 
@@ -131,7 +123,7 @@ $sql->execute();
         <!--Botones -->
         <div class="group-buttons">
           <button type="submit" value="Agregar" name="accion" class="form-btn primary">Enviar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
