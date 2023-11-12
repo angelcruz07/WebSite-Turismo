@@ -44,15 +44,15 @@ CREATE TABLE
 CREATE TABLE
     request(
         id INT AUTO_INCREMENT PRIMARY KEY,
-        type VARCHAR(255),
-        username VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        phone_number VARCHAR(255) NOT NULL,
+        business_type VARCHAR(255),
+        business VARCHAR(255) NOT NULL,
+        business_image VARCHAR(3000),
         description VARCHAR(255) NOT NULL,
         product_type VARCHAR(255),
         product_image VARCHAR(255),
         name VARCHAR(255) NOT NULL,
-        adress VARCHAR(255) NOT NULL
+        address VARCHAR(255) NOT NULL,
+        phone_number VARCHAR(255) NOT NULL
     );
 
 CREATE TABLE

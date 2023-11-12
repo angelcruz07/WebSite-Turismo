@@ -5,50 +5,53 @@ $rol = 2;
 validateRol($rol);
 require_once "../partials/headerUser.php";
 require_once "../partials/navbarUser.php";
-$conn; 
+$conn;
 
-function clean($data) {
+function clean($data)
+{
   return htmlspecialchars(stripslashes(trim($data)));
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $business_type = $name_business = $business_image = $description = $product_type = $product_image = $name = $adress = $phone = "";
+  $business_type = $name_business = $business_image = $description = $product_type = $product_image = $name = $address = $phone = "";
 
   foreach ($_POST as $key => $value) {
-      $$key = clean($value);
+    $$key = clean($value);
   }
 
-  $uploadDirectory = __DIR__ . "/User/imageUser/";
 
-  function processImage($imageField) {
-      global $uploadDirectory;
+  $uploadDirectory = __DIR__ . "/../assets/imgUser/";
 
-      if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
-          $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
+  function processImage($imageField)
+  {
+    global $uploadDirectory;
 
-          if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
-              return basename($_FILES[$imageField]['name']);
-          } else {
-              echo "Error al subir la imagen de $imageField.";
-          }
+    if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
+      $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
+
+      if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
+        return basename($_FILES[$imageField]['name']);
       } else {
-          echo "Error al cargar la imagen de $imageField.";
+        echo "Error al subir la imagen de $imageField.";
       }
+    } else {
+      echo "Error al cargar la imagen de $imageField.";
+    }
 
-      return false;
+    return false;
   }
 
   $businessImage = processImage('business_image');
   $productImage = processImage('product_image');
 
   if ($businessImage !== false && $productImage !== false) {
-      $sql = "INSERT INTO request (business_type, business, description, product_type, name, adress, phone, business_image, product_image) VALUES ('$business_type', '$name_business', '$description', '$product_type', '$name', '$adress', '$phone', '$businessImage', '$productImage')";
+    $sql = "INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES ('$business_type', '$name_business', '$description', '$product_type', '$name', '$address', '$phone', '$businessImage', '$productImage')";
 
-      if ($conn->query($sql) === TRUE) {
-          echo "Datos insertados correctamente";
-      } else {
-          echo "Error al insertar datos: " . $conn->error;
-      }
+    if ($conn->query($sql) === TRUE) {
+      echo "Datos insertados correctamente";
+    } else {
+      echo "Error al insertar datos: " . $conn->error;
+    }
   }
 }
 ?>
@@ -61,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-form-form">
       <h2 class="title-form">Datos del negocio</h2>
 
-      <form method="POST" class="form-container">
+      <form method="POST" enctype="multipart/form-data" class="form-container">
         <div class="form-group">
           <input type="hidden">
         </div>
@@ -86,7 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción del negocio:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+            required></textarea>
         </div>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de producto</label>
@@ -112,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="form-group">
           <label for="title"> Direccion:</label>
-          <input type="text" value="" name="adress" id="adress" required>
+          <input type="text" value="" name="address" id="address" required>
         </div>
         <div class="form-group">
           <label for="title"> Numero de telefono:</label>
