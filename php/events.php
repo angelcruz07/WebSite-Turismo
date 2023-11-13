@@ -7,6 +7,17 @@ require_once "../partials/scroll-top.php";
 $table = 'events';
 // Consulta de los datos
 $events = getQuery($conn, $table);
+
+$socialEvents = array();
+$religiousEvents = array();
+
+foreach ($events as $event) {
+    if ($event['type'] === 'Social') {
+        $socialEvents[] = $event;
+    } else {
+        $religiousEvents[] = $event;
+    }
+}
 ?>
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
 </head>
@@ -24,16 +35,12 @@ $events = getQuery($conn, $table);
         <h1>Eventos Proximos en Sultepec</h1>
         <div class="container-events">
             <?php
-            $alert = '<div class="alert-not-event">
-        <span class="alert">"Ups no hay eventos, Estamos preparando eventos emocionantes, ¡Mantente al tanto!</span>
-        </div>';
-            $sql = "SELECT 1 FROM $table LIMIT 1";
-            $stmt = $conn->query($sql);
-            if ($stmt->rowCount() == 0) {
-                echo $alert;
+            if (empty($socialEvents)) {
+                echo '<div class="alert-not-event">
+                <span class="alert">Ups, no hay eventos sociales programados. ¡Mantente al tanto!</span>
+            </div>';
             }
-            ?>
-            <?php foreach ($events as $event) { ?>
+            foreach ($socialEvents as $event) { ?>
                 <div class="card-event">
                     <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="Portada representativa al evento">
                     <div class="description-event">
@@ -46,5 +53,23 @@ $events = getQuery($conn, $table);
     </section>
     <section id="religious-events">
         <h2 class="title-index">Fiestas religiosas</h2>
+        <div class="container-events">
+            <?php
+            if (empty($religiousEvents)) {
+                echo '<div class="alert-not-event">
+            <span class="alert">Ups, no hay eventos religiosos programados. ¡Mantente al tanto!</span>
+        </div>';
+            }
+            foreach ($religiousEvents as $event) { ?>
+
+                <div class="card-event">
+                    <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="Portada representativa al evento">
+                    <div class="description-event">
+                        <h3><?php echo $event['title'] ?></h3>
+                        <p><?php echo $event['description'] ?></p>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
     </section>
     <?php require "../partials/footer2.php" ?>
