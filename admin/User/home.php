@@ -9,15 +9,15 @@ $conn;
  
 function clean($data)
 {
-    return htmlspecialchars(stripslashes(trim($data)));
+  return htmlspecialchars(stripslashes(trim($data)));
 }
 
 function processImage($imageField)
 {
-    global $uploadDirectory;
+  global $uploadDirectory;
 
-    if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
-        $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
+  if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
+    $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
 
         if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
             return basename($_FILES[$imageField]['name']);
@@ -28,7 +28,7 @@ function processImage($imageField)
         return "El campo de imagen $imageField está vacío.";
     }
 
-    return false;
+  return false;
 }
 
 function showAlert($message)
@@ -66,32 +66,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Resto de tu código de procesamiento
     // ...
 
-    $business_type = clean($_POST['business_type']);
-    $name_business = clean($_POST['name_business']);
-    $description = clean($_POST['description']);
-    $product_type = clean($_POST['product_type']);
-    $name = clean($_POST['name']);
-    $address = clean($_POST['address']);
-    $phone = clean($_POST['phone']);
+  $business_type = clean($_POST['business_type']);
+  $name_business = clean($_POST['name_business']);
+  $description = clean($_POST['description']);
+  $product_type = clean($_POST['product_type']);
+  $name = clean($_POST['name']);
+  $address = clean($_POST['address']);
+  $phone = clean($_POST['phone']);
 
-    $uploadDirectory = __DIR__ . "/../assets/imgUser/";
+  $uploadDirectory = __DIR__ . "/../assets/imgUser/";
 
-    $businessImage = processImage('business_image');
-    $productImage = processImage('product_image');
+  $businessImage = processImage('business_image');
+  $productImage = processImage('product_image');
 
     if ($businessImage !== false && $productImage !== false && empty($alertMessages)) {
         try {
             $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->bindParam(1, $business_type);
-            $stmt->bindParam(2, $name_business);
-            $stmt->bindParam(3, $description);
-            $stmt->bindParam(4, $product_type);
-            $stmt->bindParam(5, $name);
-            $stmt->bindParam(6, $address);
-            $stmt->bindParam(7, $phone);
-            $stmt->bindParam(8, $businessImage);
-            $stmt->bindParam(9, $productImage);
+      $stmt->bindParam(1, $business_type);
+      $stmt->bindParam(2, $name_business);
+      $stmt->bindParam(3, $description);
+      $stmt->bindParam(4, $product_type);
+      $stmt->bindParam(5, $name);
+      $stmt->bindParam(6, $address);
+      $stmt->bindParam(7, $phone);
+      $stmt->bindParam(8, $businessImage);
+      $stmt->bindParam(9, $productImage);
 
             if ($stmt->execute()) {
                 $alertMessages[] = "Datos insertados correctamente";
@@ -125,17 +125,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Usuario normal</h1>
 <!--Formulario de USER-->
 <section id="add-form" class="add-form">
-  <div class="container-form-crud">
-    <div class="container-form-form">
+  <div class="container-form-user">
+    <div class="container-form-form user">
       <h2 class="title-form">Datos del negocio</h2>
-
       <form method="POST" enctype="multipart/form-data" class="form-container">
         <div class="form-group">
-          <input type="hidden">
-        </div>
-        <div class="form-group">
           <label for="Type">Selecciona el tipo de negocio</label>
-          <select name="business_type" id="business_type">
+          <select name="business_type" id="business_type" required>
             <option value=""></option>
             <option value="Restaurante">Restaurante</option>
             <option value="Fonda">Fonda</option>
@@ -154,8 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción del negocio:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
-            required></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required></textarea>
         </div>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de producto</label>
@@ -171,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class=" form-group">
           <label for="product_image">Imagen del producto:</label><br>
-          <input type="file" name="product_image" id="product_image">
+          <input type="file" name="product_image" id="product_image" required>
         </div>
 
         <h2 class="title-form">Datos del propietario</h2>
@@ -187,8 +182,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="title"> Numero de telefono:</label>
           <input type="text" value="" name="phone" id="phone" maxlength="22" required>
         </div>
-
-
+        <!-- Mensaje de error -->
+        <?php if (!empty($errorMessage)) : ?>
+          <div class="error">
+            <?php echo $errorMessage; ?>
+          </div>
+        <?php endif; ?>
         <!--Botones -->
         <div class="group-buttons">
           <button type="submit" value="Agregar" name="accion" class="form-btn primary">Enviar</button>

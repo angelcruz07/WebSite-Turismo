@@ -50,7 +50,7 @@ $business = getQuery($conn, $table2);
       <?php foreach ($saucers as $saurcer) { ?>
         <div class="card filter <?php echo $saurcer['type'] ?>">
           <div class="card_landing" style="--i:url(<?php echo $url_images;
-                                                    echo $saurcer['image']; ?>">
+                            echo $saurcer['image']; ?>">
             <h6><?php echo $saurcer['name'] ?></h6>
           </div>
           <div class="card_info">
@@ -89,8 +89,8 @@ $business = getQuery($conn, $table2);
             </div>
           </div>
         </div>
-      <?php } ?>
       </div>
+    <?php } ?>
 
       <div class="register-business">
         <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
