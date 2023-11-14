@@ -7,6 +7,10 @@
     justify-content: space-between;
     gap: 2rem;
 }
+.container-form-user{
+    display: flex;
+    justify-content: center;
+}
 /* Contenedores */
 .container-form-form{ 
     padding:var(--standard-padding);
@@ -15,6 +19,13 @@
     box-shadow: 0 5px 10px #000;
     max-width: 50%;
     flex: 1
+}
+.user{
+    max-width: 90%;
+}
+.parraf{ 
+    text-align: center;
+    font-size: 1.2rem;
 }
 .container-forms-add{ 
     padding:2rem;
@@ -33,6 +44,12 @@
     color: #ff0000;
     text-align: center;
     font-size: var( --font-size);
+}
+.error{
+  color: #FF0000; 
+  font-weight: bold;
+ margin-bottom: 10px; 
+ text-align: center;
 }
 /* Estetica titulos */
 .title-form{ 

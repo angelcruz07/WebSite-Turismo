@@ -75,7 +75,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de evento</label>
-          <select name="type" id="type">
+          <select name="type" id="type" required>
             <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
           </select>
@@ -97,9 +97,9 @@ require "partials/navbar.php"; ?>
           <?php if ($image != "") { ?>
             <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image">
+          <input type="file" name="image" id="image" value="<?php echo $image; ?>">
         </div>
-        <div class="group-buttons">
+        <div class=" group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
