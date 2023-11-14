@@ -6,20 +6,17 @@
     justify-content: center;
     align-items: center;
 }
-
 /*Containers of the section */
 .box-about {
     display: flex;
     margin-bottom: 1rem;
 }
-
 /*Style of home  */
 .about-box-left {
     display: flex;
     padding: var(--standard-padding);
     align-items: center;
 }
-
 .information {
     padding: 2rem;
     flex: 1;
@@ -58,12 +55,34 @@
     max-width: 100%;
     height: auto;
 }
+/* Location */
+#location {
+    padding: var(--standard-padding);
+}
+.text-location{
+    font-size: var(--font-size);
+}
+.show-map-btn{
+    margin-top: 3rem;
+    text-align: center;
+}
+.show-map-btn a {
+    color: #fff;
+    padding: 1rem;
+    background-color: var(--color-secundary);
+    font-size: 1.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.show-map-btn a:hover{
+    transition: transform .5s ease;
+    transform: scale(1.2);
+}
 
 @media (max-width: 768px) {
     .box-about {
         flex-direction: column;
     }
-
     .about-box-left {
         flex-direction: column-reverse;
     }

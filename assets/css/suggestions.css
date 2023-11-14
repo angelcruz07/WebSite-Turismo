@@ -7,7 +7,7 @@
  
 .container_sugetions { 
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
     justify-content: space-between;

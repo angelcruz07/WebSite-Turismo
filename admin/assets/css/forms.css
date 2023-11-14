@@ -59,7 +59,8 @@
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom:2rem; 
+    margin-bottom:2rem;
+    position: relative;
 }
 .form-group label {
     width: 100%; 
@@ -72,6 +73,12 @@
     margin-top: 20px;
     resize: none;
     font-size: 1.5rem;
+}
+.form-group span {
+    position:absolute;
+    right: 0;
+    bottom: 0;
+
 }
 /* Estilos de menu */
 .group-buttons{ 
