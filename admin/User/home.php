@@ -6,7 +6,7 @@ validateRol($rol);
 require_once "../partials/headerUser.php";
 require_once "../partials/navbarUser.php";
 $conn;
-
+ 
 function clean($data)
 {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -22,32 +22,49 @@ function processImage($imageField)
         if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
             return basename($_FILES[$imageField]['name']);
         } else {
-            echo "Error al subir la imagen de $imageField.";
+            return "Error al subir la imagen de $imageField.";
         }
     } else {
-        echo "El campo de imagen $imageField está vacío.";
+        return "El campo de imagen $imageField está vacío.";
     }
 
     return false;
 }
 
-$errorMessage = "";
+function showAlert($message)
+{
+    echo "<script>alert('$message');</script>";
+}
+
+$alertMessages = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $requiredFields = ['business_type', 'name_business', 'description', 'product_type', 'name', 'address', 'phone', 'business_image', 'product_image'];
-
     // Validación de campos obligatorios
-    foreach ($requiredFields as $field) {
+    $requiredFields = [
+        'business_type' => 'Tipo de negocio',
+        'name_business' => 'Nombre del negocio',
+        'description' => 'Descripción del negocio',
+        'product_type' => 'Tipo de producto',
+        'name' => 'Nombre completo',
+        'address' => 'Dirección',
+        'phone' => 'Número de teléfono',
+        'business_image' => 'Imagen del negocio',
+        'product_image' => 'Imagen del producto',
+    ];
+
+    foreach ($requiredFields as $field => $fieldName) {
         if (empty($_POST[$field])) {
-            $errorMessage = "Todos los campos son obligatorios.";
-            break;
+            $alertMessages[] = "Por favor, selecciona $fieldName.";
         }
     }
 
-    // Validación de campos numericos 
+    // Validación de campos numericos
     if (!is_numeric($_POST['phone'])) {
-        $errorMessage = "El número de teléfono debe ser numérico.";
+        $alertMessages[] = "El número de teléfono debe ser numérico.";
     }
+
+    // Resto de tu código de procesamiento
+    // ...
 
     $business_type = clean($_POST['business_type']);
     $name_business = clean($_POST['name_business']);
@@ -62,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $businessImage = processImage('business_image');
     $productImage = processImage('product_image');
 
-    if (empty($errorMessage) && $businessImage !== false && $productImage !== false) {
+    if ($businessImage !== false && $productImage !== false && empty($alertMessages)) {
         try {
             $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
@@ -77,23 +94,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(9, $productImage);
 
             if ($stmt->execute()) {
-                echo "Datos insertados correctamente";
+                $alertMessages[] = "Datos insertados correctamente";
             } else {
                 throw new Exception("Error al insertar datos: " . $stmt->errorInfo()[2]);
             }
         } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+            $alertMessages[] = "Error: " . $e->getMessage();
         }
     }
+
+    // Mostrar alerta con mensajes de error (si los hay)
+    if (!empty($alertMessages)) {
+        showAlert(implode("\n", $alertMessages));
+    }
 }
-?> 
+
+?>  
  
- <!-- Mensaje de error -->
-<?php if (!empty($errorMessage)): ?>
-    <div style="color: #FF0000; font-weight: bold; margin-bottom: 10px;">
-        <?php echo $errorMessage; ?>
-    </div>
-<?php endif; ?>
+<!-- Mostrar alerta si no todos los campos están llenos -->
+<script>
+    <?php if (!empty($alertMessages)): ?>
+        alert('Es obligatorio que todos los campos estén llenos\n<?php echo implode('\n', $alertMessages); ?>');
+    <?php endif; ?>
+</script>
+
+ 
+ 
 
 
 <h1>Usuario normal</h1>
