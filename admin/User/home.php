@@ -9,52 +9,91 @@ $conn;
 
 function clean($data)
 {
-  return htmlspecialchars(stripslashes(trim($data)));
+    return htmlspecialchars(stripslashes(trim($data)));
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $business_type = $name_business = $business_image = $description = $product_type = $product_image = $name = $address = $phone = "";
-
-  foreach ($_POST as $key => $value) {
-    $$key = clean($value);
-  }
-
-
-  $uploadDirectory = __DIR__ . "/../assets/imgUser/";
-
-  function processImage($imageField)
-  {
+function processImage($imageField)
+{
     global $uploadDirectory;
 
     if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
-      $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
+        $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
 
-      if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
-        return basename($_FILES[$imageField]['name']);
-      } else {
-        echo "Error al subir la imagen de $imageField.";
-      }
+        if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
+            return basename($_FILES[$imageField]['name']);
+        } else {
+            echo "Error al subir la imagen de $imageField.";
+        }
     } else {
-      echo "Error al cargar la imagen de $imageField.";
+        echo "El campo de imagen $imageField está vacío.";
     }
 
     return false;
-  }
-
-  $businessImage = processImage('business_image');
-  $productImage = processImage('product_image');
-
-  if ($businessImage !== false && $productImage !== false) {
-    $sql = "INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES ('$business_type', '$name_business', '$description', '$product_type', '$name', '$address', '$phone', '$businessImage', '$productImage')";
-
-    if ($conn->query($sql) === TRUE) {
-      echo "Datos insertados correctamente";
-    } else {
-      echo "Error al insertar datos: " . $conn->error;
-    }
-  }
 }
-?>
+
+$errorMessage = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $requiredFields = ['business_type', 'name_business', 'description', 'product_type', 'name', 'address', 'phone', 'business_image', 'product_image'];
+
+    // Validación de campos obligatorios
+    foreach ($requiredFields as $field) {
+        if (empty($_POST[$field])) {
+            $errorMessage = "Todos los campos son obligatorios.";
+            break;
+        }
+    }
+
+    // Validación de campos numericos 
+    if (!is_numeric($_POST['phone'])) {
+        $errorMessage = "El número de teléfono debe ser numérico.";
+    }
+
+    $business_type = clean($_POST['business_type']);
+    $name_business = clean($_POST['name_business']);
+    $description = clean($_POST['description']);
+    $product_type = clean($_POST['product_type']);
+    $name = clean($_POST['name']);
+    $address = clean($_POST['address']);
+    $phone = clean($_POST['phone']);
+
+    $uploadDirectory = __DIR__ . "/../assets/imgUser/";
+
+    $businessImage = processImage('business_image');
+    $productImage = processImage('product_image');
+
+    if (empty($errorMessage) && $businessImage !== false && $productImage !== false) {
+        try {
+            $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            $stmt->bindParam(1, $business_type);
+            $stmt->bindParam(2, $name_business);
+            $stmt->bindParam(3, $description);
+            $stmt->bindParam(4, $product_type);
+            $stmt->bindParam(5, $name);
+            $stmt->bindParam(6, $address);
+            $stmt->bindParam(7, $phone);
+            $stmt->bindParam(8, $businessImage);
+            $stmt->bindParam(9, $productImage);
+
+            if ($stmt->execute()) {
+                echo "Datos insertados correctamente";
+            } else {
+                throw new Exception("Error al insertar datos: " . $stmt->errorInfo()[2]);
+            }
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+}
+?> 
+ 
+ <!-- Mensaje de error -->
+<?php if (!empty($errorMessage)): ?>
+    <div style="color: #FF0000; font-weight: bold; margin-bottom: 10px;">
+        <?php echo $errorMessage; ?>
+    </div>
+<?php endif; ?>
 
 
 <h1>Usuario normal</h1>
