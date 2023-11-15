@@ -63,8 +63,11 @@ switch ($action) {
     break;
 }
 $restaurants = getQuery($conn, $table);
-
 ?>
+    <script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addBusiness.php` ;  
+</script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -149,7 +152,8 @@ require "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $restaurant['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $businnes['id']; ?>">Borrar</button>
               </form>
             </td>
           </tr>

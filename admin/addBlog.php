@@ -56,6 +56,11 @@ switch ($action) {
 $blogs = getQuery($conn, $table);
 ?>
 
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addBlog.php` ;  
+</script>
+
 <?php require_once "partials/header.php";
 require_once "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -97,9 +102,7 @@ require_once "partials/navbar.php"; ?>
       </form>
     </div>
 
-<script>
-    let url = 'http://localhost/WebSite-Turismo/admin/addBlog.php';  
-</script>
+
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">

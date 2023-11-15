@@ -60,10 +60,16 @@ switch ($action) {
 $places = getQuery($conn, $table);
 
 ?>
+
 <?php
 require "partials/header.php";
 require "partials/navbar.php";
 ?>
+<!-- Necesario para alerta -->
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addGallery.php` ;  
+</script>
 <section id="add-form" class="add-form">
   <h1 class="title-index"> Agregar una imagen a galeria</h1>
   <div class="container-form-crud">
@@ -110,6 +116,7 @@ require "partials/navbar.php";
         </div>
       </form>
     </div>
+
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
@@ -137,7 +144,8 @@ require "partials/navbar.php";
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $place['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $gallery['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>

@@ -59,6 +59,11 @@ switch ($action) {
 // Consulta de los datos
 $events = getQuery($conn, $table);
 ?>
+<!-- Necesario para alerta -->
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addEvent.php` ;  
+</script>
 
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
@@ -106,9 +111,6 @@ require "partials/navbar.php"; ?>
         </div>
       </form>
     </div>
-    <script>
-         let url = 'http://localhost/WebSite-Turismo/admin/addEvent.php'; 
-    </script>
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
