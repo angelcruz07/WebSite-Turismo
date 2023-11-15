@@ -4,6 +4,7 @@ $('.btn.danger').click(function(e) {
   const postId = $(this).data('post-id');
   const accion = $(this).data('accion'); // Obtiene el valor del atributo data-accion
 
+
   Swal.fire({
     title: "¿Estás seguro?",
     text: "No podrás revertir esto",
@@ -17,7 +18,7 @@ $('.btn.danger').click(function(e) {
       // Utiliza postId y accion en tu solicitud AJAX
       $.ajax({
         //Url debe ser actualizada si se despliega es sitio
-        url: 'http://localhost/WebSite-Turismo/admin/addBlog.php',
+        url: url,
         type: 'POST',
         data: { id: postId, accion: accion },
         success: function(response) {
