@@ -19,7 +19,8 @@ $places = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Atractivos</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgGallery/front-page.jpg" alt="Portada de gastronomia"
+      title="Gastronomia" class="image-front-page">
   </div>
 
   <section class="attractive" id="attractive">
@@ -51,25 +52,25 @@ $places = getQuery($conn, $table);
       }
       ?>
       <?php foreach ($places as $place) { ?>
-        <div class="card my-card box filter <?php echo $place['type'] ?>">
-          <a href="<?php echo $images;
+      <div class="card my-card box filter <?php echo $place['type'] ?>">
+        <a href="<?php echo $images;
                     echo $place['image']; ?>">
-            <div class="face front">
-              <img src="<?php echo $images;
+          <div class="face front">
+            <img src="<?php echo $images;
                         echo $place['image']; ?>" alt="Imagen minero">
-              <h3><?php echo $place['name'] ?></h3>
+            <h3><?php echo $place['name'] ?></h3>
 
-            </div>
-            <div class="face back">
-              <h3><?php echo $place['name'] ?></h3>
-              <p><?php echo $place['description'] ?></p>
-              <div class="link"></div>
-            </div>
-          </a>
-          <div id="map" class="map hidden">
-            <a class="link" href="#">Ver en mapa</a>
           </div>
+          <div class="face back">
+            <h3><?php echo $place['name'] ?></h3>
+            <p><?php echo $place['description'] ?></p>
+            <div class="link"></div>
+          </div>
+        </a>
+        <div id="map" class="map hidden">
+          <a class="link" href="#">Ver en mapa</a>
         </div>
+      </div>
       <?php } ?>
   </section>
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>

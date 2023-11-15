@@ -5,7 +5,16 @@
   .logo {
     width: 80px;
   }
-  
+#alert{
+  background-color: rgb(255, 0, 0);
+  border-radius: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  position: relative;
+  left:98px;
+  top:20px;
+}
   .container-desktop {
     background-color: var(--background-secundary);
     width: 100%;

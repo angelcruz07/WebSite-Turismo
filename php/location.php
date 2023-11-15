@@ -15,7 +15,7 @@ require "../partials/scroll-top.php";
     <div class="title-front-page">
       <h1>Nuestra Ubicacion</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgLocation/centro.png" alt="Portada de Ubicacion" title="Ubicacion" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgLocation/centro.png" alt="Portada de Ubicacion" title="Ubicacion" class="image-front-page">
   </div>
   <h2 class="title-index">Ubicacion Geográfica</h2>
 
