@@ -20,6 +20,7 @@
     </a>
     <a href="<?php echo $url; ?>/admin/request.php">
       <div class="option">
+        <span id="alert-2">1</span>
         <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono gear" title="Agregar evento">
         <h4>Ver solicitud</h4>
       </div>
