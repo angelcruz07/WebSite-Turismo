@@ -34,7 +34,7 @@ $data = array(
 switch ($action) {
   case "Agregar":
     insertRegister($conn, $data, $validFields);
-    header("Loction:$location");
+    header("Location:$location");
     break;
   case "Modificar":
     editRegister($conn, $data, $validFields);
@@ -60,10 +60,15 @@ switch ($action) {
 $places = getQuery($conn, $table);
 
 ?>
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addGallery.php` ;  
+</script>
 <?php
-require "partials/header.php";
-require "partials/navbar.php";
+require_once "partials/header.php";
+require_once "partials/navbar.php";
 ?>
+<!-- Necesario para alerta -->
 <section id="add-form" class="add-form">
   <h1 class="title-index"> Agregar una imagen a galeria</h1>
   <div class="container-form-crud">
@@ -110,6 +115,7 @@ require "partials/navbar.php";
         </div>
       </form>
     </div>
+
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
@@ -137,7 +143,8 @@ require "partials/navbar.php";
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $place['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $place['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>
@@ -147,3 +154,4 @@ require "partials/navbar.php";
     </div>
   </div>
 </section>
+<?php require "./partials/footer.php" ?>

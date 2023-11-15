@@ -53,7 +53,10 @@ switch ($action) {
 }
 $services = getQuery($conn, $table);
 ?>
-
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addService.php` ;  
+</script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 
@@ -135,7 +138,8 @@ require "partials/navbar.php"; ?>
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $service['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $service['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>

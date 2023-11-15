@@ -9,13 +9,13 @@ $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $phone_number = (isset($_POST['phone_number'])) ? $_POST['phone_number'] : "";
-$url_location = (isset($_POST['location'])) ? $_POST['location'] : "";
+$location = (isset($_POST['location'])) ? $_POST['location'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 
 $table = "business";
 $file = "imgBusiness";
-$location = "addBusiness.php";
+$location = "addBusiness.php"; 
 $validFields = [
   "type",
   "name",
@@ -30,7 +30,7 @@ $data = array(
   "type" => $type,
   "name" => $name,
   "description" => $description,
-  "location" => $url_location,
+  "location" =>  $location,
   "phone_number" => $phone_number,
   "table" => $table,
   "carpet" => $file
@@ -38,14 +38,14 @@ $data = array(
 switch ($action) {
   case "Agregar":
     insertRegister($conn, $data, $validFields);
-    header("Loction:$url_location");
+    header("Location: $location");
     break;
   case "Modificar":
     editRegister($conn, $data, $validFields);
     editImage($conn, $id, $image, $file, $table);
-    header("Location:$url_location");
+    header("Location: $location");
   case "Cancelar":
-    header("Location:$url_location");
+    header("Location:$location");
   case "Seleccionar":
     $selectedRestaurant = selectRegister($conn, $id, $table);
     if ($selectedRestaurant) {
@@ -53,18 +53,21 @@ switch ($action) {
       $name = $selectedRestaurant['name'];
       $description = $selectedRestaurant['description'];
       $phone_number = $selectedRestaurant['phone_number'];
-      $url_location = $selectedRestaurant['location'];
+       $location = $selectedRestaurant['location'];
       $image = $selectedRestaurant['image'];
     }
     break;
   case "Borrar";
     deleteRegister($conn, $id, $table, $file);
-    header("Location:$url_location");
+    header("Location: $location");
     break;
 }
 $restaurants = getQuery($conn, $table);
-
 ?>
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addBusiness.php` ;  
+</script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -103,7 +106,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del lugar en google maps:</label>
-          <textarea name="location" id="location" maxlength="300" required><?php echo $url_location; ?></textarea>
+          <textarea name="location" id="location" maxlength="300" required><?php echo  $location; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
@@ -149,7 +152,8 @@ require "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $restaurant['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $restaurant['id']; ?>">Borrar</button>
               </form>
             </td>
           </tr>
@@ -159,3 +163,4 @@ require "partials/navbar.php"; ?>
     </div>
   </div>
 </section>
+<?php require "./partials/footer.php" ?>

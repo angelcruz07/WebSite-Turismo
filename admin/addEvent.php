@@ -59,6 +59,11 @@ switch ($action) {
 // Consulta de los datos
 $events = getQuery($conn, $table);
 ?>
+<!-- Necesario para alerta -->
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addEvent.php` ;  
+</script>
 
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
@@ -75,7 +80,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="Type">Selecciona el tipo de evento</label>
-          <select name="type" id="type">
+          <select name="type" id="type" required>
             <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
           </select>
@@ -97,16 +102,15 @@ require "partials/navbar.php"; ?>
           <?php if ($image != "") { ?>
             <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image">
+          <input type="file" name="image" id="image" value="<?php echo $image; ?>">
         </div>
-        <div class="group-buttons">
+        <div class=" group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
           <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
-
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
@@ -134,7 +138,8 @@ require "partials/navbar.php"; ?>
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $event['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>

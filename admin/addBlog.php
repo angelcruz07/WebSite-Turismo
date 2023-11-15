@@ -55,6 +55,12 @@ switch ($action) {
 // Consulta de los datos
 $blogs = getQuery($conn, $table);
 ?>
+
+<script>
+  const url = "http://localhost/WebSite-Turismo/admin/";
+  let file  = `${url}/addBlog.php` ;  
+</script>
+
 <?php require_once "partials/header.php";
 require_once "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -122,6 +128,7 @@ require_once "partials/navbar.php"; ?>
               <form method="POST" id="custom-register">
                 <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
                 <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                
                 <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
                   data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
               </form>
@@ -133,6 +140,4 @@ require_once "partials/navbar.php"; ?>
     </div>
   </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php require "./partials/footer.php" ?>
