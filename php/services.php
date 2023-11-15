@@ -16,7 +16,7 @@ $services = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Transporte</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgServices-copy/servicios.jpg" alt="Portada de Transporte" title="Transporte"
+    <img src="<?php echo $url ?>/admin/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte"
       class="image-front-page">
   </div>
   <h1 class="title-index">Movilidad</h1>

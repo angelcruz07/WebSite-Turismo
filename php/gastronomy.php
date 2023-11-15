@@ -4,7 +4,7 @@ require_once "../admin/config/utilities.php";
 require_once "../partials/header2.php";
 require_once "../partials/navbar.php";
 require_once "../partials/scroll-top.php";
-$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGastronomy/";
 $table = "gastronomy";
 $saucers = getQuery($conn, $table);
 $table2 = "business";
@@ -20,7 +20,8 @@ $business = getQuery($conn, $table2);
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgGastronomy-copy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia"
+      class="image-front-page">
   </div>
   <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
@@ -48,53 +49,53 @@ $business = getQuery($conn, $table2);
       ?>
 
       <?php foreach ($saucers as $saurcer) { ?>
-        <div class="card filter <?php echo $saurcer['type'] ?>">
-          <div class="card_landing" style="--i:url(<?php echo $url_images;
-                            echo $saurcer['image']; ?>">
-            <h6><?php echo $saurcer['name'] ?></h6>
+      <div class="card filter <?php echo $saurcer['type'] ?>">
+        <div class="card_landing" style="--i:url(<?php echo $url_images;
+                                                    echo $saurcer['image']; ?>">
+          <h6><?php echo $saurcer['name'] ?></h6>
+        </div>
+        <div class="card_info">
+          <div class="head">
+            <p class="title"><?php echo $saurcer['name'] ?></p>
+            <div class="description">
+            </div>
           </div>
-          <div class="card_info">
-            <div class="head">
-              <p class="title"><?php echo $saurcer['name'] ?></p>
-              <div class="description">
-              </div>
-            </div>
-            <div class="content">
-              <p class="title">Descripcion</p>
-              <ul class="list">
-                <p><?php echo $saurcer['description'] ?></p>
-              </ul>
-            </div>
+          <div class="content">
+            <p class="title">Descripcion</p>
+            <ul class="list">
+              <p><?php echo $saurcer['description'] ?></p>
+            </ul>
           </div>
         </div>
+      </div>
       <?php } ?>
     </div>
 
     <?php foreach ($business as $busine) { ?>
-      <div class="container-lodging filter <?php echo $busine['type']; ?>">
-        <div class="lodging-box-left">
-          <div class="lodging-image">
-            <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="Imagen del hotel">
+    <div class="container-lodging filter <?php echo $busine['type']; ?>">
+      <div class="lodging-box-left">
+        <div class="lodging-image">
+          <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="Imagen del hotel">
+        </div>
+        <div class="description-lodging left">
+          <h3><?php echo $busine['name']; ?></h3>
+          <p><?php echo $busine['description']; ?></p><br>
+          <div class="calf-star">
+            <a href="#">
+              <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
+            </a>
           </div>
-          <div class="description-lodging left">
-            <h3><?php echo $busine['name']; ?></h3>
-            <p><?php echo $busine['description']; ?></p><br>
-            <div class="calf-star">
-              <a href="#">
-                <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
-              </a>
-            </div>
-            <div class="link-lodging">
-              <a href="<?php echo $busine['location']; ?>">Ver en el mapa</a>
-            </div>
+          <div class="link-lodging">
+            <a href="<?php echo $busine['location']; ?>">Ver en el mapa</a>
           </div>
         </div>
       </div>
+    </div>
     <?php } ?>
 
-      <div class="register-business">
-        <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
-      </div>
+    <div class="register-business">
+      <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
+    </div>
   </section>
 
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
