@@ -143,7 +143,7 @@ require "partials/navbar.php"; ?>
                   <input type="hidden" name="id" id="id" value="<?php echo $lodging['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
                   <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
-                  data-post-id="<?php echo $logding['id']; ?>">Borrar</button>
+                  data-post-id="<?php echo $lodging['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>

@@ -64,7 +64,7 @@ $gastronomys = getQuery($conn, $table);
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
-  <h1 class="title-index"> Agregar una imagen a galeria</h1>
+  <h1 class="title-index"> Agregar comida</h1>
   <div class="container-form-crud">
     <div class="container-form-form">
       <h2 class="title-form">Nueva publicacion</h2>
@@ -143,4 +143,5 @@ require "partials/navbar.php"; ?>
       </table>
     </div>
   </div>
-</section>
+</section> 
+<?php require "./partials/footer.php" ?>
