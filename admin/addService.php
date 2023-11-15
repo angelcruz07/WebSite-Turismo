@@ -55,7 +55,7 @@ $services = getQuery($conn, $table);
 ?>
 <script>
   const url = "http://localhost/WebSite-Turismo/admin/";
-  let file  = `${url}/addService.php` ;  
+  let file  = `${url}/addService.php`;  
 </script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>

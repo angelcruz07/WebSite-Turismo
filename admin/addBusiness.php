@@ -71,7 +71,7 @@ $restaurants = getQuery($conn, $table);
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
-  <h1 class="title-index"> Agregar un Restaurant(o negocio)</h1>
+  <h1 class="title-index"> Agregar un Restaurante(o negocio)</h1>
   <div class="container-form-crud">
     <div class="container-form-form">
       <h2 class="title-form">Nueva publicacion</h2>

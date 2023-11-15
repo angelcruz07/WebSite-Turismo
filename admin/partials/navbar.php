@@ -54,6 +54,12 @@
         <h4>Agregar Gastronomia</h4>
       </div>
     </a>
+    <a href="<?php echo $url; ?>/admin/addBusiness.php">
+      <div class="option">
+        <img src="<?php echo $url ?>/assets/icons/store.svg" alt="Icono gear" title="Agregar negocio">
+        <h4>Agregar Negocio</h4>
+      </div>
+    </a>
     <a href="<?php echo $url; ?>/admin/addService.php">
       <div class="option">
         <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar Servicio">

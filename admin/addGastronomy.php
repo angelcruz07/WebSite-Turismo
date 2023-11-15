@@ -57,7 +57,7 @@ switch ($action) {
 $gastronomys = getQuery($conn, $table);
 
 ?>
-    <script>
+<script>
   const url = "http://localhost/WebSite-Turismo/admin/";
   let file  = `${url}/addGastronomy.php` ;  
 </script>

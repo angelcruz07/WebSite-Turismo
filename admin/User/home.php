@@ -29,7 +29,7 @@ function processImage($imageField)
     }
 
   return false;
-}
+}  
 
 function showAlert($message)
 {
