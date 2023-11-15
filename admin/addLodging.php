@@ -67,6 +67,10 @@ switch ($action) {
 // Consulta de los datos
 $lodgings = getQuery($conn, $table);
 ?>
+<script>
+ const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
+</script>
 
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
@@ -138,7 +142,8 @@ require "partials/navbar.php"; ?>
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $lodging['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $lodging['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>
