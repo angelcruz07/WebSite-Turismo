@@ -7,120 +7,23 @@ require_once "../partials/headerUser.php";
 require_once "../partials/navbarUser.php";
 $conn;
  
-function clean($data)
-{
-  return htmlspecialchars(stripslashes(trim($data)));
-}
-
-function processImage($imageField)
-{
-  global $uploadDirectory;
-
-  if (isset($_FILES[$imageField]) && $_FILES[$imageField]['error'] == 0) {
-    $fileName = $uploadDirectory . basename($_FILES[$imageField]['name']);
-
-        if (move_uploaded_file($_FILES[$imageField]['tmp_name'], $fileName)) {
-            return basename($_FILES[$imageField]['name']);
-        } else {
-            return "Error al subir la imagen de $imageField.";
-        }
-    } else {
-        return "El campo de imagen $imageField está vacío.";
-    }
-
-  return false;
-}  
-
-function showAlert($message)
-{
-    echo "<script>alert('$message');</script>";
-}
-
-$alertMessages = [];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validación de campos obligatorios
-    $requiredFields = [
-        'business_type' => 'Tipo de negocio',
-        'name_business' => 'Nombre del negocio',
-        'description' => 'Descripción del negocio',
-        'product_type' => 'Tipo de producto',
-        'name' => 'Nombre completo',
-        'address' => 'Dirección',
-        'phone' => 'Número de teléfono',
-        'business_image' => 'Imagen del negocio',
-        'product_image' => 'Imagen del producto',
-    ];
-
-    foreach ($requiredFields as $field => $fieldName) {
-        if (empty($_POST[$field])) {
-            $alertMessages[] = "Por favor, selecciona $fieldName.";
-        }
-    }
-
-    // Validación de campos numericos
-    if (!is_numeric($_POST['phone'])) {
-        $alertMessages[] = "El número de teléfono debe ser numérico.";
-    }
-
-    // Resto de tu código de procesamiento
-    // ...
-
-  $business_type = clean($_POST['business_type']);
-  $name_business = clean($_POST['name_business']);
-  $description = clean($_POST['description']);
-  $product_type = clean($_POST['product_type']);
-  $name = clean($_POST['name']);
-  $address = clean($_POST['address']);
-  $phone = clean($_POST['phone']);
-
-  $uploadDirectory = __DIR__ . "/../assets/imgUser/";
-
-  $businessImage = processImage('business_image');
-  $productImage = processImage('product_image');
-
-    if ($businessImage !== false && $productImage !== false && empty($alertMessages)) {
-        try {
-            $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-      $stmt->bindParam(1, $business_type);
-      $stmt->bindParam(2, $name_business);
-      $stmt->bindParam(3, $description);
-      $stmt->bindParam(4, $product_type);
-      $stmt->bindParam(5, $name);
-      $stmt->bindParam(6, $address);
-      $stmt->bindParam(7, $phone);
-      $stmt->bindParam(8, $businessImage);
-      $stmt->bindParam(9, $productImage);
-
-            if ($stmt->execute()) {
-                $alertMessages[] = "Datos insertados correctamente";
-            } else {
-                throw new Exception("Error al insertar datos: " . $stmt->errorInfo()[2]);
-            }
-        } catch (Exception $e) {
-            $alertMessages[] = "Error: " . $e->getMessage();
-        }
-    }
-
-    // Mostrar alerta con mensajes de error (si los hay)
-    if (!empty($alertMessages)) {
-        showAlert(implode("\n", $alertMessages));
-    }
-}
-
+//Datos del formulario a la basede datos 
+$business_type = $_POST['business_type']; 
+$name_business = $_POST['name_busines']; 
+$business_image = $_FILES['business_image']; 
+$description = $_POST['description']; 
+$product_type = $_POST['product_type']; 
+$product_image = $_FILES['product_image']; 
+$name = $_POST['name']; 
+$address = $_POST['address']; 
+$phone = $_POST['phone'];  
+ 
+$send_date = "INSERT INTO request('business_type', 'business', 'business_image', 'description', 'product_type', 'product_image', 'name', 'address', 'phone_number') 
+              VALUES('$business_type', '$name_business', '$business_image', '$description', '$product_type', '$product_image', '$name', '$address', '$phone')"; 
+               
+if 
 ?>  
  
-<!-- Mostrar alerta si no todos los campos están llenos -->
-<script>
-    <?php if (!empty($alertMessages)): ?>
-        alert('Es obligatorio que todos los campos estén llenos\n<?php echo implode('\n', $alertMessages); ?>');
-    <?php endif; ?>
-</script>
-
- 
- 
-
 
 <h1>Usuario normal</h1>
 <!--Formulario de USER-->
@@ -182,12 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="title"> Numero de telefono:</label>
           <input type="text" value="" name="phone" id="phone" maxlength="22" required>
         </div>
-        <!-- Mensaje de error -->
-        <?php if (!empty($errorMessage)) : ?>
-          <div class="error">
-            <?php echo $errorMessage; ?>
-          </div>
-        <?php endif; ?>
+        
+
         <!--Botones -->
         <div class="group-buttons">
           <button type="submit" value="Agregar" name="accion" class="form-btn primary">Enviar</button>
