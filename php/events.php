@@ -28,7 +28,7 @@ foreach ($events as $event) {
         <div class="title-front-page">
             <h1>Eventos</h1>
         </div>
-        <img src="<?php echo $url ?>/assets/imgEvents/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+        <img src="<?php echo $url ?>/admin/assets/imgEvents/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
     </div>
 
     <section class="events scroll-top" id="events">

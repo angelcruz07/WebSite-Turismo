@@ -4,7 +4,7 @@ require_once "../admin/config/utilities.php";
 require_once "../partials/header2.php";
 require_once "../partials/navbar.php";
 require_once "../partials/scroll-top.php";
-$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGastronomy/";
+$url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 $table = "gastronomy";
 $saucers = getQuery($conn, $table);
 $table2 = "business";
@@ -20,7 +20,7 @@ $business = getQuery($conn, $table2);
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgGastronomy-copy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
   <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
