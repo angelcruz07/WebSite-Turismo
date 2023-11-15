@@ -57,10 +57,14 @@ switch ($action) {
 $gastronomys = getQuery($conn, $table);
 
 ?>
+    <script>
+  const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
+</script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
-  <h1 class="title-index"> Agregar una imagen a galeria</h1>
+  <h1 class="title-index"> Agregar comida</h1>
   <div class="container-form-crud">
     <div class="container-form-form">
       <h2 class="title-form">Nueva publicacion</h2>
@@ -129,7 +133,8 @@ require "partials/navbar.php"; ?>
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $gastronomy['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" name="accion" value="Borrar" class="btn danger">Borrar</button>
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+                  data-post-id="<?php echo $gastronomy['id']; ?>">Borrar</button>
                 </form>
               </td>
             </tr>
@@ -138,4 +143,5 @@ require "partials/navbar.php"; ?>
       </table>
     </div>
   </div>
-</section>
+</section> 
+<?php require "./partials/footer.php" ?>
