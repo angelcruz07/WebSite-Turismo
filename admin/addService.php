@@ -54,8 +54,8 @@ switch ($action) {
 $services = getQuery($conn, $table);
 ?>
 <script>
-  const url = "http://localhost/WebSite-Turismo/admin/";
-  let file  = `${url}/addService.php`;  
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addService.php";
 </script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>

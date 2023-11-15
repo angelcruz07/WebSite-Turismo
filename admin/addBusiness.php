@@ -65,8 +65,8 @@ switch ($action) {
 $restaurants = getQuery($conn, $table);
 ?>
 <script>
-  const url = "http://localhost/WebSite-Turismo/admin/";
-  let file  = `${url}/addBusiness.php` ;  
+ const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
 </script>
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>

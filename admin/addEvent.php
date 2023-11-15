@@ -61,8 +61,9 @@ $events = getQuery($conn, $table);
 ?>
 <!-- Necesario para alerta -->
 <script>
-  const url = "http://localhost/WebSite-Turismo/admin/";
-  let file  = `${url}/addEvent.php` ;  
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addEvent.php";
+
 </script>
 
 <?php require "partials/header.php";

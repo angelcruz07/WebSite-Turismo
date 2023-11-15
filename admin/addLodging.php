@@ -68,8 +68,8 @@ switch ($action) {
 $lodgings = getQuery($conn, $table);
 ?>
 <script>
-  const url = "http://localhost/WebSite-Turismo/admin/";
-  let file  = `${url}/addLodging.php` ;  
+ const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
 </script>
 
 <?php require "partials/header.php";

@@ -19,7 +19,7 @@ $places = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Atractivos</h1>
     </div>
-    <img src="<?php echo $url ?>/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgAttractive/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
 
   <section class="attractive" id="attractive">

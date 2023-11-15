@@ -3,7 +3,7 @@ require "../admin/config/database.php";
 require "../partials/header2.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
-$urlImage = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/imgBlog";
+$urlImage = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 $query = $conn->prepare("SELECT * FROM blog");
 $query->execute();
 $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="title-front-page">
       <h1>Blog</h1>
     </div>
-    <img src="<?php echo $urlImage ?>/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia"
+    <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/front-page.jpg" alt="Portada de Blog" title="Gastronomia"
       class="image-front-page">
   </div>
   <section id="blog">
@@ -60,7 +60,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
       <div class="landscape-container">
         <div class="card__container">
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/puesta-de-sol.jpg" alt="image" class="card__img">
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/puesta-de-sol.jpg" alt="image" class="card__img">
 
             <div class="card__data">
               <span class="card__description">Puesta de Sol en Sultepec</span>
@@ -69,7 +69,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
           </article>
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/noche.jpg" alt="image" class="card__img">
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/noche.jpg" alt="image" class="card__img">
 
             <div class="card__data">
               <span class="card__description">Sultepec de Noche</span>
@@ -78,7 +78,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
           </article>
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/puesta-de-sol-2.jpg" alt="image" class="card__img">
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/puesta-de-sol-2.jpg" alt="image" class="card__img">
 
             <div class="card__data">
               <span class="card__description">Atardecer en Sultepec</span>
@@ -102,7 +102,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/Angel-colab.webp" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/Angel-colab.webp" alt="">
               </div>
 
               <div class="media-icons">
@@ -123,7 +123,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/Lizandro-colab.png" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy//Lizandro-colab.png" alt="">
               </div>
               <div class="media-icons">
                 <i class="fab fa-facebook"></i>
@@ -143,7 +143,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/landscape-3.png" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/landscape-3.png" alt="">
               </div>
 
               <div class="media-icons">
@@ -164,7 +164,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/landscape-1.png" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/landscape-1.png" alt="">
               </div>
 
               <div class="media-icons">
@@ -185,7 +185,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/landscape-2.png" alt="">
               </div>
 
               <div class="media-icons">
@@ -206,7 +206,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/landscape-2.png" alt="">
+                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog-copy/landscape-2.png" alt="">
               </div>
 
               <div class="media-icons">
