@@ -6,24 +6,22 @@ validateRol($rol);
 require_once "../partials/headerUser.php";
 require_once "../partials/navbarUser.php";
 $conn;
- 
+
 //Datos del formulario a la basede datos 
-$business_type = $_POST['business_type']; 
-$name_business = $_POST['name_busines']; 
-$business_image = $_FILES['business_image']; 
-$description = $_POST['description']; 
-$product_type = $_POST['product_type']; 
-$product_image = $_FILES['product_image']; 
-$name = $_POST['name']; 
-$address = $_POST['address']; 
-$phone = $_POST['phone'];  
- 
+$business_type = $_POST['business_type'];
+$name_business = $_POST['name_busines'];
+$business_image = $_FILES['business_image'];
+$description = $_POST['description'];
+$product_type = $_POST['product_type'];
+$product_image = $_FILES['product_image'];
+$name = $_POST['name'];
+$address = $_POST['address'];
+$phone = $_POST['phone'];
+
 $send_date = "INSERT INTO request('business_type', 'business', 'business_image', 'description', 'product_type', 'product_image', 'name', 'address', 'phone_number') 
-              VALUES('$business_type', '$name_business', '$business_image', '$description', '$product_type', '$product_image', '$name', '$address', '$phone')"; 
-               
-if 
-?>  
- 
+              VALUES('$business_type', '$name_business', '$business_image', '$description', '$product_type', '$product_image', '$name', '$address', '$phone')";
+
+?>
 
 <h1>Usuario normal</h1>
 <!--Formulario de USER-->
@@ -85,7 +83,7 @@ if
           <label for="title"> Numero de telefono:</label>
           <input type="text" value="" name="phone" id="phone" maxlength="22" required>
         </div>
-        
+
 
         <!--Botones -->
         <div class="group-buttons">
