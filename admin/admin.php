@@ -14,7 +14,14 @@ require_once "./partials/navbar.php";
     <h2 class="title-index">Bienvenido comencemos administrar el sitio</h2>
     <div class="container-card-menu">
       <a href="<?php echo $url ?>/admin/request.php" class="link-desktop">
-        <span id="alert">1</span>
+        <?php
+        $table = 'request';
+        $request = getQuery($conn, $table);
+        $numSolicitudes = count($request);
+        if ($numSolicitudes > 0) {
+          echo '<span id="alert">' . ($numSolicitudes > 9 ? '9+' : $numSolicitudes) . '</span>';
+        }
+        ?>
         <div class="card-menu">
           <div class="image-container">
             <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono plus" class="icon-desktop"
