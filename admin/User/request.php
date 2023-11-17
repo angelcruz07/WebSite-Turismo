@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <h1 class="title-index">Solicita ingresar tu negocio a nuestra web</h1>
-<p class="parraf-user">La solicitud sera enviada al H.Ayuntamiento para procesar tu solicitud</p>
+<p class="parraf-user">La solicitud sera enviada al H.Ayuntamiento para procesar tu solicitud, seras contactado si tu solicitud ha sido aprobada</p>
 
 <!--Formulario de USER-->
 <section id="add-form" class="add-form">

@@ -9,7 +9,7 @@ $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $phone_number = (isset($_POST['phone_number'])) ? $_POST['phone_number'] : "";
-$location = (isset($_POST['location'])) ? $_POST['location'] : "";
+$location_url = (isset($_POST['location'])) ? $_POST['location'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 
@@ -30,7 +30,7 @@ $data = array(
   "type" => $type,
   "name" => $name,
   "description" => $description,
-  "location" =>  $location,
+  "location" =>  $location_url,
   "phone_number" => $phone_number,
   "table" => $table,
   "carpet" => $file
@@ -53,7 +53,7 @@ switch ($action) {
       $name = $selectedRestaurant['name'];
       $description = $selectedRestaurant['description'];
       $phone_number = $selectedRestaurant['phone_number'];
-       $location = $selectedRestaurant['location'];
+       $location_url = $selectedRestaurant['location'];
       $image = $selectedRestaurant['image'];
     }
     break;
@@ -106,7 +106,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del lugar en google maps:</label>
-          <textarea name="location" id="location" maxlength="300" required><?php echo  $location; ?></textarea>
+          <textarea name="location" id="location" maxlength="300" required><?php echo  $location_url; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
