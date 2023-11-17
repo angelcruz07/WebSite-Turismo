@@ -27,7 +27,7 @@ CREATE TABLE
         id INT AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         title VARCHAR(255),
-        description VARCHAR(255),
+        description VARCHAR(512),
         date TIMESTAMP,
         image VARCHAR(3000)
     );

@@ -24,7 +24,7 @@
 .card-event img {
     max-width: 330px;
     width: 100%;
-    height: 250px;
+    height: 350px;
     display: block;
     object-fit: cover;
     border-radius: 5% 5% 0 0;
@@ -38,7 +38,8 @@
     font-family: var(--font-family);
     box-shadow: 0 5px 10px #000;
     text-align: justify;
-    height: 150px;
+    height: 350px;
+    font-size: 1.2rem;
 }
 .description-event h3{
     font-size: var(--font-size);

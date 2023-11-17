@@ -12,5 +12,5 @@ function initCharacterCounter(inputId, limit) {
 
 //Form event
 //Sustituir los parametros por el que se desea limitar
-initCharacterCounter("title", 30);
-initCharacterCounter("description", 255);
+initCharacterCounter("title", 60);
+initCharacterCounter("description", 450);
