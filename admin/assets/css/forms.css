@@ -1,7 +1,31 @@
+/* Seccion */
 #add-form { 
     padding: 5rem;
 }
-/* Contenedor del crud de formos */
+/* request */
+.label-request{
+    color:var(--color-titles);
+    font-size: var(--font-size);
+    margin-top: 1rem;
+}
+.img-request{
+    width: 150px;
+    height: 150px;
+}
+.container-img-request{
+    display: flex;
+    justify-content: space-between;
+}
+.container-titles{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 2rem;
+}
+.container-info{
+    display: flex;
+    justify-content: space-between
+}
+/* Contenedor del crud de forms  */
 .container-form-crud{ 
     display: flex;
     justify-content: space-between;
@@ -51,6 +75,7 @@
  margin-bottom: 10px; 
  text-align: center;
 }
+
 /* Estetica titulos */
 .title-form{ 
     font-size:2rem;
@@ -58,9 +83,9 @@
     text-align: center;
     color: var(--color-secundary);
 }
-.container-form-form label ,input , select{ 
-    color:#000000;
-    font-size: 1.5rem;
+.container-form-form input , select{ 
+    color: #000;
+    font-size: var(--font-size);
 }
 .form-btn{ 
     padding:10px 10px;
@@ -71,6 +96,7 @@
     background-color: var( --color-secundary);
     color:#fff;
     cursor: pointer;
+    border: none;
 }
 /* Contenedores del formulario */
 .form-group {
@@ -81,7 +107,9 @@
 }
 .form-group label {
     width: 100%; 
+    font-size: var(--font-size);
 }
+
 .form-group input,textarea,select {
     background: none;
     width: 100%;
@@ -95,7 +123,6 @@
     position:absolute;
     right: 0;
     bottom: 0;
-
 }
 /* Estilos de menu */
 .group-buttons{ 
@@ -106,7 +133,7 @@
    justify-content: space-between;
    border: none;
    text-transform: uppercase;
-font-weight: 700;
+   font-weight: 700;
 }
 /* Estilos de formos agregados */
 .info-crud { 
@@ -143,11 +170,13 @@ font-weight: 700;
   padding: 5px;
   border: 1px solid #ccc;
   font-weight:700;
-    color:#000
+  color:#000;
+  font-size: 10px;
 }
 /* Botones */
 .btn{ 
     color: #fff;
+    background-color: var(--color-secundary);
     padding: 5px;
     border-radius:5px;
     border:none;
@@ -170,6 +199,7 @@ font-weight: 700;
     text-transform: uppercase;
     color: #000;
     text-align:center;
+    font-size: 10px;
 }
 /* Responsive */
 @media  screen and (max-width: 1100px) {

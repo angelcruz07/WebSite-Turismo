@@ -62,6 +62,12 @@
 .text-location{
     font-size: var(--font-size);
 }
+.container-btn{
+    display: flex;
+    justify-content: center;
+    gap:1.5rem;
+    align-items: center;
+}
 .show-map-btn{
     margin-top: 3rem;
     text-align: center;

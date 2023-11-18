@@ -39,9 +39,6 @@ switch ($action) {
     editImage($conn, $id, $image, $file, $table);
     header("Location:$location");
     break;
-  case "Cancelar";
-    header("Location:$location");
-    break;
   case "Seleccionar":
     $selectedEvent = selectRegister($conn, $id, $table);
     if ($selectedEvent) {
@@ -60,10 +57,17 @@ switch ($action) {
 $events = getQuery($conn, $table);
 ?>
 <!-- Necesario para alerta -->
-<script>
+<script type="module">
+//Funcion de contador
+import {
+  initCharacterCounter
+}
+from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+initCharacterCounter("title-event", 60);
+initCharacterCounter("description-event", 450);
+
 const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addEvent.php";
-
 </script>
 
 <?php require "partials/header.php";
@@ -80,7 +84,7 @@ require "partials/navbar.php"; ?>
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
         </div>
         <div class="form-group">
-          <label for="Type">Selecciona el tipo de evento</label>
+          <label for="type">Selecciona el tipo de evento</label>
           <select name="type" id="type" required>
             <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
@@ -88,27 +92,31 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <span id="count"></span>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="30" required>
+          <input type="text" value="<?php echo $title ?>" name="title" class="title-event" id="title" maxlength="60"
+            required>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" id="description" maxlength="255" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="450" class="textarea description-event" rows="4"
+            cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Imagen relacionada al evento:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada"
+            width="50px">
           <?php } ?>
           <input type="file" name="image" id="image" value="<?php echo $image; ?>">
         </div>
         <div class=" group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
+            class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
+            name="accion" class="form-btn">Modificar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
@@ -127,23 +135,23 @@ require "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($events as $event) { ?>
-            <tr class="form-add">
-              <td class="date-form id"><?php echo $event['id'] ?></td>
-              <td class="date-form title"><?php echo $event['title'] ?></td>
-              <td class="date-form descrption"><?php echo $event['description'] ?></td>
-              <td class="date-form image">
-                <img src=../admin/assets/imgEvent/<?php echo $event['image'] ?> width="40px">
-              </td>
-              <td class="date-form type"><?php echo $event['type'] ?></td>
-              <td class="date-form btn-flex option">
-                <form method="POST" id="custom-register">
-                  <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
-                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+          <tr class="form-add">
+            <td class="date-form id"><?php echo $event['id'] ?></td>
+            <td class="date-form title"><?php echo $event['title'] ?></td>
+            <td class="date-form descrption"><?php echo $event['description'] ?></td>
+            <td class="date-form image">
+              <img src=../admin/assets/imgEvent/<?php echo $event['image'] ?> width="40px">
+            </td>
+            <td class="date-form type"><?php echo $event['type'] ?></td>
+            <td class="date-form btn-flex option">
+              <form method="POST" id="custom-register">
+                <input type="hidden" name="id" id="id" value="<?php echo $event['id'] ?>" />
+                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
                   data-post-id="<?php echo $event['id']; ?>">Borrar</button>
-                </form>
-              </td>
-            </tr>
+              </form>
+            </td>
+          </tr>
           <?php } ?>
         </tbody>
       </table>

@@ -15,11 +15,10 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
         <p>Sultepec, tierra de tradiciones ancestrales y belleza natural, donde el pasado se entrelaza con el presente
           en cada rincón del pueblo.</p>
         <div class="link">
-          <a href="#" class="hover-text">Leer más</a>
+          <a href="<?php echo $url ?>/php/blog.php" class=" hover-text">Leer más</a>
         </div>
       </div>
     </div>
-
     <div class="card-suggetion">
       <div class="face front">
         <img src="<?php echo $images ?>pipian-dulce.jpg" alt="Gastronomia sultepequence" title="Gastronomia">
@@ -66,3 +65,16 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
       </div>
     </div>
 </section>
+
+<h3 class="title-index">Te recomendamos ver</h3>
+<div class="container-btn">
+  <div class="show-map-btn">
+    <a href="<?php echo $url ?>/php/events.php">Eventos</a>
+  </div>
+  <div class="show-map-btn">
+    <a href="<?php echo $url ?>/php/blog.php">Blog</a>
+  </div>
+  <div class="show-map-btn">
+    <a href="<?php echo $url ?>/php/attractive.php">Galeria</a>
+  </div>
+</div>

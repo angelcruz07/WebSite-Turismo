@@ -126,6 +126,7 @@ header {
     font-weight: 300;
     cursor: pointer;
     margin-left: 3rem;
+    font-size: 1.5rem;
 }
 
 a.selected {
@@ -157,5 +158,10 @@ a.selected {
     .menu_side_move {
         width: 80px;
         left: -80px;
+    }
+}
+@media screen and (max-width:460px){
+    .options_menu .option h4{
+        margin-left: 4rem;
     }
 }

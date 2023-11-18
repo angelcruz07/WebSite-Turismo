@@ -12,11 +12,11 @@ $socialEvents = array();
 $religiousEvents = array();
 
 foreach ($events as $event) {
-    if ($event['type'] === 'Social') {
-        $socialEvents[] = $event;
-    } else {
-        $religiousEvents[] = $event;
-    }
+  if ($event['type'] === 'Social') {
+    $socialEvents[] = $event;
+  } else {
+    $religiousEvents[] = $event;
+  }
 }
 ?>
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/events.css" type="text/css">
@@ -28,28 +28,26 @@ foreach ($events as $event) {
     <div class="title-front-page">
       <h1>Eventos</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgEvent/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia"
-      class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgEvent/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
 
   <section class="events scroll-top" id="events">
     <h1>Eventos Proximos en Sultepec</h1>
     <div class="container-events">
       <?php
-            if (empty($socialEvents)) {
-                echo '<div class="alert-not-event">
+      if (empty($socialEvents)) {
+        echo '<div class="alert-not-event">
                 <span class="alert">Ups, no hay eventos sociales programados. ¡Mantente al tanto!</span>
             </div>';
-            }
-            foreach ($socialEvents as $event) { ?>
-      <div class="card-event">
-        <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>"
-          alt="Portada representativa al evento">
-        <div class="description-event">
-          <h3><?php echo $event['title'] ?></h3>
-          <p><?php echo $event['description'] ?></p>
+      }
+      foreach ($socialEvents as $event) { ?>
+        <div class="card-event">
+          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="Portada representativa al evento">
+          <div class="description-event">
+            <h3><?php echo $event['title'] ?></h3>
+            <p><?php echo $event['description'] ?></p>
+          </div>
         </div>
-      </div>
       <?php } ?>
     </div>
   </section>
@@ -57,21 +55,19 @@ foreach ($events as $event) {
     <h2 class="title-index">Fiestas religiosas</h2>
     <div class="container-events">
       <?php
-            if (empty($religiousEvents)) {
-                echo '<div class="alert-not-event">
+      if (empty($religiousEvents)) {
+        echo '<div class="alert-not-event">
             <span class="alert">Ups, no hay eventos religiosos programados. ¡Mantente al tanto!</span>
         </div>';
-            }
-            foreach ($religiousEvents as $event) { ?>
-
-      <div class="card-event">
-        <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>"
-          alt="Portada representativa al evento">
-        <div class="description-event">
-          <h3><?php echo $event['title'] ?></h3>
-          <p><?php echo $event['description'] ?></p>
+      }
+      foreach ($religiousEvents as $event) { ?>
+        <div class="card-event">
+          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="<?php echo $event['title'] ?>" />
+          <div class="description-event">
+            <h3><?php echo $event['title'] ?></h3>
+            <p><?php echo $event['description'] ?></p>
+          </div>
         </div>
-      </div>
       <?php } ?>
     </div>
   </section>

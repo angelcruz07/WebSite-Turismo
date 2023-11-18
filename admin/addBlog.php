@@ -35,9 +35,6 @@ switch ($action) {
     editImage($conn, $id, $image, $file, $table);
     header("Location:$location");
     break;
-  case "Cancelar";
-    header("Location:$location");
-    break;
   case "Seleccionar":
     $selectedEvent = selectRegister($conn, $id, $table);
     if ($selectedEvent) {
@@ -56,9 +53,17 @@ switch ($action) {
 $blogs = getQuery($conn, $table);
 ?>
 
-<script>
- const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addBlog.php";
+<script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("title-blog", 60);
+  initCharacterCounter("description-blog", 450);
+
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addBlog.php";
 </script>
 
 <?php require_once "partials/header.php";
@@ -75,29 +80,26 @@ require_once "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="22" required>
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" class="title-blog" maxlength="22" required>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea description-blog" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
-          <img src="../admin/assets/imgBlog/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="../admin/assets/imgBlog/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
-            class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
-            name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
@@ -117,23 +119,22 @@ require_once "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($blogs as $blog) { ?>
-          <tr class="form-add">
-            <td class="date-form id"><?php echo $blog['id'] ?></td>
-            <td class="date-form title"><?php echo $blog['title'] ?></td>
-            <td class="date-form descrption"><?php echo $blog['description'] ?></td>
-            <td class="date-form image">
-              <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" width="40px">
-            </td>
-            <td class="date-form btn-flex option">
-              <form method="POST" id="custom-register">
-                <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
-                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                
-                <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
-                  data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
-              </form>
-            </td>
-          </tr>
+            <tr class="form-add">
+              <td class="date-form id"><?php echo $blog['id'] ?></td>
+              <td class="date-form title"><?php echo $blog['title'] ?></td>
+              <td class="date-form descrption"><?php echo $blog['description'] ?></td>
+              <td class="date-form image">
+                <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" width="40px">
+              </td>
+              <td class="date-form btn-flex option">
+                <form method="POST" id="custom-register">
+                  <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
+                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+
+                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger" data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
+                </form>
+              </td>
+            </tr>
           <?php } ?>
         </tbody>
       </table>

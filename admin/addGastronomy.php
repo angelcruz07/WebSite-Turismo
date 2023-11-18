@@ -38,8 +38,6 @@ switch ($action) {
     editRegister($conn, $data, $validFields);
     editImage($conn, $id, $image, $file, $table);
     header("Location:$location");
-  case "Cancelar":
-    header("Location:$location");
   case "Seleccionar":
     $selectedGastronomy = selectRegister($conn, $id, $table);
     if ($selectedGastronomy) {
@@ -57,8 +55,8 @@ switch ($action) {
 $gastronomys = getQuery($conn, $table);
 
 ?>
-    <script>
-  const urlBase = window.location.protocol + "//" + window.location.host;
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
 </script>
 <?php require "partials/header.php";
@@ -90,19 +88,23 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Descripción breve de la comida:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30" required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+            required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgGastronomy/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+          <img src="<?php echo $url ?>/admin/assets/imgGastronomy/<?php echo $image ?>" title="Imagen seleccionada"
+            width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>
         <div class="group-buttons">
-          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
-          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar" name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"
+            class="form-btn primary">Agregar</button>
+          <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
+            name="accion" class="form-btn">Modificar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
@@ -121,27 +123,27 @@ require "partials/navbar.php"; ?>
         </thead>
         <tbody>
           <?php foreach ($gastronomys as $gastronomy) { ?>
-            <tr class="form-add">
-              <td class="date-form id"><?php echo $gastronomy['id'] ?></td>
-              <td class="date-form title"><?php echo $gastronomy['name'] ?></td>
-              <td class="date-form descrption"><?php echo $gastronomy['description'] ?></td>
-              <td class="date-form image">
-                <img src=../admin/assets/imgGastronomy/<?php echo $gastronomy['image'] ?> width="40px">
-              </td>
-              <td class="date-form type"><?php echo $gastronomy['type'] ?></td>
-              <td class="date-form btn-flex option">
-                <form method="POST" id="custom-register">
-                  <input type="hidden" name="id" id="id" value="<?php echo $gastronomy['id'] ?>" />
-                  <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-                  <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
+          <tr class="form-add">
+            <td class="date-form id"><?php echo $gastronomy['id'] ?></td>
+            <td class="date-form title"><?php echo $gastronomy['name'] ?></td>
+            <td class="date-form descrption"><?php echo $gastronomy['description'] ?></td>
+            <td class="date-form image">
+              <img src=../admin/assets/imgGastronomy/<?php echo $gastronomy['image'] ?> width="40px">
+            </td>
+            <td class="date-form type"><?php echo $gastronomy['type'] ?></td>
+            <td class="date-form btn-flex option">
+              <form method="POST" id="custom-register">
+                <input type="hidden" name="id" id="id" value="<?php echo $gastronomy['id'] ?>" />
+                <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
+                <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger"
                   data-post-id="<?php echo $gastronomy['id']; ?>">Borrar</button>
-                </form>
-              </td>
-            </tr>
+              </form>
+            </td>
+          </tr>
           <?php } ?>
         </tbody>
       </table>
     </div>
   </div>
-</section> 
+</section>
 <?php require "./partials/footer.php" ?>

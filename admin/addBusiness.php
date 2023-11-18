@@ -9,13 +9,13 @@ $type = (isset($_POST['type'])) ? $_POST['type'] : '';
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 $description = (isset($_POST['description'])) ? $_POST['description'] : "";
 $phone_number = (isset($_POST['phone_number'])) ? $_POST['phone_number'] : "";
-$location = (isset($_POST['location'])) ? $_POST['location'] : "";
+$location_url = (isset($_POST['location'])) ? $_POST['location'] : "";
 $action = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 $image = (isset($_FILES['image']['name'])) ? $_FILES['image']['name'] : "";
 
 $table = "business";
 $file = "imgBusiness";
-$location = "addBusiness.php"; 
+$location = "addBusiness.php";
 $validFields = [
   "type",
   "name",
@@ -30,7 +30,7 @@ $data = array(
   "type" => $type,
   "name" => $name,
   "description" => $description,
-  "location" =>  $location,
+  "location" =>  $location_url,
   "phone_number" => $phone_number,
   "table" => $table,
   "carpet" => $file
@@ -44,8 +44,6 @@ switch ($action) {
     editRegister($conn, $data, $validFields);
     editImage($conn, $id, $image, $file, $table);
     header("Location: $location");
-  case "Cancelar":
-    header("Location:$location");
   case "Seleccionar":
     $selectedRestaurant = selectRegister($conn, $id, $table);
     if ($selectedRestaurant) {
@@ -53,7 +51,7 @@ switch ($action) {
       $name = $selectedRestaurant['name'];
       $description = $selectedRestaurant['description'];
       $phone_number = $selectedRestaurant['phone_number'];
-       $location = $selectedRestaurant['location'];
+      $location_url = $selectedRestaurant['location'];
       $image = $selectedRestaurant['image'];
     }
     break;
@@ -65,7 +63,7 @@ switch ($action) {
 $restaurants = getQuery($conn, $table);
 ?>
 <script>
- const urlBase = window.location.protocol + "//" + window.location.host;
+const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
 </script>
 <?php require "partials/header.php";
@@ -106,7 +104,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del lugar en google maps:</label>
-          <textarea name="location" id="location" maxlength="300" required><?php echo  $location; ?></textarea>
+          <textarea name="location" id="location" maxlength="300" required><?php echo  $location_url; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
@@ -121,7 +119,7 @@ require "partials/navbar.php"; ?>
             class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
             name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
