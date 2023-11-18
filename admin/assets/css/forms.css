@@ -1,17 +1,12 @@
+/* Seccion */
 #add-form { 
     padding: 5rem;
 }
-span{
-    font-size: var(--font-size);
-    margin-top:2rem;
-    margin-bottom:2rem;
-}
-
 /* request */
 .label-request{
     color:var(--color-titles);
     font-size: var(--font-size);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .img-request{
     width: 150px;
@@ -19,16 +14,16 @@ span{
 }
 .container-img-request{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .container-titles{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     margin-bottom: 2rem;
 }
 .container-info{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between
 }
 /* Contenedor del crud de forms  */
 .container-form-crud{ 
@@ -49,7 +44,6 @@ span{
     max-width: 50%;
     flex: 1
 }
-
 .user{
     max-width: 90%;
 }
@@ -102,6 +96,7 @@ span{
     background-color: var( --color-secundary);
     color:#fff;
     cursor: pointer;
+    border: none;
 }
 /* Contenedores del formulario */
 .form-group {
@@ -181,6 +176,7 @@ span{
 /* Botones */
 .btn{ 
     color: #fff;
+    background-color: var(--color-secundary);
     padding: 5px;
     border-radius:5px;
     border:none;

@@ -83,7 +83,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <h1 class="title-index">Solicita ingresar tu negocio a nuestra web</h1>
-<p class="parraf-user">La solicitud sera enviada al H.Ayuntamiento para procesar tu solicitud, seras contactado si tu solicitud ha sido aprobada</p>
+<p class="parraf-user">La solicitud sera enviada al H.Ayuntamiento para procesar tu solicitud, seras contactado si tu
+  solicitud ha sido aprobada</p>
 
 <!--Formulario de USER-->
 <section id="add-form" class="add-form">
@@ -95,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="Type">Selecciona el tipo de negocio</label>
           <select name="business_type" id="business_type" required>
             <option value=""></option>
+            <option value="Hotel">Hotel</option>
             <option value="Restaurante">Restaurante</option>
             <option value="Fonda">Fonda</option>
             <option value="Bar">Bar</option>
@@ -118,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="Type">Selecciona el tipo de producto</label>
           <select name="product_type" id="product_type" required>
             <option value=""></option>
+            <option value="Servicio(hotel)">Sevicio(hotel)</option>
             <option value="Comida_mexicana">Comida Mexicana</option>
             <option value="Comida_rapida">Comida Rapida</option>
             <option value="Comida_oriental">Comida Oriental</option>
@@ -130,7 +133,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="product_image">Imagen del producto:</label><br>
           <input type="file" name="product_image" id="product_image" required>
         </div>
-
         <h2 class="title-form">Datos del propietario</h2>
         <div class="form-group">
           <label for="title"> Nombre completo:</label>

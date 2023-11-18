@@ -1,16 +1,14 @@
-function initCharacterCounter(inputId, limit) {
-  const input = document.getElementById(inputId);
-  const count = document.createElement("span");
-  count.textContent = `0/${limit}`;
-  input.parentNode.appendChild(count);
+export function initCharacterCounter(className, limit) {
+  const inputs = document.getElementsByClassName(className);
 
-  input.addEventListener("input", function () {
-    const countCharacters = input.value.length;
-    count.textContent = `${countCharacters}/${limit}`;
-  });
+  for (const input of inputs) {
+    const count = document.createElement("span");
+    count.textContent = `0/${limit}`;
+    input.parentNode.appendChild(count);
+
+    input.addEventListener("input", function () {
+      const countCharacters = input.value.length;
+      count.textContent = `${countCharacters}/${limit}`;
+    });
+  }
 }
-
-//Form event
-//Sustituir los parametros por el que se desea limitar
-initCharacterCounter("title", 60);
-initCharacterCounter("description", 450);

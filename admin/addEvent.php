@@ -39,9 +39,6 @@ switch ($action) {
     editImage($conn, $id, $image, $file, $table);
     header("Location:$location");
     break;
-  case "Cancelar";
-    header("Location:$location");
-    break;
   case "Seleccionar":
     $selectedEvent = selectRegister($conn, $id, $table);
     if ($selectedEvent) {
@@ -60,7 +57,15 @@ switch ($action) {
 $events = getQuery($conn, $table);
 ?>
 <!-- Necesario para alerta -->
-<script>
+<script type="module">
+//Funcion de contador
+import {
+  initCharacterCounter
+}
+from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+initCharacterCounter("title-event", 60);
+initCharacterCounter("description-event", 450);
+
 const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addEvent.php";
 </script>
@@ -79,7 +84,7 @@ require "partials/navbar.php"; ?>
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
         </div>
         <div class="form-group">
-          <label for="Type">Selecciona el tipo de evento</label>
+          <label for="type">Selecciona el tipo de evento</label>
           <select name="type" id="type" required>
             <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
@@ -87,16 +92,16 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <span id="count"></span>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" maxlength="60" required>
+          <input type="text" value="<?php echo $title ?>" name="title" class="title-event" id="title" maxlength="60"
+            required>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" id="description" maxlength="450" class="textarea" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="450" class="textarea description-event" rows="4"
+            cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Imagen relacionada al evento:</label><br>
@@ -111,7 +116,7 @@ require "partials/navbar.php"; ?>
             class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
             name="accion" class="form-btn">Modificar</button>
-          <button type="submit" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
