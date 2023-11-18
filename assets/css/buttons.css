@@ -1,0 +1,24 @@
+.container-btn{
+  display: flex;
+  justify-content: center;
+  gap:1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--standard-padding);
+}
+.show-map-btn{
+  margin-top: 3rem;
+  text-align: center;
+}
+.show-map-btn a {
+  color: #fff;
+  padding: 1rem;
+  background-color: var(--color-secundary);
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.show-map-btn a:hover{
+  transition: transform .5s ease;
+  transform: scale(1.2);
+}

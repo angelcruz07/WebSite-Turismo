@@ -9,14 +9,6 @@
   justify-content: center;
 }
  
-.title-attractive{ 
-  color: var(--color-titles);
-    font-size: var(--subtitles-size);
-    padding: var(--standard-padding);
-    text-align: center;
-    font-family: var(--font-primary);
-    margin-bottom: 2rem;
-}  
 /*Botones de cambio de opciones-galeria*/
 .options{ 
   position: relative; 

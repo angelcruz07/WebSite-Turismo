@@ -20,8 +20,7 @@ $business = getQuery($conn, $table2);
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia"
-      class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
   <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
@@ -40,7 +39,7 @@ $business = getQuery($conn, $table2);
   <section id="gastronomy">
     <div class="container-card-gastronomy">
       <?php
-      $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay lugares, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
+      $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay platillos, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
       $sql = "SELECT 1 FROM $table LIMIT 1";
       $stmt = $conn->query($sql);
       if ($stmt->rowCount() == 0) {
@@ -49,48 +48,59 @@ $business = getQuery($conn, $table2);
       ?>
 
       <?php foreach ($saucers as $saurcer) { ?>
-      <div class="card filter <?php echo $saurcer['type'] ?>">
-        <div class="card_landing" style="--i:url(<?php echo $url_images;
+        <div class="card filter <?php echo $saurcer['type'] ?>">
+          <div class="card_landing" style="--i:url(<?php echo $url_images;
                                                     echo $saurcer['image']; ?>">
-          <h6><?php echo $saurcer['name'] ?></h6>
-        </div>
-        <div class="card_info">
-          <div class="head">
-            <p class="title"><?php echo $saurcer['name'] ?></p>
-            <div class="description">
+            <h6><?php echo $saurcer['name'] ?></h6>
+          </div>
+          <div class="card_info">
+            <div class="head">
+              <p class="title"><?php echo $saurcer['name'] ?></p>
+              <div class="description">
+              </div>
+            </div>
+            <div class="content">
+              <p class="title">Descripcion</p>
+              <ul class="list">
+                <p><?php echo $saurcer['description'] ?></p>
+              </ul>
             </div>
           </div>
-          <div class="content">
-            <p class="title">Descripcion</p>
-            <ul class="list">
-              <p><?php echo $saurcer['description'] ?></p>
-            </ul>
-          </div>
         </div>
-      </div>
       <?php } ?>
     </div>
+    <h2 class="title-index">Dónde Comer: Especialidades Gastronómicas de Sultepec</h2>
+
+    <?php
+    $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay restaurants, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
+    $sql = "SELECT 1 FROM $table2 LIMIT 1";
+    $stmt = $conn->query($sql);
+    if ($stmt->rowCount() == 0) {
+      echo $alert;
+    }
+    ?>
+
 
     <?php foreach ($business as $busine) { ?>
-    <div class="container-lodging filter <?php echo $busine['type']; ?>">
-      <div class="lodging-box-left">
-        <div class="lodging-image">
-          <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="Imagen del hotel">
-        </div>
-        <div class="description-lodging left">
-          <h3><?php echo $busine['name']; ?></h3>
-          <p><?php echo $busine['description']; ?></p><br>
-          <div class="calf-star">
-            <a href="#">
-              <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
-            </a>
+      <div class="container-lodging filter <?php echo $busine['type']; ?>">
+        <div class="lodging-box-left">
+          <div class="lodging-image">
+            <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="<?php echo $busine['name'] ?>">
           </div>
-          <div class="link-lodging">
-            <a href="<?php echo $busine['location']; ?>">Ver en el mapa</a>
+          <div class="description-lodging left">
+            <h3><?php echo $busine['name']; ?></h3>
+            <p><?php echo $busine['description']; ?></p><br>
+            <div class="calf-star">
+              <a href="#">
+                <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
+              </a>
+            </div>
+            <div class="link-lodging">
+              <a href="<?php echo $busine['location']; ?>">Ver en el mapa</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <?php } ?>
 
     <div class="register-business">

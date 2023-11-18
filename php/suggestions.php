@@ -66,15 +66,15 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
     </div>
 </section>
 
-<h3 class="title-index">Te recomendamos ver</h3>
+<h3 class="title-index">Te recomendamos visitar </h3>
 <div class="container-btn">
   <div class="show-map-btn">
-    <a href="<?php echo $url ?>/php/events.php">Eventos</a>
+    <a href="<?php echo $url ?>/php/events.php">Festivales y Eventos en Sultepec</a>
   </div>
   <div class="show-map-btn">
-    <a href="<?php echo $url ?>/php/blog.php">Blog</a>
+    <a href="<?php echo $url ?>/php/attractive.php">Explora los Sabores Auténticos de Sultepec</a>
   </div>
   <div class="show-map-btn">
-    <a href="<?php echo $url ?>/php/attractive.php">Galeria</a>
+    <a href="<?php echo $url ?>/php/attractive.php">Descubre los Lugares Imperdibles de Sultepec</a>
   </div>
 </div>

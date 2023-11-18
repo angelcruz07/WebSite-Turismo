@@ -67,6 +67,8 @@
     justify-content: center;
     gap:1.5rem;
     align-items: center;
+    flex-wrap: wrap;
+    padding: var(--standard-padding);
 }
 .show-map-btn{
     margin-top: 3rem;
@@ -76,7 +78,7 @@
     color: #fff;
     padding: 1rem;
     background-color: var(--color-secundary);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     border-radius: 5px;
     cursor: pointer;
 }

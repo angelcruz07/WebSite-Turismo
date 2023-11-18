@@ -10,6 +10,7 @@ $places = getQuery($conn, $table);
 ?>
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/buttons.css" type="text/css">
 </head>
 
 <body id="scroll-top">
@@ -23,19 +24,16 @@ $places = getQuery($conn, $table);
   </div>
 
   <section class="attractive" id="attractive">
-
-    <h2 class="title-attractive">Maravillas Turísticas de Sultepec</h2>
+    <h2 class="title-index">Descubre las maravillas turisticas de Sultepec</h2>
     <!--Lista de lugares o opciones -->
     <div class="options">
       <ul>
         <li class="active links" data-nombre="all">Todos</li>
         <li class="links" data-nombre="Lugares">Lugares</li>
-        <li class="links" data-nombre="Mirador">Mirador</li>
+        <li class="links" data-nombre="Mirador">Miradores</li>
         <li class="links" data-nombre="Parques">Parques</li>
         <li class="links" data-nombre="Monumentos">Monumentos</li>
         <li class="links" data-nombre="Parroquia">Parroquias</li>
-        <li class="links" data-nombre="Parques">Parques</li>
-        <li class="links" data-nombre="Lugares">Lugares</li>
       </ul>
     </div>
 
@@ -71,6 +69,11 @@ $places = getQuery($conn, $table);
           </div>
         </div>
       <?php } ?>
+      <div class="container-btn">
+        <div class="show-map-btn">
+          <a href="<?php echo $url ?>/php/location.php">Ubica los destinos</a>
+        </div>
+      </div>
   </section>
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>

@@ -14,7 +14,6 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 </head>
 
 <body id="scroll-top">
@@ -27,7 +26,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/front-page.jpg" alt="Imagen del portada al blog" title="Blog Portada" class="image-front-page">
   </div>
   <section id="blog">
-    <h2 class="title-index">"Aventúrate en Sultepec"</h2>
+    <h2 class="title-index">Turismo Cultural: Explora la Belleza de Sultepec</h2>
     <!--Cards dinamicas -->
     <article class="contend-info">
       <?php
@@ -95,7 +94,6 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <!--Desarrolladores-Colaboraciones -->
     <h2 class="title-index">Nuestro Equipo y Colaboradores</h2>
     <section class="colaborations">
-
       <div class="swiper mySwiper container-colaborations">
         <div class="swiper-wrapper content-colaborations">
           <!--Empieza -->
@@ -104,13 +102,11 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
               <div class="image-colaborations">
                 <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/Angel-colab.webp" alt="">
               </div>
-
               <div class="media-icons">
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-github"></i>
               </div>
-
               <div class="name-profession">
                 <span class="name">Angel Alejandro</span>
                 <span class="profession">Programador Web</span>
@@ -181,48 +177,6 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
           </div>
           <!--Termina -->
-          <!--Empieza -->
-          <div class="swiper-slide card-colaborations">
-            <div class="card-content-colaborations">
-              <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/landscape-2.png" alt="">
-              </div>
-
-              <div class="media-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-github"></i>
-              </div>
-
-              <div class="name-profession">
-                <span class="name">NOMBRE</span>
-                <span class="profession">PROFESION/PUESTO</span>
-              </div>
-
-            </div>
-          </div>
-          <!--Termina -->
-          <!--Empieza -->
-          <div class="swiper-slide card-colaborations">
-            <div class="card-content-colaborations">
-              <div class="image-colaborations">
-                <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/landscape-2.png" alt="">
-              </div>
-
-              <div class="media-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-github"></i>
-              </div>
-
-              <div class="name-profession">
-                <span class="name">NOMBRE</span>
-                <span class="profession">PROFESION/PUESTO</span>
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </div>
 
