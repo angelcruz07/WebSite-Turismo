@@ -3,7 +3,7 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/assets/img/";
 ?>
 
 <section id="suggestions">
-  <h2 class="title-index">Aqui comienza tu nueva aventura</h2>
+  <h2 class="title-index">Sumérgete en la Cultura y Belleza de Sultepec</h2>
   <div class="container_sugetions">
     <div class="card-suggetion">
       <div class="face front">

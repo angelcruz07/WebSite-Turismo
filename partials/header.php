@@ -7,11 +7,17 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
 <head>
   <meta charset="UTF-8">
   <meta name="description"
-    content="El H.Ayuntamiento constitucional de sultepec busca promover el turismo y la economia del municipio. Te invitamos a conocer mas sobre este hermoso lugar ubicado al sur del estado de mexico.">
-  <meta name="author" content="Angel Cruz, Lizandro Antonio, Tony Villagran, Yuliana Betancourt">
+    content="Descubre el encanto de Sultepec, un destino turístico único. Planifica tu visita a Sultepec con información detallada sobre eventos, lugares turísticos, gastronomía, historia y servicios locales.">
+  <meta name="keywords"
+    content="turismo Sultepec,turismo en méxico, mexico, pueblos con encanto, estado de mexico , municipios, eventos, lugares turísticos, gastronomía, historia, hospedajes, servicios locales, restaurantes, turismo cultural">
+  <meta name="author" content="H. Ayuntamiendo de Sultepec">
+  <meta name="language" content="es">
+  <link rel="icon" href="<?php echo $url; ?>/assets/img/logo.ico" type="image/x-icon">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="http://localhost/WebSite-Turismo/">
+  <!--Cambiar ya desplegado  -->
+  <!-- <link rel="canonical" href="http://localhost/WebSite-Turismo/"> -->
+
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/superglobals.css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/normalize.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
@@ -21,7 +27,7 @@ $url = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/location.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/footer.css" type="text/css">
   <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/responsive.css" type="text/css">
-  <title>Visita Sultepec</title>
+  <title>Turismo en Sultepec - Descubre el Encanto Único</title>
 </head>
 
 <body id="scroll-top">

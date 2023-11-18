@@ -5,8 +5,8 @@
         <img id="slider" src="http://localhost/WebSite-Turismo/php/imgSlider/Postal.jpg" alt="Slider de bienvenida" title="Bienvenidos a sultepec" class="img_slider">
       </div>
       <div class="slider_text">
-        <h1 id="sliderTitle">¡Bienvenidos!</h1>
-        <p id="sliderDescription">"Vive la magia de Sultepec una experiencia inolvidable"</p>
+        <h1 id="sliderTitle">¡Bienvenido a Sultepec!</h1>
+        <p id="sliderDescription">"Vive la magia de Sultepec un destino turistico unico"</p>
       </div>
       <div class="overlay-slider"></div>
     </div>

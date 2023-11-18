@@ -24,8 +24,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="title-front-page">
       <h1>Blog</h1>
     </div>
-    <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/front-page.jpg" alt="Portada de Blog" title="Gastronomia"
-      class="image-front-page">
+    <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/front-page.jpg" alt="Imagen del portada al blog" title="Blog Portada" class="image-front-page">
   </div>
   <section id="blog">
     <h2 class="title-index">"Aventúrate en Sultepec"</h2>
@@ -44,13 +43,14 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
       ?>
       <div class="container-cards-dynamic">
         <?php foreach ($blogs as $blog) { ?>
-        <div class="card-dynamic">
-          <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" alt="Imagen del blog">
-          <div>
-            <h2 class="text-dynamic"><?php echo $blog['title'] ?></h2>
-            <p class="paragraph-dynamic"><?php echo $blog['description'] ?></p>
+          <div class="card-dynamic">
+            <img src="../admin/assets/imgBlog/<?php echo $blog['image'] ?>" alt="<?php echo $blog['title'] ?>" title="
+            <?php echo $blog['title'] ?>" />
+            <div>
+              <h2 class=" text-dynamic"><?php echo $blog['title'] ?></h2>
+              <p class="paragraph-dynamic"><?php echo $blog['description'] ?></p>
+            </div>
           </div>
-        </div>
         <?php } ?>
       </div>
     </article>
@@ -60,7 +60,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
       <div class="landscape-container">
         <div class="card__container">
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/puesta-de-sol.jpg" alt="image" class="card__img">
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/puesta-de-sol.jpg" class=" card__img" />
 
             <div class="card__data">
               <span class="card__description">Puesta de Sol en Sultepec</span>
