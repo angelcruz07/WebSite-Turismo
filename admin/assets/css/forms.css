@@ -59,6 +59,9 @@
     max-width: 50%;
     flex: 1
 }
+.req{
+    margin-top: 3rem;
+}
 .form-container {
     display: flex;
     flex-direction: column;
