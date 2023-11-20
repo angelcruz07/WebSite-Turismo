@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productImage = processImage('product_image');
 
     try {
-      $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt = $conn->prepare("INSERT INTO request (business_type, business, description, product_type, name, address, phone_number, business_image, product_image, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'en revision')");
       $stmt->bindParam(1, $business_type);
       $stmt->bindParam(2, $name_business);
       $stmt->bindParam(3, $description);
@@ -154,9 +154,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
         <!--Botones -->
         <div class="group-buttons">
-          <button type="submit" value="Agregar" name="accion" class="form-btn primary">Enviar</button>
+          <button type="submit" value="Agregar" name="accion" class="form-btn primary alert">Enviar</button>
           <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
 </section>
+<?php require_once "../partials/footerUser.php" ?>

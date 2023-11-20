@@ -1,4 +1,4 @@
--- Active: 1695851160752@@127.0.0.1@3306@tourism
+-- Active: 1700014601609@@127.0.0.1@3306@tourism
 
 DROP DATABASE IF EXISTS tourism;
 
@@ -52,7 +52,8 @@ CREATE TABLE
         product_image VARCHAR(255),
         name VARCHAR(255) NOT NULL,
         address VARCHAR(255) NOT NULL,
-        phone_number VARCHAR(255) NOT NULL
+        phone_number VARCHAR(255) NOT NULL,
+        status VARCHAR(255) NOT NULL
     );
 
 CREATE TABLE

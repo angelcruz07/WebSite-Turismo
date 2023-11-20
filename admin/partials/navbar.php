@@ -24,8 +24,15 @@
         $table = 'request';
         $request = getQuery($conn, $table);
         $numSolicitudes = count($request);
+        // Verifica si hay al menos una solicitud en revisión
         if ($numSolicitudes > 0) {
-          echo '<span id="alert-2">' . ($numSolicitudes > 9 ? '9+' : $numSolicitudes) . '</span>';
+          $solicitudesEnRevision = array_filter($request, function ($item) {
+            return strtolower($item['status']) === 'en revision';
+          });
+          $numSolicitudesEnRevision = count($solicitudesEnRevision);
+          if ($numSolicitudesEnRevision > 0) {
+            echo '<span id="alert-2">' . ($numSolicitudesEnRevision > 9 ? '9+' : $numSolicitudesEnRevision) . '</span>';
+          }
         }
         ?>
         <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono gear" title="Agregar evento">

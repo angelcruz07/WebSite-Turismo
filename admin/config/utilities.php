@@ -18,7 +18,6 @@ function validateRol($rol)
 }
 
 
-
 /**
  * Insertar un nuevo registro 
  *
