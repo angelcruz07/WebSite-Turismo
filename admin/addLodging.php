@@ -64,9 +64,20 @@ switch ($action) {
 // Consulta de los datos
 $lodgings = getQuery($conn, $table);
 ?>
-<script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
+ 
+ <script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("title-lodiging", 60);
+  initCharacterCounter("description-lodiging", 450);  
+  initCharacterCounter("number-lodiging", 14);
+
+
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
 </script>
 
 <?php require "partials/header.php";
@@ -84,16 +95,16 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title">Nombre del hospedaje</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="30">
+          <input type="text" value="<?php echo $name; ?>" name="name" id="name" class="title-lodiging" maxlength="30">
         </div>
         <div class="form-group">
           <label for="description">Descripción del hospedaje:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+          <textarea name="description" id="description" maxlength="300" class="textarea description-lodiging" rows="4" cols="30"
             required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="phone_number"> Agrega un numero de contacto:</label> <input type="text"
-            value="<?php echo $phone_number; ?>" name="phone_number" id="phone_number" maxlength="22">
+            value="<?php echo $phone_number; ?>" name="phone_number" class="number-lodiging" id="phone_number" maxlength="22">
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del hotel en google (URL)</label>

@@ -55,10 +55,20 @@ switch ($action) {
 $gastronomys = getQuery($conn, $table);
 
 ?>
-<script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
-</script>
+ 
+ <script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("title-gastronomy", 60);
+  initCharacterCounter("description-gastronomy", 450);  
+  
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
+</script>  
+
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -84,11 +94,11 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Nombre del platillo</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="55">
+          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gastronomy" id="name" maxlength="55">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve de la comida:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+          <textarea name="description" id="description" maxlength="300" class="textarea description-gastronomy" rows="4" cols="30"
             required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
