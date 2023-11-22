@@ -64,17 +64,15 @@ $places = getQuery($conn, $table);
               <div class="link"></div>
             </div>
           </a>
-          <div id="map" class="map hidden">
-            <a class="link" href="#">Ver en mapa</a>
-          </div>
         </div>
       <?php } ?>
-      <div class="container-btn">
-        <div class="show-map-btn">
-          <a href="<?php echo $url ?>/php/location.php">Ubica los destinos</a>
-        </div>
-      </div>
   </section>
+
+  <div class="container-btn">
+      <div class="show-map-btn">
+          <a href="<?php echo $url ?>/php/location.php">Ubica los destinos</a>
+      </div>
+ </div>
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

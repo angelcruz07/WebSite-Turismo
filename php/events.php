@@ -37,7 +37,7 @@ foreach ($events as $event) {
     <h1 class="title-index">Eventos Proximos en Sultepec</h1>
     <div class="container-btn">
       <div class="show-map-btn">
-        <a href="https://www.facebook.com/Ayuntamientosultepec2022/">Enterate de mas en nuestras redes</a>
+        <a href="https://www.facebook.com/Ayuntamientosultepec2022/" target="_blank">Enterate de mas en nuestras redes</a>
       </div>
     </div>
 

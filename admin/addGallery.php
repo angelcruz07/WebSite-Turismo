@@ -139,7 +139,7 @@ require_once "partials/navbar.php";
             <td class="date-form title"><?php echo $place['name'] ?></td>
             <td class="date-form descrption"><?php echo $place['description'] ?></td>
             <td class="date-form image">
-              <img src=../admin/assets/imgGallery/<?php echo $place['image'] ?> width="40px">
+              <img src="../admin/assets/imgGallery/<?php echo $place['image'] ?>" width="40px">
             </td>
             <td class="date-form type"><?php echo $place['type'] ?></td>
             <td class="date-form btn-flex option">
