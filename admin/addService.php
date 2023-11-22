@@ -51,10 +51,22 @@ switch ($action) {
 }
 $services = getQuery($conn, $table);
 ?>
-<script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addService.php";
-</script>
+ 
+ <script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("route-title", 60);
+  initCharacterCounter("schedule", 450);  
+  
+
+  
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addService.php";
+</script>  
+
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 
@@ -80,7 +92,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="route">Ruta(Salida - Destino)</label>
-          <input type="route" value="<?php echo $route; ?>" name="route" id="route" maxlength="55">
+          <input type="route" value="<?php echo $route; ?>" name="route" class="route-title" id="route" maxlength="55">
         </div>
         <div class="form-group">
           <label>Disponibilidad</label>
@@ -93,7 +105,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Horarios:</label>
-          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" id="scheduls" maxlength="55">
+          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls" maxlength="55">
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al platillo:</label><br>

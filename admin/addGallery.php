@@ -58,10 +58,20 @@ switch ($action) {
 $places = getQuery($conn, $table);
 
 ?>
-<script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addGallery.php";
-</script>
+ 
+ <script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("title-gallery", 60);
+  initCharacterCounter("description-gallery", 450);  
+  
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addGallery.php";
+</script> 
+
 <?php
 require_once "partials/header.php";
 require_once "partials/navbar.php";
@@ -89,11 +99,11 @@ require_once "partials/navbar.php";
         </div>
         <div class="form-group">
           <label for="name">Nombre del lugar</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="55">
+          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gallery" id="name" maxlength="55">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del lugar:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+          <textarea name="description" id="description" maxlength="300" class="textarea description-gallery" rows="4" cols="30"
             required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
