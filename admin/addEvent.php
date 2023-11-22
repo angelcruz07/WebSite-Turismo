@@ -57,7 +57,7 @@ switch ($action) {
 $events = getQuery($conn, $table);
 ?>
 <!-- Necesario para alerta -->
-<script type="module">
+<script type="module"> 
 //Funcion de contador
 import {
   initCharacterCounter

@@ -62,10 +62,22 @@ switch ($action) {
 }
 $restaurants = getQuery($conn, $table);
 ?>
-<script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
-</script>
+ 
+ <script type="module">
+  //Funcion de contador
+  import {
+    initCharacterCounter
+  }
+  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  initCharacterCounter("title-business", 60);
+  initCharacterCounter("description-business", 450);  
+  initCharacterCounter("number-business", 14);
+
+  
+  const urlBase = window.location.protocol + "//" + window.location.host;
+  let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
+</script> 
+
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -91,16 +103,16 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Nombre del Restaurant</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" maxlength="55">
+          <input type="text" value="<?php echo $name; ?>" name="name" class="title-business" id="name" maxlength="55">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del restaurant:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea" rows="4" cols="30"
+          <textarea name="description" id="description" maxlength="300" class="textarea description-business" rows="4" cols="30"
             required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="phone_number">Numero del telefono:</label>
-          <input name="phone_number" id="phone_number" maxlength="300" value="<?php echo $phone_number; ?>"></input>
+          <input name="phone_number" class="number-business" id="phone_number" maxlength="300" value="<?php echo $phone_number; ?>"></input>
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del lugar en google maps:</label>
