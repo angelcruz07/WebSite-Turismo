@@ -8,7 +8,6 @@ $query = $conn->prepare("SELECT * FROM blog");
 $query->execute();
 $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/blog.css" type="text/css">
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -59,7 +58,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
       <div class="landscape-container">
         <div class="card__container">
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/puesta-de-sol.jpg" class=" card__img" />
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/puesta-de-sol.jpg" alt="" title="" class=" card__img" />
 
             <div class="card__data">
               <span class="card__description">Puesta de Sol en Sultepec</span>
@@ -68,7 +67,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
           </article>
           <article class="card__article">
-            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/noche.jpg" alt="image" class="card__img">
+            <img src="<?php echo $urlImage ?>/admin/assets/imgBlog/noche.jpg" alt="image" title="" class="card__img">
 
             <div class="card__data">
               <span class="card__description">Sultepec de Noche</span>

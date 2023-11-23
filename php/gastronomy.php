@@ -85,18 +85,18 @@ $business = getQuery($conn, $table2);
       <div class="container-lodging filter <?php echo $busine['type']; ?>">
         <div class="lodging-box-left">
           <div class="lodging-image">
-            <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="<?php echo $busine['name'] ?>">
+            <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="<?php echo $busine['name'] ?>" title="<?php echo $busine['name'] ?>">
           </div>
           <div class="description-lodging left">
             <h3><?php echo $busine['name']; ?></h3>
             <p><?php echo $busine['description']; ?></p><br>
             <div class="calf-star">
               <a href="#">
-                <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto">
+                <img src="../assets/icons/whatsapp.svg" alt="Numero de Contacto" title="Icono de Whatssap">
               </a>
             </div>
             <div class="link-lodging">
-              <a href="<?php echo $busine['location']; ?>">Ver en el mapa</a>
+              <a href="<?php echo $busine['location']; ?>" target="_blank">Ver en el mapa</a>
             </div>
           </div>
         </div>

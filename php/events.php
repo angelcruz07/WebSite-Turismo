@@ -29,15 +29,15 @@ foreach ($events as $event) {
     <div class="title-front-page">
       <h1>Eventos</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgEvent/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia"
-      class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgEvent/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia Fondo" class="image-front-page">
   </div>
 
   <section class="events scroll-top" id="events">
     <h1 class="title-index">Eventos Proximos en Sultepec</h1>
     <div class="container-btn">
       <div class="show-map-btn">
-        <a href="https://www.facebook.com/Ayuntamientosultepec2022/" target="_blank">Enterate de mas en nuestras redes</a>
+        <a href="https://www.facebook.com/Ayuntamientosultepec2022/" target="_blank">Enterate de mas en nuestras
+          redes</a>
       </div>
     </div>
 
@@ -49,14 +49,13 @@ foreach ($events as $event) {
             </div>';
       }
       foreach ($socialEvents as $event) { ?>
-      <div class="card-event">
-        <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>"
-          alt="Portada representativa al evento">
-        <div class="description-event">
-          <h3><?php echo $event['title'] ?></h3>
-          <p><?php echo $event['description'] ?></p>
+        <div class="card-event">
+          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="<?php echo $event['title'] ?>" title="<?php echo $event['title'] ?>">
+          <div class="description-event">
+            <h3><?php echo $event['title'] ?></h3>
+            <p><?php echo $event['description'] ?></p>
+          </div>
         </div>
-      </div>
       <?php } ?>
     </div>
   </section>
@@ -70,14 +69,13 @@ foreach ($events as $event) {
         </div>';
       }
       foreach ($religiousEvents as $event) { ?>
-      <div class="card-event">
-        <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>"
-          alt="<?php echo $event['title'] ?>" />
-        <div class="description-event">
-          <h3><?php echo $event['title'] ?></h3>
-          <p><?php echo $event['description'] ?></p>
+        <div class="card-event">
+          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $event['image'] ?>" alt="<?php echo $event['title'] ?>" title="<?php echo $event['title'] ?>" />
+          <div class="description-event">
+            <h3><?php echo $event['title'] ?></h3>
+            <p><?php echo $event['description'] ?></p>
+          </div>
         </div>
-      </div>
       <?php } ?>
     </div>
   </section>

@@ -16,8 +16,7 @@ $services = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Transporte</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte"
-      class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte Imagen" class="image-front-page">
   </div>
   <h1 class="title-index">Movilidad</h1>
   <section class="services" id="services">
@@ -30,26 +29,25 @@ $services = getQuery($conn, $table);
     }
     ?>
     <?php foreach ($services as $service) { ?>
-    <div class="container-service">
-      <div class="service-box">
-        <div class="service-image">
-          <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $service['image'] ?>" alt=""
-            class="img-services">
-        </div>
-        <h2 class="subtitle"><?php echo $service['type'] ?></h2>
-        <!-- descripcion equivale a tabla  -->
-        <div class="description-service">
-          <h3>Ruta</h3>
-          <img src="<?php echo $url ?>/assets/icons/route.svg" alt="" class="img-services">
-          <span><?php echo $service['route'] ?></span>
-          <h3>Disponibilidad</h3>
-          <span><?php echo $service['availability'] ?></span>
-          <h3>Horarios</h3>
-          <img src="<?php echo $url ?>/assets/icons/clock.svg" alt="" class="img-services">
-          <span><?php echo $service['scheduls'] ?></span> <span>Abierto</span>
+      <div class="container-service">
+        <div class="service-box">
+          <div class="service-image">
+            <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $service['image'] ?>" alt="<?php echo $service['type'] ?>" title="<?php echo $service['type'] ?> class=" img-services">
+          </div>
+          <h2 class="subtitle"><?php echo $service['type'] ?></h2>
+          <!-- descripcion equivale a tabla  -->
+          <div class=" description-service">
+            <h3>Ruta</h3>
+            <img src="<?php echo $url ?>/assets/icons/route.svg" alt="icono de ruta" title="Ruta" class="img-services">
+            <span><?php echo $service['route'] ?></span>
+            <h3>Disponibilidad</h3>
+            <span><?php echo $service['availability'] ?></span>
+            <h3>Horarios</h3>
+            <img src="<?php echo $url ?>/assets/icons/clock.svg" alt="Icono de reloj" title="reloj" class="img-services">
+            <span><?php echo $service['scheduls'] ?></span> <span>Abierto</span>
+          </div>
         </div>
       </div>
-    </div>
     <?php } ?>
   </section>
   <?php require "../partials/footer2.php" ?>
