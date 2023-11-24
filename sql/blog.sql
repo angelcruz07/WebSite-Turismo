@@ -1,3 +1,4 @@
+-- Active: 1700014601609@@127.0.0.1@3306@tourism
 
 INSERT INTO `blog` (`id`, `title`, `description`, `date`, `image`) VALUES
 (1, 'Dia del musico ', '🎵 ¡Feliz Día Internacional del Músico! 🎉🎶 La música es el idioma que todos entendemos, una melodía que une corazones. 💓🌍 En este día especial, rendimos homenaje a esos artistas que convierten las notas en emociones. ¿Cuál es ese tema que te transporta a o', '2023-11-22 15:34:19', '1700667259_dia del musico.jpg'),

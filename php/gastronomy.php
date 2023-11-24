@@ -31,8 +31,8 @@ $business = getQuery($conn, $table2);
       <li class="links" data-nombre="Rapida">Comida Rápida</li>
       <li class="links" data-nombre="Oriental">Comida Oriental</li>
       <li class="links" data-nombre="Tradicional">Comida Tradicional</li>
-      <li class="links" data-nombre="Reposteria">Bebidas</li>
-      <li class="links" data-nombre="Bebidas">Reposteria</li>
+      <li class="links" data-nombre="Bebidas">Bebidas</li>
+      <li class="links" data-nombre="Reposteria">Reposteria</li>
     </ul>
   </div>
 
