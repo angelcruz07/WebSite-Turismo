@@ -29,7 +29,7 @@ $places = getQuery($conn, $table);
     <div class="options">
       <ul>
         <li class="active links" data-nombre="all">Todos</li>
-        <li class="links" data-nombre="Lugares">Lugares</li>
+        <!--<li class="links" data-nombre="Lugares">Lugares</li>-->
         <li class="links" data-nombre="Mirador">Miradores</li>
         <li class="links" data-nombre="Parques">Parques</li>
         <li class="links" data-nombre="Monumentos">Monumentos</li>
