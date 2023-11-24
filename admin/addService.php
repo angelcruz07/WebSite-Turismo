@@ -108,7 +108,7 @@ require "partials/navbar.php"; ?>
           <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls" maxlength="55">
         </div>
         <div class=" form-group">
-          <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
+          <label for="image">Agrega la imagen correspondiente al transporte:</label><br>
           <?php if ($image != "") { ?>
           <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $image ?>" title="Imagen seleccionada"
             width="50px">
