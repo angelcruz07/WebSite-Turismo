@@ -21,7 +21,7 @@
 }
 .service-image img {
   width: 350px;
-  height: auto;
+  height: 250px;
 }
 .description-service {
   padding: var(--standard-padding);

@@ -71,7 +71,7 @@ $lodgings = getQuery($conn, $table);
     initCharacterCounter
   }
   from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
-  initCharacterCounter("title-lodiging", 60);
+  initCharacterCounter("title-lodiging", 30);
   initCharacterCounter("description-lodiging", 450);  
   initCharacterCounter("number-lodiging", 14);
 </script>
