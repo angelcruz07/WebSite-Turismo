@@ -58,19 +58,19 @@ switch ($action) {
 $places = getQuery($conn, $table);
 
 ?>
- 
- <script type="module">
-  //Funcion de contador
-  import {
-    initCharacterCounter
-  }
-  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
-  initCharacterCounter("title-gallery", 60);
-  initCharacterCounter("description-gallery", 450);  
-  
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addGallery.php";
-</script> 
+
+<script type="module">
+//Funcion de contador
+import {
+  initCharacterCounter
+}
+from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+initCharacterCounter("title-gallery", 60);
+initCharacterCounter("description-gallery", 450);
+
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addGallery.php";
+</script>
 
 <?php
 require_once "partials/header.php";
@@ -103,8 +103,8 @@ require_once "partials/navbar.php";
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del lugar:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea description-gallery" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="300" class="textarea description-gallery" rows="4"
+            cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="location">Ubicacion del lugar en google (URL)</label>
@@ -124,7 +124,7 @@ require_once "partials/navbar.php";
             class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
             name="accion" class="form-btn">Modificar</button>
-          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="reset" name="accion" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>
