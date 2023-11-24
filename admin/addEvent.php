@@ -65,7 +65,9 @@ import {
 from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
 initCharacterCounter("title-event", 60);
 initCharacterCounter("description-event", 450);
+</script>
 
+<script>
 const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addEvent.php";
 </script>

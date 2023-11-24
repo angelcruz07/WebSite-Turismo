@@ -60,12 +60,12 @@ $services = getQuery($conn, $table);
   from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
   initCharacterCounter("route-title", 60);
   initCharacterCounter("schedule", 450);  
-  
-
-  
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addService.php";
 </script>  
+
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addService.php";
+</script>
 
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>

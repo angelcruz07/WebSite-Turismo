@@ -61,9 +61,10 @@ $blogs = getQuery($conn, $table);
   from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
   initCharacterCounter("title-blog", 60);
   initCharacterCounter("description-blog", 450); 
-
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addBlog.php";
+</script>
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addBlog.php";
 </script>
 
 <?php require_once "partials/header.php";

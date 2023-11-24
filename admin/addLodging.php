@@ -74,10 +74,11 @@ $lodgings = getQuery($conn, $table);
   initCharacterCounter("title-lodiging", 60);
   initCharacterCounter("description-lodiging", 450);  
   initCharacterCounter("number-lodiging", 14);
+</script>
 
-
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addLodging.php";
 </script>
 
 <?php require "partials/header.php";

@@ -67,9 +67,13 @@ import {
 from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
 initCharacterCounter("title-gallery", 60);
 initCharacterCounter("description-gallery", 450);
+</script>
+
+<script>
 
 const urlBase = window.location.protocol + "//" + window.location.host;
 let file = urlBase + "/WebSite-Turismo/admin/addGallery.php";
+
 </script>
 
 <?php

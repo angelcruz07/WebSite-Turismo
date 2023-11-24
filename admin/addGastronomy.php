@@ -64,9 +64,11 @@ $gastronomys = getQuery($conn, $table);
   from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
   initCharacterCounter("title-gastronomy", 60);
   initCharacterCounter("description-gastronomy", 450);
+</script>
 
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
 </script>
 
 <?php require "partials/header.php";

@@ -72,11 +72,12 @@ $restaurants = getQuery($conn, $table);
   initCharacterCounter("title-business", 60);
   initCharacterCounter("description-business", 450);  
   initCharacterCounter("number-business", 14);
-
-  
-  const urlBase = window.location.protocol + "//" + window.location.host;
-  let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
 </script> 
+
+<script>
+const urlBase = window.location.protocol + "//" + window.location.host;
+let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
+</script>
 
 <?php require "partials/header.php";
 require "partials/navbar.php"; ?>
