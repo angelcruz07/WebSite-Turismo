@@ -1,6 +1,6 @@
 <?php
 require_once "config/database.php";
-require_once "./config/utilities.php";
+require_once "./controllers/utilities.php";
 $rol = 1;
 validateRol($rol);
 
@@ -88,14 +88,20 @@ require_once "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
+<<<<<<< HEAD
           <textarea name="description" id="description" maxlength="450" class="textarea description-blog" rows="4" cols="30" required><?php echo $description; ?></textarea>
+=======
+          <textarea name="description" id="description" maxlength="450" class="textarea description-blog" rows="4" cols="30" required>
+            <?php echo $description; ?>
+          </textarea>
+>>>>>>> 6da04b6f32642ca24c7ce4015375b98613add212
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
           <?php if ($image != "") { ?>
             <img src="../admin/assets/imgBlog/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image">
+          <input type="file" name="image" id="image" required>
         </div>
         <div class="group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion" class="form-btn primary">Agregar</button>
@@ -104,7 +110,6 @@ require_once "partials/navbar.php"; ?>
         </div>
       </form>
     </div>
-
 
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>

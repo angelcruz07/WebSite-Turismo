@@ -1,6 +1,6 @@
 <?php
 require "./config/database.php";
-require "./config/utilities.php";
+require_once "./controllers/utilities.php";
 
 session_start();
 $error = null;
