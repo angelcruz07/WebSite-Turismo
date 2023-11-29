@@ -92,7 +92,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="route">Ruta(Salida - Destino)</label>
-          <input type="route" value="<?php echo $route; ?>" name="route" class="route-title" id="route" maxlength="55">
+          <input type="route" value="<?php echo $route; ?>" name="route" class="route-title" id="route" maxlength="60">
         </div>
         <div class="form-group">
           <label>Disponibilidad</label>
@@ -105,7 +105,7 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Horarios:</label>
-          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls" maxlength="55">
+          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls" maxlength="450">
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al transporte:</label><br>

@@ -81,14 +81,14 @@ require_once "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title"> Agrega un título:</label>
-          <input type="text" value="<?php echo $title ?>" name="title" id="title" class="title-blog" maxlength="22" required>
+          <input type="text" value="<?php echo $title ?>" name="title" id="title" class="title-blog" maxlength="60" required>
           <?php if (!empty($titleError)) {
             echo "<div class='error-message'>$titleError</div>";
           } ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea description-blog" rows="4" cols="30" required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="450" class="textarea description-blog" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
