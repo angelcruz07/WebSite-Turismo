@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sliderImage = document.getElementById("sliderImage");
   const imagePaths = [ 
-    "http://localhost/WebSite-Turismo/php/aboutSlider/casas2.jpg",  
-    "http://localhost/WebSite-Turismo/php/aboutSlider/centro2.jpg",  
-    "http://localhost/WebSite-Turismo/php/aboutSlider/iglesia1.jpg", 
-    "http://localhost/WebSite-Turismo/php/aboutSlider/pirotecnia.jpg" 
+    "http://localhost/WebSite-Turismo/assets/aboutSlider/casas2.jpg",  
+    "http://localhost/WebSite-Turismo/assets/aboutSlider/centro2.jpg",  
+    "http://localhost/WebSite-Turismo/assets/aboutSlider/iglesia1.jpg", 
+    "http://localhost/WebSite-Turismo/assets/aboutSlider/pirotecnia.jpg" 
   ]; // Lista de rutas de imágenes
   let currentIndex = 0;
 

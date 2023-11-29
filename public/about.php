@@ -10,7 +10,7 @@
       </div>
       <div class="image">
         <div class="slider-container-about">
-          <img id="sliderImage" src="http://localhost/WebSite-Turismo/php/aboutSlider/iglesia2.jpg"
+          <img id="sliderImage" src="http://localhost/WebSite-Turismo/assets/aboutSlider/iglesia2.jpg"
             alt="Sultepec Mejores Image" title="Slider">
         </div>
       </div>

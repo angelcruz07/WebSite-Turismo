@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderTitle = document.getElementById("sliderTitle");
   const sliderDescription = document.getElementById("sliderDescription");
   const imagePaths = [
-    "http://localhost/WebSite-Turismo/php/imgSlider/centro.jpg",
-    "http://localhost/WebSite-Turismo/php/imgSlider/img3.jpg",
-    "http://localhost/WebSite-Turismo/php/imgSlider/img4.jpg"
+    "http://localhost/WebSite-Turismo/assets/imgSlider/centro.jpg",
+    "http://localhost/WebSite-Turismo/assets/imgSlider/img3.jpg",
+    "http://localhost/WebSite-Turismo/assets/imgSlider/img4.jpg"
   ]; // Lista de rutas de imágenes
   const textData = [
     {
