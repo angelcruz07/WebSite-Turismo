@@ -1,5 +1,4 @@
 # WebSite-Turismo Conociendo las riquezas de sultepec
-
 ## Indice
 
 - [Descripcion](#Descripcion)
@@ -39,7 +38,7 @@ proyecto.
 - [x] Sistema de Roles
 - [x] Automatizacion del contenido mediante PHP
 - [x] Panel de administrador
-- [ ] Funciones para usuario registrado
+- [x] Funciones para usuario registrado
 - [ ] Informacion relevante
 - [ ] Optimizacion de imagenes
 - [ ] Revision y optimizacion del codigo
@@ -49,7 +48,6 @@ proyecto.
 - [ ] Presentacion del proyecto
 
 ## Inicialización
-
 - Clonar el repositorio de git en tu maquina local.
 - XAMP o algun servidor local
 - Extension Mysql ID: cweijan.vscode-mysql-client2
@@ -99,7 +97,7 @@ parroquia sultepec/portada.webp
 
 ## Desarolladores
 
-| Nombre                           | Rol en Proyecto        |
+| Nombre                           | Roles       |
 | -------------------------------- | ---------------------- |
 | Lizandro Antonio Santos          | Programador Backend    |
 | Yuliana Lizeth Betancourt Medina | Programador, diseñador |
