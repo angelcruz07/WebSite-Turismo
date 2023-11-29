@@ -36,7 +36,7 @@ CREATE TABLE
     blog (
         id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(255),
-        description VARCHAR(255),
+        description VARCHAR(512),
         date TIMESTAMP,
         image VARCHAR(3000)
     );
@@ -47,7 +47,7 @@ CREATE TABLE
         business_type VARCHAR(255),
         business VARCHAR(255) NOT NULL,
         business_image VARCHAR(3000),
-        description VARCHAR(255) NOT NULL,
+        description VARCHAR(512) NOT NULL,,
         product_type VARCHAR(255),
         product_image VARCHAR(255),
         name VARCHAR(255) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE
     lodging (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description VARCHAR(512) NOT NULL,
         phone_number VARCHAR(255) NOT NULL,
         location VARCHAR(255) NOT NULL,
         image VARCHAR(3000)
@@ -71,7 +71,7 @@ CREATE TABLE
         id INT AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255),
+        description VARCHAR(512),
         phone_number VARCHAR(255),
         location VARCHAR(255),
         image VARCHAR(3000)
@@ -82,7 +82,7 @@ CREATE TABLE
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description VARCHAR(512) NOT NULL,
         image VARCHAR(3000) NOT NULL
     );
 
@@ -101,7 +101,7 @@ CREATE TABLE
         id INT AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL,
         name VARCHAR(255) NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description VARCHAR(512) NOT NULL,
         location VARCHAR(255) NOT NULL,
         image VARCHAR(255) NOT NULL
     );
