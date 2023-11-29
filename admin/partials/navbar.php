@@ -35,7 +35,7 @@
           }
         }
         ?>
-        <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono gear" title="Agregar evento">
+        <img src="<?php echo $url ?>/assets/icons/folder.svg" alt="Icono gear" title="Agregar evento">
         <h4>Ver solicitud</h4>
       </div>
     </a>

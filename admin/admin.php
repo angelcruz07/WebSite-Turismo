@@ -31,7 +31,7 @@ require_once "./partials/navbar.php";
         ?>
         <div class="card-menu">
           <div class="image-container">
-            <img src="<?php echo $url ?>/assets/icons/file.svg" alt="Icono plus" class="icon-desktop" title="Ver solicitudes">
+            <img src="<?php echo $url ?>/assets/icons/folder.svg" alt="Icono plus" class="icon-desktop" title="Ver solicitudes">
           </div>
           Ver Solicitudes
         </div>
