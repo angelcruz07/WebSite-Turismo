@@ -1,7 +1,7 @@
 <?php
 require_once "../admin/config/database.php";
-require_once "../admin/config/utilities.php";
-require "../partials/header2.php";
+require_once "../admin/controllers/getQuery.php";
+require "../partials/header.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $table = 'services';
@@ -50,4 +50,4 @@ $services = getQuery($conn, $table);
       </div>
     <?php } ?>
   </section>
-  <?php require "../partials/footer2.php" ?>
+  <?php require "../partials/footer.php" ?>

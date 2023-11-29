@@ -10,26 +10,26 @@
         <nav>
             <ul>
                 <li class="margin-left"><a href="<?php echo $url; ?>" id="selected"></a></li>
-                <li class="margin-left"><a href="<?php echo $url; ?>/php/events.php" class="no__hover">Eventos</a>
+                <li class="margin-left"><a href="<?php echo $url; ?>/public/events.php" class="no__hover">Eventos</a>
                     <ul>
-                        <li><a href="<?php echo $url; ?>/php/events.php" title="Eventos sociales">Eventos sociales</a></li>
-                        <li><a href="<?php echo $url; ?>/php/events.php/#religious-events">Eventos patronales</a></li>
+                        <li><a href="<?php echo $url; ?>/public/events.php" title="Eventos sociales">Eventos sociales</a></li>
+                        <li><a href="<?php echo $url; ?>/public/events.php/#religious-events">Eventos patronales</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Nuestro Encanto</a>
                     <ul>
-                        <li><a href="<?php echo $url; ?>/php/attractive.php">Lugares</a></li>
-                        <li><a href="<?php echo $url; ?>/php/gastronomy.php">Gastronomía</a></li>
+                        <li><a href="<?php echo $url; ?>/public/attractive.php">Lugares</a></li>
+                        <li><a href="<?php echo $url; ?>/public/gastronomy.php">Gastronomía</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Servicios</a>
                     <ul>
-                        <li><a href="<?php echo $url; ?>/php/services.php">Transporte</a></li>
-                        <li><a href="<?php echo $url; ?>/php/gastronomy.php">Comida</a></li>
-                        <li><a href="<?php echo $url; ?>/php/lodging.php">Hospedajes</a></li>
+                        <li><a href="<?php echo $url; ?>/public/services.php">Transporte</a></li>
+                        <li><a href="<?php echo $url; ?>/public/gastronomy.php">Comida</a></li>
+                        <li><a href="<?php echo $url; ?>/public/lodging.php">Hospedajes</a></li>
                     </ul>
                 </li>
-                <li class="margin-left"><a href="<?php echo $url; ?>/php/blog.php">Blog</a></li>
+                <li class="margin-left"><a href="<?php echo $url; ?>/public/blog.php">Blog</a></li>
                 <li class="margin-left"> <a href="<?php echo $url; ?>/admin/login.php"><img src="<?php echo $url ?>/assets/icons/user-solid.svg" alt="icon-user" title="Iniciar sesion" class="fa-user"></img></a></li>
             </ul>
         </nav>

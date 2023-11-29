@@ -1,6 +1,6 @@
 <?php
 require "../admin/config/database.php";
-require "../partials/header2.php";
+require "../partials/header.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 $urlImage = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo";
@@ -188,4 +188,4 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
   <script src="<?php echo $url; ?>/assets/js/blog.js"></script>
-  <?php require "../partials/footer2.php" ?>
+  <?php require "../partials/footer.php" ?>

@@ -1,15 +1,27 @@
 <?php
 //header
 require_once "partials/header.php";
+
+?>
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/navbar.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/slider.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/about.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/suggestions.css" type="text/css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/location.css" type="text/css">
+</head>
+<body id="scroll-top">
+
+<?php 
 // Navbar
 require_once "./partials/navbar.php";
 // Slider index
-require_once "./php/slider.php";
+require_once "./public/slider.php";
 //Funtion scroll top
 require_once "./partials/scroll-top.php";
 //Suggestions
-require_once "./php/suggestions.php";
+require_once "./public/suggestions.php";
 //About
-require_once "./php/about.php";
+require_once "./public/about.php";
 //footer
 require_once "./partials/footer.php";
+?>

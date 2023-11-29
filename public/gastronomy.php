@@ -1,7 +1,7 @@
 <?php
 require_once "../admin/config/database.php";
-require_once "../admin/config/utilities.php";
-require_once "../partials/header2.php";
+require_once "../admin/controllers/getQuery.php";
+require_once "../partials/header.php";
 require_once "../partials/navbar.php";
 require_once "../partials/scroll-top.php";
 $url_images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGastronomy/";
@@ -110,4 +110,4 @@ $business = getQuery($conn, $table2);
 
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
-  <?php require "../partials/footer2.php" ?>
+  <?php require "../partials/footer.php" ?>

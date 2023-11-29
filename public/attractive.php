@@ -1,7 +1,7 @@
 <?php
 require_once "../admin/config/database.php";
-require_once "../admin/config/utilities.php";
-require_once "../partials/header2.php";
+require_once "../admin/controllers/getQuery.php";
+require_once "../partials/header.php";
 require_once  "../partials/navbar.php";
 require_once  "../partials/scroll-top.php";
 $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/imgGallery/";
@@ -37,9 +37,7 @@ $places = getQuery($conn, $table);
         <li class="links" data-nombre="Parroquia">Parroquias</li>
       </ul>
     </div>
-
     <!--Contenedor de la galeria -->
-
     <div class="container-gallery">
       <?php
       $alert = '<div class="alert-not-event"><span class="alert">"Ups no hay lugares, estamos trabajando en ello, ¡Mantente al tanto!</span></div>';
@@ -58,7 +56,6 @@ $places = getQuery($conn, $table);
                         echo $place['image']; ?>" alt="<?php echo $place["title"] ?>"
               title="<?php echo $place["title"] ?>">
             <h3><?php echo $place['name'] ?></h3>
-
           </div>
           <div class=" face back">
             <h3><?php echo $place['name'] ?></h3>
@@ -69,7 +66,6 @@ $places = getQuery($conn, $table);
       </div>
       <?php } ?>
   </section>
-
   <div class="container-btn">
     <div class="show-map-btn">
       <a href="<?php echo $url ?>/php/location.php">Ubica los destinos</a>
@@ -80,4 +76,4 @@ $places = getQuery($conn, $table);
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
-  <?php require "../partials/footer2.php" ?>
+  <?php require "../partials/footer.php" ?>
