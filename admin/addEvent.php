@@ -1,6 +1,6 @@
 <?php
 require_once "config/database.php";
-require_once "config/utilities.php";
+require_once "./controllers/utilities.php";
 $rol = 1;
 validateRol($rol);
 //Recibir los datos del formulario
@@ -88,6 +88,7 @@ require "partials/navbar.php"; ?>
         <div class="form-group">
           <label for="type">Selecciona el tipo de evento</label>
           <select name="type" id="type" required>
+            <option value=""></option>
             <option value="Social">Social</option>
             <option value="Religioso">Religioso</option>
           </select>
@@ -111,7 +112,7 @@ require "partials/navbar.php"; ?>
           <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada"
             width="50px">
           <?php } ?>
-          <input type="file" name="image" id="image" value="<?php echo $image; ?>">
+          <input type="file" name="image" id="image" value="<?php echo $image; ?>" required>
         </div>
         <div class=" group-buttons">
           <button type="submit" <?php echo ($action == "Seleccionar") ? "disabled" : "" ?> value="Agregar" name="accion"

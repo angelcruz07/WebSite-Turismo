@@ -1,6 +1,6 @@
 <?php
 require_once "config/database.php";
-require_once "./config/utilities.php";
+require_once "./controllers/utilities.php";
 $rol = 1;
 validateRol($rol);
 $id = (isset($_POST['id'])) ? $_POST['id'] : "";
