@@ -103,11 +103,11 @@ require_once "partials/navbar.php";
         </div>
         <div class="form-group">
           <label for="name">Nombre del lugar</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gallery" id="name" maxlength="55">
+          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gallery" id="name" maxlength="60">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del lugar:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea description-gallery" rows="4"
+          <textarea name="description" id="description" maxlength="450" class="textarea description-gallery" rows="4"
             cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">

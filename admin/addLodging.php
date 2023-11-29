@@ -71,7 +71,7 @@ $lodgings = getQuery($conn, $table);
     initCharacterCounter
   }
   from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
-  initCharacterCounter("title-lodiging", 30);
+  initCharacterCounter("title-lodiging", 60);
   initCharacterCounter("description-lodiging", 450);  
   initCharacterCounter("number-lodiging", 14);
 </script>
@@ -96,20 +96,20 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="title">Nombre del hospedaje</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" id="name" class="title-lodiging" maxlength="30">
+          <input type="text" value="<?php echo $name; ?>" name="name" id="name" class="title-lodiging" maxlength="60">
         </div>
         <div class="form-group">
           <label for="description">Descripción del hospedaje:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea description-lodiging" rows="4" cols="30"
+          <textarea name="description" id="description" maxlength="450" class="textarea description-lodiging" rows="4" cols="30"
             required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="phone_number"> Agrega un numero de contacto:</label> <input type="text"
-            value="<?php echo $phone_number; ?>" name="phone_number" class="number-lodiging" id="phone_number" maxlength="22">
+            value="<?php echo $phone_number; ?>" name="phone_number" class="number-lodiging" id="phone_number" maxlength="14">
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del hotel en google (URL)</label>
-          <textarea name="location" id="location" maxlength="300" class="textarea" rows="4"
+          <textarea name="location" id="location" class="textarea" rows="4"
             cols="30"><?php echo $url_lodging; ?></textarea>
         </div>
         <div class=" form-group">

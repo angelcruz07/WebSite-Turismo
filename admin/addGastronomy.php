@@ -96,11 +96,11 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Nombre del platillo</label>
-          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gastronomy" id="name" maxlength="55">
+          <input type="text" value="<?php echo $name; ?>" name="name" class="title-gastronomy" id="name" maxlength="60">
         </div>
         <div class="form-group">
           <label for="description">Descripción breve de la comida:</label>
-          <textarea name="description" id="description" maxlength="300" class="textarea description-gastronomy" rows="4" cols="30" required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="450" class="textarea description-gastronomy" rows="4" cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
