@@ -3,23 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderTitle = document.getElementById("sliderTitle");
   const sliderDescription = document.getElementById("sliderDescription");
   const imagePaths = [
-    "http://localhost/WebSite-Turismo/assets/imgSlider/centro.jpg",
-    "http://localhost/WebSite-Turismo/assets/imgSlider/img3.jpg",
-    "http://localhost/WebSite-Turismo/assets/imgSlider/img4.jpg"
+    "http://localhost/WebSite-Turismo/assets/imgSlider/kiosco_sultepec.webp",
+    "http://localhost/WebSite-Turismo/assets/imgSlider/santuario.webp",
+    "http://localhost/WebSite-Turismo/assets/imgSlider/atardecer.webp",
   ]; // Lista de rutas de imágenes
   const textData = [
     {
-      title: "Nombre del lugar 1",
-      description: "Descripción del lugar"
+      title: "Kiosko Central",
+      description:
+        "Guardián de las experiencias más especiales en nuestro municipio",
     },
     {
-      title: "Nombre del lugar 2",
-      description: "Descripción del lugar"
+      title: "Santuario de la Sta.Veracruz",
+      description: "Custodiando a todo Sultepec",
     },
     {
-      title: "Nombre del lugar 3",
-      description: "Descripción del lugar"
-    }
+      title: "Atardeceres Únicos en Sultepec",
+      description:
+        "Disfruta de la magia de los atardeceres que solo Sultepec puede ofrecer",
+    },
   ];
 
   let currentIndex = 0;
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentIndex = (currentIndex + 1) % imagePaths.length;
     updateSlider();
   }
-  
+
   function updateSlider() {
     sliderImage.style.transform = "translateX(-100%)"; // Desliza la imagen hacia la izquierda
     setTimeout(() => {
@@ -38,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
       sliderImage.style.transform = "translateX(0)"; // Vuelve la imagen a su posición original
     }, 500); // Deja tiempo para que la imagen se desplace antes de cambiarla
   }
-  
+
   // Asegurarse de que todas las imágenes se hayan cargado antes de iniciar el slider
   let imagesLoaded = 0;
-  
+
   imagePaths.forEach((path) => {
     const img = new Image();
     img.src = path;
