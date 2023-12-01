@@ -26,7 +26,7 @@
       este rincón único del sur del estado de México y descubre un lugar que captura el corazón de quienes lo visitan.
     </p>
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/php/location.php" title="Ver en el mapa">Ver en el mapa</a>
+      <a href="<?php echo $url ?>/public/location.php" title="Ver en el mapa">Ver en el mapa</a>
     </div>
   </article>
 </section>

@@ -1,5 +1,5 @@
 <?php
-require "../partials/header2.php";
+require "../partials/header.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 
@@ -21,13 +21,13 @@ require "../partials/scroll-top.php";
   <h2 class="title-index">Ubicacion Geográfica</h2>
   <div class="container-btn">
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/php/gastronomy.php">Sabor Local: Mejores Restaurantes y Cafeterías en Sultepec</a>
+      <a href="<?php echo $url ?>/public/gastronomy.php">Sabor Local: Mejores Restaurantes y Cafeterías en Sultepec</a>
     </div>
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/php/services.php">Cómo Llegar a Sultepec Consejos de Transporte </a>
+      <a href="<?php echo $url ?>/public/services.php">Cómo Llegar a Sultepec Consejos de Transporte </a>
     </div>
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/php/lodging.php"> Hoteles y Alojamientos en Sultepec</a>
+      <a href="<?php echo $url ?>/public/lodging.php"> Hoteles y Alojamientos en Sultepec</a>
     </div>
   </div>
 

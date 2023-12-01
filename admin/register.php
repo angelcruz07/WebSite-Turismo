@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 <?php
-require "../partials/header2.php";
+require "../partials/header.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 ?>
@@ -93,4 +93,4 @@ require "../partials/scroll-top.php";
             </div>
         </div>
     </section>
-    <?php require "../partials/footer2.php" ?>
+    <?php require "../partials/footer.php" ?>

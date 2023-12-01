@@ -68,7 +68,7 @@ $places = getQuery($conn, $table);
   </section>
   <div class="container-btn">
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/php/location.php">Ubica los destinos</a>
+      <a href="<?php echo $url ?>/public/location.php">Ubica los destinos</a>
     </div>
   </div>
   <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
