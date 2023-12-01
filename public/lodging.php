@@ -17,7 +17,7 @@ $lodgings = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Hospedajes</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgLodging/portada.jpg" alt="Portada de hospedajes " title="Hospedajes" class="image-front-page">
+    <img src="<?php echo $url ?>/admin/assets/imgLodging/hospedaje.webp" alt="Portada de hospedajes " title="Hospedajes" class="image-front-page">
   </div>
   <section class="lodging" id="lodging">
     <h2 class="title-index">Donde Descansar Hospedajes Económicos en Sultepec</h2>
