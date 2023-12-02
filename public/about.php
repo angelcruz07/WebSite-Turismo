@@ -10,13 +10,12 @@
       </div>
       <div class="image">
         <div class="slider-container-about">
-          <img id="sliderImage" src="http://localhost/WebSite-Turismo/assets/aboutSlider/iglesia2.jpg"
-            alt="Sultepec Mejores Image" title="Slider">
+          <img id="sliderImage" src="./assets/aboutSlider/iglesia2.jpg" alt="Sultepec Mejores Image" title="Slider">
         </div>
       </div>
     </div>
   </div>
-  <script src="http://localhost/WebSite-Turismo/assets/js/aboutSlider.js"></script>
+  <script src="./assets/js/aboutSlider.js"></script>
 </section>
 <section id=location>
   <article>
@@ -26,7 +25,7 @@
       este rincón único del sur del estado de México y descubre un lugar que captura el corazón de quienes lo visitan.
     </p>
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/public/location.php" title="Ver en el mapa">Ver en el mapa</a>
+      <a href="./public/location.php" title="Ver en el mapa">Ver en el mapa</a>
     </div>
   </article>
 </section>

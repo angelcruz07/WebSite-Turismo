@@ -10,7 +10,7 @@ $saucers = getQuery($conn, $table);
 $table2 = "business";
 $business = getQuery($conn, $table2);
 ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/gastronomy.css">
+<link rel="stylesheet" href="../assets/css/gastronomy.css">
 </head>
 
 <body id="scroll-top">
@@ -20,7 +20,7 @@ $business = getQuery($conn, $table2);
     <div class="title-front-page">
       <h1>Gastronomía</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
+    <img src="../admin/assets/imgGastronomy/fondo.webp" alt="Portada de gastronomia" title="Gastronomia" class="image-front-page">
   </div>
   <h2 class="title-index">"Sabores sultepequenses delicias que enamoran tu paladar"</h2>
   <!--Lista de lugares o opciones -->
@@ -49,8 +49,7 @@ $business = getQuery($conn, $table2);
 
       <?php foreach ($saucers as $saurcer) { ?>
         <div class="card filter <?php echo $saurcer['type'] ?>">
-          <div class="card_landing" style="--i:url(<?php echo $url_images;
-                                                    echo $saurcer['image']; ?>">
+          <div class="card_landing" style="--i:url(../WebSite-Turismo/admin/assets/imgGastronomy/<?= $saurcer['image']; ?>">
             <h6><?php echo $saurcer['name'] ?></h6>
           </div>
           <div class="card_info">
@@ -104,10 +103,10 @@ $business = getQuery($conn, $table2);
     <?php } ?>
 
     <div class="register-business">
-      <a href="<?php echo $url ?>/admin/register.php" class="btn2">Registra tu negocio </a>
+      <a href="../admin/register.php" class="btn2">Registra tu negocio </a>
     </div>
   </section>
 
-  <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
-  <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/bottons-links.js"></script>
   <?php require "../partials/footer.php" ?>

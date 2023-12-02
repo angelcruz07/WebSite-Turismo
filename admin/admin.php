@@ -4,7 +4,7 @@ require_once "./controllers/utilities.php";
 require_once "./controllers/getQuery.php";
 $rol = 1;
 validateRol($rol);
-require_once "partials/header.php";
+require_once "./partials/header.php";
 require_once "./partials/navbar.php";
 ?>
 

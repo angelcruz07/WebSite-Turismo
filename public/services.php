@@ -7,7 +7,7 @@ require "../partials/scroll-top.php";
 $table = 'services';
 $services = getQuery($conn, $table);
 ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/services.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/services.css" type="text/css">
 </head>
 
 <body class="scroll-top">
@@ -16,7 +16,7 @@ $services = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Transporte</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte Imagen" class="image-front-page">
+    <img src="../admin/assets/imgServices/servicios.jpg" alt="Portada de Transporte" title="Transporte Imagen" class="image-front-page">
   </div>
   <h1 class="title-index">Movilidad</h1>
   <section class="services" id="services">
@@ -32,18 +32,18 @@ $services = getQuery($conn, $table);
       <div class="container-service">
         <div class="service-box">
           <div class="service-image">
-            <img src="<?php echo $url ?>/admin/assets/imgServices/<?php echo $service['image'] ?>" alt="<?php echo $service['type'] ?>" title="<?php echo $service['type'] ?> class=" img-services">
+            <img src="../admin/assets/imgServices/<?php echo $service['image'] ?>" alt="<?php echo $service['type'] ?>" title="<?php echo $service['type'] ?>" class=" img-services">
           </div>
           <h2 class="subtitle"><?php echo $service['type'] ?></h2>
           <!-- descripcion equivale a tabla  -->
           <div class=" description-service">
             <h3>Ruta</h3>
-            <img src="<?php echo $url ?>/assets/icons/route.svg" alt="icono de ruta" title="Ruta" class="img-services">
+            <img src="../assets/icons/route.svg" alt="icono de ruta" title="Ruta" class="img-services">
             <span><?php echo $service['route'] ?></span>
             <h3>Disponibilidad</h3>
             <span><?php echo $service['availability'] ?></span>
             <h3>Horarios</h3>
-            <img src="<?php echo $url ?>/assets/icons/clock.svg" alt="Icono de reloj" title="reloj" class="img-services">
+            <img src="../assets/icons/clock.svg" alt="Icono de reloj" title="reloj" class="img-services">
             <span><?php echo $service['scheduls'] ?></span> <span>Abierto</span>
           </div>
         </div>

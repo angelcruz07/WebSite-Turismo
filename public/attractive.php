@@ -8,9 +8,9 @@ $images = "http://" . $_SERVER['HTTP_HOST'] . "/WebSite-Turismo/admin/assets/img
 $table = 'gallery';
 $places = getQuery($conn, $table);
 ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/attractive.css">
+<link rel="stylesheet" href="../assets/css/attractive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/buttons.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/buttons.css" type="text/css">
 </head>
 
 <body id="scroll-top">
@@ -20,10 +20,9 @@ $places = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Atractivos</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgGallery/front-page.jpg" alt="Portada de gastronomia"
-      title="Gastronomia" class="image-front-page">
+    <img src="../admin/assets/imgGallery/front-page.jpg" alt="Portada de Attracctiovos" title="Attractivos"
+      class="image-front-page">
   </div>
-
   <section class="attractive" id="attractive">
     <h2 class="title-index">Descubre las maravillas turisticas de Sultepec</h2>
     <!--Lista de lugares o opciones -->
@@ -71,9 +70,9 @@ $places = getQuery($conn, $table);
       <a href="<?php echo $url ?>/public/location.php">Ubica los destinos</a>
     </div>
   </div>
-  <script src="<?php echo $url; ?>/assets/js/jquery-3.3.1.min.js"></script>
-  <script src="<?php echo $url; ?>/assets/js/bottons-links.js"></script>
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/bottons-links.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-  <script src="<?php echo $url; ?>/assets/js/lightbox.js"></script>
+  <script src="../assets/js/lightbox.js"></script>
   <?php require "../partials/footer.php" ?>

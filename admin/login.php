@@ -74,7 +74,7 @@ require "../partials/scroll-top.php";
       <h2 class="title-index">Iniciar sesion</h2>
       <div class="container-form">
         <?php if ($error) : ?>
-          <p class="text-error"> <?= $error ?> </p>
+        <p class="text-error"> <?= $error ?> </p>
         <?php endif ?>
         <form method="POST" action="#">
           <div class="card-option">

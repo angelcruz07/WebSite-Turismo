@@ -7,7 +7,7 @@ require_once "../partials/scroll-top.php";
 $table = 'lodging';
 $lodgings = getQuery($conn, $table);
 ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/lodging.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/lodging.css" type="text/css">
 </head>
 
 <body id="scroll-top">
@@ -17,7 +17,8 @@ $lodgings = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Hospedajes</h1>
     </div>
-    <img src="<?php echo $url ?>/admin/assets/imgLodging/hospedaje.webp" alt="Portada de hospedajes " title="Hospedajes" class="image-front-page">
+    <img src="../admin/assets/imgLodging/hospedaje.webp" alt="Portada de hospedajes " title="Hospedajes"
+      class="image-front-page">
   </div>
   <section class="lodging" id="lodging">
     <h2 class="title-index">Donde Descansar Hospedajes Económicos en Sultepec</h2>
@@ -30,27 +31,27 @@ $lodgings = getQuery($conn, $table);
     }
     ?>
     <?php foreach ($lodgings as $lodging) { ?>
-      <div class="container-lodging">
-        <div class="lodging-box">
-          <div class="lodging-image">
-            <img src="<?php echo $url ?>/admin/assets/imgLodging/<?php echo $lodging['image'] ?>" alt="Imagen del hotel">
+    <div class="container-lodging">
+      <div class="lodging-box">
+        <div class="lodging-image">
+          <img src="../admin/assets/imgLodging/<?php echo $lodging['image'] ?>" alt="Imagen del hotel">
+        </div>
+        <div class="description-lodging">
+          <h3><?php echo $lodging['name'] ?></h3>
+          <p><?php echo $lodging['description'] ?></p><br>
+          <div class="calf-star">
+            <img src="../assets/icons/star.svg" alt="">
+            <img src="../assets/icons/star.svg" alt="">
+            <img src="../assets/icons/star.svg" alt="">
+            <img src="../assets/icons/star.svg" alt="">
+            <img src="../assets/icons/star-regular.svg" alt="">
           </div>
-          <div class="description-lodging">
-            <h3><?php echo $lodging['name'] ?></h3>
-            <p><?php echo $lodging['description'] ?></p><br>
-            <div class="calf-star">
-              <img src="../assets/icons/star.svg" alt="">
-              <img src="../assets/icons/star.svg" alt="">
-              <img src="../assets/icons/star.svg" alt="">
-              <img src="../assets/icons/star-regular.svg" alt="">
-              <img src="../assets/icons/star-regular.svg" alt="">
-            </div>
-            <div class="link-lodging">
-              <a href="<?php echo $lodging['location'] ?>" target="_blank">Ver en el mapa</a>
-            </div>
+          <div class="link-lodging">
+            <a href="<?php echo $lodging['location'] ?>" target="_blank">Ver en el mapa</a>
           </div>
         </div>
       </div>
+    </div>
     <?php } ?>
   </section>
   <?php require "../partials/footer.php" ?>
