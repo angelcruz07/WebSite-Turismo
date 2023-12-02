@@ -1,6 +1,6 @@
 <header>
   <div class="icon_menu">
-    <img src="<?php echo $url ?>/assets/icons/bars-solid-black.svg" alt="Icono menu" id="btn_open" title="icon-menu">
+    <img src="../assets/icons/bars-solid-black.svg" alt="Icono menu" id="btn_open" title="icon-menu">
   </div>
   <h1>Escritorio</h1>
 </header>
@@ -12,13 +12,13 @@
       </div>
       <h4>Administrar </h4>
     </div>
-    <a href="<?php echo $url; ?>/admin/admin.php">
+    <a href="./admin.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/house-solid-black.svg" alt="Icono house" title="Inicio">
+        <img src="../assets/icons/house-solid-black.svg" alt="Icono house" title="Inicio">
         <h4>Inicio</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/request.php">
+    <a href="./request.php">
       <div class="option">
         <?php
         $table = 'request';
@@ -35,61 +35,61 @@
           }
         }
         ?>
-        <img src="<?php echo $url ?>/assets/icons/folder.svg" alt="Icono gear" title="Agregar evento">
+        <img src="../assets/icons/folder.svg" alt="Icono gear" title="Agregar evento">
         <h4>Ver solicitud</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addEvent.php">
+    <a href="./addEvent.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/plus.svg" alt="Icono gear" title="Agregar evento">
+        <img src="../assets/icons/plus.svg" alt="Icono gear" title="Agregar evento">
         <h4>Agregar evento</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addBlog.php">
+    <a href="./addBlog.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/pen.svg" alt="Icono gear" title="Agregar al blog">
+        <img src="../assets/icons/pen.svg" alt="Icono gear" title="Agregar al blog">
         <h4>Agregar al blog</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addLodging.php">
+    <a href="./addLodging.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
+        <img src="../assets/icons/hotel.svg" alt="Icono gear" title="Agregar hospedaje">
         <h4>Agregar hospedaje</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addGallery.php">
+    <a href="./addGallery.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/image.svg" alt="Icono gear" title="Agregar galeria">
+        <img src="../assets/icons/image.svg" alt="Icono gear" title="Agregar galeria">
         <h4>Agregar Galeria</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addGastronomy.php">
+    <a href="./addGastronomy.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar Gastronomia">
+        <img src="../assets/icons/gastronomy.svg" alt="Icono gear" title="Agregar Gastronomia">
         <h4>Agregar Gastronomia</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addBusiness.php">
+    <a href="./addBusiness.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/store.svg" alt="Icono gear" title="Agregar negocio">
+        <img src="../assets/icons/store.svg" alt="Icono gear" title="Agregar negocio">
         <h4>Agregar Negocio</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/addService.php">
+    <a href="./addService.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/taxi.svg" alt="Icono gear" title="Agregar Servicio">
+        <img src="../assets/icons/taxi.svg" alt="Icono gear" title="Agregar Servicio">
         <h4>Agregar Servicio</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>">
+    <a href="../">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/eye-solid.svg" alt="Icono plus" title="Ver sitio">
+        <img src="../assets/icons/eye-solid.svg" alt="Icono plus" title="Ver sitio">
         <h4>Ver sitio</h4>
       </div>
     </a>
-    <a href="<?php echo $url; ?>/admin/logout.php">
+    <a href="./logout.php">
       <div class="option">
-        <img src="<?php echo $url ?>/assets/icons/bracket.svg" alt="Icono bracket" title="Cerrar sesion">
+        <img src="../assets/icons/bracket.svg" alt="Icono bracket" title="Cerrar sesion">
         <h4>Cerrar sesion</h4>
       </div>
     </a>

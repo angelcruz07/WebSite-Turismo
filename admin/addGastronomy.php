@@ -62,14 +62,13 @@ $gastronomys = getQuery($conn, $table);
   import {
     initCharacterCounter
   }
-  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  from "../admin/assets/js/limits.js"
   initCharacterCounter("title-gastronomy", 60);
   initCharacterCounter("description-gastronomy", 450);
 </script>
 
 <script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addGastronomy.php";
+  let file = "../admin/addGastronomy.php";
 </script>
 
 <?php require "partials/header.php";
@@ -106,7 +105,7 @@ require "partials/navbar.php"; ?>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al platillo:</label><br>
           <?php if ($image != "") { ?>
-            <img src="<?php echo $url ?>/admin/assets/imgGastronomy/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
+            <img src="../admin/assets/imgGastronomy/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>

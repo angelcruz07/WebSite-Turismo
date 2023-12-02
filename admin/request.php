@@ -1,6 +1,7 @@
 <?php
-require_once "config/database.php";
+require_once "./config/database.php";
 require_once "./controllers/utilities.php";
+require_once "./controllers/getQuery.php";
 $rol = 1;
 validateRol($rol);
 $table = "request";

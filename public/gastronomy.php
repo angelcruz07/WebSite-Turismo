@@ -49,7 +49,7 @@ $business = getQuery($conn, $table2);
 
       <?php foreach ($saucers as $saurcer) { ?>
         <div class="card filter <?php echo $saurcer['type'] ?>">
-          <div class="card_landing" style="--i:url(../WebSite-Turismo/admin/assets/imgGastronomy/<?= $saurcer['image']; ?>">
+          <div class="card_landing" style="--i:url(../admin/assets/imgGastronomy/<?= $saurcer['image']; ?>">
             <h6><?php echo $saurcer['name'] ?></h6>
           </div>
           <div class="card_info">
@@ -84,7 +84,7 @@ $business = getQuery($conn, $table2);
       <div class="container-lodging filter <?php echo $busine['type']; ?>">
         <div class="lodging-box-left">
           <div class="lodging-image">
-            <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="<?php echo $busine['name'] ?>" title="<?php echo $busine['name'] ?>">
+            <img src="../admin/assets/imgBusiness/<?php echo $busine['image']; ?>" alt="<?php echo $busine['name'] ?>" title="<?php echo $busine['name'] ?>">
           </div>
           <div class="description-lodging left">
             <h3><?php echo $busine['name']; ?></h3>

@@ -59,15 +59,13 @@ $blogs = getQuery($conn, $table);
   import {
     initCharacterCounter
   }
-  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+  from "../admin/assets/js/limits.js"
   initCharacterCounter("title-blog", 60);
-  initCharacterCounter("description-blog", 450); 
+  initCharacterCounter("description-blog", 450);
 </script>
 <script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addBlog.php";
+  let file = "../admin/addBlog.php ";
 </script>
-
 <?php require_once "partials/header.php";
 require_once "partials/navbar.php"; ?>
 <section id="add-form" class="add-form">
@@ -75,7 +73,6 @@ require_once "partials/navbar.php"; ?>
   <div class="container-form-crud">
     <div class="container-form-form">
       <h2 class="title-form">Nueva publicacion</h2>
-
       <form method="POST" enctype="multipart/form-data" class="form-container">
         <div class="form-group">
           <input type="hidden" value="<?php echo $id ?>" name="id" id="id" required>
@@ -89,13 +86,7 @@ require_once "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description"> Agrega una Descripción:</label>
-<<<<<<< HEAD
           <textarea name="description" id="description" maxlength="450" class="textarea description-blog" rows="4" cols="30" required><?php echo $description; ?></textarea>
-=======
-          <textarea name="description" id="description" maxlength="450" class="textarea description-blog" rows="4" cols="30" required>
-            <?php echo $description; ?>
-          </textarea>
->>>>>>> 6da04b6f32642ca24c7ce4015375b98613add212
         </div>
         <div class=" form-group">
           <label for="image">Agrega una imagen:</label><br>
@@ -111,7 +102,6 @@ require_once "partials/navbar.php"; ?>
         </div>
       </form>
     </div>
-
     <div class="container-forms-add">
       <h2 class="title-form">Publicadas</h2>
       <table class="info-crud">
@@ -137,7 +127,6 @@ require_once "partials/navbar.php"; ?>
                 <form method="POST" id="custom-register">
                   <input type="hidden" name="id" id="id" value="<?php echo $blog['id'] ?>" />
                   <button type="submit" name="accion" value="Seleccionar" class="btn primary">Editar</button>
-
                   <button type="submit" data-accion="Borrar" name="accion" value="Borrar" class="btn danger" data-post-id="<?php echo $blog['id']; ?>">Borrar</button>
                 </form>
               </td>

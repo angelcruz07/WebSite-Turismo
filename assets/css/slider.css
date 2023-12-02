@@ -66,7 +66,7 @@
     font-size: 4rem;
    }
    .slider_text p{
-   font-size: 3rem;
+   font-size: 2rem;
  }
  .slider-container,.overlay-slider {
   height: 50vh;
@@ -83,7 +83,7 @@
    font-size: 3rem;
   }
   .slider_text p{
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .slider-container,.overlay-slider{
   height: 35vh;

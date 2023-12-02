@@ -58,19 +58,18 @@ switch ($action) {
 $events = getQuery($conn, $table);
 ?>
 <!-- Necesario para alerta -->
-<script type="module"> 
+<script type="module">
 //Funcion de contador
 import {
   initCharacterCounter
 }
-from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+from "../admin/assets/js/limits.js"
 initCharacterCounter("title-event", 60);
 initCharacterCounter("description-event", 450);
 </script>
 
 <script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addEvent.php";
+let file = "../admin/addEvent.php";
 </script>
 
 <?php require "partials/header.php";
@@ -110,8 +109,7 @@ require "partials/navbar.php"; ?>
         <div class=" form-group">
           <label for="image">Imagen relacionada al evento:</label><br>
           <?php if ($image != "") { ?>
-          <img src="<?php echo $url ?>/admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada"
-            width="50px">
+          <img src="../admin/assets/imgEvent/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image" value="<?php echo $image; ?>" required>
         </div>
@@ -120,7 +118,7 @@ require "partials/navbar.php"; ?>
             class="form-btn primary">Agregar</button>
           <button type="submit" <?php echo ($action != "Seleccionar") ? "disabled" : "" ?> value="Modificar"
             name="accion" class="form-btn">Modificar</button>
-          <button type="reset" value="Cancelar" name="accion" class="form-btn danger">Cancelar</button>
+          <button type="reset" value="Cancelar" class="form-btn danger">Cancelar</button>
         </div>
       </form>
     </div>

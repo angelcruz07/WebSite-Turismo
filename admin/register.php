@@ -41,20 +41,16 @@ require "../partials/header.php";
 require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 ?>
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/login.css" type="text/css">
 </head>
 
 <body class="scroll-top">
     <section class="form-register">
         <div class="container-register">
-
             <h2 class="title-index">Crear una cuenta</h2>
             <div class="register">
                 <p class="parraf">Llena el siguiente formulario con tus datos</P>
             </div>
-
-
-
             <div class="container-form">
                 <?php if ($error) : ?>
                     <p class="text-error">

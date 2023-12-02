@@ -2,7 +2,7 @@
   <div class="container_slider">
     <div class="slider_screen">
       <div class="slider-container">
-        <img id="slider" src="<?= $url ?>/assets/imgSlider/Postal.webp" alt="Parroquia" title="Bienvenida" class="img_slider">
+        <img id="slider" src="./assets/imgSlider/Postal.webp" alt="Parroquia" title="Bienvenida" class="img_slider">
       </div>
       <div class="slider_text">
         <h1 id="sliderTitle">¡Bienvenido a Sultepec!</h1>
@@ -11,5 +11,5 @@
       <div class="overlay-slider"></div>
     </div>
   </div>
-  <script src="../assets/js/slider.js"></script>
+  <script src="./assets/js/slider.js"></script>
 </section>

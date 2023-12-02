@@ -42,4 +42,4 @@ require_once "../partials/navbarUser.php";
     </div>
   </div>
 </section>
-<?php require_once "../partials/footerUser.php" ?>
+<?php require_once "../partials/footer.php" ?>

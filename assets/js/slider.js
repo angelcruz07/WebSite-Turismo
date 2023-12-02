@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderTitle = document.getElementById("sliderTitle");
   const sliderDescription = document.getElementById("sliderDescription");
   const imagePaths = [
-    "http://localhost/WebSite-Turismo/assets/imgSlider/kiosco_sultepec.webp",
-    "http://localhost/WebSite-Turismo/assets/imgSlider/santuario.webp",
-    "http://localhost/WebSite-Turismo/assets/imgSlider/atardecer.webp",
+    "./assets/imgSlider/kiosco_sultepec.webp",
+    "./assets/imgSlider/santuario.webp",
+    "./assets/imgSlider/atardecer.webp",
   ]; // Lista de rutas de imágenes
   const textData = [
     {
@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Guardián de las experiencias más especiales en nuestro municipio",
     },
     {
-      title: "Santuario de la Sta.Veracruz",
+      title: "La Sta.Veracruz",
       description: "Custodiando a todo Sultepec",
     },
     {
-      title: "Atardeceres Únicos en Sultepec",
-      description:
-        "Disfruta de la magia de los atardeceres que solo Sultepec puede ofrecer",
+      title: "Atardeceres en Sultepec",
+      description: "Disfruta de la magia que solo Sultepec puede ofrecer",
     },
   ];
 

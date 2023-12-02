@@ -1,6 +1,5 @@
 <?php
-$location = "http://".$_SERVER['HTTP_HOST']."/WebSite-Turismo";
+$location = "../";
 session_start();
 session_destroy();
 header("Location: $location");
-?>

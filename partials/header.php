@@ -1,8 +1,4 @@
-<?php
-$file = "";
-$url = "../WebSite-Turismo";
-$title = "Turismo en Sultepec - Descubre el Encanto Único"
-?>
+<?php $title = "Turismo en Sultepec - Descubre el Encanto Único" ?>
 <!DOCTYPE html>
 <html lang="es">
 

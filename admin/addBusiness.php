@@ -63,21 +63,20 @@ switch ($action) {
 }
 $restaurants = getQuery($conn, $table);
 ?>
- 
- <script type="module">
-  //Funcion de contador
-  import {
-    initCharacterCounter
-  }
-  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
-  initCharacterCounter("title-business", 60);
-  initCharacterCounter("description-business", 450);  
-  initCharacterCounter("number-business", 14);
-</script> 
+
+<script type="module">
+//Funcion de contador
+import {
+  initCharacterCounter
+}
+from "../admin/assets/js/limits.js"
+initCharacterCounter("title-business", 60);
+initCharacterCounter("description-business", 450);
+initCharacterCounter("number-business", 14);
+</script>
 
 <script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addBusiness.php";
+let file = "../admin/addBusiness.php ";
 </script>
 
 <?php require "partials/header.php";
@@ -109,12 +108,13 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="description">Descripción breve del restaurant:</label>
-          <textarea name="description" id="description" maxlength="450" class="textarea description-business" rows="4" cols="30"
-            required><?php echo $description; ?></textarea>
+          <textarea name="description" id="description" maxlength="450" class="textarea description-business" rows="4"
+            cols="30" required><?php echo $description; ?></textarea>
         </div>
         <div class="form-group">
           <label for="phone_number">Numero del telefono:</label>
-          <input name="phone_number" class="number-business" id="phone_number" maxlength="14" value="<?php echo $phone_number; ?>"></input>
+          <input name="phone_number" class="number-business" id="phone_number" maxlength="14"
+            value="<?php echo $phone_number; ?>"></input>
         </div>
         <div class="form-group">
           <label for="description">Ubicacion del lugar en google maps:</label>
@@ -123,8 +123,7 @@ require "partials/navbar.php"; ?>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al restaurant:</label><br>
           <?php if ($image != "") { ?>
-          <img src="<?php echo $url ?>/admin/assets/imgBusiness/<?php echo $image ?>" title="Imagen seleccionada"
-            width="50px">
+          <img src="../admin/assets/imgBusiness/<?php echo $image ?>" title="Imagen seleccionada" width="50px">
           <?php } ?>
           <input type="file" name="image" id="image">
         </div>

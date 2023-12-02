@@ -64,7 +64,7 @@ require "../partials/navbar.php";
 require "../partials/scroll-top.php";
 ?>
 
-<link rel="stylesheet" href="<?php echo $url; ?>/assets/css/login.css" type="text/css">
+<link rel="stylesheet" href="../assets/css/login.css" type="text/css">
 </head>
 
 <body class="scroll-top">
@@ -74,7 +74,7 @@ require "../partials/scroll-top.php";
       <h2 class="title-index">Iniciar sesion</h2>
       <div class="container-form">
         <?php if ($error) : ?>
-        <p class="text-error"> <?= $error ?> </p>
+          <p class="text-error"> <?= $error ?> </p>
         <?php endif ?>
         <form method="POST" action="#">
           <div class="card-option">

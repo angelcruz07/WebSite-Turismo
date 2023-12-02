@@ -52,20 +52,19 @@ switch ($action) {
 }
 $services = getQuery($conn, $table);
 ?>
- 
- <script type="module">
-  //Funcion de contador
-  import {
-    initCharacterCounter
-  }
-  from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
-  initCharacterCounter("route-title", 60);
-  initCharacterCounter("schedule", 450);  
-</script>  
+
+<script type="module">
+//Funcion de contador
+import {
+  initCharacterCounter
+}
+from "http://localhost/WebSite-Turismo/admin/assets/js/limits.js"
+initCharacterCounter("route-title", 60);
+initCharacterCounter("schedule", 450);
+</script>
 
 <script>
-const urlBase = window.location.protocol + "//" + window.location.host;
-let file = urlBase + "/WebSite-Turismo/admin/addService.php";
+let file = "../admin/addService.php";
 </script>
 
 <?php require "partials/header.php";
@@ -106,7 +105,8 @@ require "partials/navbar.php"; ?>
         </div>
         <div class="form-group">
           <label for="name">Horarios:</label>
-          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls" maxlength="450">
+          <input type="scheduls" value="<?php echo $scheduls; ?>" name="scheduls" class="schedule" id="scheduls"
+            maxlength="450">
         </div>
         <div class=" form-group">
           <label for="image">Agrega la imagen correspondiente al transporte:</label><br>

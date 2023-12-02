@@ -10,16 +10,12 @@
         <nav>
             <ul>
                 <li class="margin-left"><a href="<?= $folder ?>" id="selected"></a></li>
-                <li class="margin-left"><a href="#" class="no__hover">Eventos</a>
-                    <ul>
-                        <li><a href="<?= $folder ?>/public/events.php" title="Eventos sociales">Eventos sociales</a></li>
-                        <li><a href="<?= $folder ?>/public/events.php/#religious-events">Eventos patronales</a></li>
-                    </ul>
+                <li class="margin-left"><a href="<?= $folder ?>public/events.php">Eventos</a>
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Nuestro Encanto</a>
                     <ul>
-                        <li><a href="<?= $folder ?>/public/attractive.php">Lugares</a></li>
-                        <li><a href="<?= $folder ?>/public/gastronomy.php">Gastronomía</a></li>
+                        <li><a href="<?= $folder ?>public/attractive.php">Lugares</a></li>
+                        <li><a href="<?= $folder ?>public/gastronomy.php">Gastronomía</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Servicios</a>
