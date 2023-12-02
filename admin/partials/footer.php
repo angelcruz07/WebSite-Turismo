@@ -5,5 +5,7 @@
 <script src="../admin/assets/js/limits.js" type="module"></script>
 </main>
 </body>
+<footer>
+</footer>
 
 </html>
