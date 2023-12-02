@@ -11,6 +11,7 @@ $table2 = "business";
 $business = getQuery($conn, $table2);
 ?>
 <link rel="stylesheet" href="../assets/css/gastronomy.css">
+<link rel="stylesheet" href="../assets/css/lodging.css">
 </head>
 
 <body id="scroll-top">
@@ -49,10 +50,10 @@ $business = getQuery($conn, $table2);
 
       <?php foreach ($saucers as $saurcer) { ?>
         <div class="card filter <?php echo $saurcer['type'] ?>">
-          <div class="card_landing" style="--i:url(../admin/assets/imgGastronomy/<?= $saurcer['image']; ?>">
+          <div class="card_landing" style="--i: url(http://localhost/WebSite-Turismo/admin/assets/imgGastronomy/<?= $saurcer['image'] ?>);">
             <h6><?php echo $saurcer['name'] ?></h6>
           </div>
-          <div class="card_info">
+          <div class=" card_info">
             <div class="head">
               <p class="title"><?php echo $saurcer['name'] ?></p>
               <div class="description">

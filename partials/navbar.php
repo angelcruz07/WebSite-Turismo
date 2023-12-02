@@ -20,9 +20,9 @@
                 </li>
                 <li class="margin-left"><a class="no__hover" href="#" title="Nuestro encanto">Servicios</a>
                     <ul>
-                        <li><a href="<?= $folder ?>services.php">Transporte</a></li>
-                        <li><a href="<?= $folder ?>gastronomy.php">Comida</a></li>
-                        <li><a href="<?= $folder ?>lodging.php">Hospedajes</a></li>
+                        <li><a href="<?= $folder ?>public/services.php">Transporte</a></li>
+                        <li><a href="<?= $folder ?>public/gastronomy.php">Comida</a></li>
+                        <li><a href="<?= $folder ?>public/lodging.php">Hospedajes</a></li>
                     </ul>
                 </li>
                 <li class="margin-left"><a href="<?= $folder ?>/public/blog.php">Blog</a></li>
