@@ -8,7 +8,8 @@ require_once "../partials/navbarUser.php";
 ?>
 <section class="desktop" id="desktop">
   <div class="container-desktop">
-    <img src="../../assets/img/LOGO AYUNTAMIENTO.webp" class="logo" alt="Logo del Ayuntamiento" title="H. Ayuntamiento de sultepec">
+    <img src="../../assets/img/LOGO AYUNTAMIENTO.webp" class="logo" alt="Logo del Ayuntamiento"
+      title="H. Ayuntamiento de sultepec">
     <h2 class="title-index">Bienvenido</h2>
     <div class="container-card-menu">
       <a href="./request.php" class="link-desktop">

@@ -20,8 +20,7 @@ $places = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Atractivos</h1>
     </div>
-    <img src="../admin/assets/imgGallery/front-page.jpg" alt="Portada de Attracctiovos" title="Attractivos"
-      class="image-front-page">
+    <img src="../admin/assets/imgGallery/front-page.jpg" alt="Portada de Attracctiovos" title="Attractivos" class="image-front-page">
   </div>
   <section class="attractive" id="attractive">
     <h2 class="title-index">Descubre las maravillas turisticas de Sultepec</h2>
@@ -47,27 +46,26 @@ $places = getQuery($conn, $table);
       }
       ?>
       <?php foreach ($places as $place) { ?>
-      <div class="card my-card box filter <?php echo $place['type'] ?>">
-        <a href="<?php echo $images;
+        <div class="card my-card box filter <?php echo $place['type'] ?>">
+          <a href="<?php echo $images;
                     echo $place['image']; ?>">
-          <div class="face front">
-            <img src="<?php echo $images;
-                        echo $place['image']; ?>" alt="<?php echo $place["title"] ?>"
-              title="<?php echo $place["title"] ?>">
-            <h3><?php echo $place['name'] ?></h3>
-          </div>
-          <div class=" face back">
-            <h3><?php echo $place['name'] ?></h3>
-            <p><?php echo $place['description'] ?></p>
-            <div class="link"></div>
-          </div>
-        </a>
-      </div>
+            <div class="face front">
+              <img src="<?php echo $images;
+                        echo $place['image']; ?>" alt="<?php echo $place["title"] ?>" title="<?php echo $place["title"] ?>">
+              <h3><?php echo $place['name'] ?></h3>
+            </div>
+            <div class=" face back">
+              <h3><?php echo $place['name'] ?></h3>
+              <p><?php echo $place['description'] ?></p>
+              <div class="link"></div>
+            </div>
+          </a>
+        </div>
       <?php } ?>
   </section>
   <div class="container-btn">
     <div class="show-map-btn">
-      <a href="<?php echo $url ?>/public/location.php">Ubica los destinos</a>
+      <a href="./location.php">Ubica los destinos</a>
     </div>
   </div>
   <script src="../assets/js/jquery-3.3.1.min.js"></script>
