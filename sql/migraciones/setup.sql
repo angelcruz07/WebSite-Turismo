@@ -111,9 +111,7 @@ CREATE TABLE
 INSERT INTO roles (id, rol) VALUES (1, 'admin'), (2, 'colaborador');
 
 -- Insert fields into the users table.
-
 -- The password for admin is admin.
-
 -- The password for user is user.
 
 INSERT INTO
