@@ -29,7 +29,7 @@ foreach ($events as $event) {
     <div class="title-front-page">
       <h1>Eventos</h1>
     </div>
-    <img src="../admin/assets/imgEvent/front-page.jpg" alt="Portada de gastronomia" title="Gastronomia Fondo"
+    <img src="../admin/assets/imgEvent/front-page.webp" alt="Portada de gastronomia" title="Gastronomia Fondo"
       class="image-front-page">
   </div>
 

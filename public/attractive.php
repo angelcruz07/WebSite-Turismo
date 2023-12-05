@@ -20,7 +20,7 @@ $places = getQuery($conn, $table);
     <div class="title-front-page">
       <h1>Atractivos</h1>
     </div>
-    <img src="../admin/assets/imgGallery/front-page.jpg" alt="Portada de Attracctiovos" title="Attractivos" class="image-front-page">
+    <img src="../admin/assets/imgGallery/front-page.webp" alt="Portada de Attracctiovos" title="Attractivos" class="image-front-page">
   </div>
   <section class="attractive" id="attractive">
     <h2 class="title-index">Descubre las maravillas turisticas de Sultepec</h2>
