@@ -1,9 +1,8 @@
-# Conociendo las riquezas de sultepec [img](/assets/img/cecytem-logo.png)
+# Conociendo las riquezas de Sultepec ![Logo CECYTEM](/assets/img/cecytem-logo.png)
 
 
 ## Índice
 - [Descripción](#descripcion)
-- [Instalación](#instalación)
 - [Funcionalidades del Proyecto](#hammerfuncionalidades-del-proyecto)
 - [Acceso al Proyecto, Estructura](#-acceso-al-proyecto-estructura)
 - [Tecnologías](#tecnologias)
@@ -71,7 +70,9 @@ WebSite-Turismo/
 |-- admin/
 
 ```
-\## Tecnologias
+
+
+## Tecnologias
 
 - 1.PHP
 - 2.SQL
@@ -79,9 +80,9 @@ WebSite-Turismo/
 - 4.CSS
 - 5.HTML
 
-## Estandaress
+# Estandaress
 
-# Colores
+## Colores
 
 1. Paleta de Colores:
 - Color de Fondo: ##f2f2f2ff
@@ -90,7 +91,7 @@ WebSite-Turismo/
 - Color de titulos: #138e46
 - Color de texto: #fff
 
-# Tipografía:
+## Tipografía:
 Fuente principal: Poppins.
 Fuente secundaria: Ghotman.
 Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso:Negrita Clase:title-index
@@ -98,7 +99,7 @@ Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
 
 ## Desarolladores
 
-| Nombre                           | Roles       |
+| Nombre                           | Roles                  |
 | -------------------------------- | ---------------------- |
 | @LizandroBackEnd                 | Programador Backend    |
 | @lizethbeta                      | Programador, diseñador |
