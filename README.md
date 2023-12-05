@@ -14,10 +14,10 @@ donde como finalidad se tiene fomentar el turismo, la economia y presencia dentr
 a traves de un sitio web el cual represente  las maravillas y bellezas del municipio resaltando su encanto
 
 ## :hammer:Funcionalidades del proyecto
-`Funcionalidad 1`: CRUD para administrar el sitio
-`Funcionalidad 2`: Contendio cargado por un administrador
-`Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario)
-`Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe
+-`Funcionalidad 1`: CRUD para administrar el sitio
+-`Funcionalidad 2`: Contendio cargado por un administrador
+-`Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario)
+-`Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe
 
 \## Clonar el repositorio
 
@@ -30,7 +30,7 @@ $ git clone https://github.com/angelcruz07/WebSite-Turismo.git
 > [!IMPORTANT]
 > No olvides la base de datos.
 
-\## 🛠️ Abre y ejecuta el archivo setup.sql
+## 🛠️ Abre y ejecuta el archivo setup.sql
 - 1.Navega al siguiente directirio
 
 ```bash
@@ -39,7 +39,7 @@ $ cd WebSite-Turismo/SQL/migraciones/setup.sql
 
 ```
 
-\## Estructura 📁 Acceso al proyecto
+\# 📁 Acceso al proyecto, Estructura
 
 ```bash
 
@@ -74,9 +74,9 @@ WebSite-Turismo/
 - 4.CSS
 - 5.HTML
 
-\## Estandaress
+## Estandaress
 
-## Colores
+# Colores
 
 1. Paleta de Colores:
 - Color de Fondo: ##f2f2f2ff
@@ -85,7 +85,7 @@ WebSite-Turismo/
 - Color de titulos: #138e46
 - Color de texto: #fff
 
-## Tipografía:
+# Tipografía:
 Fuente principal: Poppins.
 Fuente secundaria: Ghotman.
 Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso:Negrita Clase:title-index
