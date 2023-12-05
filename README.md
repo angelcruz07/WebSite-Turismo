@@ -8,7 +8,6 @@
 - [Desarrolladores](#Desarrolladores)
 
 ## Descripcion
-
 Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, 
 proyecto propuesto por el CECYTEM PLANTEL SULTEPC al H.Ayuntamiento del municipio del Sultpec,
 donde como finalidad se tiene fomentar el turismo, la economia y presencia dentro del municipio 
