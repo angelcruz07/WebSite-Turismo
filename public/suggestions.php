@@ -3,7 +3,7 @@
   <div class="container_sugetions">
     <div class="card-suggetion">
       <div class="face front">
-        <img src="./assets/img/antiguo-sultepec.jpg" alt="Cultura sultepequense" title="Cultura sultepequense">
+        <img src="./assets/img/antiguo-sultepec.webp" alt="Cultura sultepequense" title="Cultura sultepequense">
         <h3>Historia</h3>
       </div>
       <div class="face back">
@@ -18,7 +18,7 @@
     </div>
     <div class="card-suggetion">
       <div class="face front">
-        <img src="./assets/img/pipian-dulce.jpg" alt="Gastronomia sultepequence" title="Gastronomia sultepequense">
+        <img src="./assets/img/pipian-dulce.webp" alt="Gastronomia sultepequence" title="Gastronomia sultepequense">
         <h3>Gastronomia</h3>
       </div>
       <div class="face back">
@@ -34,7 +34,7 @@
 
     <div class="card-suggetion">
       <div class="face front">
-        <img src="./assets/img/minero sultepec.jpg" alt="Lugares Turisticos sultepec"
+        <img src="./assets/img/minero sultepec.webp" alt="Lugares Turisticos sultepec"
           title="Lugares Turisticos sultepec">
         <h3>Lugares</h3>
       </div>
@@ -52,7 +52,7 @@
 
     <div class="card-suggetion">
       <div class="face front">
-        <img src="./assets/img/hospedaje.jpeg" alt="Donde hospedarte en sultepec" title="Donde hospedarte en sultepec">
+        <img src="./assets/img/hospedaje.webp" alt="Donde hospedarte en sultepec" title="Donde hospedarte en sultepec">
         <h3>Hospedaje</h3>
       </div>
       <div class="face back">
