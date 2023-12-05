@@ -21,7 +21,7 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="title-front-page">
       <h1>Blog</h1>
     </div>
-    <img src="../admin/assets/imgBlog/front-page.jpg" alt="Imagen del portada al blog" title="Blog Portada"
+    <img src="../admin/assets/imgBlog/front-page.webp" alt="Imagen del portada al blog" title="Blog Portada"
       class="image-front-page">
   </div>
   <section id="blog">
