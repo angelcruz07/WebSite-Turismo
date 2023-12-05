@@ -1,7 +1,3 @@
--- Active: 1700014601609@@127.0.0.1@3306@tourism
-
-DROP DATABASE IF EXISTS tourism;
-
 CREATE DATABASE tourism;
 
 USE tourism;
