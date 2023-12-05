@@ -10,7 +10,7 @@
       </div>
       <div class="image">
         <div class="slider-container-about">
-          <img id="sliderImage" src="./assets/aboutSlider/iglesia2.jpg" alt="Sultepec Mejores Image" title="Slider">
+          <img id="sliderImage" src="./assets/aboutSlider/iglesia2.webp" alt="Sultepec Mejores Image" title="Slider">
         </div>
       </div>
     </div>

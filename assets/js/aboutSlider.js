@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sliderImage = document.getElementById("sliderImage");
   const imagePaths = [
-    "./assets/aboutSlider/casas2.jpg",
-    "./assets/aboutSlider/centro2.jpg",
-    "./assets/aboutSlider/iglesia1.jpg",
-    "./assets/aboutSlider/pirotecnia.jpg",
+    "./assets/aboutSlider/casas2.webp",
+    "./assets/aboutSlider/centro2.webp",
+    "./assets/aboutSlider/iglesia1.webp",
+    "./assets/aboutSlider/pirotecnia.webp",
   ]; // Lista de rutas de imágenes
   let currentIndex = 0;
 
