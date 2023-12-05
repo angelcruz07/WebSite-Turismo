@@ -1,105 +1,110 @@
-# WebSite-Turismo Conociendo las riquezas de sultepec
-## Indice
+# Conociendo las riquezas de Sultepec 
+<p align="center">
+  <img src="/assets/img/cecytem-logo.png" alt="Logo CECYTEM" width="100px"/>
+</p>
 
-- [Descripcion](#Descripcion)
-- [Marco_de_trabajo](#Marco_de_trabajo)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Desarrolladores](#Desarrolladores)
+
+## Índice
+- [Descripción](#descripcion)
+- [Funcionalidades del Proyecto](#hammerfuncionalidades-del-proyecto)
+- [Acceso al Proyecto, Estructura](#-acceso-al-proyecto-estructura)
+- [Tecnologías](#tecnologias)
+- [Estándares](#estandares)
+- [Desarrolladores](#desarrolladores)
 
 ## Descripcion
+Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, 
+proyecto propuesto por el CECYTEM PLANTEL SULTEPC al H.Ayuntamiento del municipio del Sultpec,
+donde como finalidad se tiene fomentar el turismo, la economia y presencia dentro del municipio 
+a traves de un sitio web el cual represente  las maravillas y bellezas del municipio resaltando su encanto
 
-Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, proyecto propuesto por el CECYTEM_SULTEPC al H. Ayuntamiento del municipio del sultpec, en donde como finalidad se tiene promover el turismo dentro del municipio a traves de un sitio web el cual represente
-los lugares mas relevantes y atractivos para visitar asi como informacion de interes para cualquier persona.
+## :hammer:Funcionalidades del proyecto
+- `Funcionalidad 1`: CRUD para administrar el sitio 
+- `Funcionalidad 2`: Contendio cargado por un administrador 
+- `Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario) 
+- `Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe 
 
-## Marco_de_trabajo
+## Clonar el repositorio
 
-El diseño previamente establecido del sitio web cuenta con una serie de funcionalidades por desarrollar.
-En este proyecto se hace uso de PHP por lo que usamos las caracteristicas del mismo
-aislando nuestro codigo y organizandolo en carpetas con nombres referenciales a su proposito en ellas encontras
-la mayoria del codigo desarrollado para el funcionamiento del sitio web
-Destacando el uso de los archivos esenciales y requeridos para inicar el proyecto en tu maquina local
-dentro de la carpeta assets se encontrara otra llamada css
-en donde existe un archivo con el nombre superglobals.css
-en el se encuentran nuestras variables globales de los estilos del sitio para modificar o hacer uso de este
-archivo tendras que hacer referencia al mismo.
+```bash
 
-# Dudas en diseño?
+$ git clone https://github.com/angelcruz07/WebSite-Turismo.git
 
-Si tienes duda de como realizar un diseño en especifico se ha creado una carpeta con el nombre desing
-en donde se han incluido todas las imagenes de diseño que podrian ser de utilizadad al momento de desarollar en el
-proyecto.
+```
 
-## Tareas pendientes
+> [!IMPORTANT]
+> No olvides la base de datos.
 
-- [x] Creacion del diseño inicial
-- [x] Creacion del primero codigo HTML CSS JS
-- [x] Base de datos para usuario registrados
-- [x] Sistema de Roles
-- [x] Automatizacion del contenido mediante PHP
-- [x] Panel de administrador
-- [x] Funciones para usuario registrado
-- [ ] Informacion relevante
-- [ ] Optimizacion de imagenes
-- [ ] Revision y optimizacion del codigo
-- [ ] Pruebas de funcionalidad
-- [ ] SEO
-- [ ] Despliegue del sitio
-- [ ] Presentacion del proyecto
+## 🛠️ Abre y ejecuta el archivo setup.sql
+- 1.Navega al siguiente directirio
 
-## Inicialización
-- Clonar el repositorio de git en tu maquina local.
-- XAMP o algun servidor local
-- Extension Mysql ID: cweijan.vscode-mysql-client2
+```bash
 
-## Crear base de datos
+$ cd WebSite-Turismo/SQL/migraciones/setup.sql 
 
-Coneccion a la base de datos en MYSQL
-Una vez instalada la extencion deberas crear la coneccion a la base de datos de la siguiente manera
-Como puedes observar la extesion cuenta con una funcionalidad de ejecutar sentecias sql directamente
-una vez que lo hayas echo con todos las sentencias sql y tendras las base de datos ya instalada he iniciada por lo que
-podras hacer uso de las funciones que requieren base de datos.
+```
 
-## Estandares
+
+
+# 📁 Acceso al proyecto, Estructura
+
+```bash
+
+WebSite-Turismo/
+|-- index.html
+
+|-- SQL/
+|   `-- migraciones/
+|       `-- setup.sql
+
+|-- assets/
+|   |-- CSS/
+|   |   `-- superglobals.css
+|   |-- JS/
+|   |   `-- script.js
+|   |-- img/
+|   |   |-- imgs/
+|   |-- icons/
+|       |-- icons/
+|   |-- fonts/
+|       |-- fonts/
+
+|-- partials/
+|-- admin/
+
+```
+
+
+## Tecnologias
+
+- 1.PHP
+- 2.SQL
+- 3.JS
+- 4.CSS
+- 5.HTML
+
+# Estandaress
+
+## Colores
 
 1. Paleta de Colores:
-
-- Color de Fondo: #1F242D
-- Color de fondo Secundario:#B6DB7B
-- Color complementario: #1AB823
-- Color de titulos: #1AB823
-- Color de texto: #F9F4F5
+- Color de Fondo: ##f2f2f2ff
+- Color de fondo Secundario: #e7e8eb
+- Color complementario: #00172bff
+- Color de titulos: #138e46
+- Color de texto: #fff
 
 ## Tipografía:
-
-Fuente principal:Ghotman , Montserrat.
-Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso: Negrita
-Subtítulos (h2, a ): Fuente: Fuente: Tamaño: 2.5rem, Peso: Seminegrita
-Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
-Texto Destacado: Fuente: Tamaño: 1.6rem.
-
-## Clases y Nomenclatura
-
-Utiliza nombres en el idioma ingles claros y descriptivos para las clases en el código CSS.
-Utiliza la metodologia BEM
-Prefijo de Clases: .Nombre descriptivo-(uso de dos guiones medios)segunda palabra descriptiva
-Ejemplos:
-.menu-container
-.menu-icon
-.menu-text
-
-## Imagenes
-
-Utiliza imágenes de alta calidad y optimizadas para la web (Formato: .webp).
-Prefijo de Nombres de Archivos: Crear Carpeta con el nombre assets e incluir las imagenes con el siguiente formato (Descripicion corta de la imagen/lugar en la web)
-Ejemplo:
-parroquia sultepec/portada.webp
+- Fuente principal: Poppins.
+- Fuente secundaria: Ghotman.
+- Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso:Negrita Clase:title-index
+- Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
 
 ## Desarolladores
 
-| Nombre                           | Roles       |
+| Nombre                           | Roles                  |
 | -------------------------------- | ---------------------- |
-| Lizandro Antonio Santos          | Programador Backend    |
-| Yuliana Lizeth Betancourt Medina | Programador, diseñador |
-| Tony Villagran Arellano          | Programador, diseñador |
-| Angel Alejandro Cruz Sanchez     | Programador FullStack  |
+| @LizandroBackEnd                 | Programador Backend    |
+| @lizethbeta                      | Programador, diseñador |
+| @tonyarellanovi                  | Programador, diseñador |
+| @angelcruz07                     | Programador FullStack  |

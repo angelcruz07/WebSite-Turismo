@@ -85,21 +85,16 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
     <h2 class="title-index">Nuestro Equipo y Colaboradores</h2>
     <section class="colaborations">
       <div class="swiper mySwiper container-colaborations">
-        <div class="swiper-wrapper content-colaborations">
-          <!--Empieza -->
-          <div class="swiper-slide card-colaborations">
+        <div class="swiper-wrapper content-colaborations"> 
+           <!--Empieza -->
+           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="../admin/assets/imgBlog/Angel-colab.webp" alt="">
-              </div>
-              <div class="media-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-github"></i>
+                <img src="../admin/assets/imgBlog/CECYTEM-IMG.jpg" alt="">
               </div>
               <div class="name-profession">
-                <span class="name">Angel Alejandro</span>
-                <span class="profession">Programador Web</span>
+                <span class="name">Cecytem Plantel Sultepec</span>
+                <span class="profession">Institución</span>
               </div>
             </div>
           </div>
@@ -108,19 +103,51 @@ $blogs = $query->fetchAll(PDO::FETCH_ASSOC);
           <div class="swiper-slide card-colaborations">
             <div class="card-content-colaborations">
               <div class="image-colaborations">
-                <img src="../admin/assets/imgBlog//Lizandro-colab.png" alt="">
+                <img src="../admin/assets/imgBlog/Angel-colab.webp" alt="">
               </div>
-              <div class="media-icons">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-github"></i>
+              <div class="name-profession">
+                <span class="name">Angel Alejandro</span>
+                <span class="profession">Programador FullStack</span>
               </div>
-
+            </div>
+          </div>
+          <!--Termina -->
+          <!--Empieza -->
+          <div class="swiper-slide card-colaborations">
+            <div class="card-content-colaborations">
+              <div class="image-colaborations">
+                <img src="../admin/assets/imgBlog/Lizandro-colab.png" alt="">
+              </div>
               <div class="name-profession">
                 <span class="name">Lizandro Antonio Santos</span>
-                <span class="profession">Programador Web</span>
+                <span class="profession">Programador BackEnd</span>
               </div>
-
+            </div>
+          </div>
+          <!--Termina --> 
+          <!--Empieza -->
+          <div class="swiper-slide card-colaborations">
+            <div class="card-content-colaborations">
+              <div class="image-colaborations">
+                <img src="../admin/assets/imgBlog/Tony-colab.png" alt="">
+              </div>
+              <div class="name-profession">
+                <span class="name">Tony Villagran Arellano</span>
+                <span class="profession">Designer</span>
+              </div>
+            </div>
+          </div>
+          <!--Termina --> 
+          <!--Empieza -->
+          <div class="swiper-slide card-colaborations">
+            <div class="card-content-colaborations">
+              <div class="image-colaborations">
+                <img src="../admin/assets/imgBlog/Yuliana-colab.png" alt="">
+              </div>
+              <div class="name-profession">
+                <span class="name">Yuliana Lizeth Betancourt Medina</span>
+                <span class="profession">Designer</span>
+              </div>
             </div>
           </div>
           <!--Termina -->
