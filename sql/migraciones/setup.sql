@@ -1,3 +1,4 @@
+-- Active: 1698426412794@@127.0.0.1@3306@tourism
 CREATE DATABASE tourism;
 
 USE tourism;
@@ -43,7 +44,7 @@ CREATE TABLE
         business_type VARCHAR(255),
         business VARCHAR(255) NOT NULL,
         business_image VARCHAR(3000),
-        description VARCHAR(512) NOT NULL,,
+        description VARCHAR(512) NOT NULL,
         product_type VARCHAR(255),
         product_image VARCHAR(255),
         name VARCHAR(255) NOT NULL,
@@ -51,6 +52,7 @@ CREATE TABLE
         phone_number VARCHAR(255) NOT NULL,
         status VARCHAR(255) NOT NULL
     );
+
 
 CREATE TABLE
     lodging (
