@@ -1,4 +1,5 @@
-# Conociendo las riquezas de Sultepec ![Logo CECYTEM](/assets/img/cecytem-logo.png)
+# Conociendo las riquezas de Sultepec 
+![Logo CECYTEM](/assets/img/cecytem-logo.png)
 
 
 ## Índice
