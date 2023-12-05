@@ -107,4 +107,4 @@ WebSite-Turismo/
 | @LizandroBackEnd                 | Programador Backend    |
 | @lizethbeta                      | Programador, diseñador |
 | @tonyarellanovi                  | Programador, diseñador |
-| @angelcruz070                    | Programador FullStack  |
+| @angelcruz07                     | Programador FullStack  |
