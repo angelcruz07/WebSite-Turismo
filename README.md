@@ -1,11 +1,14 @@
-# Conociendo las riquezas de sultepec [img](https://seeklogo.com/images/C/cecytem-logo-D0CECF053F-seeklogo.com.png)
+# Conociendo las riquezas de sultepec [img](/assets/img/cecytem-logo.png)
 
-## Indice
-- [Descripcion](#Descripcion)
-- [Instalación](#Instalación)
-- [Funcionalides](#Funcionalidades)
-- [Estandares](#Estandares)
-- [Desarrolladores](#Desarrolladores)
+
+## Índice
+- [Descripción](#descripcion)
+- [Instalación](#instalación)
+- [Funcionalidades del Proyecto](#hammerfuncionalidades-del-proyecto)
+- [Acceso al Proyecto, Estructura](#-acceso-al-proyecto-estructura)
+- [Tecnologías](#tecnologias)
+- [Estándares](#estandares)
+- [Desarrolladores](#desarrolladores)
 
 ## Descripcion
 Desarrollo de sitio web dinamico para promover el turismo en el municipio de Sultepec, 
@@ -14,12 +17,12 @@ donde como finalidad se tiene fomentar el turismo, la economia y presencia dentr
 a traves de un sitio web el cual represente  las maravillas y bellezas del municipio resaltando su encanto
 
 ## :hammer:Funcionalidades del proyecto
--`Funcionalidad 1`: CRUD para administrar el sitio
--`Funcionalidad 2`: Contendio cargado por un administrador
--`Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario)
--`Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe
+`Funcionalidad 1`: CRUD para administrar el sitio 1-
+`Funcionalidad 2`: Contendio cargado por un administrador 2-
+`Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario) 3-
+`Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe 4-
 
-\## Clonar el repositorio
+## Clonar el repositorio
 
 ```bash
 
@@ -39,7 +42,9 @@ $ cd WebSite-Turismo/SQL/migraciones/setup.sql
 
 ```
 
-\# 📁 Acceso al proyecto, Estructura
+
+
+# 📁 Acceso al proyecto, Estructura
 
 ```bash
 
