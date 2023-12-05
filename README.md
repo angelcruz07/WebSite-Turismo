@@ -19,10 +19,10 @@ donde como finalidad se tiene fomentar el turismo, la economia y presencia dentr
 a traves de un sitio web el cual represente  las maravillas y bellezas del municipio resaltando su encanto
 
 ## :hammer:Funcionalidades del proyecto
-`Funcionalidad 1`: CRUD para administrar el sitio 1-
-`Funcionalidad 2`: Contendio cargado por un administrador 2-
-`Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario) 3-
-`Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe 4-
+- `Funcionalidad 1`: CRUD para administrar el sitio 
+- `Funcionalidad 2`: Contendio cargado por un administrador 
+- `Funcionalidad 3`: Sistema de Roles (Adminitrador, Usuario) 
+- `Funcionalidad 4`: Envio de solicitudes por medio del usuario que el administrador recibe 
 
 ## Clonar el repositorio
 
@@ -95,10 +95,10 @@ WebSite-Turismo/
 - Color de texto: #fff
 
 ## Tipografía:
-Fuente principal: Poppins.
-Fuente secundaria: Ghotman.
-Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso:Negrita Clase:title-index
-Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
+- Fuente principal: Poppins.
+- Fuente secundaria: Ghotman.
+- Títulos Principales (H1): Fuente: Tamaño: 4,6rem, Peso:Negrita Clase:title-index
+- Texto del Cuerpo (p): Fuente: Fuente: Tamaño: 1.6rem, Peso: Regular
 
 ## Desarolladores
 
